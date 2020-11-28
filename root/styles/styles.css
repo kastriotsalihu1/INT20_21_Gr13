@@ -24,43 +24,46 @@ header{
 	padding: 0px 0px;
 	overflow: hidden;
 }
-#siteName{
+header #siteName{
+	display: inline-block;
 	text-indent: 5%;
 	font-family: 'Roboto', sans-serif;
 	font-weight: bold;
 	font-style: normal;
 	padding: 10px;
 }
-.welcome{
+header #siteName:hover{
+	color: white;
+}
+header .welcome{
 	margin: 10px;
 	font-weight: bold;
+	cursor: pointer;
+	background-color: white;
 }
-
-header #up-logo {
-	position: relative;
-	right: 0;
-	width: 15%;
-	float: right;
-	margin: 5 5 5 5;
-	position: absolute;
-} 
+header .welcome:hover{
+	color: red;
+}
 
 nav{
 	overflow: hidden;
 	background-color: #333;
+	position: sticky;
+	top: 0;
 }
 .navigation-list{
 	list-style-type: none;
 	margin: auto;
 	padding: 0px 0px;
 	width: 100%;
+	position: sticky;
+	left: 0;
 }
 .navigation-list ul {
 	z-index:100;
 	position: -webkit-sticky;
 	position: sticky;
 	top: 0;
-	/* overflow: hidden; */
 	list-style-type: none;
 	margin: auto;
 	padding: 0px 10px;
@@ -79,11 +82,12 @@ nav{
 	float: left;
 	background-color: rgb(0, 0, 0);
 }
-.navigation-list li #about-link {
+.navigation-list li #login-link {
 	float: right;
 }  
 .navigation-list li a:hover:not(.active) {
 	background-color: #333;
+	color: red;
 }
 .navigation-list li .active {
 	background-color: red;
