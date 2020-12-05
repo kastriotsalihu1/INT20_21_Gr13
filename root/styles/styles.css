@@ -48,7 +48,7 @@ header .welcome:hover{
 nav{
 	overflow: hidden;
 	background-color: #333;
-	position: sticky;
+	/* position: sticky; */
 	top: 0;
 }
 .navigation-list{

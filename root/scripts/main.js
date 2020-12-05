@@ -5,8 +5,8 @@ function msg(){
 
 
 $(function() {
-    $( 'nav .navigation-list li' ).on( 'click', function() {
-          $( this ).parent().find( 'a.active' ).removeClass( 'active' );
-          $( this ).children().addClass( 'active' );
+    $( '.side-nav ul li' ).on( 'click', function() {
+          $( this ).parent().find( '.active' ).removeClass( 'active' );
+          $( this ).addClass( 'active' );
     });
 });
