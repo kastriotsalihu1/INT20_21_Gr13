@@ -82,10 +82,40 @@ header li{
 #sec_4 .big h1, #sec_3 h1{
    text-align: center;
 }
+.small, .last_box{
+ 
+  padding:0 45% 0 45%;
+  color:white;
+}
+
 .icons img{
    width:20px;
    height:20px;
 
+}
+.last_box{
+padding-bottom: 20px;
+padding-top:40px;
+margin-top: 0;
+}
+
+.sign_up{
+    padding-top:20px;
+    padding-left:50%;
+}
+.table{
+    padding-top:20px;
+   
+}
+#footer{
+    height: 300px;
+    width: 100%;
+    background-color: rgb(55,125,236);
+    color:white;
+}
+.copyright, .icons{
+
+    padding-top: 100px;
 }
 
 
