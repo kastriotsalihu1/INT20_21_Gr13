@@ -13,3 +13,29 @@ body{
   display: flex;
   font-family: sans-serif;
 }
+
+.container .box form .form-group{
+  margin-bottom: 20px;
+ }
+ 
+ .container .box form .form-group .sci{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+ }
+ 
+ .container .box form .form-group .sci li{
+  list-style: none;
+  width: 35px;
+  height: 35px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: #607d8b;
+  border-radius:50%;  
+  margin:0 7px;
+  cursor: pointer;
+  margin-top: 5px;
+ }
+ 
+ 
