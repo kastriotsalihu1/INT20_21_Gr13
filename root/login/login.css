@@ -75,6 +75,49 @@ body{
   cursor: pointer;
  }
  
+.container .box .btn:hover{
+  background: rgb(55,125,236);
+ }
+ 
+ .container .box form .remember{
+  margin-bottom: 0.1px;
+  margin-top: 1px;
+  color: #607d8b;
+  font-weight: 400;
+  font-size: 14px;
+ }
+ 
+ .container .box form .form-group p{
+  color: #607d8b;
+ }
+ 
+ .container .box form .form-group p  .form{
+  color:  rgb(55,125,236);
+  font-size: 17px;
+ } 
+ 
+ .container .box h3{
+  color: #607d8b;
+  text-align: center;
+  font-weight: 500;
+  margin-top: 50px;
+ }
+ 
+ .container{
+  margin: auto;
+  width: 800px;
+  height: 480px;
+  display: flex;
+ }
+ 
+ .container form{
+  width: 100%;
+  height: 100%;
+  padding: 20px;
+  background-color: white;
+  border-radius: 4px;
+ }
+ 
  
  
  
