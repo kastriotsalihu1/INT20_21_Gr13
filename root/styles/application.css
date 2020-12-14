@@ -1,106 +1,75 @@
 html,
-body{
-	width: 100%;
-	height: 100%;
-	margin: 0;
-	font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
-} 
-.wrapper{
-	height: 100%;
-	overflow: hidden;
-	background-color: #f8f8fc;
+body {
+    padding: 0;
+    margin: 0;
+    background-color: #f8f8fc;
+    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
 }
 
-.top-nav{
-	display: flex;
-	flex-wrap: column nowrap;
-	width: 100%;
-	border: 1px solid #999;
-	box-shadow: 0 5px 5px -2px #888;
-	background-color: white;
-	position: sticky;
-	top: 0;
-	justify-content: space-between;
-}
-.top-nav button:focus{
-	outline: none;
-}
-.top-nav button :hover:not(.active) {
-	color: #00f;
-}
-#menu-bar-link{
-	padding-left: 29px;
-}
-.container{
-	display: flex;
-	height: 100%;
-	overflow: hidden;
-}
-.side-nav{
-	display: flex;
-	flex-wrap: column nowrap;
-	justify-content: space-evenly;
-	margin-left: 0px;
-
-	width: fit-content;
-	z-index: 1;
-	top: 0;
-	left: 0;
-
-	background-color: white;
-	border: 1px solid #999;
-	padding-top: 30px;
-
-	box-shadow: 5px 0 5px -2px #888;
-	position: relative;
-
-	max-width: 75px;
+#menu-bar-button {
+    padding-left: 29px;
 }
 
-.side-nav ul{ 
-	list-style-type: none; 
-	margin: 0; 
-	padding: 0; 
-	overflow: hidden;
-	width: fit-content;
-} 
-.side-nav ul li{
-	padding: 8px 16px;
+.topbar {
+    padding: 0 10px;
+    margin: 0;
+    display: flex;
+    justify-content: space-between;
+    position: fixed;
+    width: 100%;
+    box-shadow: 0 5px 5px -2px #888;
+    background-color: white;
+    top: 0;
+    height: 50px;
 }
 
-li button,
-.top-nav button { 
-	display: block; 
-	color: #aaa; 
-	background-color: white;
-	/* padding: 8px 16px;  */
-	border: 0 solid transparent;
-	/* margin: 0 0; */
-	cursor: pointer;
+.sidebar {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    margin-left: 0px;
+    width: 50px;
+    height: calc(100vh - 50px);
+    position: fixed;
+    bottom: 0;
+    background-color: white;
+    box-shadow: 5px 0 5px -2px #888;
 }
 
-li button:focus{
-	outline: none;
+button {
+    color: #aaa;
+    background-color: white;
+    border: 0 solid transparent;
+    cursor: pointer;
+    align-content: center;
 }
 
-ul .active{
-	box-shadow: inset -2px 0px 0px 0px #00f;
-}
-ul .active button i{
-	color: #00f; 
+button:focus {
+    outline: none;
 }
 
-.side-nav ul :hover:not(.active) {
-	color: #00f;
+.sidebar .active {
+    box-shadow: inset -2px 0px 0px 0px #00f;
 }
 
-.icon { 
-	margin-right: 10px; 
-} 
+.sidebar .active button i {
+    color: #00f;
+}
 
-.main{
-	width: 100%;
-	padding: 15px;
-	overflow: auto;
-	padding: 120px;
+.sidebar :hover:not(.active) {
+    color: #00f;
+}
+
+.icon {
+    margin-right: 10px;
+}
+
+main {
+    width: calc(100vw - 200px);
+    height: calc(100vh - 50px);
+    float: right;
+}
+
+main .content {
+    padding: 50px 20px;
 }

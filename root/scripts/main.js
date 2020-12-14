@@ -4,8 +4,8 @@ function msg(){
    
 
 
-$(function() {
-    $( '.side-nav ul li' ).on( 'click', function() {
+$(function() {0
+    $( '.sidebar' ).on( 'click', function() {
           $( this ).parent().find( '.active' ).removeClass( 'active' );
           $( this ).addClass( 'active' );
     });
