@@ -1,75 +1,91 @@
-html,
-body {
-    padding: 0;
-    margin: 0;
-    background-color: #f8f8fc;
-    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+html, body {
+  padding: 0;
+  margin: 0;
+  background-color: #f6f7fb;
+  font-family: "Gill Sans", "Gill Sans MT", Calibri, "Trebuchet MS", sans-serif;
 }
 
 #menu-bar-button {
-    padding-left: 29px;
+  padding-left: 29px;
 }
 
 .topbar {
-    padding: 0 10px;
-    margin: 0;
-    display: flex;
-    justify-content: space-between;
-    position: fixed;
-    width: 100%;
-    box-shadow: 0 5px 5px -2px #888;
-    background-color: white;
-    top: 0;
-    height: 50px;
+  padding: 0 10px;
+  margin: 0;
+  display: flex;
+  justify-content: space-between;
+  position: fixed;
+  width: 100%;
+  box-shadow: 0 5px 5px -2px rgba(0, 0, 0, 0.15);
+  background-color: white;
+  top: 0;
+  height: 50px;
 }
 
 .sidebar {
-    display: flex;
-    flex-direction: column;
-    justify-content: space-around;
-    margin-left: 0px;
-    width: 50px;
-    height: calc(100vh - 50px);
-    position: fixed;
-    bottom: 0;
-    background-color: white;
-    box-shadow: 5px 0 5px -2px #888;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  margin-left: 0px;
+  width: 50px;
+  height: calc(100vh - 50px);
+  position: fixed;
+  bottom: 0;
+  background-color: white;
+  box-shadow: 5px 0 5px -2px rgba(0, 0, 0, 0.15);
 }
 
 button {
-    color: #aaa;
-    background-color: white;
-    border: 0 solid transparent;
-    cursor: pointer;
-    align-content: center;
+  color: #aaa;
+  background-color: white;
+  border: 0 solid transparent;
+  cursor: pointer;
+  align-content: center;
 }
 
 button:focus {
-    outline: none;
+  outline: none;
 }
 
 .sidebar .active {
-    box-shadow: inset -2px 0px 0px 0px #00f;
+  box-shadow: inset -2px 0px 0px 0px #4D85FE;
 }
 
 .sidebar .active button i {
-    color: #00f;
+  color: #00f;
 }
 
 .sidebar :hover:not(.active) {
-    color: #00f;
+  color: #00f;
 }
 
 .icon {
-    margin-right: 10px;
+  margin-right: 10px;
 }
 
 main {
-    width: calc(100vw - 200px);
-    height: calc(100vh - 50px);
-    float: right;
+  margin: 100px 100px 100px 100px;
+  background-color: #f6f7fb;
+  display: flex;
+  flex-wrap: wrap;
 }
 
-main .content {
-    padding: 50px 20px;
+.card {
+  border-radius: 5px;
+  display: inline-block;
+  margin: 1rem;
+  box-shadow: 0 6px 16px rgba(0, 0, 0, 0.15);
+}
+
+.card-1 {
+  background-color: #fff;
+  width: 800px;
+  height: 500px;
+}
+
+.card-2 {
+  background-color: #4D85FE;
+  width: 800px;
+  height: 500px;
+
 }
