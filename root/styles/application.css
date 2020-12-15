@@ -1,91 +1,102 @@
-html, body {
+/* Everything */
+html,
+body {
+  background-color: #f6f7fb;
+
   padding: 0;
   margin: 0;
-  background-color: #f6f7fb;
+
   font-family: "Gill Sans", "Gill Sans MT", Calibri, "Trebuchet MS", sans-serif;
 }
 
-#menu-bar-button {
-  padding-left: 29px;
-}
+/* Header */
+header {
+  background-color: white;
 
-.topbar {
-  padding: 0 10px;
+  padding: 0;
   margin: 0;
+
   display: flex;
   justify-content: space-between;
+
   position: fixed;
   width: 100%;
-  box-shadow: 0 5px 5px -2px rgba(0, 0, 0, 0.15);
-  background-color: white;
+  height: 100px;
   top: 0;
-  height: 50px;
+
+  box-shadow: 0 5px 5px -2px rgba(0, 0, 0, 0.15);
 }
 
-.sidebar {
+
+/* Navigation */
+.hamburger {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  background-color: white;
+  
+  position: fixed;
+ 
+  width: 100px;
+  height: 100px;
+  
+  top: 0;
+  
+  box-shadow: 0px 5px 5px -2px rgba(0, 0, 0, 0.15);
+}
+
+.fas{
+  color:gray;
+}
+
+
+nav {
+  background-color: white;
+
+  margin-left: 0px;
+
   display: flex;
   flex-direction: column;
   justify-content: space-around;
-  margin-left: 0px;
-  width: 50px;
-  height: calc(100vh - 50px);
+
+  width: 100px;
+  height: 100vh;
   position: fixed;
   bottom: 0;
-  background-color: white;
+
   box-shadow: 5px 0 5px -2px rgba(0, 0, 0, 0.15);
 }
 
-button {
-  color: #aaa;
-  background-color: white;
-  border: 0 solid transparent;
-  cursor: pointer;
-  align-content: center;
-}
 
-button:focus {
-  outline: none;
-}
-
-.sidebar .active {
-  box-shadow: inset -2px 0px 0px 0px #4D85FE;
-}
-
-.sidebar .active button i {
-  color: #00f;
-}
-
-.sidebar :hover:not(.active) {
-  color: #00f;
-}
-
-.icon {
-  margin-right: 10px;
-}
-
+/* Content */
 main {
-  margin: 100px 100px 100px 100px;
   background-color: #f6f7fb;
+
   display: flex;
   flex-wrap: wrap;
+
+  margin: 150px 100px 100px 150px;
 }
 
 .card {
   border-radius: 5px;
   display: inline-block;
   margin: 1rem;
+
   box-shadow: 0 6px 16px rgba(0, 0, 0, 0.15);
 }
 
 .card-1 {
   background-color: #fff;
-  width: 800px;
+
+  width: 700px;
   height: 500px;
 }
 
 .card-2 {
-  background-color: #4D85FE;
-  width: 800px;
-  height: 500px;
+  background-color: #4d85fe;
 
+  width: 700px;
+  height: 500px;
 }
