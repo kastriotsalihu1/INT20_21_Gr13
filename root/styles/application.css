@@ -76,16 +76,21 @@ nav {
     outline: none;
 }
 
-.active {
+.active button {
     box-shadow: inset -4px 0px 0px 0px #4d85fe;
 }
 
-.active .fas {
+.active button .fas {
     color: #4d85fe;
 }
 
 
 /* Content */
+
+.pages {
+    /* By default hide all pages */
+    display: none;
+}
 
 main {
     background-color: #f6f7fb;
