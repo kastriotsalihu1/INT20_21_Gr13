@@ -144,11 +144,32 @@ p{
    }
    
 
-    .box1, .box2{
-        display: block;
-        width:100%;
-        margin:0, 20%,0,20%;
-        align-content: center;
+    .box_1, .box_2{
+        display:block;
+       
+        
+    }
+    #sec1{
+        height: 500px;
+        background: rgb(55,125,236);
+        display:block;
+    }
+        
+    #sec1 img{
+        width:300px;
+        padding-top: 35px;
+      height:200px;
+    }
+    .box_left{
+       padding: 0, 30 px,0,30 px;
+       font-size: 13px;
+       float: left;
+    }
+
+    #sec2{
+        height: 600px;
+     display:block;
+
     }
 
 }
