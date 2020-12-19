@@ -142,15 +142,23 @@ p{
    .icon1{
     float:inline-start;
    }
-   
+   .contains1{
+    display: block;
+  }
+   .box_left, .box_right{
+
+    width:100%; 
+    margin: 20px 0 20px 0;  
+    padding:0 20% 0 20% ;
+   }
 
     .box_1, .box_2{
-      width:100%;
-       
-        
+      width:100%; 
+      padding: 20px 20px;   
     }
+    
     #sec1{
-        height: 500px;
+        height: 800px;
         background: rgb(55,125,236);
         display:block;
     }
@@ -181,7 +189,18 @@ p{
         width:100%;
        padding: 10% 30% 10% 30%;
     }
-
+    .table{
+       padding:10% 30% 0% 30%;
+    }
+    .sign_up{
+        padding:10% 30% 10% 30%;
+    }
+    .copyright, .icons{
+        margin: 0;
+    }
+    #footer{
+        height:100%;
+    }
 
 }
 
