@@ -145,7 +145,7 @@ p{
    
 
     .box_1, .box_2{
-        display:block;
+      width:100%;
        
         
     }
@@ -171,6 +171,17 @@ p{
      display:block;
 
     }
+    .contains{
+        display: block;
+
+        justify-content: center;
+
+    }
+    .box_a, .box_b, .box_c, .box_d, .box_e{
+        width:100%;
+       padding: 10% 30% 10% 30%;
+    }
+
 
 }
 
