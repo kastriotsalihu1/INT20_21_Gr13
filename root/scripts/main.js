@@ -13,12 +13,17 @@ const card = document.getElementsByClassName("card");
 
 $(function () {
     $('.nav-icons i').on('click', function () {
-
-        notificationCount++;
-        $("#notification").attr("data-badge", notificationCount);
-
         let previous = $(this).parent().find('.active');
         if (previous.attr("id") != $(this).attr("id")) {
+
+            if ($(this).attr("id") === "folder") {
+                $("#notification").attr("data-badge", "");
+            }
+            else {
+                notificationCount++;
+                $("#notification").attr("data-badge", notificationCount);
+            }
+
             previous.removeClass('active');
             $(this).addClass('active');
 
@@ -28,7 +33,7 @@ $(function () {
             );
         }
     });
-    $('#notification').on('click', function(){
+    $('#notification').on('click', function () {
         notificationCount--;
         $("#notification").attr("data-badge", notificationCount);
     });
