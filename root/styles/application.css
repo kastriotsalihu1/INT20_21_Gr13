@@ -32,7 +32,7 @@ header {
 }
 
 #hamburger:hover{
-  color: #3030ca;
+  color: #4d85fe;
 }
 
 #info {
@@ -74,8 +74,30 @@ header {
   flex-direction: column;
   justify-content: center;
   align-items: center;
-
   color: #9b9b9b;
+}
+
+#notification:hover{
+  color: #4d85fe;
+}
+/* Notification pop-up badge */
+#notification[data-badge]:after {
+  content:attr(data-badge);
+  position:relative;
+  left: 13px;
+  top: -40px;
+  font-size:.8em;
+  background:red;
+  color:white;
+  width:19px;
+  height:19px;
+  text-align:center;
+  line-height:18px;
+  border-radius:50%;
+  box-shadow:0 0 1px #333;
+}
+#notification[data-badge=””]:after {
+content: none;
 }
 
 /* Navigation */
@@ -109,10 +131,15 @@ nav {
   height:100px;
 }
 
-.nav-icons > i:hover{
+.nav-icons .active{
+  color: #4d85fe;
+  transform: translateX(4px);
+}
+
+.nav-icons > i:hover:not(.active){
   box-sizing: border-box;
-  color: #3030ca;
-  border-right:4px solid #3030ca;
+  color: #4d85fe;
+  border-right:4px solid #4d85fe;
 }
 
 main {
@@ -128,8 +155,11 @@ main {
 
   background-color: #4d85fe;
 
-  width: 300px;
+  width: 300px;  
   height: 350px;
 
   box-shadow: 0 6px 16px rgba(0, 0, 0, 0.2);
 }
+
+
+/* Previous color for hover: #3030ca */
