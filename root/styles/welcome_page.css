@@ -138,9 +138,14 @@ width:30%;
 }
 
 .icons img{
-   width:20px;
-   height:20px;
+   width:30px;
+   height:30px;
+   padding:10px;
+  
 
+}
+.icons{
+   padding-left:70%;
 }
 .last_box{
 padding-bottom: 20px;
@@ -158,7 +163,7 @@ margin-top: 0;
 }
 #footer{
     
-    height: 400px;
+    height: 300px;
     width: 100%;
     background-color:rgb(128, 97, 226);
     color:white;
@@ -167,6 +172,7 @@ margin-top: 0;
 .copyright, .icons{
 
     padding-top: 100px;
+    
 }
 p{
     font-size: 20px;
@@ -174,10 +180,11 @@ p{
 }
 
 td{
+    padding-left: 30px;
     padding-right: 40px;
     line-height: 30px;
-    font-weight: 500;
-    font-size: 25px;
+    font-weight: 700;
+    font-size: 20px;
     text-transform: uppercase;
 }
     /*Media Queries*/
