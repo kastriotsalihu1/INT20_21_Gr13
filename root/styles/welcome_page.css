@@ -43,6 +43,7 @@ header ul{
 
 header li{
     display: inline;
+    padding:10px;
 }
 
 .contains{
@@ -63,6 +64,7 @@ header li{
     color:white;
     background:rgb(128, 97, 226);
     padding-left: 20px;
+    padding-right: 30px;
     padding-top: 70px;
     width:60%;
     padding-left:20px;
@@ -125,7 +127,11 @@ width:30%;
 #sec_4 .big h1, #sec_3 h1{
    text-align: center;
 }
-.small, .last_box{
+.small{
+    align-items: center;
+    padding:0 35% 0 35%;
+}
+.last_box{
  
   padding:0 45% 0 45%;
   color:white;
