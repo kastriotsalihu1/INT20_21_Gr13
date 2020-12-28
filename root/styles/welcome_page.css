@@ -106,7 +106,7 @@ background:rgb(128, 97, 226);
     margin: -20px;
 }
  #sec_3{
-     background-color:rgb(128, 97, 226);
+     background-color:rgb(234, 235, 230);
  }
  .box_a{
     padding-left: 10%;
@@ -133,7 +133,7 @@ width:30%;
 }
 .last_box{
  
-  padding:0 45% 0 45%;
+  padding:0 35% 0 35%;
   color:white;
 }
 
@@ -173,6 +173,13 @@ p{
 
 }
 
+td{
+    padding-right: 40px;
+    line-height: 30px;
+    font-weight: 500;
+    font-size: 25px;
+    text-transform: uppercase;
+}
     /*Media Queries*/
     @media(max-width:768px){
        
