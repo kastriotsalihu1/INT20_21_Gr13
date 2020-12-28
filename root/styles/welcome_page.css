@@ -146,31 +146,42 @@ width:30%;
 }
 .icons{
    padding-left:70%;
+   height: 100px;
 }
 .last_box{
 padding-bottom: 20px;
 padding-top:40px;
 margin-top: 0;
+height: 100px;
 }
-
+.rev_1 p, .rev_1 img, .rev_2 p, .rev_2 img {
+    display: inline;
+    padding: 0 10px;
+    line-height: 40px;
+    
+}
+.rev_1 p, .rev_2 p{
+    margin-bottom: 40px;
+}
 .sign_up{
     padding-top:20px;
     padding-left:50%;
+    height: 100px;
 }
 .table{
     padding-top:20px;
-   
+    height: 100px;
 }
 #footer{
     
-    height: 300px;
+    height: 340px;
     width: 100%;
     background-color:rgb(128, 97, 226);
     color:white;
     margin-top: 0;
 }
 .copyright, .icons{
-
+    height: 50px;
     padding-top: 100px;
     
 }
