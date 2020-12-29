@@ -146,3 +146,11 @@ nav {
   color: #4d85fe;
   border-right:4px solid #4d85fe;
 }
+
+.card {
+  border-radius: 5px;
+  display: inline-block;
+  margin: 1rem;
+  background-color: lightgray;
+  box-shadow: 0 6px 16px rgba(0, 0, 0, 0.2);
+}
