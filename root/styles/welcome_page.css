@@ -6,6 +6,7 @@ body{
     font-family: 'Open Sans', sans-serif;
     width:100%;
     padding: 0;
+    overflow: auto;
 
 }
 
@@ -104,7 +105,7 @@ background:rgb(128, 97, 226);
     
  }
 .svg_div2{
-    margin: -20px;
+    margin: -10px;
 }
  #sec_3{
      background-color:rgb(234, 235, 230);
