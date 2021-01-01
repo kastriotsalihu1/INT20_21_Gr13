@@ -50,12 +50,31 @@
         <!-- QITU -->
         <!-- QITU -->
         <!-- QITU -->
-        <div class="card box_1">
-          <p>Pomodoro</p>
-          <p>25:00</p>
-          <button id="start">Start</button>
-          <button id="pause">Pause</button>
-          <button id="end">Restart</button>
+        <div class="card box_1" id="container">
+           <p id="work" class="label">Work:</p>
+           <p id="cycle" class="label">Cycle:</p>
+           <p id="break" class="label">Break:</p>
+
+
+           <div id="work_timer" class="timer">
+             <p id="work_minutes">25</p>
+             <p class="semicolon">:</p>
+             <p id="work_seconds">00</p>
+           </div>
+
+           <p id="counter" class="timer">0</p>
+
+           <div id="break-timer" class="timer">
+            <p id="break_minutes">5</p>
+            <p class="semicolon">:</p>
+            <p id="break_seconds">00</p>
+          </div>
+
+          <button id="start" class="button">Start</button>
+          <button id="pause" class="button">Pause</button>
+          <button id="reset" class="button">Reset</button>
+           
+
         </div>
         <div class="card box_2">
           Music
@@ -63,6 +82,7 @@
         <div class="card box_2">
           End a cycle of 4 pomodoros to plant a tree
         </div>
+        <script src="pomodor_main.js"></script>
         <!-- QITU -->
         <!-- QITU -->
         <!-- QITU -->
