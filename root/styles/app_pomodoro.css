@@ -67,6 +67,29 @@ p{
   grid-area:2 / 3 / 2 / 3;
 }
 
+#work-timer{
+  grid-area:2 / 2 / 2 / 2;
+}
+#break-timer{
+  grid-area:2 / 4 / 2 / 4;
+}
+
+.button{
+  align-self: center;
+  justify-self: center;
+  width: 100px;
+  height: 30px;
+  font-size: 20px;
+}
+#start{
+  grid-area: 3 / 2 / 3 / 2;
+}
+#reset{
+  grid-area: 3 / 2 / 3 / 2;
+}
+#stop{
+  grid-area: 3 / 2 / 3 / 2;
+}
 
 
 
