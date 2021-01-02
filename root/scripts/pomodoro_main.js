@@ -10,7 +10,26 @@ var bs =document.getElementById('break_seconds');
 
 var startTimer;
 
-
+start.addEventListener('click', function(){
+    if(startTimer === undefined){
+            startTimer = setInterval(timer,1000)
+    }else{
+            alert("Timer is aready running!");
+    }
+})
+reset.addEventListener('click',function(){
+    wm.innerText=25;
+    ws.innerText="00";
+    bm.innerText=5;
+    bs.innerText="00";
+    document.getElementById('counter').innerText=0;
+    stopInterval()
+    startTimer=undefined;
+})
+stop.addEventListener('click', function(){
+    stopInterval()
+    startTimer= undefined;
+})
 
 function timer(){
   if(ws.innerText != 0){
