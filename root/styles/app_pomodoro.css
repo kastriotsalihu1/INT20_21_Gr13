@@ -89,10 +89,10 @@ p{
   width: 100px;
   height: 30px;
   font-size: 20px;
-  border-radius: 10%;
   background-color: white;
   font-weight: 600;
   color: gray;
+  border: none;
 }
 #start{
   grid-area: 3 / 2 / 3 / 2;
