@@ -1,3 +1,4 @@
+@import url('https://fonts.googleapis.com/css2?family=Open+Sans&display=swap');
 main {
   width: 100%;
   height: 700px;
@@ -15,6 +16,7 @@ main {
   grid-template-areas:
     "a a"
     "b c";
+  font-family: 'Open Sans', sans-serif;
 }
 .box_1{
   grid-area: a;
@@ -74,10 +76,10 @@ p{
   grid-area:2 / 3 / 2 / 3;
 }
 
-#work-timer{
+#work_timer{
   grid-area:2 / 2 / 2 / 2;
 }
-#break-timer{
+#break_timer{
   grid-area:2 / 4 / 2 / 4;
 }
 
@@ -86,7 +88,11 @@ p{
   justify-self: center;
   width: 100px;
   height: 30px;
-   font-size: 20px;
+  font-size: 20px;
+  border-radius: 10%;
+  background-color: white;
+  font-weight: 600;
+  color: gray;
 }
 #start{
   grid-area: 3 / 2 / 3 / 2;
