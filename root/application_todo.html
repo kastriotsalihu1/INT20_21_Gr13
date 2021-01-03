@@ -51,38 +51,43 @@
       <main>
         <!-- to-do list -->
         <div id="todolist" class="card">
-          <h2
-            style="
-              color: black;
-              padding-left: 40px;
-              font-weight: bolder;
-              text-align: center;
-            "
-          >
-            TO-DO LIST
-          </h2>
-          <div id="add" class="listheader">
-            <input type="text" id="todoInput" placeholder="Add to list..." />
-            <!-- <span onclick="addToList()" class="addBtn">Add</span> -->
+          <div id="listheader">
+            <h2>TO-DO LIST</h2>
+            <input type="text" id="todoinput" placeholder="Add to list..." /> 
+            <!-- <label class="switch">
+              <input type="checkbox">
+              <span class="slider round"></span>
+            </label> -->
           </div>
 
-          <ul id="listcontainer">
-            <li>Todo for that</li>
-            <li class="checked">todo for this</li>
-            <li>go sleep</li>
-            <li>lern</li>
-            <li>drink vodka</li>
-            <li>win dotka</li>
-            <li>win dotka</li>
-            <li>win dotka</li>
-            <li>win dotka</li>
-            <li>win dotka</li>
-            <li>win dotka</li>
-            <li>win dotka</li>
-            <li>win dotka</li>
-            <li>win dotka</li>
-            <li>win dotka</li>
-          </ul>
+          <div id="listcontent">
+            <ul id="itemlist">
+              <li>Todo for that</li>
+              <li class="checked">todo for this</li>
+              <li>go sleep</li>
+              <li>lern</li>
+              <li>drink vodka</li>
+              <li>win dotka</li>
+              <li>win dotka</li>
+              <li>win dotka</li>
+              <li>Todo for that</li>
+              <li class="checked">todo for this</li>
+              <li>go sleep</li>
+              <li>lern</li>
+              <li>drink vodka</li>
+              <li>win dotka</li>
+              <li>win dotka</li>
+              <li>win dotka</li>
+            </ul>
+          </div>
+          <div id="listfooter">
+          
+            <input
+              id="displayinput"
+              type="image"
+              src="images/todo/add_circle_button.png"
+            />
+          </div>
         </div>
         <div class="card comingsoon" style="grid-area: b">COMING SOON</div>
         <div class="card comingsoon" style="grid-area: c">COMING SOON</div>
@@ -90,6 +95,7 @@
     </div>
 
     <script src="scripts/jquery.js"></script>
+    <script src="scripts/todo.js"></script>
     <script src="scripts/main.js"></script>
   </body>
 </html>
