@@ -152,8 +152,14 @@ ul li.checked::before {
 
 #displayinput {
   padding: 0;
+  margin-bottom: 10px;
   outline:none;
   float: none;
   height: 100px;
   width: 100px;
+  transition: 0.2s;
+}
+
+.rotate{
+  transform: rotate(45deg);
 }

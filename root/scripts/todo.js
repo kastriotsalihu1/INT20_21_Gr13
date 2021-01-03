@@ -10,9 +10,8 @@ $(document).ready(function () {
     $(this).toggleClass("checked");
   });
 
-  $('#displayinput').click(function(){
-    $('#todoinput').slideToggle('fast',function(){} );
+  $("#displayinput").click(function () {
+    $(this).toggleClass("rotate");
+    $("#todoinput").slideToggle("fast", function () {});
   });
-
 });
-
