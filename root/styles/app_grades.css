@@ -5,7 +5,7 @@ body
 
 main {
   width: 100%;
-  height: 700px;
+  height: 1000px;
   margin: 20px 0 0 20px;
 
   background-color: #f6f7fb;
@@ -48,6 +48,7 @@ main {
 }
 
 /* Clear floats after the header */
+/*
 .listheader:after {
   content: "";
   display: table;
@@ -64,6 +65,7 @@ input {
 }
 
 /* Style the "Add" button */
+/*
 .addBtn { 
   padding: 10px;
   width: 25%;
@@ -138,3 +140,97 @@ ul li.checked::before {
   background-color: #f44336;
   color: white;
 }
+
+
+.box{
+  background: #f6f7fb;
+  height: 300px;
+  float:right;
+  width: 700px;
+  margin:  100px auto;
+  box-shadow:  0 0 3px rgba(0, 0, 0, 0.3);
+}
+select {
+  float: right;
+  width: 100px;
+  display: inline-block;
+  height: 40px;
+  outline: none;
+  border:0.2px solid #fff;
+}
+select:focus{
+  background: white;
+  border:  3px solid #2980b9;
+  /*outline osht highlighti*/
+  outline: none;
+}
+h1{
+  background: #2980b9; 
+  color: white;
+  margin: 0;
+  padding: 10px 20px;
+  text-transform: uppercase;
+  font-size:25px;
+  font-weight: normal;
+}
+ul{
+  /* me i hek bulletpoints*/
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+li{
+  background: #fff;
+  height: 40px;
+  /*teksti del n mes dmth e merr krejt hapsiren height */
+  line-height: 40px;
+  color: #666;
+}
+
+li:nth-child(2n){
+  background-color: #f7f7f7;
+  }
+select:nth-child(2n){
+    background-color: #f7f7f7;
+  }
+.completed{
+    color: gray;
+    text-decoration: line-through;
+}
+input{
+  font-size: 18px;
+  color:#2980b9;
+  background-color: #f7f7f7;
+  width: 100%;
+  box-sizing: border-box;
+  padding: 13px 13px 13px 20px ;
+  border:0.2px solid #f7f7f7;
+}
+input:focus{
+  background: white;
+  border:  3px solid #2980b9;
+  /*outline osht highlighti*/
+  outline: none;
+}
+
+
+span{
+  background: #e74c3c;
+  height: 40px;
+  margin-right: 20px;
+  text-align: center;
+  color: white;
+  width:0px;
+  display: inline-block;
+  transition: 0.2s linear ;
+  /*mos mu shfaq ikona kur osht width 0*/
+  opacity: 0;
+}
+/*all the trash have the width of 0 until u hover*/
+
+li:hover span{
+  width: 40px;
+  opacity: 1.0;
+}
+
