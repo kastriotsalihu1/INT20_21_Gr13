@@ -31,12 +31,19 @@ main {
   font-weight: bold ;
   color: #747474;
 }
-
+/*
 #todolist {
   background-color: lightgray;
   grid-area: a;
   overflow-y: scroll;
   overflow-x: hidden;
+}*/
+#container{
+  width: 600px;
+  /*how to center an element */
+  margin: 100px auto ;
+  background: #f7f7f7;
+  box-shadow: 0 0 3px rgba(0, 0, 0, 0.1);
 }
 
 .listheader {
@@ -91,7 +98,7 @@ ul {
   margin: 0;
   padding: 0;
 }
-
+/*
 ul li {
   cursor: pointer;
   position: relative;
@@ -124,6 +131,32 @@ ul li.checked::before {
   transform: rotate(45deg);
   height: 15px;
   width: 7px;
+}
+*/
+
+
+ul{
+  /* me i hek bulletpoints*/
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+.fa-pencil-alt{
+  float: right;
+}
+
+li{
+  background: #fff;
+  height: 40px;
+  /*teksti del n mes dmth e merr krejt hapsiren height */
+  line-height: 40px;
+  color: #666;
+}
+
+/*every second*/
+li:nth-child(2n){
+background-color: #f7f7f7;
 }
 
 /* Style the close button */
