@@ -142,6 +142,15 @@ ul li.checked::before {
   height: 15px;
   width: 7px;
 }
+*/
+
+
+ul{
+  /* me i hek bulletpoints*/
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
 
 #listfooter {
   width: 100%;
