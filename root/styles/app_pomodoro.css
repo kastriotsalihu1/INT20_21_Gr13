@@ -1,8 +1,4 @@
-body
-{
-  font-family: 'Open Sans', sans-serif;
-}
-
+@import url('https://fonts.googleapis.com/css2?family=Open+Sans&display=swap');
 main {
   width: 100%;
   height: 700px;
@@ -13,128 +9,106 @@ main {
 
   display: grid;
 
-  grid-template-columns: repeat(3, 30%);
-  grid-template-rows: repeat(3, 375px);
+  grid-template-columns: repeat(2, 50%);
+  grid-template-rows: repeat(2, 50%);
 
   gap: 10px;
   grid-template-areas:
-    "a a b"
-    "a a b"
-    "c c c";
+    "a a"
+    "b c";
+  font-family: 'Open Sans', sans-serif;
 }
-
-.comingsoon{
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  font-size: 45px;
-  font-weight: bold ;
-  color: #747474;
-}
-
-#todolist {
-  background-color: lightgray;
+.box_1{
   grid-area: a;
-  overflow-y: scroll;
-  overflow-x: hidden;
-}
-
-.listheader {
-  background-color: white;
-  height: 60px;
-  width: 100%;
+  line-height: 70px;
   text-align: center;
-  border-bottom: 1px solid lightgray;
+  background-color: rgb(217, 83, 79);
+
+
+}
+.box_2{
+  line-height: 300px;
+  text-align: center;
+  background-color:rgb(237, 134, 132);
+
+}
+p{
+  color:white;
+  font-weight: 600;
+  text-align: center;
+}
+#container{
+  display: grid;
+  grid-template-columns: repeat(5, 1fr);
+  grid-template-rows: repeat(3, 1fr);
+  width:1000px;
+  margin: 0 auto;
 }
 
-/* Clear floats after the header */
-.listheader:after {
-  content: "";
-  display: table;
-  clear: both;
+.label{
+  align-self: center;
+  justify-self: center;
+  font-size:30px;
 }
-input {
-  margin: 0;
-  border: none;
-  border-radius: 0;
-  width: 100%;
-  padding: 0 0 0 40px;
-  float: left;
+
+#work{
+  grid-area: 1 / 2 / 1 / 2; 
+}
+
+#break{
+  grid-area: 1 / 4 / 1 / 4;
+}
+
+#cycles{
+  grid-area: 1 / 3 / 1 / 3;
+}
+
+.timer{
+  display: flex;
+  align-self:center;
+  justify-self: center;
+
+  font-size: 30px;
+  font-weight: bold;
+}
+
+#counter{
+  grid-area:2 / 3 / 2 / 3;
+}
+
+#work_timer{
+  grid-area:2 / 2 / 2 / 2;
+}
+#break_timer{
+  grid-area:2 / 4 / 2 / 4;
+}
+
+.button{
+  align-self: center;
+  justify-self: center;
+  width: 100px;
+  height: 30px;
   font-size: 20px;
+  background-color: white;
+  font-weight: 600;
+  color: gray;
+  border: none;
+}
+#start{
+  grid-area: 3 / 2 / 3 / 2;
+}
+#reset{
+  grid-area: 3 / 3 / 3 / 3;
+}
+#stop{
+  grid-area: 3 / 4 / 3 / 4;
 }
 
-/* Style the "Add" button */
-.addBtn { 
-  padding: 10px;
-  width: 25%;
-  background: #e9e9e9;
-  color: #313131;
-  float: left;
-  text-align: center;
-  font-size: 16px;
-  cursor: pointer;
-  transition: 0.3s;
-  border-radius: 0;
-}
-input,
-.addBtn {
-  box-sizing: border-box;
-  height:100%;
-}
 
-.addBtn:hover {
-  background-color: #bbb;
-}
 
-ul {
-  list-style-type: none;
-  margin: 0;
-  padding: 0;
-}
 
-ul li {
-  cursor: pointer;
-  position: relative;
-  padding: 15px 10px 15px 40px;
-  background: #eee;
-  font-size: 18px;
-  transition: 0.2s;
 
-  user-select: none;
-}
 
-ul li:hover {
-  background: #ddd;
-}
 
-ul li.checked {
-  background: #888;
-  color: #fff;
-  text-decoration: line-through;
-}
 
-ul li.checked::before {
-  content: "";
-  position: absolute;
-  border-color: #fff;
-  border-style: solid;
-  border-width: 0 2px 2px 0;
-  top: 10px;
-  left: 16px;
-  transform: rotate(45deg);
-  height: 15px;
-  width: 7px;
-}
 
-/* Style the close button */
-.close {
-  position: absolute;
-  right: 0;
-  top: 0;
-  padding: 12px 16px 12px 16px;
-}
-
-.close:hover {
-  background-color: #f44336;
-  color: white;
-}

@@ -1,6 +1,5 @@
-body
-{
-  font-family: 'Open Sans', sans-serif;
+body {
+  font-family: "Open Sans", sans-serif;
 }
 
 main {
@@ -8,8 +7,7 @@ main {
   height: 700px;
   margin: 20px 0 0 20px;
 
-  background-color: #f6f7fb;
-
+  background-color: #f8fbfc;
 
   display: grid;
 
@@ -23,72 +21,86 @@ main {
     "c c c";
 }
 
-.comingsoon{
+.comingsoon {
   display: flex;
   align-items: center;
   justify-content: center;
   font-size: 45px;
-  font-weight: bold ;
+  font-weight: bold;
   color: #747474;
 }
 
 #todolist {
-  background-color: lightgray;
+  position: relative;
+  background-color: #5a95ff;
   grid-area: a;
-  overflow-y: scroll;
   overflow-x: hidden;
 }
 
-.listheader {
-  background-color: white;
-  height: 60px;
+#listheader {
+  /* height: 60px; */
+  position: relative;
   width: 100%;
   text-align: center;
-  border-bottom: 1px solid lightgray;
+  z-index: 10;
 }
 
-/* Clear floats after the header */
-.listheader:after {
+#listheader:after {
   content: "";
   display: table;
   clear: both;
 }
-input {
-  margin: 0;
+
+#listheader > h2 {
+  color: white;
+  font-size: 35px;
+  font-weight: bolder;
+}
+
+input{
+  outline: none;
   border: none;
-  border-radius: 0;
+}
+
+#todoinput{
+  font-size: 25px;
   width: 100%;
-  padding: 0 0 0 40px;
-  float: left;
-  font-size: 20px;
-}
-
-/* Style the "Add" button */
-.addBtn { 
-  padding: 10px;
-  width: 25%;
-  background: #e9e9e9;
-  color: #313131;
-  float: left;
-  text-align: center;
-  font-size: 16px;
-  cursor: pointer;
-  transition: 0.3s;
-  border-radius: 0;
-}
-input,
-.addBtn {
+  height: 70px;
+  box-shadow: 0 5px 10px rgba(0, 0, 0, 0.15);
   box-sizing: border-box;
-  height:100%;
+  padding-left: 50px;
 }
 
-.addBtn:hover {
-  background-color: #bbb;
+
+#listcontent {
+  height: 500px;
+  width: 100%;
+
+  overflow-y: scroll; 
+  overflow-x: hidden; 
 }
+#listcontent::-webkit-scrollbar-track
+{
+	border-radius: 3px;
+	background-color: whitesmoke;
+}
+
+#listcontent::-webkit-scrollbar
+{
+	width: 12px;
+}
+
+#listcontent::-webkit-scrollbar-thumb
+{
+	border-radius:  3px;
+	background-color: #3768c3;
+}
+
 
 ul {
   list-style-type: none;
-  margin: 0;
+
+  margin-bottom: 75px;
   padding: 0;
 }
 
@@ -96,11 +108,16 @@ ul li {
   cursor: pointer;
   position: relative;
   padding: 15px 10px 15px 40px;
-  background: #eee;
-  font-size: 18px;
+  word-wrap: break-word;
+  background: white;
+  font-size: 20px;
+  font-weight: 600;
+  color: rgb(42, 42, 42);
   transition: 0.2s;
-
+  margin: 15px 30px 15px 30px;
+  border-radius: 10px;
   user-select: none;
+  box-shadow: 0 5px 10px rgba(0, 0, 0, 0.1);
 }
 
 ul li:hover {
@@ -108,7 +125,7 @@ ul li:hover {
 }
 
 ul li.checked {
-  background: #888;
+  background: #2d5eb8;
   color: #fff;
   text-decoration: line-through;
 }
@@ -125,16 +142,33 @@ ul li.checked::before {
   height: 15px;
   width: 7px;
 }
+*/
 
-/* Style the close button */
-.close {
-  position: absolute;
-  right: 0;
-  top: 0;
-  padding: 12px 16px 12px 16px;
+
+ul{
+  /* me i hek bulletpoints*/
+  list-style: none;
+  margin: 0;
+  padding: 0;
 }
 
-.close:hover {
-  background-color: #f44336;
-  color: white;
+#listfooter {
+  width: 100%;
+  position: absolute;
+  bottom: 10px;
+  text-align: center;
+}
+
+#displayinput {
+  padding: 0;
+  margin-bottom: 10px;
+  outline:none;
+  float: none;
+  height: 100px;
+  width: 100px;
+  transition: 0.4s;
+}
+
+.rotate{
+  transform: rotate(45deg);
 }
