@@ -37,12 +37,11 @@ p{
   font-weight: 600;
   text-align: center;
 }
-#container{
+#pomodoro{
   display: grid;
   grid-template-columns: repeat(5, 1fr);
   grid-template-rows: repeat(3, 1fr);
-  width:1000px;
-  margin: 0 auto;
+
 }
 
 .label{
