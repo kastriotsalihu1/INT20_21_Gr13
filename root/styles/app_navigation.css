@@ -1,4 +1,6 @@
 /* Everything */
+@import url('https://fonts.googleapis.com/css2?family=Open+Sans:wght@300;400;600;700;800&display=swap');
+
 body {
   background-color: #f6f7fb;
 
@@ -10,6 +12,11 @@ body {
   font-family: "Gill Sans", "Gill Sans MT", Calibri, "Trebuchet MS", sans-serif;
 }
 
+a{
+text-decoration: none;
+color: inherit;
+}
+
 /* Header */
 header {
   width: 100%;
@@ -19,20 +26,22 @@ header {
   justify-content: space-between;
 }
 
-#hamburger {
-  background-color: white;
-  box-sizing: border-box;
-  width: 100px;
-  height: 100%;
-
+.centeredicon{
   display: flex;
   justify-content: center;
   align-items: center;
   color: #9b9b9b;
 }
 
+#hamburger {
+  background-color: white;
+  box-sizing: border-box;
+  width: 100px;
+  height: 100%;
+}
+
 #hamburger:hover{
-  color: #3030ca;
+  color: #4d85fe;
 }
 
 #info {
@@ -48,14 +57,9 @@ header {
 }
 
 
-
 #photo > i{
-  display: flex;
   flex-direction: column;
-  justify-content: center;
-  align-items: center;
   margin-right:20px;
-  color: #9b9b9b;
 }
 
 #user{
@@ -70,12 +74,36 @@ header {
 
 #notification{
   width:125px;
-  display: flex;
   flex-direction: column;
-  justify-content: center;
-  align-items: center;
+}
 
-  color: #9b9b9b;
+#notification:hover{
+  color: #4d85fe;
+}
+
+#notification-icon{
+  position: absolute;
+}
+
+/* Notification pop-up badge */
+#notification[data-badge]:after {
+  content:attr(data-badge);
+  position: relative;
+  left: 15px;
+  top: -16px;
+  font-size:.8em;
+  background:red;
+  color:white;
+  width:19px;
+  height:19px;
+  text-align:center;
+  line-height:18px;
+  border-radius:50%;
+  box-shadow:0 0 1px #333;
+}
+#notification[data-badge=""]::after {
+  /* visibility: hidden; */
+  display: none;
 }
 
 /* Navigation */
@@ -97,7 +125,7 @@ nav {
   box-shadow: 5px -2px 5px -2px rgba(0, 0, 0, 0.15);
 }
 
-.nav-icons > i{
+.nav-icons > a > i{
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -109,27 +137,21 @@ nav {
   height:100px;
 }
 
-.nav-icons > i:hover{
-  box-sizing: border-box;
-  color: #3030ca;
-  border-right:4px solid #3030ca;
+.nav-icons .active{
+  color: #4d85fe;
+  transform: translateX(4px);
 }
 
-main {
-  width: 100%;
-  margin: 20px 0 0 20px;
-  background-color: #f6f7fb;
+.nav-icons > a > i:hover:not(.active){
+  box-sizing: border-box;
+  color: #4d85fe;
+  border-right:4px solid #4d85fe;
 }
 
 .card {
   border-radius: 5px;
   display: inline-block;
   margin: 1rem;
-
-  background-color: #4d85fe;
-
-  width: 300px;
-  height: 350px;
-
+  background-color: lightgray;
   box-shadow: 0 6px 16px rgba(0, 0, 0, 0.2);
 }

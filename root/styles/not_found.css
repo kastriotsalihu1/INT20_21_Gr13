@@ -1,0 +1,38 @@
+body {
+  background-image: url('../images/lost/lost.jpg');
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+  background-size: cover;
+
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+  flex-wrap: nowrap;
+  align-items: center;
+
+  color: white;
+  font-family: "Gill Sans", "Gill Sans MT", Calibri, "Trebuchet MS", sans-serif;
+}
+
+#container{
+    background-color: antiquewhite;
+    width: calc(100% - 400px);
+    height: calc(100vh - 300px);
+    box-shadow: 0px 20px 17px 13px rgba(230, 224, 224, 0.15);
+    margin-top: 40px;
+}
+
+a:visited,
+a:link,
+a:active,
+a:hover{
+    color: #4d85fe;
+    text-decoration: none;
+}
+#info {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    max-height: 150px;
+
+}

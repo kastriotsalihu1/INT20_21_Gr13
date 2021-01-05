@@ -1,0 +1,174 @@
+body {
+  font-family: "Open Sans", sans-serif;
+}
+
+main {
+  width: 100%;
+  height: 700px;
+  margin: 20px 0 0 20px;
+
+  background-color: #f8fbfc;
+
+  display: grid;
+
+  grid-template-columns: repeat(3, 30%);
+  grid-template-rows: repeat(3, 375px);
+
+  gap: 10px;
+  grid-template-areas:
+    "a a b"
+    "a a b"
+    "c c c";
+}
+
+.comingsoon {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 45px;
+  font-weight: bold;
+  color: #747474;
+}
+
+#todolist {
+  position: relative;
+  background-color: #5a95ff;
+  grid-area: a;
+  overflow-x: hidden;
+}
+
+#listheader {
+  /* height: 60px; */
+  position: relative;
+  width: 100%;
+  text-align: center;
+  z-index: 10;
+}
+
+#listheader:after {
+  content: "";
+  display: table;
+  clear: both;
+}
+
+#listheader > h2 {
+  color: white;
+  font-size: 35px;
+  font-weight: bolder;
+}
+
+input{
+  outline: none;
+  border: none;
+}
+
+#todoinput{
+  font-size: 25px;
+  width: 100%;
+  height: 70px;
+  box-shadow: 0 5px 10px rgba(0, 0, 0, 0.15);
+  box-sizing: border-box;
+  padding-left: 50px;
+}
+
+
+#listcontent {
+  height: 500px;
+  width: 100%;
+
+  overflow-y: scroll; 
+  overflow-x: hidden; 
+}
+#listcontent::-webkit-scrollbar-track
+{
+	border-radius: 3px;
+	background-color: whitesmoke;
+}
+
+#listcontent::-webkit-scrollbar
+{
+	width: 12px;
+}
+
+#listcontent::-webkit-scrollbar-thumb
+{
+	border-radius:  3px;
+	background-color: #3768c3;
+}
+
+
+ul {
+  list-style-type: none;
+
+  margin-bottom: 75px;
+  padding: 0;
+}
+
+ul li {
+  cursor: pointer;
+  position: relative;
+  padding: 15px 10px 15px 40px;
+  word-wrap: break-word;
+  background: white;
+  font-size: 20px;
+  font-weight: 600;
+  color: rgb(42, 42, 42);
+  transition: 0.2s;
+  margin: 15px 30px 15px 30px;
+  border-radius: 10px;
+  user-select: none;
+  box-shadow: 0 5px 10px rgba(0, 0, 0, 0.1);
+}
+
+ul li:hover {
+  background: #ddd;
+}
+
+ul li.checked {
+  background: #2d5eb8;
+  color: #fff;
+  text-decoration: line-through;
+}
+
+ul li.checked::before {
+  content: "";
+  position: absolute;
+  border-color: #fff;
+  border-style: solid;
+  border-width: 0 2px 2px 0;
+  top: 10px;
+  left: 16px;
+  transform: rotate(45deg);
+  height: 15px;
+  width: 7px;
+}
+*/
+
+
+ul{
+  /* me i hek bulletpoints*/
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+#listfooter {
+  width: 100%;
+  position: absolute;
+  bottom: 10px;
+  text-align: center;
+}
+
+#displayinput {
+  padding: 0;
+  margin-bottom: 10px;
+  outline:none;
+  float: none;
+  height: 100px;
+  width: 100px;
+  transition: 0.4s;
+}
+
+.rotate{
+  transform: rotate(45deg);
+}

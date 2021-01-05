@@ -1,0 +1,236 @@
+body
+{
+  font-family: 'Open Sans', sans-serif;
+}
+
+main {
+  width: 100%;
+  height: 1000px;
+  margin: 20px 0 0 20px;
+
+  background-color: #f6f7fb;
+
+
+  display: grid;
+
+  grid-template-columns: repeat(3, 30%);
+  grid-template-rows: repeat(3, 375px);
+
+  gap: 10px;
+  grid-template-areas:
+    "a a b"
+    "a a b"
+    "c c c";
+}
+
+.comingsoon{
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 45px;
+  font-weight: bold ;
+  color: #747474;
+}
+
+#todolist {
+  background-color: lightgray;
+  grid-area: a;
+  overflow-y: scroll;
+  overflow-x: hidden;
+}
+
+.listheader {
+  background-color: white;
+  height: 60px;
+  width: 100%;
+  text-align: center;
+  border-bottom: 1px solid lightgray;
+}
+
+/* Clear floats after the header */
+/*
+.listheader:after {
+  content: "";
+  display: table;
+  clear: both;
+}
+input {
+  margin: 0;
+  border: none;
+  border-radius: 0;
+  width: 100%;
+  padding: 0 0 0 40px;
+  float: left;
+  font-size: 20px;
+}
+
+/* Style the "Add" button */
+/*
+.addBtn { 
+  padding: 10px;
+  width: 25%;
+  background: #e9e9e9;
+  color: #313131;
+  float: left;
+  text-align: center;
+  font-size: 16px;
+  cursor: pointer;
+  transition: 0.3s;
+  border-radius: 0;
+}
+input,
+.addBtn {
+  box-sizing: border-box;
+  height:100%;
+}
+
+.addBtn:hover {
+  background-color: #bbb;
+}
+
+ul {
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+}
+
+ul li {
+  cursor: pointer;
+  position: relative;
+  padding: 15px 10px 15px 40px;
+  background: #eee;
+  font-size: 18px;
+  transition: 0.2s;
+
+  user-select: none;
+}
+
+ul li:hover {
+  background: #ddd;
+}
+
+ul li.checked {
+  background: #888;
+  color: #fff;
+  text-decoration: line-through;
+}
+
+ul li.checked::before {
+  content: "";
+  position: absolute;
+  border-color: #fff;
+  border-style: solid;
+  border-width: 0 2px 2px 0;
+  top: 10px;
+  left: 16px;
+  transform: rotate(45deg);
+  height: 15px;
+  width: 7px;
+}
+
+/* Style the close button */
+.close {
+  position: absolute;
+  right: 0;
+  top: 0;
+  padding: 12px 16px 12px 16px;
+}
+
+.close:hover {
+  background-color: #f44336;
+  color: white;
+}
+
+
+.box{
+  background: #f6f7fb;
+  height: 300px;
+  float:right;
+  width: 700px;
+  margin:  100px auto;
+  box-shadow:  0 0 3px rgba(0, 0, 0, 0.3);
+}
+select {
+  float: right;
+  width: 100px;
+  display: inline-block;
+  height: 40px;
+  outline: none;
+  border:0.2px solid #fff;
+}
+select:focus{
+  background: white;
+  border:  3px solid #2980b9;
+  /*outline osht highlighti*/
+  outline: none;
+}
+h1{
+  background: #2980b9; 
+  color: white;
+  margin: 0;
+  padding: 10px 20px;
+  text-transform: uppercase;
+  font-size:25px;
+  font-weight: normal;
+}
+ul{
+  /* me i hek bulletpoints*/
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+li{
+  background: #fff;
+  height: 40px;
+  /*teksti del n mes dmth e merr krejt hapsiren height */
+  line-height: 40px;
+  color: #666;
+}
+
+li:nth-child(2n){
+  background-color: #f7f7f7;
+  }
+select:nth-child(2n){
+    background-color: #f7f7f7;
+  }
+.completed{
+    color: gray;
+    text-decoration: line-through;
+}
+input{
+  font-size: 18px;
+  color:#2980b9;
+  background-color: #f7f7f7;
+  width: 100%;
+  box-sizing: border-box;
+  padding: 13px 13px 13px 20px ;
+  border:0.2px solid #f7f7f7;
+}
+input:focus{
+  background: white;
+  border:  3px solid #2980b9;
+  /*outline osht highlighti*/
+  outline: none;
+}
+
+
+span{
+  background: #e74c3c;
+  height: 40px;
+  margin-right: 20px;
+  text-align: center;
+  color: white;
+  width:0px;
+  display: inline-block;
+  transition: 0.2s linear ;
+  /*mos mu shfaq ikona kur osht width 0*/
+  opacity: 0;
+}
+/*all the trash have the width of 0 until u hover*/
+
+li:hover span{
+  width: 40px;
+  opacity: 1.0;
+}
+
