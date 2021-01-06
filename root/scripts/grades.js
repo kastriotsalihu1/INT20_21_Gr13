@@ -13,6 +13,10 @@ $("ul").on("click", "li", function(){
    });
    event.stopPropagation();/* mos mu ekzekutu line-throughi i cili pasi spani osht brenda li(event bubbling) bohet line-through*/
  });
+
+ $("#math").on("click",function(event){
+   $(this).parent(),remove();
+ })
  
  $("input").keypress(function(event){
    if(event.which===13){
@@ -22,7 +26,7 @@ $("ul").on("click", "li", function(){
      $(this).val("");
      //create a new li and add to ul4
      // jo me "" po me ''
-     $("ul").append("<li><span><i class='fas fa-trash'></i></span> " + todoText + "<select><option >6</option><option >7</option><option >8</option><option >9</option><option >10</option></select></li>")
+     $("ul").append("<li><span><i class='fas fa-trash'></i></span> " + todoText + "<select id='grades'><option >6</option><option >7</option><option >8</option><option >9</option><option >10</option></select></li>")
    }
  });
  
@@ -36,7 +40,24 @@ $("ul").on("click", "li", function(){
   $(this).toggleClass("completed");
  });
  
- 
- 
+ var pooFiles=[];
+$("#objects").click(
+  function(){
+    var literatura=$('#objects').find(":selected").val();
+    document.getElementById("paragrafi").innerText=literatura;
+    if(literatura=="POO"){
+   <input type="file" name="file" value="">
+    }
+  }
+)
 
+
+
+
+
+
+
+
+
+ 
  
