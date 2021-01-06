@@ -12,12 +12,12 @@ main {
   display: grid;
 
   grid-template-columns: repeat(2, 50%);
-  grid-template-rows: repeat(1, 75%);
+  grid-template-rows: repeat(2, 75%);
 
   gap: 10px;
   grid-template-areas:
     "  a  b "
-    "  a  b "
+    "  c  c "
     ;
 }
  .box_1{
@@ -29,6 +29,11 @@ main {
   background-color:#2E8B57 ; 
   grid-area: b;
   max-height: 400px;
+ }
+ .box_3{
+  background-color:#2E8B57 ; 
+  grid-area: c;
+  max-height:300px ;
  }
  .literatura{
   background-color:#2E8B57 ; 
