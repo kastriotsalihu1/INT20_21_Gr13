@@ -13,6 +13,10 @@ $("ul").on("click", "li", function(){
    });
    event.stopPropagation();/* mos mu ekzekutu line-throughi i cili pasi spani osht brenda li(event bubbling) bohet line-through*/
  });
+
+ $("#math").on("click",function(event){
+   $(this).parent(),remove();
+ })
  
  $("input").keypress(function(event){
    if(event.which===13){
@@ -22,7 +26,7 @@ $("ul").on("click", "li", function(){
      $(this).val("");
      //create a new li and add to ul4
      // jo me "" po me ''
-     $("ul").append("<li><span><i class='fas fa-trash'></i></span> " + todoText + "<select><option >6</option><option >7</option><option >8</option><option >9</option><option >10</option></select></li>")
+     $("ul").append("<li><span><i class='fas fa-trash'></i></span> " + todoText + "<select id='grades'><option >6</option><option >7</option><option >8</option><option >9</option><option >10</option></select></li>")
    }
  });
  
@@ -36,7 +40,52 @@ $("ul").on("click", "li", function(){
   $(this).toggleClass("completed");
  });
  
- 
- 
+ var pooFiles=[];
+$("#objects").click(
+  function(){
+    var literatura=$('#objects').find(":selected").val();
+    document.getElementById("paragrafi").innerText=literatura;
+    if(literatura=="POO"){
+   
+    }
+  }
+)
 
+var matFiles = [{lenda: "Matematike", emriiFile: "matematika diskrete", lloji: "Ligjerata"}, {lenda: "Matematike", emriiFile: "matematika diskrete ushtrimet", lloji: "ushtrimet"}];
+
+function shfaqMaterialin(lenda){
+  if(lenda==="mat"){
+
+    const tabela = document.getElementById("tabela");
+    tabela.innerHTML = "";
+  
+    matFiles.forEach((matfile) => {
+      const tr = document.createElement('tr');
+      for(const key in matfile){
+        const td = document.createElement('td');     
+        td.innerText = matfile[key];
+        tr.appendChild(td);
+        
+      }
+      tabela.appendChild(tr);
+    });
+    
+
+  }
+}
+
+$("#selectLiteraturen").click(
+  function(){
+    var lenda =$('#selectLiteraturen').find(":selected").val();
+    shfaqMaterialin(lenda);
+    console.log(lenda);
+  }
+)
+
+
+
+
+
+
+ 
  

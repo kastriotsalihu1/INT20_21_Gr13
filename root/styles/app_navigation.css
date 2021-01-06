@@ -1,15 +1,20 @@
 /* Everything */
 @import url('https://fonts.googleapis.com/css2?family=Open+Sans:wght@300;400;600;700;800&display=swap');
 
+html{
+  height:100vh;
+}
+
 body {
   background-color: #f6f7fb;
 
   padding: 0;
   margin: 0;
-
+  height: 100%;
   width: 100%;
-  height: 100vh;
-  font-family: "Gill Sans", "Gill Sans MT", Calibri, "Trebuchet MS", sans-serif;
+  font-family: "Open Sans", sans-serif;
+  display:flex;
+  flex-direction: column;
 }
 
 a{
@@ -34,6 +39,7 @@ header {
 }
 
 #hamburger {
+  flex-shrink: 0;
   background-color: white;
   box-sizing: border-box;
   width: 100px;
@@ -110,7 +116,6 @@ header {
 #container {
   width: 100%;
   height: 100%;
-
   display: flex;
   justify-content: space-between;
 }
@@ -118,10 +123,9 @@ header {
 nav {
   background-color: white;
   width: 100px;
-
+  flex-shrink: 0;
   position: relative;
   z-index: 10;
-
   box-shadow: 5px -2px 5px -2px rgba(0, 0, 0, 0.15);
 }
 
@@ -147,6 +151,15 @@ nav {
   color: #4d85fe;
   border-right:4px solid #4d85fe;
 }
+
+main {
+  width: 100%;
+  height: 100%;
+  padding: 20px;
+  box-sizing: border-box;
+  background-color: #f8fbfc;
+}
+
 
 .card {
   border-radius: 5px;
