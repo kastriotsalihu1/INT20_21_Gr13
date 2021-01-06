@@ -73,3 +73,10 @@ function timer(){
 function stopInterval(){
     clearInterval(startTimer);
 }
+
+
+
+
+
+
+

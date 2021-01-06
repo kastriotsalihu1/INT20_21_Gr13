@@ -7,6 +7,19 @@
     <link rel="stylesheet" href="styles/app_pomodoro.css" />
     <link href="dependencies/fontawesome/css/all.css" rel="stylesheet" />
     <title>Document</title>
+
+    <script type="text/javascript">
+    //Music div functionality with jquery
+
+
+$(document).ready(function(){
+    $(".card c1 a").click(function(){
+        $("#c1 b").hide();
+        $("#c1 c").hide();
+     });
+     
+});
+    </script>
   </head>
 
   <body>
@@ -31,6 +44,7 @@
           <i class="far fa-bell fa-2x" id="notification-icon"></i>
         </div>
       </div>
+      
     </header>
 
     <div id="container">
@@ -77,11 +91,30 @@
 
         </div>
         <div class="card box_2">
-          <div class="card c1">Classical music</div>
-          <div class="card c1">Lofi songs</div>
-          <div class="card c1">Ambient music</div>
+          <button class="card c1 a">Classical music</button>
+          <button class="card c1 b">Lofi songs</button>
+          <button class="card c1 c">Ambient music</button>
+
+        
+          <audio controls id="classical">
+            <source src="./videos/rise_of_the_king.mp3" type="audio/mp3">
+          </audio>
+          <audio controls id="classical">
+            <source src="./videos/rise_of_the_king.mp3" type="audio/mp3">
+          </audio >
+          <audio controls id="classical">
+            <source src="./videos/rise_of_the_king.mp3" type="audio/mp3">
+          </audio>
+          <audio controls id="classical">
+            <source src="./videos/rise_of_the_king.mp3" type="audio/mp3">
+          </audio>
+          <audio controls id="classical">
+            <source src="./videos/rise_of_the_king.mp3" type="audio/mp3">
+          </audio>
+          
+
         </div>
-        <div class="card box_2">
+        <div class="card box_3">
           End a cycle of 4 pomodoros to plant a tree
         </div>
        
@@ -93,7 +126,9 @@
       </main>
     </div>
 
-    <script src="scripts/jquery.js"></script>
+    <script src="scripts/jquery.js">
+    
+    </script>
     <script src="scripts/pomodoro_main.js"></script>
   </body>
 </html>
