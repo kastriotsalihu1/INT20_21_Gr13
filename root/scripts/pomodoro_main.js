@@ -78,10 +78,11 @@ function stopInterval(){
 $(document).ready(function () {
     $(".c1").click(function () {
         //I mshef krejt kta kullerat tjer
-        $(this).siblings().hide();
+        $(this).siblings().toggle();
 
         //e bon show divin classical --- nuk osht menyre e mire qikjo
         $("#classical").show();
+
     });
   });
 
