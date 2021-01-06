@@ -46,13 +46,41 @@ $("#objects").click(
     var literatura=$('#objects').find(":selected").val();
     document.getElementById("paragrafi").innerText=literatura;
     if(literatura=="POO"){
-   <input type="file" name="file" value="">
+   
     }
   }
 )
 
+var matFiles = [{lenda: "Matematike", emriiFile: "matematika diskrete", lloji: "Ligjerata"}, {lenda: "Matematike", emriiFile: "matematika diskrete ushtrimet", lloji: "ushtrimet"}];
 
+function shfaqMaterialin(lenda){
+  if(lenda==="mat"){
 
+    const tabela = document.getElementById("tabela");
+    tabela.innerHTML = "";
+  
+    matFiles.forEach((matfile) => {
+      const tr = document.createElement('tr');
+      for(const key in matfile){
+        const td = document.createElement('td');     
+        td.innerText = matfile[key];
+        tr.appendChild(td);
+        
+      }
+      tabela.appendChild(tr);
+    });
+    
+
+  }
+}
+
+$("#selectLiteraturen").click(
+  function(){
+    var lenda =$('#selectLiteraturen').find(":selected").val();
+    shfaqMaterialin(lenda);
+    console.log(lenda);
+  }
+)
 
 
 
