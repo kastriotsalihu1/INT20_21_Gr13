@@ -1,8 +1,8 @@
 /* Everything */
-@import url('https://fonts.googleapis.com/css2?family=Open+Sans:wght@300;400;600;700;800&display=swap');
+@import url("https://fonts.googleapis.com/css2?family=Open+Sans:wght@300;400;600;700;800&display=swap");
 
-html{
-  height:100vh;
+html {
+  height: 100vh;
 }
 
 body {
@@ -13,13 +13,13 @@ body {
   height: 100%;
   width: 100%;
   font-family: "Open Sans", sans-serif;
-  display:flex;
+  display: flex;
   flex-direction: column;
 }
 
-a{
-text-decoration: none;
-color: inherit;
+a {
+  text-decoration: none;
+  color: inherit;
 }
 
 /* Header */
@@ -31,7 +31,7 @@ header {
   justify-content: space-between;
 }
 
-.centeredicon{
+.centeredicon {
   display: flex;
   justify-content: center;
   align-items: center;
@@ -46,7 +46,7 @@ header {
   height: 100%;
 }
 
-#hamburger:hover{
+#hamburger:hover {
   color: #4d85fe;
 }
 
@@ -54,58 +54,71 @@ header {
   background-color: white;
   width: 100%;
 
-  display:flex;
-  flex-direction:row-reverse;
+  display: flex;
+  flex-direction: row-reverse;
 
   position: relative;
   z-index: 10;
   box-shadow: -2px 5px 5px -2px rgba(0, 0, 0, 0.15);
 }
 
-
-#photo > i{
-  flex-direction: column;
-  margin-right:20px;
+#photo {
+  width: 65px;
+  height: 65px;
+  border-radius: 10px;
+  margin-right: 20px;
+  background-size: contain;
+  overflow: hidden;
+}
+#photo > img {
+  max-width: 100%;
+  max-height: 100%;
 }
 
-#user{
-  width:350px;
+#photo > i {
+  flex-direction: column;
+}
+
+#user {
+  width: 350px;
   display: flex;
   justify-content: center;
   align-items: center;
-  font-size: 30px;
-  color: #616161;
-  box-shadow: -2px -1px 10px 0px rgba(0,0,0,0.15);
+  font-size: 25px;
+  font-weight: bold;
+  color: #242424;
+
+  box-shadow: -2px -1px 10px 0px rgba(0, 0, 0, 0.15);
 }
 
-#notification{
-  width:125px;
+#notification {
+  width: 125px;
   flex-direction: column;
 }
 
-#notification:hover{
+#notification:hover {
   color: #4d85fe;
 }
 
-#notification-icon{
+#notification-icon {
   position: absolute;
 }
 
 /* Notification pop-up badge */
 #notification[data-badge]:after {
-  content:attr(data-badge);
+  content: attr(data-badge);
   position: relative;
   left: 15px;
   top: -16px;
-  font-size:.8em;
-  background:red;
-  color:white;
-  width:19px;
-  height:19px;
-  text-align:center;
-  line-height:18px;
-  border-radius:50%;
-  box-shadow:0 0 1px #333;
+  font-size: 0.8em;
+  background: red;
+  color: white;
+  width: 19px;
+  height: 19px;
+  text-align: center;
+  line-height: 18px;
+  border-radius: 50%;
+  box-shadow: 0 0 1px #333;
 }
 #notification[data-badge=""]::after {
   /* visibility: hidden; */
@@ -129,7 +142,7 @@ nav {
   box-shadow: 5px -2px 5px -2px rgba(0, 0, 0, 0.15);
 }
 
-.nav-icons > a > i{
+.nav-icons > a > i {
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -137,19 +150,19 @@ nav {
 
   color: #9b9b9b;
 
-  width:100%;
-  height:100px;
+  width: 100%;
+  height: 100px;
 }
 
-.nav-icons .active{
+.nav-icons .active {
   color: #4d85fe;
   transform: translateX(4px);
 }
 
-.nav-icons > a > i:hover:not(.active){
+.nav-icons > a > i:hover:not(.active) {
   box-sizing: border-box;
   color: #4d85fe;
-  border-right:4px solid #4d85fe;
+  border-right: 4px solid #4d85fe;
 }
 
 main {
@@ -159,7 +172,6 @@ main {
   box-sizing: border-box;
   background-color: #f8fbfc;
 }
-
 
 .card {
   border-radius: 5px;
