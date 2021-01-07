@@ -171,10 +171,10 @@ $("#selectLiteraturen").click(
     console.log(lenda);
   }
 )
-/*
-const openModalButtons=document.querySelectorAll('[data-modal-target]')/*
-const closeModalButtons=document.querySelectorAll('[data-close-button]')
-const overlay=document.getElementById("overlay")
+
+const openModalButtons=document.querySelectorAll('[data-modal-target]');
+const closeModalButtons=document.querySelectorAll('[data-close-button]');
+const overlay=document.getElementById('overlay');
 
 openModalButtons.forEach(button=>{
   button.addEventListener('click',()=>{
@@ -194,20 +194,14 @@ closeModalButtons.forEach(button=>{
  function openModal(model){
    if(modal==null)
      reutrn 
-   modal.classList.add("active")
-   overlay.classList.add("active")
+   modal.classList.add('active')
  }
 
  function closeModal(model){
-  if(modal==null)
-    reutrn 
-  modal.classList.remove("active")
-  overlay.classList.remove("active")
+  if(modal==null)return 
+  modal.classList.remove('active')
+  
 }
-
-
-
-*/
 
 
 
