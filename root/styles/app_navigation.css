@@ -205,21 +205,22 @@ main {
 
 
 /* information information information information  */
+/*
 .information {
   position: absolute;
   top: 10px;
   right: 20px;
-
   color: #f6f7fb;
   font-size: 40px;
-}
-.popup {
-  display: none;
-  width: 100px;
-  height: 100px;
-  position: absolute;
-  right: 10px;
-  top: 10px;
-  background-color: red;
+  width:30px;
 }
 /* information  information information information  */
+/*
+.popup{
+  position: absolute;
+  top: 10px;
+  right: 20px;
+  color: #f6f7fb;
+  font-size: 40px;
+  width:30px;
+}
