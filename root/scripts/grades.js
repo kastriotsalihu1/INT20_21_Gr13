@@ -41,39 +41,67 @@ $("ul").on("click", "li", function(){
  });
  
  var pooFiles=[];
-$("#objects").click(
+ var matFiles = [{lenda: " Matematike", emriiFile: " Matematika diskrete", lloji: " Ligjerata"}, {lenda: " Matematike", emriiFile: " Detyra", lloji: " Ushtrimet"}];
+$("#shtoButton").click(
   function(){
-    var literatura=$('#objects').find(":selected").val();
-    document.getElementById("paragrafi").innerText=literatura;
-    if(literatura=="POO"){
-   
+    var lenda =$('#lendet').find(":selected").val();
+    var lloji =$('#lloji').find(":selected").val();  
+    var emri  = $("#file")[0].files[0].name;
+    if(lenda === "Matematike"){
+      const materiali = {
+        lenda: lenda,
+        emriiFile:  emri,
+        lloji: lloji
+      }
+      matFiles.push(materiali);
     }
+    shfaqMaterialin(lenda);
+   
   }
-)
+);
 
-var matFiles = [{lenda: "Matematike", emriiFile: "matematika diskrete", lloji: "Ligjerata"}, {lenda: "Matematike", emriiFile: "matematika diskrete ushtrimet", lloji: "ushtrimet"}];
+
+var SinjaleSistemeFiles=[{lenda: " SinjaleDheSisteme", emriiFile:" Serite Furie", lloji:" Detyra"},
+{lenda:" SinjaleDheSisteme",emriiFile:" Hyrje ne Sinjale", lloji:" Ligjerata 1"},
+{lenda:" SinjaleDheSisteme",emriiFile:" Signals and systems", lloji:" Libra Anglisht"}]
 
 function shfaqMaterialin(lenda){
-  if(lenda==="mat"){
-
+  if(lenda==="Matematike"){
     const tabela = document.getElementById("tabela");
     tabela.innerHTML = "";
-  
+    tabela.innerHTML = getHeader();
     matFiles.forEach((matfile) => {
       const tr = document.createElement('tr');
       for(const key in matfile){
         const td = document.createElement('td');     
         td.innerText = matfile[key];
         tr.appendChild(td);
-        
       }
       tabela.appendChild(tr);
     });
     
 
+  }else if(lenda==="ss"){
+    const tabela = document.getElementById("tabela");
+    tabela.innerHTML = "";
+    tabela.innerHTML = getHeader();
+
+    SinjaleSistemeFiles.forEach((ssfile) => {
+      const tr = document.createElement('tr');
+      for(const key in ssfile){
+        const td = document.createElement('td');     
+        td.innerText = ssfile[key];
+        tr.appendChild(td);
+        
+      }
+      tabela.appendChild(tr);
+    });
   }
 }
-
+function getHeader(){
+  const tr = '<tr><th>Lenda</th><th>Emri i file</th><th>Lloji</th></tr>';
+  return tr;
+}
 $("#selectLiteraturen").click(
   function(){
     var lenda =$('#selectLiteraturen').find(":selected").val();
@@ -81,6 +109,7 @@ $("#selectLiteraturen").click(
     console.log(lenda);
   }
 )
+
 
 
 
