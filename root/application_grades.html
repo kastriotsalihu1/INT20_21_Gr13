@@ -10,6 +10,7 @@
   </head>
 
   <body>
+    <div class="active"id="overlay">
     <!-- this is the header -->
     <header>
       <!-- opens and closes the side navigation bar -->
@@ -34,7 +35,7 @@
     </header>
 
     <div id="container">
-      <!-- side navigation menu -->
+      <!-- side navigation menu --> 
       <nav>
         <div class="nav-icons fa-2x">
           <a href="#"><i class="fab fa-chromecast" id="chromecast"></i></a>
@@ -43,15 +44,25 @@
           ></a>
           <a href="#"><i class="far fa-folder" id="folder"></i></a>
         </div>
-      </nav>
+      </nav>  
       <main>
+        
         <div class="card box_1">
 
           <!--  information information information information information -->
-          <div class="information">
-            <i class="fas fa-info-circle"></i>
-            <div class="popup"></div>
-          </div>
+          
+            <button data-modal-target="#modal">Open Modal</button>
+            <div class="modal" id="modal" >
+              <div class="modal-header">
+                <div class="title">Example Modal</div>
+                <button data-close-button class="close-button">&times;</button>
+              </div>
+              <div class="modal-body">
+                Lorem ipsum dolor sit amet consectetur adipisicing elit. Ab omnis iste temporibus ut quidem amet accusamus sed. Ex enim autem dignissimos sint quidem iure aliquid quam possimus nulla iusto eius repellat, tempore quaerat expedita reiciendis aspernatur distinctio deserunt fugit error nemo, ut odit temporibus sapiente neque
+              </div>
+            </div>
+            
+         
           <!--  information information information information information -->
           
           <h1>GPA Calculator</h1>
@@ -98,8 +109,8 @@
           </ul>
           <div></div>
         </div>
-
-        <div class="card box_2">
+       
+        <div class="card box_2" >
           <h1>Shto Literature</h1>
           <select class="objects" id="lendet">
             <option>Lendet</option>
@@ -132,18 +143,22 @@
             <option value="POO">Poo</option>
           </select>
           <div>
-            <table id="tabela">
+            <table id="tabela" class="tabela1" >
               <tr id="rreshti">
                 
               </tr>
             </table>
           </div>
         </div>
+        
+          
+        </div>
+        
       </main>
-    </div>
-
     <script src="scripts/jquery.js"></script>
     <script src="scripts/main.js"></script>
     <script src="scripts/grades.js"></script>
+
   </body>
+  
 </html>
