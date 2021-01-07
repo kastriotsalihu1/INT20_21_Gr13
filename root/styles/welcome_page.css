@@ -1,16 +1,4 @@
-<<<<<<< HEAD
 @import url("https://fonts.googleapis.com/css2?family=Open+Sans&display=swap");
-=======
-@import url('https://fonts.googleapis.com/css2?family=Open+Sans&display=swap');
-
-
-body{
-    margin:0;
-    font-family: 'Open Sans', sans-serif;
-    width:100%;
-    padding: 0;
-    overflow-x: hidden;
->>>>>>> 6fb60a5b9956835aedeb2e6ed886b0232d412597
 
 body {
   margin: 0;
