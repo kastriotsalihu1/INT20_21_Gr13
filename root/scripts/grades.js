@@ -48,40 +48,38 @@ $("#shtoButton").click(
     var lenda =$('#lendet').find(":selected").val();
     var lloji =$('#lloji').find(":selected").val();  
     var emri  = $("#file")[0].files[0].name;
+    const materiali = {
+      lenda: lenda,
+      emriiFile:  emri,
+      lloji: lloji
+    }
     if(lenda === "Matematike"){
-      const materiali = {
-        lenda: lenda,
-        emriiFile:  emri,
-        lloji: lloji
-      }
       matFiles.push(materiali);
     }else if(lenda === "SinjaledheSisteme"){
-      const materiali = {
-        lenda: lenda,
-        emriiFile:  emri,
-        lloji: lloji
-      }
       SinjaleSistemeFiles.push(materiali);
     }else if(lenda === "POO"){
-      const materiali = {
-        lenda: lenda,
-        emriiFile:  emri,
-        lloji: lloji
-      }
       pooFiles.push(materiali);
     }
+    $("#lendet option:selected").prop("selected", false);
+    $("#lloji option:selected").prop("selected", false);
+    $("#file").val(null);
     shfaqMaterialin(lenda);
-
   }
-
 );
-
 
 var SinjaleSistemeFiles=[{lenda: " SinjaleDheSisteme", emriiFile:" Serite Furie", lloji:" Detyra"},
 {lenda:" SinjaleDheSisteme",emriiFile:" Hyrje ne Sinjale", lloji:" Ligjerata 1"},
 {lenda:" SinjaleDheSisteme",emriiFile:" Signals and systems", lloji:" Libra Anglisht"}]
 
 function shfaqMaterialin(lenda){
+  var shfaqLenda =$('#selectLiteraturen').find(":selected").val();
+  if(lenda!=shfaqLenda){
+    $('#selectLiteraturen option').each(function() {
+      if($(this).val() == lenda) {
+          $(this).prop("selected", true);
+      }
+  });
+  }
   if(lenda==="Matematike"){
     const tabela = document.getElementById("tabela");
     tabela.innerHTML = "";
@@ -91,18 +89,8 @@ function shfaqMaterialin(lenda){
       for(const key in matfile){
         const td = document.createElement('td');     
         td.innerText = matfile[key];
+        td.classList.add("tdstyle");
         tr.appendChild(td);
-        document.getElementById("rreshti").classList.add("trstyle");
-        $("td").css({"width":"500px","background-color":" rgb(238, 238, 238)",
-        "color":" rgb(111, 111, 111)",
-        "padding":" 20px 30px"})
-        $("th").css({
-          "background-color": "rgb(112, 196, 105)",
-          "color": "white",
-          "font-weight": "normal",
-          "padding": "20px 30px",
-          "text-align": "center"
-        })
       }
       tabela.appendChild(tr);
     });
@@ -143,17 +131,6 @@ function shfaqMaterialin(lenda){
         const td = document.createElement('td');     
         td.innerText = poofile[key];
         tr.appendChild(td);
-        document.getElementById("rreshti").classList.add("trstyle");
-        $("td").css({"width":"500px","background-color":" rgb(238, 238, 238)",
-        "color":" rgb(111, 111, 111)",
-        "padding":" 20px 30px"})
-        $("th").css({
-          "background-color": "rgb(112, 196, 105)",
-          "color": "white",
-          "font-weight": "normal",
-          "padding": "20px 30px",
-          "text-align": "center"});
-        
       }
       tabela.appendChild(tr);
     })
@@ -161,7 +138,7 @@ function shfaqMaterialin(lenda){
 
 }
 function getHeader(){
-  const tr = '<tr id="rreshti"><th>Lenda</th><th>Emri i file</th><th>Lloji</th></tr>';
+  const tr = '<tr class="thstyle"><th>Lenda</th><th>Emri i file</th><th>Lloji</th></tr>';
   return tr;
 }
 $("#selectLiteraturen").click(
