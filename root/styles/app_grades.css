@@ -202,3 +202,68 @@ li:hover span{
   border-radius: 3px;
   background-color: #1f5e3a;
 } 
+.modal{
+position: fixed;
+/*top left transform : me e qit n mes */
+top: 50%;
+left: 50%;
+transform: translate(-50%,-50%) /*scale(0)*/;
+transition: 200ms ease-in-out;
+color: black;
+border: 1px solid rgb(15, 94, 38);
+border-radius: 10px;
+/*me dal permi ccdo elementi*/
+z-index: 10;
+background-color: rgb(187, 230, 187);
+width: 500px;
+max-width: 60%;
+height: 200px;
+font-size: 18px;
+}/*
+.modal.active{
+  transform: translate(-50%,-50%) scale(1);
+}
+*/
+.modal-header{
+padding: 10px 15px;
+display: flex;
+justify-content: space-between;
+align-items: center;
+border-bottom: 1px solid #2E8B57;
+}
+.modal-header .title{
+  font-size: 1.25rem;
+  font-weight: bold;
+  text-transform: uppercase;
+}
+
+.modal-header .close-button{
+  cursor:pointer;
+  border: none;
+  outline: none;
+  background: none;
+  font-size: 1.25rem;
+  font-weight: bold;
+}
+
+.modal-body{
+  padding: 10px 15px;
+  overflow-y: scroll;
+  scrollbar-width: thin;
+  height: 100px;
+}
+#overlay{
+  position:fixed;
+opacity: 0;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: rgba(0, 0, 0,0.4);
+  pointer-events: none;
+  transition: 200ms ease-in-out;
+}
+#overlay.active{
+  opacity: 1;
+  pointer-events:all ;
+}
