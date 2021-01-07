@@ -74,5 +74,35 @@ input[type="range"]::-webkit-slider-thumb{
     width: 40%;
 }
  
+/* volume part */
+.left .volume{
+    position: absolute;
+    bottom: 10%;
+    left: 0;
+    width: 100%;
+    height: 30px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: #fff;
+}
+.left .volume p{
+    font-size: 15px;
+}
+.left .volume i{
+    cursor: pointer;
+    padding: 8px 12px;
+    background:  rgb(217, 83, 79);
+}
+.left .volume i:hover{
+    background: rgba(245,245,245,0.1);
+}
+.volume #volume_show{
+    padding: 8px 12px;
+    margin: 0 5px 0 0;
+    background: rgba(245,245,245,0.1);
+}
+ 
+ 
 
     
