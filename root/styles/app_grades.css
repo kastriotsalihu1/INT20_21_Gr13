@@ -139,6 +139,66 @@ li:hover span{
   padding: 13px 13px 13px 20px ;
   border:  3px solid #2E8B57;
 }
-.mystyle{
-  background-color: seashell;
+
+.trstyle{
+  background-color: rgb(185, 70, 70);
 }
+.rows{
+  background: snows;
+}
+#selectLiteraturen{
+  font-size: 18px;
+  color:#2E8B57;
+  background-color: #f7f7f7;
+  width: 100%;
+  box-sizing: border-box;
+  padding: 13px 13px 13px 20px ;
+  border:0.2px solid #f7f7f7;
+
+}
+#selectLiteraturen:focus{
+  background: white;
+  border:  3px solid #2E8B57;
+  /*outline osht highlighti*/
+  outline: none;
+}
+#file{
+  font-size: 18px;
+  color:#2E8B57 ;
+  background-color: #f7f7f7;
+  width: 100%;
+  box-sizing: border-box;
+  padding: 13px 13px 13px 20px ;
+  border:  3px solid #2E8B57;
+}
+#shtoButton{
+  font-size: 18px;
+  color:#2E8B57 ;
+  background-color: #f7f7f7;
+  width: 70%;
+  box-sizing: border-box;
+  padding: 13px 13px 13px 20px ;
+  border:  3px solid #2ed175;
+  margin-left: 100px;
+ 
+}
+#shtoButton:focus{
+  background: white;
+  border:  3px solid #2E8B57;
+  /*outline osht highlighti*/
+  outline: none;
+}
+.scroll{
+  width: 725px;
+  height: 240px;
+  overflow-y: scroll;
+  scrollbar-width: thin;
+}
+.scroll::-webkit-scrollbar {
+  width: 12px;
+}
+
+.scroll::-webkit-scrollbar-thumb {
+  border-radius: 3px;
+  background-color: #1f5e3a;
+} 
