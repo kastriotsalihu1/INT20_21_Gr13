@@ -6,6 +6,9 @@
     <link rel="stylesheet" href="styles/app_navigation.css" />
     <link rel="stylesheet" href="styles/app_pomodoro.css" />
     <link href="dependencies/fontawesome/css/all.css" rel="stylesheet" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/
+    font-awesome/4.7.0/css/font-awesome.min.css" />
+    <link rel="stylesheet" href="styles/music_player.css">
     <title>Document</title>
   </head>
 
@@ -50,7 +53,8 @@
         <!-- QITU -->
         <!-- QITU -->
         <!-- QITU -->
-        <div class="card box_1" id="pomodoro">
+        <div class="card box_2" id="pomodoro">
+          <p class="title">POMODORO</p>
           <p id="work" class="label">Work:</p>
           <p id="break" class="label">Break:</p>
           <p id="cycles" class="label">Cycles:</p>
@@ -69,33 +73,56 @@
             <p id="break_seconds">00</p>
           </div>
 
-          <button id="start" class="button">Start</button>
-          <button id="stop" class="button">Pause</button>
-          <button id="reset" class="button">Reset</button>
+          <button id="start" class="card button">Start</button>
+          <button id="stop" class="card button">Pause</button>
+          <button id="reset" class="card button">Reset</button>
         </div>
-        <div class="card box_2">
-          <div>
-            <button class="card c1 a dodo">Classical music</button>
-            <button class="card c1 b">Lofi songs</button>
-            <button class="card c1 c">Ambient music</button>
-          </div>
-
-          <div id="classical"  style="display: none">
-            <audio controls id="classical" class="dodo">
-              <source src="./videos/rise_of_the_king.mp3" type="audio/mp3" />
-            </audio>
-            <audio controls id="classical">
-              <source src="./videos/rise_of_the_king.mp3" type="audio/mp3" />
-            </audio>
-            <audio controls id="classical">
-              <source src="./videos/rise_of_the_king.mp3" type="audio/mp3" />
-            </audio>
-            <audio controls id="classical">
-              <source src="./videos/rise_of_the_king.mp3" type="audio/mp3" />
-            </audio>
-            <audio controls id="classical">
-              <source src="./videos/rise_of_the_king.mp3" type="audio/mp3" />
-            </audio>
+        <div class="card box_1">
+          <div class=" main">
+            <p id="logo"><i class="fa fa-music"></i>Music</p>
+            
+            <!--- left part --->
+             <div class="left">
+        
+              <!--- song img --->
+              <img id="track_image">
+                 <div class="volume">
+                    <p id="volume_show">90</p>
+                    <i class="fa fa-volume-up" aria-hidden="true" onclick="mute_sound()" id="volume_icon"></i>
+                    <input type="range" min="0" max="100" value="90" onchange="volume_change()" id="volume">  
+                 </div>
+        
+             </div>
+         
+        
+             <!--- right part --->
+             <div class="right">
+        
+                <div class="show_song_no">
+                  <p id="present">1</p>
+                  <p>/</p>
+                  <p id="total">14</p>
+                </div>
+        
+               <!--- song title & artist name --->
+              <p id="title">title.mp3</p>
+              <p id="artist">Artist name</p>
+        
+              <!--- middle part --->
+               <div class="middle">
+                   <button onclick="previous_song()" id="pre"><i class="fa fa-step-backward" aria-hidden="true"></i></button>
+                   <button onclick="justplay()" id="play"><i class="fa fa-play" aria-hidden="true"></i></button>
+                   <button onclick="next_song()" id="next"><i class="fa fa-step-forward" aria-hidden="true"></i></button>
+               </div>
+        
+               <!--- song duration part --->
+                <div class="duration">
+                   <input type="range" min="0" max="100" value="0" id="duration_slider" onchange="change_duration()">
+                </div>
+                   <button id="auto" onclick="autoplay_switch()">Auto play <i class="fa fa-circle-o-notch" aria-hidden="true"></i></button>
+            </div>
+        
+        
           </div>
         </div>
 
@@ -110,6 +137,7 @@
     </div>
 
     <script src="scripts/jquery.js"></script>
-    <script src="scripts/pomodoro_main.js"></script>
+    <script src="scripts/music_player.js"></script>
+    
   </body>
 </html>
