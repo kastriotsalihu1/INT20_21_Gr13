@@ -121,7 +121,7 @@ li:hover span{
   opacity: 1.0;
 }
 
-#objects{
+.objects{
   font-size: 18px;
   color:#2E8B57 ;
   background-color: #f7f7f7;
@@ -138,4 +138,7 @@ li:hover span{
   box-sizing: border-box;
   padding: 13px 13px 13px 20px ;
   border:  3px solid #2E8B57;
+}
+.mystyle{
+  background-color: seashell;
 }
