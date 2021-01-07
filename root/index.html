@@ -1,186 +1,211 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" type="text/css" href="./styles/welcome_page.css">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" type="text/css" href="./styles/welcome_page.css" />
+    <link href="dependencies/fontawesome/css/all.css" rel="stylesheet" />
     <title>eStudent | Welcome</title>
-</head>
-<body>
+  </head>
+  <body>
+    <!-- LOGO AND NAVIGATION -->
     <header>
-       
-            <div class="icon1"> 
-                <img src="./images/wp_img/icon2.jpg" alt="icon of a person using a laptop" width="90px">
-            </div>
-            <div class="nav">
-            <nav>
-                <ul>
-                    <li><a href="#sec_1">Home</a></li>
-                    <li><a href="#sec_2">Features</a></li>
-                    <li><a href="#sec_3">About</a></li>
-                    <li><a href="#sec_4">Pricing</a></li>
-                    <li><a href="#footer">Download</a></li>
-    
-                </ul>
-            </nav>
-            </div>
-       
+      <img
+        src="./images/wp_img/logo.png"
+        alt="icon of a person using a laptop"
+      />
+      <nav>
+        <ul>
+          <li><a href="#intro">Home</a></li>
+          <li><a href="#features">Features</a></li>
+          <li><a href="#about">About</a></li>
+          <li><a class="login" href="login.html">Log In</a></li>
+        </ul>
+      </nav>
     </header>
-    <section id="sec_1">
-        <a name="sec_1"></a>
-        <div class="contains1">
-            <div class="box_left">
-                <h1>
-                A simple place to share tasks and chat with the most important person in your life.
-                </h1>
-                <p>
-                As long as you have your laptop or any other device with you, you will have all the university stuff with you.
-                No more carrying around hundred pages books and heavy backpacks we're all bored of!
-                Create an account on eStudent for better productivity and less stressfull college life.
-                </p>
-                <input type="submit" name="download" id="download">
-            </div>
-            <div class="box_right">
-                <img src="./images/wp_img/laptop2.jpg" alt="Photo of a laptop" >
-            </div>
-        </div>
-    </section >
-    <section class="svg_div1">
-        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1440 320"><path fill="#8061e2" fill-opacity="1" d="M0,128L120,138.7C240,149,480,171,720,154.7C960,139,1200,85,1320,58.7L1440,32L1440,0L1320,0C1200,0,960,0,720,0C480,0,240,0,120,0L0,0Z"></path></svg>
 
+    <!-- INTRO AND APPLICATION PLACEHOLDER -->
+    <section id="intro">
+      <a name="intro"></a>
+      <div>
+        <h1>A simple place to keep your student life organised!</h1>
+        <p>
+          Keeping track of your studies has never been easier! No more carrying
+          around hundred pages books and heavy backpacks we're all bored of.
+          Create an account on eStudent for better productivity and less
+          stressfull college life.
+        </p>
+      </div>
+      <img
+        src="./images/wp_img/laptop_placeholder.png"
+        alt="Photo of a laptop"
+      />
     </section>
-    <section id="sec_2">
-        <a name="sec_2"></a>
-        <div class="contains">
-            <div class="box_1">
-                <img src="./images/wp_img/tasks3.jpg" alt="Photo-Tasks" width="400px">
-            </div>
-            <div class="box_2">
-                <h1>Share Tasks</h1>
-                <p>Keep one another on track with a simple shared task list.Create tasks for you or your partner, and add due dates to help keep things on schedule.</p>
-            </div>
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1440 160">
+      <path
+        fill="#377ded"
+        fill-opacity="1"
+        d="M0,128L120,138.7C240,149,480,171,720,154.7C960,139,1200,85,1320,58.7L1440,32L1440,0L1320,0C1200,0,960,0,720,0C480,0,240,0,120,0L0,0Z"
+      ></path>
+    </svg>
+
+    <!-- FEATURES -->
+    <section id="features">
+      <a name="features"></a>
+      <div class="feat_content">
+        <img src="./images/wp_img/tasks3.jpg" alt="Photo-Tasks" />
+        <div>
+          <h2>Share Tasks</h2>
+          <p>
+            Keep one another on track with a simple shared task list.Create
+            tasks for you or your partner, and add due dates to help keep things
+            on schedule.
+          </p>
         </div>
-
-
-        <div class="contains">
-            <div class="box_1">
-                <h1>Chat Live</h1>
-                <p>Connect with people worldwide who have the same hardworking lifestyle as you, and collaborate together to bring new and better projects maybe..</p>
-            </div>
-            <div class="box_2">
-                <img src="./images/wp_img/chatlive.jpg" alt="Photo-Tasks" width="400px" >
-            </div>
+      </div>
+      <div class="feat_content">
+        <img src="./images/wp_img/chatlive.jpg" alt="Photo-Tasks" />
+        <div>
+          <h2>Chat Live</h2>
+          <p>
+            Connect with people worldwide who have the same hardworking
+            lifestyle as you, and collaborate together to bring new and better
+            projects maybe..
+          </p>
         </div>
-
-    </section>
-
-    <section id="sec_3">
-        <a name="sec_3"></a>
-        <h1>eStudent is perfect for</h1>
-        <div class="contains">
-            <div class="box_a">
-                <img src="./images/wp_img/organisation.jpg" alt="Photo describing organisaton skills" width="150px">
-                <h2>Organizing</h2>
-                <p>Making students' life easier by putting all the studying tools in one place.</p>
-            </div>
-            <div class="box_b">
-                <img src="./images/wp_img/sorting-out.jpg" width="150px">
-                <h2>Sorting Out</h2>
-                <p>Helps for makings students aware of which assignments they have to turn in sooner, work on more or just to remind them the due date. </p>
-            </div>
-            <div class="box_c">
-                <img src="./images/wp_img/security.jpg" width="150px" >
-                <h2>Privacy</h2>
-                <p>Grades and rated assignments dont have to be seen by everyone, save them on eStudent to keep it private.</p>
-            </div>
-
-        </div>
-        <div class="contains">
-            <div class="box_d">
-                <img src="./images/wp_img/collect.jpg" width="150px">
-                <h2>Business Collecting</h2>
-                <p>Best collecting algorithms save so much of your time, instead of having to look up for things manually and very often.</p>
-            </div>
-            <div class="box_e">
-                <img src="./images/wp_img/review.jpg" width="150px">
-                <h2>Reviews</h2>
-                <p>Students can review each others projekts and help each other out on what is good and what could get better.</p>
-            </div>
-        </div>
+      </div>
     </section>
 
-    <section id="sec_4">
-        <a name="sec_4"></a>
-        <div class="big">
-            <h1>Estudent is awesome for managing and organizing students' hardworking days.</h1>
-            <div class="small">
-                <img src="./images/wp_img/rev.jpg" width="400px">
-              
-            </div>
-        <br><br><br>
-            <div class="rev_1">
-                <img src="./images/wp_img/profile.png" alt="Profile pic of a student" width="50px">
-                <p>Josh from England feels super relieved after using eStudent!</p>
-            </div>
-            <div class="rev_2">
-                <img src="./images/wp_img/group.jpg" alt="Photo of a group of students" width="50px">
-                <p>'We are the new Martians" group of students from USA want to share their opinions about eStudent.</p>
-            
+    <!-- ABOUT -->
+    <section id="about">
+      <a name="about"></a>
+      <h2>eStudent is perfect for</h2>
+      <div id="ab_container">
+        <div class="ab_content">
+          <img
+            src="./images/wp_img/organisation.jpg"
+            alt="Photo describing organisaton skills"
+          />
+          <h2>Organizing</h2>
+          <p>
+            Making students' life easier by putting all the studying tools in
+            one place.
+          </p>
         </div>
+        <div class="ab_content">
+          <img
+            src="./images/wp_img/organisation.jpg"
+            alt="Photo describing organisaton skills"
+            width="150px"
+          />
+          <h2>Organizing</h2>
+          <p>
+            Making students' life easier by putting all the studying tools in
+            one place.
+          </p>
         </div>
-    </section>
-    <section class="svg_div2">
-        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1440 320"><path fill="#8061e2" fill-opacity="1" d="M0,256L120,245.3C240,235,480,213,720,218.7C960,224,1200,256,1320,272L1440,288L1440,320L1320,320C1200,320,960,320,720,320C480,320,240,320,120,320L0,320Z"></path></svg>
-    </section>
-    <section id="sec_5">
-        <div class="last_box">
-            <h1>Start sharing tasks today</h1>
-            <p>Create your own account and start making things right today!</p>
-            <input type="submit" name="download" id="download">
+        <div class="ab_content">
+          <img src="./images/wp_img/sorting-out.jpg" width="150px" />
+          <h2>Sorting Out</h2>
+          <p>
+            Helps for makings students aware of which assignments they have to
+            turn in sooner, work on more or just to remind them the due date.
+          </p>
         </div>
+        <div class="ab_content">
+          <img src="./images/wp_img/security.jpg" width="150px" />
+          <h2>Privacy</h2>
+          <p>
+            Grades and rated assignments dont have to be seen by everyone, save
+            them on eStudent to keep it private.
+          </p>
+        </div>
+        <div class="ab_content">
+          <img src="./images/wp_img/collect.jpg" width="150px" />
+          <h2>Business Collecting</h2>
+          <p>
+            Best collecting algorithms save so much of your time, instead of
+            having to look up for things manually and very often.
+          </p>
+        </div>
+        <div class="ab_content">
+          <img src="./images/wp_img/review.jpg" width="150px" />
+          <h2>Reviews</h2>
+          <p>
+            Students can review each others projekts and help each other out on
+            what is good and what could get better.
+          </p>
+        </div>
+      </div>
     </section>
-    <footer id="footer">
-        <a name="footer"></a>
-        <div class="contains">
-            <div class="table">
-                <table>
-                    <tr>
-                        <td>HOME</td>
-                        <td>BLOG</td>
-                    
-                    </tr>
-                    <tr>
-                        <td>Features</td>
-                        <td>Press</td>
-                      
-                    </tr>
-                    <tr>
-                        <td>About</td>
-                        <td>Legal</td>
-                      
-                    </tr>
-                  
-                </table>
-            </div>
-            <div class="sign_up">
-                <h2>Sign up to hear about new features</h2>
-                <input type="email" placeholder="Email Adress">
-                <input type="submit" name="download" id="download">
 
-            </div>
-        </div>    
-        <div class="contains">
-            <div class="copyright">
-                <p>&copy; 2020 Estudent </p>  
-            </div>
-            <div class="icons">
-                <img src="./images/wp_img/fb_icon.png" alt="Facebook icon">
-                <img src="./images/wp_img/linkedin_icon.png" alt="LinkedIn icon">
-                <img src="./images/wp_img/google_icon.png" alt="Google icon">
-                <img src="./images/wp_img/ig_icon.png" alt="Instagram icon">
-            </div>
-
+    <!-- REVIEWS -->
+    <section id="reviews">
+      <a name="reviews"></a>
+      <div class="big">
+        <h2>
+          "eStudent is a life saviour to me and my fellow colleagues."
+        </h2>
+          <img
+            src="./images/wp_img/profile.png"
+            alt="Profile pic of a student"
+          />
+          <p>We</p>
         </div>
+      </div>
+    </section>
+
+     <!-- REGISTER -->
+    <div>
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 160 1440 160">
+        <path
+          fill="#377ded"
+          fill-opacity="1"
+          d="M0,256L120,245.3C240,235,480,213,720,218.7C960,224,1200,256,1320,272L1440,288L1440,320L1320,320C1200,320,960,320,720,320C480,320,240,320,120,320L0,320Z"
+        ></path>
+      </svg>
+      <div id="register">
+        <h2>Start organizing your life now!</h2>
+        <p>Create your own account and start making things right today!</p>
+        <a class="login" href="login.html">REGISTER NOW</a>
+      </div>
+    </div>
+
+
+    <!-- FOOTER -->
+    <footer>
+      <a name="footer"></a>
+      <div class="fo_container">
+              <table>
+            <tr>
+              <td><a href="#intro">HOME</a></td>
+              <td><a href="login.html">LOG IN</a></td>
+              <td><a href="terms&conditions.html">Press</a></td>
+
+            </tr>
+            <tr>
+                <td><a href="#features">FEATURES</a></td>
+              <td><a href="terms.html">TERMS</a></td>
+              <td><a href="privacy&policy.html">Privacy and policy</a></td>
+            </tr>
+          </table>
+        <div class="sign_up">
+          <h3>Sign up to hear about new features</h3>
+          <div class="newspaper">
+          <input type="email" placeholder="Email Address" />
+          <input type="submit" name="download"  id="download" />
+        </div>
+        </div>
+      </div>
+      <div class="fo_container">
+          <p>&copy; 2020 eStudent</p>
+        <div id="icons">
+            <i class="fab fa-facebook-square"></i>
+            <i class="fab fa-linkedin"></i>
+            <i class="fab fa-google-plus-square"></i>
+            <i class="fab fa-instagram-square"></i>
+        </div>
+      </div>
     </footer>
-</body>
+  </body>
 </html>

@@ -11,9 +11,6 @@ $(document).ready(function () {
     }
   });
 
-  $(document.body).on("click", ".information", function () {
-    console.log($(this).children()[1]);
-  });
 
   $(document.body).on("click", "#itemlist > li", function () {
     $(this).toggleClass("checked");
