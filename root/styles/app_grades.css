@@ -268,3 +268,16 @@ border-bottom: 1px solid #2E8B57;
   pointer-events:all ;
 }
 
+.tdstyle{
+  width:500px;
+  background-color: rgb(238, 238, 238);
+  color: rgb(111, 111, 111);
+  padding: 20px 30px;
+}
+
+.thstyle{
+  width:500px;
+  background-color: rgb(13, 155, 60);
+  color: rgb(111, 111, 111);
+  padding: 20px 30px;
+}
