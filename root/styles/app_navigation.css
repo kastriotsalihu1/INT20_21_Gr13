@@ -203,24 +203,12 @@ main {
   font-weight: 600;
 }
 
-
-/* information information information information  */
-/*
-.information {
-  position: absolute;
-  top: 10px;
-  right: 20px;
-  color: #f6f7fb;
-  font-size: 40px;
-  width:30px;
-}
-/* information  information information information  */
-/*
-.popup{
-  position: absolute;
-  top: 10px;
-  right: 20px;
-  color: #f6f7fb;
-  font-size: 40px;
-  width:30px;
+.button{
+  border: none;
+  outline: none;
+  background: none;
+  color: white;
+  margin-right: 200px;
+  padding: 10px;
+  height: 1px;
 }
