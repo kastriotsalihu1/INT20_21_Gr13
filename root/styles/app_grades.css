@@ -207,7 +207,7 @@ position: fixed;
 /*top left transform : me e qit n mes */
 top: 50%;
 left: 50%;
-transform: translate(-50%,-50%) /*scale(0)*/;
+transform: translate(-50%,-50%) scale(0);
 transition: 200ms ease-in-out;
 color: black;
 border: 1px solid rgb(15, 94, 38);
@@ -219,11 +219,11 @@ width: 500px;
 max-width: 60%;
 height: 200px;
 font-size: 18px;
-}/*
+}
 .modal.active{
   transform: translate(-50%,-50%) scale(1);
 }
-*/
+
 .modal-header{
 padding: 10px 15px;
 display: flex;
@@ -254,7 +254,7 @@ border-bottom: 1px solid #2E8B57;
 }
 #overlay{
   position:fixed;
-opacity: 0;
+  opacity: 0;
   top: 0;
   left: 0;
   right: 0;
@@ -267,3 +267,4 @@ opacity: 0;
   opacity: 1;
   pointer-events:all ;
 }
+
