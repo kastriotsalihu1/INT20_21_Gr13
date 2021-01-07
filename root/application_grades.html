@@ -56,10 +56,9 @@
           
           <h1>GPA Calculator</h1>
           <input type="text" placeholder="Subjects" />
-          <ul>
+          <ul class="scroll">
             <li>
-              <span><i class="fa fa-trash"></i></span>Internet
-              <select id="grades">
+              <span><i class="fa fa-trash"></i></span>Internet<select id="grades">
                 <option>6</option>
                 <option>7</option>
                 <option>8</option>
@@ -68,9 +67,8 @@
               </select>
             </li>
             <li>
-              <span><i class="fa fa-trash"></i></span>Systems and Signals<select
-                id="grades"
-              >
+              <span><i class="fa fa-trash"></i></span>Sinjale dhe Sisteme<select
+                id="grades">
                 <option>6</option>
                 <option>7</option>
                 <option>8</option>
@@ -79,9 +77,8 @@
               </select>
             </li>
             <li>
-              <span><i class="fa fa-trash"></i></span>Database<select
-                id="grades"
-              >
+              <span><i class="fa fa-trash"></i></span>Databaze<select
+                id="grades">
                 <option>6</option>
                 <option>7</option>
                 <option>8</option>
@@ -90,7 +87,7 @@
               </select>
             </li>
             <li>
-              <span><i class="fa fa-trash"></i></span>Math<select id="grades">
+              <span><i class="fa fa-trash"></i></span>Matematike<select id="grades">
                 <option>6</option>
                 <option>7</option>
                 <option>8</option>
@@ -106,12 +103,12 @@
           <h1>Shto Literature</h1>
           <select class="objects" id="lendet">
             <option>Lendet</option>
-            <option value="Matematike">Matematike</option>
-            <option>Internet</option>
-            <option>Databaze</option>
-            <option>POO</option>
-            <option>Sinjale dhe Sisteme</option>
-            <option>Elektronike</option>
+            <option value="Matematike">Matematike<option>
+            <option value="Internet">Internet</option>
+            <option value="Databaze">Databaze</option>
+            <option value="POO">POO</option>
+            <option value="SinjaledheSisteme">Sinjale dhe Sisteme</option>
+            <option value="Elektronike">Elektronike</option>
           </select>
           <select id = "lloji" class="objects">
             <option>Lloji</option>
@@ -127,24 +124,17 @@
         <div class="card box_3">
           <h1>Shfaq Literaturen</h1>
           <select id="selectLiteraturen">
-            <option value="Matematike">Math</option>
-            <option value="elektronike">elektronike</option>
-            <option value="ss">Sinjale dhe sisteme</option>
-            <option value="internet">internet</option>
-            <option value="databaze">databaze</option>
-            <option value="poo">poo</option>
+            <option value="Matematike">Matematike</option>
+            <option value="Elektronike">Elektronike</option>
+            <option value="SinjaledheSisteme">Sinjale dhe Sisteme</option>
+            <option value="Internet">Internet</option>
+            <option value="Databaze">Databaze</option>
+            <option value="POO">Poo</option>
           </select>
           <div>
             <table id="tabela">
-              <tr>
-                <th>Lenda</th>
-                <th>Emri i file</th>
-                <th>Lloji</th>
-              </tr>
-              <tr>
-                <td>Math</td>
-                <td>detyrat</td>
-                <td>pdf</td>
+              <tr id="rreshti">
+                
               </tr>
             </table>
           </div>
