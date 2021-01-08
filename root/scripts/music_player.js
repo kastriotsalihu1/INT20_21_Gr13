@@ -141,4 +141,13 @@ function mute_sound(){
     volume_show.innerHTML = 0;
 }
  
+// checking.. the song is playing or not
+function justplay(){
+    if(Playing_song==false){
+        playsong();
+ 
+    }else{
+        pausesong();
+    }
+ }
 
