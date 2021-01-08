@@ -161,4 +161,11 @@ function playsong(){
   Playing_song = true;
   play.innerHTML = '<i class="fa fa-pause" aria-hidden="true"></i>';
 }
+//pause song
+function pausesong(){
+    track.pause();
+    Playing_song = false;
+    play.innerHTML = '<i class="fa fa-play" aria-hidden="true"></i>';
+}
+ 
 
