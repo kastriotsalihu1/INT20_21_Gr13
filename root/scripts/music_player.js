@@ -150,4 +150,15 @@ function justplay(){
         pausesong();
     }
  }
+// reset song slider
+function reset_slider(){
+    slider.value = 0;
+ }
+ 
+// play song
+function playsong(){
+  track.play();
+  Playing_song = true;
+  play.innerHTML = '<i class="fa fa-pause" aria-hidden="true"></i>';
+}
 
