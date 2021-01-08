@@ -222,4 +222,22 @@ function autoplay_switch(){
  
 function range_slider(){
     let position = 0;
+}
+  // update slider position
+  if(!isNaN(track.duration)){
+    position = track.currentTime * (100 / track.duration);
+    slider.value =  position;
+   }
+
+
+// function will run when the song is over
+if(track.ended){
+  play.innerHTML = '<i class="fa fa-play" aria-hidden="true"></i>';
+    if(autoplay==1){
+        index_no += 1;
+        load_track(index_no);
+        playsong();
+    }
+ }
+}
 
