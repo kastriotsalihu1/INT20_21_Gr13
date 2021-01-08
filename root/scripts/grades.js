@@ -59,11 +59,11 @@ $("#shtoButton").click(
       SinjaleSistemeFiles.push(materiali);
     }else if(lenda === "POO"){
       pooFiles.push(materiali);
-    }else if(lenda=="Elektronike"){
+    }else if(lenda==="Elektronike"){
       elektronikaFiles.push(materiali);
-    }else if(lenda=="Databaze"){
+    }else if(lenda==="Databaze"){
       databazeFiles.push(materiali);
-    }else if(lenda=="Internet"){
+    }else if(lenda==="Internet"){
       internetFiles.push(materiali);
     }
     $("#lendet option:selected").prop("selected", false);
