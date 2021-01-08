@@ -3,6 +3,7 @@ body {
 }
 
 main {
+  overflow-y: scroll;
   background-color: #f8fbfc;
 
   display: grid;
