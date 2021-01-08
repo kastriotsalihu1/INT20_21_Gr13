@@ -112,4 +112,24 @@ let All_song = [
       singer: "Haydn"
     }
  ];
+
  
+
+ // function load the track
+function load_track(index_no){
+    clearInterval(timer);
+    reset_slider();
+ 
+    track.src = All_song[index_no].path;
+    title.innerHTML = All_song[index_no].name;  
+    track_image.src = All_song[index_no].img;
+    artist.innerHTML = All_song[index_no].singer;
+    track.load();
+ 
+    timer = setInterval(range_slider ,1000);
+    total.innerHTML = All_song.length;
+    present.innerHTML = index_no + 1;
+}
+ 
+load_track(index_no);
+
