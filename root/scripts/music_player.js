@@ -222,7 +222,7 @@ function change_duration(){
 function autoplay_switch(){
 	if (autoplay==1){
        autoplay = 0;
-       auto_play.style.background = "rgb(217, 83, 79)";
+       auto_play.style.background = "rgba(255,255,255,0.2)";
 	}else{
        autoplay = 1;
        auto_play.style.background = "rgb(217, 83, 79)";
