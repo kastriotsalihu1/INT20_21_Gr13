@@ -11,3 +11,15 @@ let auto_play = document.querySelector('#auto');
 let present = document.querySelector('#present');
 let total = document.querySelector('#total');
 let artist = document.querySelector('#artist');
+ 
+ 
+ 
+let timer;
+let autoplay = 0;
+ 
+let index_no = 0;
+let Playing_song = false;
+ 
+//create a audio Element
+let track = document.createElement('audio');
+
