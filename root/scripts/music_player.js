@@ -133,3 +133,12 @@ function load_track(index_no){
  
 load_track(index_no);
 
+
+//mute sound function
+function mute_sound(){
+    track.volume = 0;
+    volume.value = 0;
+    volume_show.innerHTML = 0;
+}
+ 
+
