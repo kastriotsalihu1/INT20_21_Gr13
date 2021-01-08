@@ -42,7 +42,7 @@ main {
 }
  #grades {
   float: right;
-  width: 100px;
+  width: 200px;
   display: inline-block;
   height: 40px;
   outline: none;
@@ -70,6 +70,7 @@ ul{
   list-style: none;
   margin: 0;
   padding: 0;
+  width: 100%;
 }
 
 li{
@@ -78,6 +79,7 @@ li{
   /*teksti del n mes dmth e merr krejt hapsiren height */
   line-height: 40px;
   color: #666;
+  width: 100%;
 }
 
 li:nth-child(2n){
@@ -190,8 +192,8 @@ li:hover span{
   outline: none;
 }
 .scroll{
-  width: 725px;
-  height: 240px;
+  width: 100%;
+  height:311px;
   overflow-y: scroll;
   scrollbar-width: thin;
 }
