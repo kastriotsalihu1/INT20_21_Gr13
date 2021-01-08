@@ -183,4 +183,17 @@ function next_song(){
 }
  
  
+// previous song
+function previous_song(){
+    if(index_no > 0){
+        index_no -= 1;
+        load_track(index_no);
+        playsong();
+ 
+    }else{
+        index_no = All_song.length;
+        load_track(index_no);
+        playsong();
+    }
+}
 
