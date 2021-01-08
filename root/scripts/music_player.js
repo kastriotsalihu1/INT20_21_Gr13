@@ -239,5 +239,4 @@ if(track.ended){
         playsong();
     }
  }
-}
 

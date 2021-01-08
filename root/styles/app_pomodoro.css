@@ -35,27 +35,18 @@ main {
   background-color:rgb(217, 83, 79);
 
 }
-.c1{
-  margin-top: 20px;
-  height: 70px;
-  display:block;
-  background-color: rgb(217, 83, 79);
-  text-align:center;
-  color: white;
-  font-weight: 600;
-  font-size: 20px;
-  line-height:65px;
-  width: 95%;
-}
+
 p{
   color:white;
   font-weight: 600;
   text-align: center;
 }
 #pomodoro{
+  
   display: grid;
-  grid-template-columns: repeat(5, 1fr);
+  grid-template-columns: repeat(5, 120px);
   grid-template-rows: repeat(3, 1fr);
+  
 
 }
 
