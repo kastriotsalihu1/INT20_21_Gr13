@@ -208,3 +208,18 @@ function change_duration(){
     track.currentTime = slider_position;
 }
 
+// autoplay function
+function autoplay_switch(){
+    if (autoplay==1){
+       autoplay = 0;
+       auto_play.style.background = " rgb(217, 83, 79)";
+    }else{
+       autoplay = 1;
+       auto_play.style.background = " rgb(217, 83, 79)";
+    }
+}
+ 
+ 
+function range_slider(){
+    let position = 0;
+
