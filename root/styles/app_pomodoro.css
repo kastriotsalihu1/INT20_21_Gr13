@@ -4,26 +4,35 @@ main {
 
   display: grid;
 
-  grid-template-columns: repeat(2, 45%);
-  grid-template-rows: repeat(2, 50%);
+  grid-template-columns:45% 45%;
+  grid-template-rows: 60% 40%;
 
   gap: 10px;
   grid-template-areas:
     "a a"
     "b c";
 }
+.title{
+  position: absolute;
+  left:20px;
+  font-size: 10px;
+}
 .box_1{
   grid-area: a;
-  line-height: 70px;
+  line-height: 10px;
+  text-align: center;
+  background-color: rgb(217, 83, 79);
+}
+.box_2{
+  line-height: 0px;
   text-align: center;
   background-color: rgb(217, 83, 79);
 
-
 }
-.box_2, .box_3{
-  line-height: 300px;
+.box_3{
+  line-height: 100px;
   text-align: center;
-  background-color:rgb(237, 134, 132);
+  background-color:rgb(217, 83, 79);
 
 }
 .c1{
@@ -113,12 +122,4 @@ button{
 #stop{
   grid-area: 3 / 4 / 3 / 4;
 }
-
-
-
-
-
-
-
-
 
