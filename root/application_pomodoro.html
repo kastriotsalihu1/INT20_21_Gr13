@@ -6,6 +6,10 @@
     <link rel="stylesheet" href="styles/app_navigation.css" />
     <link rel="stylesheet" href="styles/app_pomodoro.css" />
     <link href="dependencies/fontawesome/css/all.css" rel="stylesheet" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/
+    font-awesome/4.7.0/css/font-awesome.min.css" />
+    <link rel="stylesheet" href="styles/music_player.css">
+    <link rel="stylesheet" href="styles/tree.css">
     <title>Document</title>
   </head>
 
@@ -17,7 +21,7 @@
         <i class="fas fa-bars fa-2x"></i>
       </div>
 
-      <!-- displays the nessesary user information -->
+      <!-- displays the nessesary user information   -->
       <div id="info">
         <!-- username and photo -->
         <div id="user">
@@ -50,39 +54,89 @@
         <!-- QITU -->
         <!-- QITU -->
         <!-- QITU -->
-        <div class="card box_1" id="container">
-              <p id="work" class="label">Work:</p>
-              <p id="break" class="label">Break:</p>
-              <p id="cycles" class="label">Cycles:</p>
+        <div class="card box_2" id="pomodoro">
+          <p class="title">POMODORO</p>
+          <p id="work" class="label">Work:</p>
+          <p id="break" class="label">Break:</p>
+          <p id="cycles" class="label">Cycles:</p>
 
+          <div id="work_timer" class="timer">
+            <p id="work_minutes">25</p>
+            <p class="semicolon">:</p>
+            <p id="work_seconds">00</p>
+          </div>
 
-              <div id="work_timer" class="timer">
-                <p id="work_minutes">25</p>
-                <p class="semicolon">:</p>
-                <p id="work_seconds">00</p>
-              </div>
+          <p id="counter" class="timer">0</p>
 
-              <p id="counter" class="timer">0</p>
+          <div id="break_timer" class="timer">
+            <p id="break_minutes">5</p>
+            <p class="semicolon">:</p>
+            <p id="break_seconds">00</p>
+          </div>
 
-              <div id="break_timer" class="timer">
-                <p id="break_minutes">5</p>
-                <p class="semicolon">:</p>
-                <p id="break_seconds">00</p>
-              </div>
+          <button id="start" class="card button">Start</button>
+          <button id="stop" class="card button">Pause</button>
+          <button id="reset" class="card button">Reset</button>
+        </div>
+        <div class="card box_1">
+          <div class=" main">
+            <p id="logo"><i class="fa fa-music"></i>Music</p>
+            
+            <!--- left part --->
+             <div class="left">
+        
+              <!--- song img --->
+              <img id="track_image">
+                 <div class="volume">
+                    <p id="volume_show">90</p>
+                    <i class="fa fa-volume-up" aria-hidden="true" onclick="mute_sound()" id="volume_icon"></i>
+                    <input type="range" min="0" max="100" value="90" onchange="volume_change()" id="volume">  
+                 </div>
+        
+             </div>
+         
+        
+             <!--- right part --->
+             <div class="right">
+        
+                <div class="show_song_no">
+                  <p id="present">1</p>
+                  <p>/</p>
+                  <p id="total">14</p>
+                </div>
+        
+               <!--- song title & artist name --->
+              <p id="title">title.mp3</p>
+              <p id="artist">Artist name</p>
+        
+              <!--- middle part --->
+               <div class="middle">
+                   <button onclick="previous_song()" id="pre"><i class="fa fa-step-backward" aria-hidden="true"></i></button>
+                   <button onclick="justplay()" id="play"><i class="fa fa-play" aria-hidden="true"></i></button>
+                   <button onclick="next_song()" id="next"><i class="fa fa-step-forward" aria-hidden="true"></i></button>
+               </div>
+        
+               <!--- song duration part --->
+                <div class="duration">
+                   <input type="range" min="0" max="100" value="0" id="duration_slider" onchange="change_duration()">
+                </div>
+                   <button id="auto" onclick="autoplay_switch()">Auto play <i class="fa fa-circle-o-notch" aria-hidden="true"></i></button>
+            </div>
+        
+        
+          </div>
+        </div>
 
-              <button id="start" class="button">Start</button>
-              <button id="stop" class="button">Pause</button>
-              <button id="reset" class="button">Reset</button>
-              
+        <div class="card box_3">
+          <p class="tree">
+            End a cycle of 4 pomodoros to plant a tree
+          </p>
+          <div class="card inside">
+
+          </div>
 
         </div>
-        <div class="card box_2">
-          Music
-        </div>
-        <div class="card box_2">
-          End a cycle of 4 pomodoros to plant a tree
-        </div>
-       
+
         <!-- QITU -->
         <!-- QITU -->
         <!-- QITU -->
@@ -92,6 +146,9 @@
     </div>
 
     <script src="scripts/jquery.js"></script>
+    <script src="scripts/music_player.js"></script>
     <script src="scripts/pomodoro_main.js"></script>
+    
+    
   </body>
 </html>

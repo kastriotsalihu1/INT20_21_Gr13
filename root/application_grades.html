@@ -10,6 +10,7 @@
   </head>
 
   <body>
+    <div class="active"id="overlay">
     <!-- this is the header -->
     <header>
       <!-- opens and closes the side navigation bar -->
@@ -34,7 +35,7 @@
     </header>
 
     <div id="container">
-      <!-- side navigation menu -->
+      <!-- side navigation menu --> 
       <nav>
         <div class="nav-icons fa-2x">
           <a href="#"><i class="fab fa-chromecast" id="chromecast"></i></a>
@@ -43,65 +44,141 @@
           ></a>
           <a href="#"><i class="far fa-folder" id="folder"></i></a>
         </div>
-      </nav>
+      </nav>  
       <main>
-      <div>
-        <!--Notat-->
-        <div class="box">
-         <h1>GPA Calculator</h1>
-         <input type="text" placeholder="Subjects">
-         <ul>
-           <li><span><i class="fa fa-trash"></i></span>Internet <select>
-             <option >6</option>
-             <option >7</option>
-             <option >8</option>
-             <option >9</option>
-             <option >10</option>
-          </select></li>
-           <li><span><i class="fa fa-trash"></i></span>Electronics<select>
-            <option >6</option>
-            <option >7</option>
-            <option >8</option>
-            <option >9</option>
-            <option >10</option>
-         </select></li>
-           <li><span><i class="fa fa-trash"></i></span>Systems and Signals<select>
-            <option >6</option>
-            <option >7</option>
-            <option >8</option>
-            <option >9</option>
-            <option >10</option>
-         </select></li>
-           <li><span><i class="fa fa-trash"></i></span>Database<select>
-            <option >6</option>
-            <option >7</option>
-            <option >8</option>
-            <option >9</option>
-            <option >10</option>
-         </select></li>
-           <li><span><i class="fa fa-trash"></i></span>Math<select>
-            <option >6</option>
-            <option >7</option>
-            <option >8</option>
-            <option >9</option>
-            <option >10</option>
-         </select></li>
-         </ul>
-         <h1>Result</h1>
-         <!--Rezultati-->
-         <div>
-          <h4>GPA <input type="text" name="" id=""></h4> 
-         </div>
+        
+        <div class="card box_1">
+
+          <!--  information information information information information -->
+          
+            <button data-modal-target="#modal" class="button"><i class="fas fa-info-circle"></i></button>
+            <div class="modal" id="modal" >
+              <div class="modal-header">
+                <div class="title">Notat</div>
+                <button data-close-button class="close-button">&times;</button>
+              </div>
+              <div class="modal-body">
+                Lorem ipsum dolor, sit amet consectetur adipisicing elit. Placeat corporis eveniet modi exercitationem eum ipsum temporibus sapiente pariatur iusto repudiandae?Lorem ipsum dolor sit, amet consectetur adipisicing elit. Architecto, veritatis.
+              </div>
+            </div>
+           <div id="overlay">
+             
+           </div>
+          <!--  information information information information information -->
+          
+          <h1>Notat</h1>
+          <input type="text" placeholder="Subjects" />
+          <ul class="scroll">
+            <li> 
+              <span><i class="fa fa-trash"></i></span>Internet<select id="grades">
+                <option>6</option>
+                <option>7</option>
+                <option>8</option>
+                <option>9</option>
+                <option>10</option>
+              </select>
+            </li>
+            <li>
+              <span><i class="fa fa-trash"></i></span>Sinjale dhe Sisteme<select
+                id="grades">
+                <option>6</option>
+                <option>7</option>
+                <option>8</option>
+                <option>9</option>
+                <option>10</option>
+              </select>
+            </li>
+            <li> 
+              <span><i class="fa fa-trash"></i></span>POO<select id="grades">
+                <option>6</option>
+                <option>7</option>
+                <option>8</option>
+                <option>9</option>
+                <option>10</option>
+              </select>
+            </li>
+            <li> 
+              <span><i class="fa fa-trash"></i></span>Elektronike<select id="grades">
+                <option>6</option>
+                <option>7</option>
+                <option>8</option>
+                <option>9</option>
+                <option>10</option>
+              </select>
+            </li>
+            <li>
+              <span><i class="fa fa-trash"></i></span>Databaze<select
+                id="grades">
+                <option>6</option>
+                <option>7</option>
+                <option>8</option>
+                <option>9</option>
+                <option>10</option>
+              </select>
+            </li>
+            <li>
+              <span><i class="fa fa-trash"></i></span>Matematike<select id="grades">
+                <option>6</option>
+                <option>7</option>
+                <option>8</option>
+                <option>9</option>
+                <option>10</option>
+              </select>
+            </li>
+          </ul>
+          <div></div>
         </div>
-        <!--Literatura-->
-        <div ></div>
-      </div>
+       
+        <div  class="card box_2" >
+          <h1 id="shtoLiterature">Shto Literature</h1>
+          <select class="objects" id="lendet">
+            <option >Lenda</option>
+            <option value="Databaze">Databaze</option>
+            <option value="POO">POO</option>
+            <option value="Matematike">Matematike</option>
+            <option value="SinjaledheSisteme">Sinjale dhe Sisteme</option>
+            <option value="Elektronike">Elektronike</option>
+            <option>Lendet</option>
+            <option value="Internet">Internet</option>  
+          </select>
+          <select id = "lloji" class="objects">
+            <option>Lloji</option>
+            <option value="Ligjerata">Ligjerata</option>
+            <option value="Ushtrime">Ushtrime</option>
+            <option value="Liber">Liber</option>
+            <option value="Afate">Afate</option>
+            <option value="Tjeter">Tjeter</option>
+          </select>
+          <input type="file" name="file" id="file" />
+          <button id="shtoButton">Shto Literaturen</button>
+        </div>
+        <div  class="card box_3">
+          <h1>Shfaq Literaturen</h1>
+          <select id="selectLiteraturen">
+            <option value="Matematike">Matematike</option>
+            <option value="Elektronike">Elektronike</option>
+            <option value="SinjaledheSisteme">Sinjale dhe Sisteme</option>
+            <option value="Internet">Internet</option>
+            <option value="Databaze">Databaze</option>
+            <option value="POO">POO</option>
+          </select>
+          <div>
+            <table id="tabela">
+              <tr id="rreshti">
+                
+              </tr>
+            </table>
+          </div>
+        </div>
+        
+          
+        </div>
         
       </main>
-    </div>
-
     <script src="scripts/jquery.js"></script>
     <script src="scripts/main.js"></script>
     <script src="scripts/grades.js"></script>
+
   </body>
+  
 </html>
