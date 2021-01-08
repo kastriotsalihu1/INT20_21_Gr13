@@ -2,8 +2,6 @@
 $("ul").on("click", "li", function(){
   $(this).toggleClass("completed");
  });
- 
- 
  //Click on X to delete Todo
  $("ul").on("click","span",function(event){
    //this=span
@@ -17,7 +15,7 @@ $("ul").on("click", "li", function(){
  $("#math").on("click",function(event){
    $(this).parent(),remove();
  })
- 
+
  $("input").keypress(function(event){
    if(event.which===13){
      //grabbiing new todo text from input
@@ -29,20 +27,22 @@ $("ul").on("click", "li", function(){
      $("ul").append("<li><span><i class='fas fa-trash'></i></span> " + todoText + "<select id='grades'><option >6</option><option >7</option><option >8</option><option >9</option><option >10</option></select></li>")
    }
  });
- 
- 
  /*me e shfaq ose me e fade away ikonen e lapsit*/
  $(".fa-pencil-alt").click(function(){
    $("input").fadeToggle();
  })
- 
  $("ul").on("click", "select", function(){
   $(this).toggleClass("completed");
  });
  
- var pooFiles=[{lenda:"POO",emriiFile:"Java",lloji:"Liber"},{lenda:"POO",emriiFile:"Programimi i Orientuar ne Objekte",lloji:"Afate"}];
- var matFiles = [{lenda: " Matematike", emriiFile: " Matematika diskrete", lloji: " Ligjerata"}, {lenda: " Matematike", emriiFile: " Detyra", lloji: " Ushtrime"}];
-
+ var pooFiles=[{lenda:"POO",emriiFile:"Java",lloji:"Liber"},{lenda:"POO",emriiFile:"Programimi i Orientuar ne Objekte",  lloji:"Afate"}];
+ var matFiles = [{lenda: "Matematike", emriiFile: "Matematika diskrete", lloji: "Ligjerata"}, {lenda: "Matematike", emriiFile: "Detyra", lloji: "Ushtrime"}];
+ var SinjaleSistemeFiles=[{lenda: "SinjaleDheSisteme", emriiFile:"Serite Furie", lloji:"Afate"},
+{lenda:"SinjaleDheSisteme",emriiFile:"Hyrje ne Sinjale", lloji:"Ligjerata"},
+{lenda:"SinjaleDheSisteme",emriiFile:"Signals and systems", lloji:"Tjeter"}]
+var elektronikaFiles=[{lenda:"Elektronike",emriiFile:"Amplifikatoret",lloji:"Liber"}];
+var databazeFiles=[{lenda:"Databaze",emriiFile:"Tabelat relacionale",lloji:"Afate"}];
+var internetFiles=[{lenda:"Internet",emriiFile:"Hyrje ne internet",lloji:"Liber"}];
 $("#shtoButton").click(
   function(){
     var lenda =$('#lendet').find(":selected").val();
@@ -59,6 +59,12 @@ $("#shtoButton").click(
       SinjaleSistemeFiles.push(materiali);
     }else if(lenda === "POO"){
       pooFiles.push(materiali);
+    }else if(lenda=="Elektronike"){
+      elektronikaFiles.push(materiali);
+    }else if(lenda=="Databaze"){
+      databazeFiles.push(materiali);
+    }else if(lenda=="Internet"){
+      internetFiles.push(materiali);
     }
     $("#lendet option:selected").prop("selected", false);
     $("#lloji option:selected").prop("selected", false);
@@ -66,10 +72,6 @@ $("#shtoButton").click(
     shfaqMaterialin(lenda);
   }
 );
-
-var SinjaleSistemeFiles=[{lenda: " SinjaleDheSisteme", emriiFile:" Serite Furie", lloji:" Detyra"},
-{lenda:" SinjaleDheSisteme",emriiFile:" Hyrje ne Sinjale", lloji:" Ligjerata 1"},
-{lenda:" SinjaleDheSisteme",emriiFile:" Signals and systems", lloji:" Libra Anglisht"}]
 
 function shfaqMaterialin(lenda){
   var shfaqLenda =$('#selectLiteraturen').find(":selected").val();
@@ -94,29 +96,17 @@ function shfaqMaterialin(lenda){
       }
       tabela.appendChild(tr);
     });
-    
   }else if(lenda==="SinjaledheSisteme"){
     const tabela = document.getElementById("tabela");
     tabela.innerHTML = "";
     tabela.innerHTML = getHeader();
-
     SinjaleSistemeFiles.forEach((ssfile) => {
       const tr = document.createElement('tr');
       for(const key in ssfile){
         const td = document.createElement('td');     
         td.innerText = ssfile[key];
+        td.classList.add("tdstyle");
         tr.appendChild(td);
-        document.getElementById("rreshti").classList.add("trstyle");
-        $("td").css({"width":"500px","background-color":" rgb(238, 238, 238)",
-        "color":" rgb(111, 111, 111)",
-        "padding":" 20px 30px"})
-        $("th").css({
-          "background-color": "rgb(112, 196, 105)",
-          "color": "white",
-          "font-weight": "normal",
-          "padding": "20px 30px",
-          "text-align": "center"});
-        
       }
       tabela.appendChild(tr);
     })
@@ -124,12 +114,54 @@ function shfaqMaterialin(lenda){
     const tabela = document.getElementById("tabela");
     tabela.innerHTML = "";
     tabela.innerHTML = getHeader();
-
     pooFiles.forEach((poofile) => {
       const tr = document.createElement('tr');
       for(const key in poofile){
         const td = document.createElement('td');     
         td.innerText = poofile[key];
+        td.classList.add("tdstyle");
+        tr.appendChild(td);
+      }
+      tabela.appendChild(tr);
+    })
+  }else if(lenda==="Databaze"){
+    const tabela = document.getElementById("tabela");
+    tabela.innerHTML = "";
+    tabela.innerHTML = getHeader();
+    databazeFiles.forEach((databazefile) => {
+      const tr = document.createElement('tr');
+      for(const key in databazefile){
+        const td = document.createElement('td');     
+        td.innerText = databazefile[key];
+        td.classList.add("tdstyle");
+        tr.appendChild(td);
+      }
+      tabela.appendChild(tr);
+    })
+  }else if(lenda==="Elektronike"){
+    const tabela = document.getElementById("tabela");
+    tabela.innerHTML = "";
+    tabela.innerHTML = getHeader();
+    elektronikaFiles.forEach((elektronikefile) => {
+      const tr = document.createElement('tr');
+      for(const key in elektronikefile){
+        const td = document.createElement('td');     
+        td.innerText = elektronikefile[key];
+        td.classList.add("tdstyle");
+        tr.appendChild(td);
+      }
+      tabela.appendChild(tr);
+    })
+  }else if(lenda==="Internet"){
+    const tabela = document.getElementById("tabela");
+    tabela.innerHTML = "";
+    tabela.innerHTML = getHeader();
+    internetFiles.forEach((internetfile) => {
+      const tr = document.createElement('tr');
+      for(const key in internetfile){
+        const td = document.createElement('td');     
+        td.innerText = internetfile[key];
+        td.classList.add("tdstyle");
         tr.appendChild(td);
       }
       tabela.appendChild(tr);
