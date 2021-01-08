@@ -168,4 +168,19 @@ function pausesong(){
     play.innerHTML = '<i class="fa fa-play" aria-hidden="true"></i>';
 }
  
+// next song
+function next_song(){
+    if(index_no < All_song.length - 1){
+        index_no += 1;
+        load_track(index_no);
+        playsong();
+    }else{
+        index_no = 0;
+        load_track(index_no);
+        playsong();
+ 
+    }
+}
+ 
+ 
 
