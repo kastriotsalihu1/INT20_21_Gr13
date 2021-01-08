@@ -23,3 +23,93 @@ let Playing_song = false;
 //create a audio Element
 let track = document.createElement('audio');
 
+
+ 
+//All songs list
+let All_song = [
+    {
+      name: "Four Seasons",
+      path: "videos/Four seasons- Vivaldi.mp3",
+      img: "images/pomodoro_img/four seasons.jpg",
+      singer: "Vivaldi"
+    },
+    {
+      name: "Fur Elise",
+      path: "videos/Fur Elise- Beethoven.mp3",
+      img: "images/pomodoro_img/fur elise.jpg",
+      singer: "Beethoven"
+    },
+    {
+      name: "Classical Play",
+      path: "videos/Mozart.mp3",
+      img: "images/pomodoro_img/mozart1.jpg",
+      singer: "Mozart"
+    },
+    {
+      name: "Piano Play",
+      path: "videos/Piano Music- Marc Robillard.mp3",
+      img: "images/pomodoro_img/piano1.jpg",
+      singer: "Marc Robillard"
+    },
+    {
+      name: "Ambient Music",
+      path: "videos/ambient music.mp3",
+      img: "images/pomodoro_img/ambient music.jpg",
+      singer: "DJ"
+    },
+    {
+      name: "Rain Sounds",
+      path: "videos/Rain Sound.mp3",
+      img: "images/pomodoro_img/rain.jpg",
+      singer: "The Sky"
+    },
+    {
+      name: "The Girl I Met",
+      path: "videos/Kudasai - the girl i haven't met.mp3",
+      img: "images/pomodoro_img/kudasai.gif",
+      singer: "Kudasai"
+    },
+    {
+      name: "Ocean Waves",
+      path: "videos/Ocean Wave.mp3",
+      img: "images/pomodoro_img/ocean.jpg",
+      singer: "Ocean"
+    },
+    {
+      name: "Sorry I Like You",
+      path: "videos/Burbank - sorry i like you.mp3",
+      img: "images/pomodoro_img/burbank.jpg",
+      singer: "Burbank"
+    },
+    {
+      name: "Lo-fi Song",
+      path: "videos/Lo-Fi Hiphop Beats Study Timer.mp3",
+      img: "images/pomodoro_img/lofi1.png",
+      singer: "DJ"
+    },
+    {
+      name: "Chill Guitar",
+      path: "videos/Chill Guitar.mp3",
+      img: "images/pomodoro_img/chill guitar.jpg",
+      singer: "Unknown"
+    },
+    {
+      name: "Piano Music",
+      path: "videos/Piano Music.mp3",
+      img: "images/pomodoro_img/piano2.jpg",
+      singer: "Unknown"
+    },
+    {
+      name: "Lofi Song",
+      path: "videos/Lo-fi song.mp3",
+      img: "images/pomodoro_img/lofi2.jpg",
+      singer: "DJ"
+    },
+    {
+      name: "Classical Music",
+      path: "videos/Classical music.mp3",
+      img: "images/pomodoro_img/classical music.jpg",
+      singer: "Haydn"
+    }
+ ];
+ 
