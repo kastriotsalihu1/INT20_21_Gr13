@@ -202,4 +202,9 @@ function volume_change(){
     track.volume = recent_volume.value / 100;
 }
  
+// change slider position 
+function change_duration(){
+    slider_position = track.duration * (slider.value / 100);
+    track.currentTime = slider_position;
+}
 
