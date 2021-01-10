@@ -11,6 +11,7 @@ $(document).ready(function () {
     }
   });
 
+
   $(document.body).on("click", "#itemlist > li", function () {
     $(this).toggleClass("checked");
   });
@@ -25,7 +26,7 @@ $(document).ready(function () {
   });
 
   $("#addnote").click(function () {
-    $("#notecontainer").prepend("<div class=\"card note\"><i class=\"closenote fas fa-times-circle\"></i><h2 contenteditable=\"true\" class=\"notetitle\">Thy Title!</h2><p contenteditable=\"true\" class=\"text\">I want to note something!</p>"
+    $("#notecontainer").prepend("<div class=\"card note\"><i class=\"closenote fas fa-times-circle\"></i><h2 contenteditable=\"true\" class=\"smalltitle\">Thy Title!</h2><p contenteditable=\"true\" class=\"text\">I want to note something!</p>"
     );
   });
 

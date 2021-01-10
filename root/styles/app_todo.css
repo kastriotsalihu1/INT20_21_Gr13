@@ -30,19 +30,6 @@ main {
   z-index: 10;
 }
 
-.notetitle {
-  text-transform: uppercase;
-  color: #292929;
-  font-size: 30px;
-  font-weight: 600;
-}
-
-.cardtitle {
-  text-transform: uppercase;
-  color: white;
-  font-size: 35px;
-  font-weight: bolder;
-}
 
 input {
   outline: none;
@@ -85,13 +72,6 @@ ul {
   padding: 0;
 }
 
-.text {
-  word-wrap: break-word;
-  overflow: auto;
-  font-size: 20px;
-  font-weight: 600;
-}
-
 .todotext {
   padding: 15px 10px 15px 40px;
 }
@@ -129,7 +109,7 @@ ul li.checked::before {
   border-color: #fff;
   border-style: solid;
   border-width: 0 2px 2px 0;
-
+  top:18px;
   left: 16px;
   transform: rotate(45deg);
   height: 15px;
@@ -182,6 +162,7 @@ ul li.checked::before {
   width: 300px;
   text-align: center;
   transition: 0.2s;
+
 }
 .note:hover {
   background: #ecf4ff;
