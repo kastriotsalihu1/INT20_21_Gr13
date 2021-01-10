@@ -1,15 +1,4 @@
-.tree{
-    position: absolute;
-    top:10px;
-    left:100px;
-    text-align: center;
-    text-transform: uppercase;
-}
-
-.inside{
-    background-color: rgb(237, 134, 132);
-    width:90%;
-    height: 60%;
-    position:relative;
-    top:35px;
+canvas{
+ background-color: green;  
+ border-radius:5px ;
 }
