@@ -27,6 +27,7 @@ $(function () {
             previous.removeClass('active');
             $(this).addClass('active');
 
+            // get card at random position, set its background color to random
             $(card).eq(Math.floor(Math.random() * card.length)).css(
                 'background-color',
                 `rgba(${Math.random() * 256},${Math.random() * 256},${Math.random() * 256}, ${Math.random()})`
