@@ -21,11 +21,9 @@ footer {
   width: 100%;
 }
 
-
 p {
-    font-size: 20px;
-  }
-  
+  font-size: 20px;
+}
 
 /* <!-- LOGO AND NAVIGATION --> */
 header {
@@ -202,8 +200,8 @@ svg {
   margin: 0;
 }
 #register p {
-  margin-bottom:50px;
-  }
+  margin-bottom: 50px;
+}
 
 #register a {
   text-transform: uppercase;
@@ -225,8 +223,8 @@ footer {
 .fo_container {
   display: flex;
   justify-content: space-between;
-  align-items:flex-end;
-  padding-top:100px;
+  align-items: flex-end;
+  padding-top: 100px;
 }
 
 .sign_up {
@@ -266,4 +264,26 @@ table td {
 }
 .newspaper input[type="email"] {
   width: 100%;
+}
+
+td {
+  padding-left: 30px;
+  padding-right: 40px;
+  text-transform: uppercase;
+}
+
+tr a {
+  line-height: 30px;
+  font-weight: 300;
+  font-size: 20px;
+}
+
+#icons {
+  font-size: 50px;
+}
+#icons i {
+  margin: 0 3px;
+}
+.fo_container p {
+  margin: 0;
 }
