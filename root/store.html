@@ -2,283 +2,260 @@
 <html lang="en">
 
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="styles/app_navigation.css" />
     <link rel="stylesheet" href="styles/store.css" />
-    <script src="scripts/store.js"></script>
     <script src="scripts/jquery.js"></script>
-
-
+    <script src="scripts/store.js"></script>
+    <link href="dependencies/fontawesome/css/all.css" rel="stylesheet" />
     <title>Document</title>
 </head>
 
 <body>
+    <!-- this is the header -->
+    <header>
+        <!-- opens and closes the side navigation bar -->
+        <div id="hamburger" class="centeredicon">
+            <i class="fas fa-bars fa-2x"></i>
+        </div>
 
-    <div class="container">
+        <!-- displays the nessesary user information -->
+        <div id="info">
+            <!-- username and photo -->
+            <div id="user">
+                <div id="photo" class="centeredicon">
+                    <i class="far fa-user-circle fa-1x"></i>
+                </div>
+                <div id="name">Lendrit Ibrahimi</div>
+            </div>
+            <!-- notifications -->
+            <div id="notification" class="centeredicon" data-badge="">
+                <i class="far fa-bell fa-2x" id="notification-icon"></i>
+            </div>
+        </div>
+    </header>
 
-        <header>
-            <nav>
-                <section id="search">
-                    <!-- Search form -->
-                    <input type="text" value="Search.." name="q">
-                    <input type="submit" value="Search">
-                </section>
-            </nav>
-
-            <section id="submenu">
-                <!-- Defining the sub menu -->
-                <ul>
-                    <li><a href="#">Product category #1</a></li>
-                    <li><a href="#">Product category #2</a></li>
-                    <li><a href="#">Product category #3</a></li>
-                    <li><a href="#">Product category #4</a></li>
-                    <li><a href="#">Product category #5</a></li>
-                    <li><a href="#">Product category #6</a></li>
-                </ul>
-            </section>
-        </header>
-
-        <!-- Defining the main content section -->
+    <div id="container">
+        <!-- side navigation menu -->
+        <nav>
+            <div class="nav-icons fa-2x">
+                <a href="#"><i class="fab fa-chromecast" id="chromecast"></i></a>
+                <a href="application_todo.html"><i class="far fa-list-alt" id="list"></i></a>
+                <a href="#"><i class="far fa-folder" id="folder"></i></a>
+            </div>
+        </nav>
         <main>
             <!-- Defining submain content section -->
-            <div class="left">
-                <div class="title">
-                    <h3>Latest products</h3>
-                </div>
-                <div class="options">
-                    Group by:
-                    <br>
-                    Sort by:
-
+            <div class="card left">
+                <div class="contentheader">
+                    <h2 class="cardtitle">Latest Products</h2>
                 </div>
                 <div class="products">
-                    <div class="product">
-                        <div class="img"><img alt="" src="images/store/post1.jpg"></div>
+                    <div class="card product">
+                        <figure>
+                            <img alt="" src="images/store/fletore-blue.jpg">
+                            <figcaption>
+                                <a class="name" href="#">Fletore</a>
+                            </figcaption>
+                        </figure>
                         <div class="info">
-                            <h2><a class="name" href="#">Product 1</a></h2>
-                            <p>Description 1 Lorem ipsum dolor sit amet, consectetur adipisicing elit. Non
-                                eligendi
-                                doloribus numquam explicabo in temporibus accusamus ipsa praesentium cupiditate,
-                                provident animi obcaecati suscipit. Repellat cum, temporibus sapiente quod
-                                aliquid
-                                labore.</p>
                             <div class="price">
-                                Our price:<strong>$550.00</strong>
+                                <span class="priceValue">$250.00</span>
                             </div>
-                            <div class="actions">
-                                <button href="#" class="details">Details</button>
-                                <button href="#" class="to-cart">Add to cart</button>
+                            <div class="colorswitcher">
+                                <button type="button" id="red" class="activeColor"> </button>
+                                <button type="button" id="blue"> </button>
+                                <button type="button" id="green"> </button>
+                                <button type="button" id="purple"> </button>
+                            </div>
+                            <button class="tocart">Add to cart</button>
+                        </div>
+                    </div>
+                    <div class="card product">
+                        <figure>
+                            <img alt="" src="images/store/kimiku-red.jpg">
+                            <figcaption>
+                                <a class="name" href="#">Kimik</a>
+                            </figcaption>
+                        </figure>
+                        <div class="info">
+                            <div class="price">
+                                <span class="priceValue">$350.00</span>
+                            </div>
+                            <div class="colorswitcher">
+                                <button type="button" id="red" class="activeColor"> </button>
+                                <button type="button" id="blue"> </button>
+                                <button type="button" id="green"> </button>
+                                <button type="button" id="purple"> </button>
+                            </div>
+                            <button class="tocart">Add to cart</button>
+                        </div>
+                    </div>
+                    <div class="card product">
+                        <figure>
+                            <img alt="" src="images/store/maica-green.jpg">
+                            <figcaption>
+                                <a class="name" href="#">Maic&euml;</a>
+                            </figcaption>
+                        </figure>
+                        <div class="info">
+                            <div class="price">
+                                <span class="priceValue">$550.00</span>
+                            </div>
+                            <div class="colorswitcher">
+                                <button type="button" id="red" class="activeColor"> </button>
+                                <button type="button" id="blue"> </button>
+                                <button type="button" id="green"> </button>
+                                <button type="button" id="purple"> </button>
+                            </div>
+                            <button class="tocart">Add to cart</button>
+                        </div>
+                    </div>
+                    <div class="card product">
+                        <figure>
+                            <img alt="" src="images/store/qanta-purple.jpg">
+                            <figcaption>
+                                <a class="name" href="#">Qant&euml;</a>
+                            </figcaption>
+                        </figure>
+                        <div class="info">
+                            <div class="price">
+                                <span class="priceValue">$250.00</span>
+                            </div>
+                            <div class="colorswitcher">
+                                <button type="button" id="red" class="activeColor"> </button>
+                                <button type="button" id="blue"> </button>
+                                <button type="button" id="green"> </button>
+                                <button type="button" id="purple"> </button>
+                            </div>
+                            <button class="tocart">Add to cart</button>
+                        </div>
+                    </div>
+
+                    <!-- help keep the same width for all the products -->
+                    <div class="product-placeholder"></div>
+                    <div class="product-placeholder"></div>
+                    <div class="product-placeholder"></div>
+                    <div class="product-placeholder"></div>
+                </div>
+            </div>
+
+            <div class="card right">
+                <div class="card right_card">
+                    <div class="contentheader">
+                        <h2 class="cardtitle">Best Deals</h2>
+                    </div>
+                    <div class="content">
+                        <div class="offer">
+                            <div class="img"><img alt="" src="images/store/qanta-blue.jpg"></div>
+                            <div class="info">
+                                <a class="name" href="#">Qant&euml;</a>
+                                <div class="price">
+                                    <span class="usual">$600.00 </span>&nbsp;
+                                    <span class="special">$500.00</span>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="offer">
+                            <div class="img"><img alt="" src="images/store/qanta-purple.jpg"></div>
+                            <div class="info">
+                                <a class="name" href="#">Qant&euml;</a>
+                                <div class="price">
+                                    <span class="usual">$500.00 </span>&nbsp;
+                                    <span class="special">$400.00</span>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="offer">
+                            <div class="img"><img alt="" src="images/store/maica-green.jpg"></div>
+                            <div class="info">
+                                <a class="name" href="#">Maic&euml;</a>
+                                <div class="price">
+                                    <span class="usual">$700.00 </span>&nbsp;
+                                    <span class="special">$600.25</span>
+                                </div>
                             </div>
                         </div>
                     </div>
-                    <div class="product">
-                        <div class="img"><img alt="" src="images/store/post2.jpg"></div>
-                        <div class="info">
-                            <a class="name" href="#">Product 2</a>
-                            <p>Description 2</p>
-                            <div class="price">
-                                Our price:<strong>$250.00</strong>
+                </div>
+
+                <div class="card right_card">
+                    <div class="contentheader">
+                        <h2 class="cardtitle">Previous purchases</h2>
+                    </div>
+                    <div class="content">
+                        <div class="owned">
+                            <div class="img"><img alt="" src="images/store/kimiku-red.jpg"></div>
+                            <div class="info">
+                                <a class="name" href="#">Kimik</a>
+                                <div class="price">
+                                    $805.00
+                                </div>
                             </div>
-                            <div class="actions">
-                                <a href="#" class="details">Details</a>
-                                <a href="#" class="to-cart">Add to cart</a>
+                        </div>
+                        <div class="owned">
+                            <div class="img"><img alt="" src="images/store/kimiku-green.jpg"></div>
+                            <div class="info">
+                                <a class="name" href="#">Kimik</a>
+                                <div class="price">
+                                    $1205.00
+                                </div>
+                            </div>
+                        </div>
+                        <div class="owned">
+                            <div class="img"><img alt="" src="images/store/maica-green.jpg"></div>
+                            <div class="info">
+                                <a class="name" href="#">Maic&euml;</a>
+                                <div class="price">
+                                    $200.00
+                                </div>
+                            </div>
+                        </div>
+                        <div class="owned">
+                            <div class="img"><img alt="" src="images/store/qanta-blue.jpg"></div>
+                            <div class="info">
+                                <a class="name" href="#">Qant&euml;</a>
+                                <div class="price">
+                                    $200.00
+                                </div>
                             </div>
                         </div>
                     </div>
-                    <div class="product">
-                        <div class="img"><img alt="" src="images/store/post3.jpg"></div>
-                        <div class="info">
-                            <a class="name" href="#">Product 3</a>
-                            <p>Description 3</p>
-                            <div class="price">
-                                Our price:<strong>$350.00</strong>
-                            </div>
-                            <div class="actions">
-                                <a href="#" class="details">Details</a>
-                                <a href="#" class="to-cart">Add to cart</a>
+                </div>
+                <div class="card right_card">
+                    <div class="contentheader">
+                        <h2 class="cardtitle">Your Cart</h2>
+                    </div>
+                    <div class="content" id="cart">
+                        <div class="oncart">
+                            <div class="img"><img alt="" src="images/store/maica-green.jpg"></div>
+                            <div class="info">
+                                <a class="name" href="#">Maic&euml;</a>
+                                <div class="price">
+                                    Price:<span class="priceValue">$550.00</span>
+                                </div>
+                                <button class="removeCart">Remove from cart</button>
                             </div>
                         </div>
-                    </div>
-                    <div class="product">
-                        <div class="img"><img alt="" src="images/store/post4.jpg"></div>
-                        <div class="info">
-                            <a class="name" href="#">Product 4</a>
-                            <p>Description 1</p>
-                            <div class="price">
-                                Our price:<strong>$550.00</strong>
-                            </div>
-                            <div class="actions">
-                                <a href="#" class="details">Details</a>
-                                <a href="#" class="to-cart">Add to cart</a>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="product">
-                        <div class="img"><img alt="" src="images/store/post5.jpg"></div>
-                        <div class="info">
-                            <a class="name" href="#">Product 5</a>
-                            <p>Description 2</p>
-                            <div class="price">
-                                Our price:<strong>$250.00</strong>
-                            </div>
-                            <div class="actions">
-                                <a href="#" class="details">Details</a>
-                                <a href="#" class="to-cart">Add to cart</a>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="product">
-                        <div class="img"><img alt="" src="images/store/post6.jpg"></div>
-                        <div class="info">
-                            <a class="name" href="#">Product 5</a>
-                            <p>Description 2</p>
-                            <div class="price">
-                                Our price:<strong>$250.00</strong>
-                            </div>
-                            <div class="actions">
-                                <a href="#" class="details">Details</a>
-                                <a href="#" class="to-cart">Add to cart</a>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="product">
-                        <div class="img"><img alt="" src="images/store/post7.jpg"></div>
-                        <div class="info">
-                            <a class="name" href="#">Product 6</a>
-                            <p>Description 3</p>
-                            <div class="price">
-                                Our price:<strong>$350.00</strong>
-                            </div>
-                            <div class="actions">
-                                <a href="#" class="details">Details</a>
-                                <a href="#" class="to-cart">Add to cart</a>
+                        <div class="oncart">
+                            <div class="img"><img alt="" src="images/store/kimiku-red.jpg"></div>
+                            <div class="info">
+                                <a class="name" href="#">Kimik</a>
+                                <div class="price">
+                                    Price:<span class="priceValue">$350.00</span>
+                                </div>
+                                <button class="removeCart">Remove from cart</button>
                             </div>
                         </div>
                     </div>
                 </div>
             </div>
-
-            <div class="right">
-                <div class="top_right">
-                    <div class="title">
-                        <h3>Best deals</h3>
-                    </div>
-                    <div class="offers">
-                        <div class="img"><img alt="" src="images/store/post6.jpg"></div>
-                        <div class="info">
-                            <a class="name" href="#">Product 7</a>
-                            <div class="price">
-                                <span class="usual">$600.00 </span>&nbsp;
-                                <span class="special">$500.00</span>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="offers">
-                        <div class="img"><img alt="" src="images/store/post5.jpg"></div>
-                        <div class="info">
-                            <a class="name" href="#">Product 8</a>
-                            <div class="price">
-                                <span class="usual">$500.00 </span>&nbsp;
-                                <span class="special">$400.00</span>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="offers">
-                        <div class="img"><img alt="" src="images/store/post4.jpg"></div>
-                        <div class="info">
-                            <a class="name" href="#">Product 9</a>
-                            <div class="price">
-                                <span class="usual">$700.00 </span>&nbsp;
-                                <span class="special">$600.25</span>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-
-                <div class="bottom_right">
-                    <div class="title">
-                        <h3>Your purchases</h3>
-                    </div>
-                    <div class="owned">
-                        <div class="img"><img alt="" src="images/store/post3.jpg"></div>
-                        <div class="info">
-                            <a class="name" href="#">Product 10</a>
-                            <div class="price">
-                                $805.00
-                            </div>
-                        </div>
-                    </div>
-                    <div class="owned">
-                        <div class="img"><img alt="" src="images/store/post8.jpg"></div>
-                        <div class="info">
-                            <a class="name" href="#">Product 11</a>
-                            <div class="price">
-                                $1205.00
-                            </div>
-                        </div>
-                    </div>
-                    <div class="owned">
-                        <div class="img"><img alt="" src="images/store/post9.jpg"></div>
-                        <div class="info">
-                            <a class="name" href="#">Product 12</a>
-                            <div class="price">
-                                $200.00
-                            </div>
-                        </div>
-                    </div>
-                    <div class="owned">
-                        <div class="img"><img alt="" src="images/store/post6.jpg"></div>
-                        <div class="info">
-                            <a class="name" href="#">Product 12</a>
-                            <div class="price">
-                                $200.00
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                <div class="shopping-cart">
-                    <div class="title">
-                        <h3>Your Cart</h3>
-                    </div>
-                    <div class="cart">
-                        <div class="oncart">
-                            <div class="img"><img alt="" src="images/store/post4.jpg"></div>
-                            <div class="info">
-                                <a class="name" href="#">Product 4</a>
-                                <div class="price">
-                                    Price:<strong>$550.00</strong>
-                                </div>
-                                <div class="actions">
-                                    <a href="#" class="remove-from-cart">Remove from cart</a>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="oncart">
-                            <div class="img"><img alt="" src="images/store/post3.jpg"></div>
-                            <div class="info">
-                                <a class="name" href="#">Product 3</a>
-                                <div class="price">
-                                   Price:<strong>$350.00</strong>
-                                </div>
-                                <div class="actions">
-                                    <a href="#" class="remove-from-cart">Remove from cart</a>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
         </main>
-
-        <hr>
-
-        <footer>
-            <!-- Defining the footer section of the page -->
-            <div id="privacy">
-                Policy
-            </div>
-        </footer>
-
     </div>
+
+    <script src="scripts/jquery.js"></script>
+    <script src="scripts/main.js"></script>
 </body>
 
 </html>
