@@ -30,7 +30,6 @@ main {
   z-index: 10;
 }
 
-
 input {
   outline: none;
   border: none;
@@ -51,16 +50,19 @@ input {
   padding-bottom: 150px;
   overflow: auto;
 }
-.cardcontent::-webkit-scrollbar-track {
+
+
+
+.scrollwheel::-webkit-scrollbar-track {
   border-radius: 3px;
   background-color: whitesmoke;
 }
 
-.cardcontent::-webkit-scrollbar {
+.scrollwheel::-webkit-scrollbar {
   width: 12px;
 }
 
-.cardcontent::-webkit-scrollbar-thumb {
+.scrollwheel::-webkit-scrollbar-thumb {
   border-radius: 3px;
   background-color: #3768c3;
 }
@@ -109,7 +111,7 @@ ul li.checked::before {
   border-color: #fff;
   border-style: solid;
   border-width: 0 2px 2px 0;
-  top:18px;
+  top: 18px;
   left: 16px;
   transform: rotate(45deg);
   height: 15px;
@@ -156,37 +158,49 @@ ul li.checked::before {
 }
 
 .note {
+  padding:20px 0 5px 0;
   position: relative;
-  background-color: white;
+  background-color:aliceblue;
   height: 300px;
   width: 300px;
   text-align: center;
   transition: 0.2s;
-
+  display:flex;
+  flex-direction: column;
 }
 .note:hover {
-  background: #ecf4ff;
+  background: #d9e8ff;
 }
 
 #notecontainer {
   display: flex;
   justify-content: center;
   flex-wrap: wrap;
-  overflow:auto;
+}
+.notetitle {
+  height: 70px;
+
+}
+.notecontent {
+  height:100%;
 }
 
-.note > h2,
-.note > p {
+.notecontent,.notetitle{
+  border-radius: 5px;
+  margin:5px 10px;
+  padding-top:5px;
+  background-color:white;
+  overflow-y:auto;
+  overflow-x:hidden;
+}
+
+.note h2,
+.note p {
+  padding: 0 10px;
+  margin: 0;
   outline: none;
   border: none;
-  margin-bottom: 25px;
-}
-.note > h2 {
-  flex-grow: 1;
-}
-
-.note > p {
-  flex-grow: 2;
+  overflow:hidden;
 }
 
 .closenote {
@@ -195,8 +209,8 @@ ul li.checked::before {
   width: 30px;
   height: 30px;
   font-size: 0px;
-  right: 7px;
-  top: 7px;
+  right: 5px;
+  top: 5px;
   transition: 0.2s;
 }
 .note:hover .closenote {
