@@ -13,7 +13,7 @@ var startTimer;
 
 start.addEventListener('click', function(){
     if(startTimer === undefined){
-        startTimer = setInterval(timer, 1000)
+        startTimer = setInterval(timer1, 1000)
     } else {
         alert("Timer is already running");
     }
@@ -38,7 +38,7 @@ stop.addEventListener('click', function(){
 
 
 //Start Timer Function
-function timer(){
+function timer1(){
     //Work Timer Countdown
     if(ws.innerText != 0){
         ws.innerText--;
@@ -75,16 +75,6 @@ function stopInterval(){
 }
 
 
-$(document).ready(function () {
-    $(".c1").click(function () {
-        //I mshef krejt kta kullerat tjer
-        $(this).siblings().toggle();
-
-        //e bon show divin classical --- nuk osht menyre e mire qikjo
-        $("#classical").show();
-
-    });
-  });
 
 
 
