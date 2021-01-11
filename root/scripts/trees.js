@@ -6,7 +6,7 @@ var Button = document.getElementById('btn');
 
 
 Button.addEventListener('click', function(){
-   ctx.fillRect(Math.random()*100,Math.random()*100,20,20)
+   ctx.fillRect(Math.random()*499,Math.random()*199,20,20)
 }
    
    );
