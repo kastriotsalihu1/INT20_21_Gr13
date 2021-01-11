@@ -3,6 +3,7 @@ var offset = 20;
 
 
 $(document).ready(function () {
+
     //set the position of the scrollbar to the bottom
     // $('.content').scrollTop($('.content')[0].scrollHeight);
 
