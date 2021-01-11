@@ -1,0 +1,32 @@
+:root {
+  --primarycolor: rgb(37, 37, 37);
+}
+
+main {
+  display: grid;
+
+  grid-template-columns: repeat(3, 33%);
+  grid-template-rows: repeat(3, 33%);
+
+  gap: 10px;
+  grid-template-areas:
+    "a a b"
+    "a a c"
+    "a a d";
+}
+.card {
+  background-color: var(--primarycolor);
+}
+
+#latest {
+  grid-area: a;
+}
+#featured {
+  grid-area: b;
+}
+#recent {
+  grid-area: c;
+}
+#cart {
+  grid-area: d;
+}
