@@ -49,7 +49,7 @@ body{
     /* song image */
 .left img{
     object-fit: contain;
-     height: 45%;
+     height: 180px;
     /* width: 60%; */
     border-radius: 15px;
     box-shadow: 1px 0px 20px 12px rgba(240,240,240,0.2);
