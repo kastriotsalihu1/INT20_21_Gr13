@@ -1,12 +1,15 @@
 const canvas = document.getElementById('canvas');
+const ctx = canvas.getContext('2d');
 const image = document.getElementById('tree_img');
-var addButton = document.getElementById('btn');
+var Button = document.getElementById('btn');
 
 
-addButton.addEventListener('click', addTree);
 
-function addTree(){
-   canvas.appendChild(image);
-
+Button.addEventListener('click', function(){
+   ctx.fillRect(Math.random()*100,Math.random()*100,20,20)
 }
+   
+   );
+
+
 
