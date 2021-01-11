@@ -7,16 +7,6 @@ var Button = document.getElementById('btn');
 
 ctx.fillStyle = "rgb(29, 18, 16)";
 
-Button.addEventListener('click', function(){
-   ctx.fillRect(Math.random()*499,Math.random()*199,20,20)
-}
-   
-   );
-
-
-
-//Button.addEventListener('dblclick',function(){
-
-//ctx.drawImage(image);
-
-//});
+Button.addEventListener('click', function () {
+   ctx.drawImage(image, Math.random() * 499, Math.random() * 199, 40, 40);
+});

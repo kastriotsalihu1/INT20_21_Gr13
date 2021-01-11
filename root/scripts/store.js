@@ -4,7 +4,7 @@ var offset = 20;
 
 $(document).ready(function () {
     //set the position of the scrollbar to the bottom
-    $('.content').scrollTop($('.content')[0].scrollHeight);
+    // $('.content').scrollTop($('.content')[0].scrollHeight);
 
     $(".product figure img").each(function () {
         // when the image is loaded set the active button acodingly
@@ -79,4 +79,11 @@ $(document).ready(function () {
         let onCartProduct = $(this).parent().parent();
         $(onCartProduct).remove();
     });
+    $('.buy').click(function(){
+        $(this).parent().parent().addClass("clicked");
+      });
+      
+      $('.remove, .more').click(function(){
+        $(this).parent().parent().removeClass("clicked");
+      });
 });
