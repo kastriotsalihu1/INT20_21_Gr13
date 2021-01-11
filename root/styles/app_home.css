@@ -1,0 +1,31 @@
+main {
+  display: grid;
+
+  grid-template-columns: repeat(4, 25%);
+  grid-template-rows: repeat(2, 50%);
+
+  gap: 10px;
+  grid-template-areas:
+    "a b b c"
+    "d d e e";
+}
+
+.card:nth-child(1) {
+  grid-area: a;
+  background-color:red;
+}
+.card:nth-child(2) {
+  grid-area: b;
+  background-color:green;
+}
+.card:nth-child(3) {
+  grid-area: c;
+  background-color:blue;
+}
+.card:nth-child(4) {
+  grid-area: d;
+  background-color:orange;
+}.card:nth-child(5) {
+  grid-area: e;
+  background-color:#161616;
+}

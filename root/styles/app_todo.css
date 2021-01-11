@@ -192,6 +192,7 @@ ul li.checked::before {
   background-color:white;
   overflow-y:auto;
   overflow-x:hidden;
+  overscroll-behavior: contain;
 }
 
 .note h2,

@@ -4,58 +4,26 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <link rel="stylesheet" href="styles/app_navigation.css" />
+    <link rel="stylesheet" href="styles/app_home.css" />
     <link href="dependencies/fontawesome/css/all.css" rel="stylesheet" />
     <title>Document</title>
   </head>
 
   <body>
-    <!-- this is the header -->
-    <header>
-      <!-- opens and closes the side navigation bar -->
-      <div id="hamburger" class="centeredicon">
-        <i class="fas fa-bars fa-2x"></i>
-      </div>
-
-      <!-- displays the nessesary user information -->
-      <div id="info">
-        <!-- username and photo -->
-        <div id="user">
-          <div id="photo" class="centeredicon">
-            <img src="images/profile/profile-placeholder.png" alt="Profile picture" />
-          </div>
-          <div id="name">Arben Gashi</div>
-          <div id="settingsicon" class="centeredicon">
-            <i class="fas fa-caret-down"></i>
-            <div id="settingdropdown" style="display: none">
-              <a href="index.html"><div class="setting">LOG OUT</div></a>
-            </div>
-          </div>
-
-        </div>
-        <!-- notifications -->
-        <div id="notification" class="centeredicon" data-badge="">
-          <i class="far fa-bell fa-2x" id="notification-icon"></i>
-        </div>
-      </div>
-    </header>
-
+    <div id="header"></div>
     <div id="container">
-      <!-- side navigation menu -->
-      <nav>
-        <div class="nav-icons fa-2x">
-          <a href="application.html"><i class="fas fa-home" id="home"></i></a>
-          <a href="application_todo.html"
-            ><i class="far fa-list-alt" id="todo"></i
-          ></a>
-          <a href="application_grades.html"><i class="far fa-folder-open" id="grades"></i></a>
-          <a href="application_pomodoro.html"><i class="far fa-clock" id="pomodoro"></i></a>
-          <a href="application_store.html"><i class="far fa-credit-card" id="store"></i></a>
-        </div>
-      </nav>
-      <main></main>
+      <div id="sidebar"></div>
+      <main>
+        <div class="card"></div>
+        <div class="card"></div>
+        <div class="card"></div>
+        <div class="card"></div>
+        <div class="card"></div>
+      </main>
     </div>
 
     <script src="scripts/jquery.js"></script>
+    <script src="scripts/load.js"></script>
     <script src="scripts/main.js"></script>
   </body>
 </html>
