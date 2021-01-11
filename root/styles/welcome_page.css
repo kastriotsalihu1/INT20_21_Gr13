@@ -1,5 +1,12 @@
 @import url("https://fonts.googleapis.com/css2?family=Open+Sans&display=swap");
 
+:root {
+  --primarycolor: #377ded;
+  --secondarycolor: #3070d4;
+  --darkersecondary:#18386b;
+}
+
+
 body {
   margin: 0;
   font-family: "Open Sans", sans-serif;
@@ -21,6 +28,11 @@ footer {
   width: 100%;
 }
 
+path{
+  fill:var(--primarycolor);
+  fill-opacity: 1;
+}
+
 p {
   font-size: 20px;
 }
@@ -32,7 +44,7 @@ header {
   justify-content: space-between;
   padding: 50px 15% 0 15%;
   height: 200px;
-  background-color: #377ded;
+  background-color: var(--primarycolor);
   color: white;
 }
 header img {
@@ -41,7 +53,7 @@ header img {
 }
 nav {
   height: 100%;
-  background-color: #377ded;
+  background-color: var(--primarycolor);
   display: flex;
   align-items: center;
 }
@@ -72,7 +84,7 @@ header li {
 
 /* <!-- INTRO AND APPLICATION PLACEHOLDER --> */
 #intro {
-  background-color: #377ded;
+  background-color: var(--primarycolor);
   padding-top: 100px;
   color: white;
 }
@@ -177,7 +189,7 @@ h2 {
 }
 
 #reviews p {
-  color: #377ded;
+  color: var(--primarycolor);
 }
 
 /* <!-- REGISTER --> */
@@ -187,7 +199,7 @@ svg {
 }
 
 #register {
-  background-color: #377ded;
+  background-color: var(--primarycolor);
   color: white;
   display: flex;
   align-items: center;
@@ -213,7 +225,7 @@ svg {
 footer {
   width: 100%;
   padding-top: 50px;
-  background-color: #3070d4;
+  background-color: var(--secondarycolor);
   color: white;
   display: flex;
   flex-direction: column;
@@ -260,7 +272,7 @@ table td {
   width: 150px;
   padding: 0;
   color: white;
-  background-color: #18386b;
+  background-color: var(--darkersecondary);
 }
 .newspaper input[type="email"] {
   width: 100%;

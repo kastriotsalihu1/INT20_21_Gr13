@@ -1,7 +1,7 @@
 main {
   display: grid;
 
-  grid-template-columns: repeat(2, 45%);
+  grid-template-columns: repeat(2, 50%);
 
   gap: 10px;
   grid-template-areas: "a b";
@@ -88,7 +88,7 @@ ul li {
   transition: 0.2s;
   margin: 15px 30px 15px 30px;
   border-radius: 10px;
-  user-select: none;
+  -webkit-user-select: none;
   box-shadow: 0 5px 10px rgba(0, 0, 0, 0.1);
   overflow: hidden;
 }
@@ -121,7 +121,7 @@ ul li.checked::before {
   position: absolute;
   bottom: 10px;
   text-align: center;
-  user-select: none;
+  -webkit-user-select: none;
 }
 
 .displayinput {

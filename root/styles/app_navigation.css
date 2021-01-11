@@ -41,9 +41,11 @@ header {
 #hamburger {
   flex-shrink: 0;
   background-color: white;
-  box-sizing: border-box;
+  /* box-sizing: border-box; */
   width: 100px;
   height: 100%;
+  z-index: 9;
+  box-shadow: 0 5px 5px -2px rgba(0, 0, 0, 0.15);
 }
 
 #hamburger:hover {
@@ -67,6 +69,7 @@ header {
   height: 65px;
   border-radius: 10px;
   margin-right: 20px;
+  margin-left: 60px;
   background-size: contain;
   overflow: hidden;
 }
@@ -80,20 +83,80 @@ header {
 }
 
 #user {
-  width: 350px;
+  width: 500px;
   display: flex;
-  justify-content: center;
   align-items: center;
-  font-size: 25px;
-  font-weight: bold;
-  color: #242424;
+  font-size: 30px;
+  font-weight: 500;
+  color: black;
+  -webkit-user-select: none;
+  position: relative;
+}
 
-  box-shadow: -2px -1px 10px 0px rgba(0, 0, 0, 0.15);
+#settingsicon {
+  margin-left: 30px;
+}
+
+#settingdropdown {
+
+  display: flex;
+  flex-direction: column;
+  position: absolute;
+  top: 100%;
+  margin-top:10px;
+  right:25px;
+  width: 70%;
+  /* height: 450px; */
+  background-color:#4d85fe;
+  box-shadow: 0px 10px 30px 3px rgba(0, 0, 0, 0.08);
+  border-radius: 7px;
+}
+#settingdropdown::after {
+content:'';
+width:70px;
+height:70px;
+position: absolute; 
+border:inherit;
+left:50%;
+top:-10px;
+z-index:-10;
+transform: rotateZ(45deg);
+background-color:inherit;
+}
+
+
+.setting{
+margin:10px 20px;
+background-color: whitesmoke;
+display: flex;
+align-items: center;
+height:50px; 
+border-radius: 5px;
+box-shadow: 0px 0px 9px 5px rgba(0, 0, 0, 0.15);
+font-size: 25px;
+padding-left:30px;
+/* font-weight: bold; */
+color:#292929;
+}
+.setting:hover{
+  background-color: rgb(226, 226, 226);
+}
+.setting:first-child{
+  margin-top:20px;
+}
+.setting:last-child{
+  margin-bottom:20px;
+}
+
+#user:hover #settingsicon {
+  color: #4d85fe;
 }
 
 #notification {
   width: 125px;
+  box-shadow: 0px -1px 8px 0px rgba(0, 0, 0, 0.13);
   flex-direction: column;
+  z-index: inherit;
 }
 
 #notification:hover {
@@ -140,6 +203,12 @@ nav {
   position: relative;
   z-index: 10;
   box-shadow: 5px -2px 5px -2px rgba(0, 0, 0, 0.15);
+  transition: 0.2s;
+}
+
+.hidenav {
+  width: 0px;
+  opacity: 0;
 }
 
 .nav-icons > a > i {
@@ -168,7 +237,7 @@ nav {
 main {
   width: 100%;
   height: 100%;
-  padding: 20px;
+  padding: 20px 100px 20px 50px;
   box-sizing: border-box;
   background-color: #f8fbfc;
 }
@@ -203,7 +272,7 @@ main {
   font-weight: 600;
 }
 
-.button{
+.button {
   border: none;
   outline: none;
   background: none;
