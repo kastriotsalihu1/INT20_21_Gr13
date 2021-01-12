@@ -12,7 +12,7 @@ main {
 
 .card:nth-child(1) {
   grid-area: a;
-  background-color:red;
+  background-color:blue;
 }
 .card:nth-child(2) {
   grid-area: b;
@@ -20,7 +20,7 @@ main {
 }
 .card:nth-child(3) {
   grid-area: c;
-  background-color:blue;
+  background-color:red;
 }
 .card:nth-child(4) {
   grid-area: d;
