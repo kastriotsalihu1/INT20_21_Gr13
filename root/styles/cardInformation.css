@@ -1,0 +1,49 @@
+.information {
+    z-index: 99;
+    background: #254053;
+    width: 50px;
+    height: 50px;
+    position: absolute;
+    top: 0px;
+    left: 0px;
+    border-radius: 0px 0px 200px 0px;
+    transition: all 0.5s, border-radius 2s;
+  }
+  .information .icon {
+    position: absolute;
+    right: 27px;
+    top: 11px;
+    color: white;
+    opacity: 1;
+  }
+  .information:hover {
+    width: 100%;
+    height: 100%;
+    border-radius: 0;
+  }
+  .information:hover .icon {
+    opacity: 0;
+  }
+  .information:hover .contents {
+    opacity: 1;
+    transform: scale(1);
+  }
+  .information .contents {
+    padding: 5%;
+    opacity: 0;
+    position: relative;
+    transform: scale(0.5);
+    transition: opacity 0.2s, transform 0.8s;
+  }
+  .information .contents table {
+    text-align: left;
+    width: 100%;
+  }
+  .information .contents h2,
+  .information .contents p,
+  .information .contents table {
+    color: white;
+  }
+  .information .contents p {
+    font-size: 13px;
+  }
