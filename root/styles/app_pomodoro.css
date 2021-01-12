@@ -21,6 +21,7 @@ main {
   line-height: 10px;
   text-align: center;
   background-color: rgb(217, 83, 79);
+  padding:20px 0;
 }
 .box_2 {
   line-height: 0px;
@@ -28,11 +29,21 @@ main {
   background-color: rgb(217, 83, 79);
 }
 .box_3 {
-  text-align: center;
+  display:flex;
+  flex-direction: column;
   background-color: rgb(217, 83, 79);
+  overflow:auto;
+  padding:20px;
+  padding-top: 0;
+}
+.box_3 p{
+  margin:0;
+  padding:20px;
+  overflow:hidden;
 }
 
 p {
+  
   color: white;
   font-weight: 600;
   text-align: center;
@@ -118,11 +129,8 @@ button {
 
 canvas{
   background-color: rgb(237, 134, 132);
-  /* background-color: green;   */
   border-radius:5px ;
-  position:absolute;
-  top:55px;
-  left:30px;
+  height:100%;
  }
  
 
