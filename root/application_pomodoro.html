@@ -6,11 +6,7 @@
     <link rel="stylesheet" href="styles/app_navigation.css" />
     <link rel="stylesheet" href="styles/app_pomodoro.css" />
     <link href="dependencies/fontawesome/css/all.css" rel="stylesheet" />
-    <link
-      rel="stylesheet"
-      href="https://cdnjs.cloudflare.com/ajax/libs/
-    font-awesome/4.7.0/css/font-awesome.min.css"
-    />
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css"/>
     <link rel="stylesheet" href="styles/music_player.css" />
     <link rel="stylesheet" href="styles/tree.css" />
     <title>Document</title>
@@ -44,7 +40,7 @@
           <p id="counter" class="timer">0</p>
 
           <div id="break_timer" class="timer">
-            <p id="break_minutes">5</p>
+            <p id="break_minutes">05</p>
             <p class="semicolon">:</p>
             <p id="break_seconds">00</p>
           </div>
@@ -125,8 +121,11 @@
         </div>
 
         <div class="card box_3">
-          <p class="tree">End a cycle of 4 pomodoros to plant a tree</p>
-          <div class="card inside"></div>
+          <p class="text">End a cycle of 4 pomodoros to plant a tree</p>
+          <canvas id="canvas" width="600" height="190" >
+          </canvas>
+          
+         
         </div>
 
         <!-- QITU -->
@@ -141,5 +140,6 @@
     <script src="scripts/music_player.js"></script>
     <script src="scripts/pomodoro_main.js"></script>
     <script src="scripts/load.js"></script>
+    
   </body>
 </html>
