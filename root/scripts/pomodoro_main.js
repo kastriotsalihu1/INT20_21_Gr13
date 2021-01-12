@@ -10,8 +10,8 @@ var bs = document.getElementById("break_seconds");
 
 //store a reference to a timer variable
 var startTimer;
-var pomodoroDuration = 25;
-var pomodoroBreaktime = 5;
+var pomodoroDuration = 0;
+var pomodoroBreaktime = 0;
 var pomodoroCycles = 1;
 var toggle = true;
 
@@ -21,7 +21,7 @@ window.onload = function () {
 
 start.addEventListener("click", function () {
   if (startTimer === undefined) {
-    startTimer = setInterval(timer1, 1000);
+    startTimer = setInterval(timer1, 100);
   } else {
     alert("Timer is already running");
   }
