@@ -31,14 +31,15 @@ main {
 .box_3 {
   display:flex;
   flex-direction: column;
+  align-items: center;
   background-color: rgb(217, 83, 79);
   overflow:auto;
   padding:20px;
   padding-top: 0;
 }
 .box_3 p{
-  margin:0;
-  padding:20px;
+  width:100%;
+  height:80px;
   overflow:hidden;
 }
 
@@ -120,17 +121,11 @@ button {
 }
 
 
-/* CSS OF THE TREES PART */
-
-.text{
-  text-align: center;
-  
-}
-
-canvas{
+#canvascontainer{
   background-color: rgb(237, 134, 132);
   border-radius:5px ;
   height:100%;
+  width: 100%;
  }
  
 
