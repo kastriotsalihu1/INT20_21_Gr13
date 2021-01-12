@@ -1,9 +1,14 @@
 @import url("https://fonts.googleapis.com/css2?family=Open+Sans&display=swap");
 
 :root{
-  --primarycolor:#d9534f;
-  --secondarycolor:#ed8684;
+  --primarycolor:#2E8B57;
+  --secondarycolor:#4b9e6f;
+
+  /* --primarycolor:#d9534f;
+  --secondarycolor:#ed8684; */
+
 }
+
 
 main {
   display: grid;
@@ -41,9 +46,6 @@ main {
   display: none;
 }
 
-.blueish{
-  color: #4883f0;
-}
 #counter{
   display: flex;
   align-items: flex-end;
@@ -98,20 +100,7 @@ cursor: pointer;
   padding: 0 10%;
 }
 
-.trees {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  background-color: var(--primarycolor);
-  overflow: auto;
-  padding: 20px;
-  padding-top: 0;
-}
-.trees p {
-  width: 100%;
-  height: 80px;
-  overflow: hidden;
-}
+
 
 p {
   color: white;
@@ -124,45 +113,31 @@ p {
   justify-self: center;
   font-size: 30px;
 }
-
-#work {
-  grid-area: 1 / 2 / 1 / 2;
-}
-
-#break {
-  grid-area: 1 / 4 / 1 / 4;
-}
-
-#cycles {
-  grid-area: 1 / 3 / 1 / 3;
-}
-
-
-#work_timer {
-  grid-area: 2 / 2 / 2 / 2;
-}
-#break_timer {
-  grid-area: 2 / 4 / 2 / 4;
-}
-
 button {
   border: none;
   outline: none;
 }
 
-#start {
-  grid-area: 3 / 2 / 3 / 2;
+#trees {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  background-color: var(--primarycolor);
+  padding: 20px;
+  padding-top: 0;
 }
-#reset {
-  grid-area: 3 / 3 / 3 / 3;
-}
-#stop {
-  grid-area: 3 / 4 / 3 / 4;
+#trees h2 {
+  padding:14px 0;
 }
 
 #canvascontainer {
-  background-color: var(--secondarycolor);
+  background-color:var(--secondarycolor) ;
   border-radius: 5px;
-  height: 100%;
+  height:100%;
   width: 100%;
+  overflow: hidden;
+}
+canvas{
+  margin:0;
+  padding:0;
 }
