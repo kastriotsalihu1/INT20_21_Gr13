@@ -7,19 +7,19 @@ $(document).ready(function () {
     //set the position of the scrollbar to the bottom
     // $('.content').scrollTop($('.content')[0].scrollHeight);
 
-    $(".product figure img").each(function () {
+    $(".product .top").each(function () {
         // when the image is loaded set the active button acodingly
         // e.g. if a red version of the product is the default loaded one, then set the active button the red one
 
-        // get the product
-        let product = $(this).parent().parent();
         // get the colorswitcher
-        let colorswitcher = $(product).children(".info").children(".colorswitcher");
+        let colorswitcher = $(this).siblings(".bottom").children(".colorswitcher");
+        // get the url of the background image
+        let imageSource = $(this).css("background-image");
 
-        let imageSource = $(this).attr("src");
+        let imageName = getProductImageNameFromUrl(imageSource);
+        console.log(imageName)
         // the format of the image name is: <productName>-<productColor>.<imageExtension>
-        let imageColor = imageSource.split("-")[1].split(".")[0];
-
+        let imageColor = imageName.split("-")[1].split(".")[0];
         //remove the activeColor class from the default color
         $(colorswitcher).children("#red").removeClass("activeColor");
         //set the active button, the button whose id is the same as the product color
@@ -36,18 +36,13 @@ $(document).ready(function () {
             previous.removeClass('activeColor');
             $(this).addClass('activeColor');
 
-            // get the product that the clicked button is for
-            // product  > info > colorswitcher > button
-            let product = $(this).parent().parent().parent();
-            //get the image of the product
-            let image = $(product).children("figure").children("img");
-            let previousSource = image.attr("src");
+            let top = $(this).parent().parent().siblings(".top");
+            let previousImageSource = $(top).css("background-image");
 
-            // the format of the image name is: <productName>-<productColor>.<imageExtension>
-            let productImageName = previousSource.split("-")[0];
+            let productName = getProductNameFromUrl(previousImageSource);
             //set the image name based on the id of the button that was clicked
-            let newSource = productImageName + "-" + $(this).attr("id") + ".jpg";
-            image.attr("src", newSource);
+            let newSource = `url("images/store/${productName}-${$(this).attr("id")}.jpg")`;
+            top.css("background-image", newSource);
         }
     });
     $(".tocart").click(function () {
@@ -80,11 +75,29 @@ $(document).ready(function () {
         let onCartProduct = $(this).parent().parent();
         $(onCartProduct).remove();
     });
-    $('.buy').click(function(){
+    $('.buy').click(function () {
         $(this).parent().parent().addClass("clicked");
-      });
-      
-      $('.remove, .more').click(function(){
+    });
+
+    $('.remove, .more').click(function () {
         $(this).parent().parent().removeClass("clicked");
-      });
+    });
 });
+
+
+function getProductImageNameFromUrl(url) {
+    // the format of the backgroudn image is 
+    // url(" <path-to-image>/<image> ")
+    let slicedSource = url.split("/");
+    //remove the      ")
+    return slicedSource[slicedSource.length - 1].slice(0, -2);
+}
+
+function getProductNameFromUrl(url) {
+    // the format of the backgroudn image is 
+    // url(" <path-to-image>/<image> ")
+    let slicedSource = url.split("/");
+    let productNameWithNoise = slicedSource[slicedSource.length - 1].split("-")[0];
+    // the format of the image name is: <productName>-<productColor>.<imageExtension>
+    return productNameWithNoise.split("-")[0];
+}
