@@ -146,7 +146,7 @@ for (let i = 0; i < 8; i++) {
 const canvas = document.getElementById("canvas");
 const ctx = canvas.getContext("2d");
 fitToContainer(canvas);
-var button = document.getElementById("btn");
+
 
 var xCoordinate = [];
 var yCoordinate = [];
@@ -198,3 +198,11 @@ function fitToContainer(canvas) {
 function scaleCanvas(sSize) {
   ctx.scale(sSize, sSize, canvas.width / 2, canvas.height / 2);
 }
+
+
+
+
+
+
+
+
