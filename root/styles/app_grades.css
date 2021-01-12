@@ -1,7 +1,6 @@
 body {
   font-family: "Open Sans", sans-serif;
 }
-
 main {
   background-color: #f8fbfc;
 
@@ -25,6 +24,8 @@ main {
  .box_2{
   background-color:#2E8B57 ; 
   grid-area: b;
+  display:flex;
+  flex-direction:column;
  }
  .box_3{
   background-color:#2E8B57 ; 
@@ -34,10 +35,6 @@ main {
  }
  .table{
   overflow-y:auto;
- }
- .literatura{
-  background-color:#2E8B57 ; 
-  grid-area: b;
  }
  
  #listcontent {
@@ -190,20 +187,14 @@ li:hover span{
   border:  3px solid #188648;
 }
 #shtoButton{
-  font-size: 18px;
+  font-size: 20px;
   color:#2E8B57 ;
   background-color: #f7f7f7;
-  margin-top: 20px;
-  height: 70px;
-  width: 70%;
   box-sizing: border-box;
   padding: 13px 13px 13px 20px ;
   border:  3px solid #219352;
-  margin-left: 100px;
- 
 }
 #shtoButton:focus{
-  background: white;
   border:  3px solid #0a5129;
   /*outline osht highlighti*/
   outline: none;
