@@ -13,6 +13,7 @@ var startTimer;
 var pomodoroDuration = 25;
 var pomodoroBreaktime = 5;
 var pomodoroCycles = 1;
+var toggle = true;
 
 window.onload = function () {
   configurePomodoro(pomodoroDuration, pomodoroBreaktime);
@@ -33,7 +34,6 @@ reset.addEventListener("click", function () {
   bm.innerText = pomodoroBreaktime;
   bs.innerText = "00";
 
-  document.getElementById("counter").innerText = 0;
   stopInterval();
   startTimer = undefined;
 });
@@ -47,6 +47,13 @@ stop.addEventListener("click", function () {
 function timer1() {
   //Work Timer Countdown
   if (ws.innerText != 0) {
+    if (!toggle) {
+      $("#break").toggleClass("hidden");
+      $("#timer").toggleClass("hidden");
+      $("#pomodoro > .cardtitle").html("Pomodoro");
+      console.log("asd");
+      toggle = true;
+    }
     ws.innerText--;
   } else if (wm.innerText != 0 && ws.innerText == 0) {
     ws.innerText = 59;
@@ -55,6 +62,14 @@ function timer1() {
 
   //Break Timer Countdown
   if (wm.innerText == 0 && ws.innerText == 0) {
+    if (toggle) {
+      $("#break").toggleClass("hidden");
+      $("#timer").toggleClass("hidden");
+      $("#pomodoro > .cardtitle").html("Pomodoro - have a rest!");
+      toggle = false;
+    }
+
+
     if (bs.innerText != 0) {
       bs.innerText--;
     } else if (bm.innerText != 0 && bs.innerText == 0) {
@@ -76,9 +91,9 @@ function timer1() {
     bm.innerText = pomodoroBreaktime;
     bs.innerText = "00";
 
-    document.getElementById("counter").innerText++;
+    document.getElementById("cycle").innerText++;
 
-    if (document.getElementById("counter").innerText % pomodoroCycles == 0) {
+    if (document.getElementById("cycle").innerText % pomodoroCycles == 0) {
       console.log(treeIndex % yCoordinate.length);
       let image = treeImages[treeIndex % treeImages.length];
       ctx.drawImage(
