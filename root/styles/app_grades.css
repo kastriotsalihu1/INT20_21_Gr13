@@ -177,7 +177,6 @@ li:hover span{
   outline: none;
 }
 #file{
-
   color:#2E8B57 ;
   background-color: #f7f7f7;
   width: 100%;
@@ -213,9 +212,9 @@ li:hover span{
 } 
 .modal{
 position: fixed;
-/*top left transform : me e qit n mes */
 top: 50%;
 left: 50%;
+/*top left transform : me e qit n mes */
 transform: translate(-50%,-50%) scale(0);
 transition: 200ms ease-in-out;
 color: black;
