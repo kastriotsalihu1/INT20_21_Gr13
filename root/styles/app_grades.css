@@ -19,6 +19,8 @@ main {
  .box_1{
   grid-area: a;
   background-color:#2E8B57 ;
+  display:flex;
+  flex-direction:column;
  }
  .box_2{
   background-color:#2E8B57 ; 
@@ -27,6 +29,11 @@ main {
  .box_3{
   background-color:#2E8B57 ; 
   grid-area: c;
+  display:flex;
+  flex-direction:column;
+ }
+ .table{
+  overflow-y:auto;
  }
  .literatura{
   background-color:#2E8B57 ; 
