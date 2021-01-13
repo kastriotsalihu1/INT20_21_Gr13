@@ -35,19 +35,18 @@
 }
 
 .toggle-btn{
-   padding: 10px 30px;
+   padding: 15px 32px;
    cursor: pointer;
    background: transparent;
    border: 0;
    outline: none;
    position: relative;
    text-align: center;
-  font-size: 10px;
+  font-size: 12px;
   font-weight: 600;
-  text-transform: uppercase;
   display:inline-block;
   margin: 0px 0px 0px 0px; 
-  color: #cccccc;
+  color: #00000080;
 }
 
 #btn{
@@ -82,11 +81,6 @@
   margin: 5px;
   width: 75%;
   border: 2px solid #f6f6f6;
-  -webkit-transition: all 0.5s ease-in-out;
-  -moz-transition: all 0.5s ease-in-out;
-  -ms-transition: all 0.5s ease-in-out;
-  -o-transition: all 0.5s ease-in-out;
-  transition: all 0.5s ease-in-out;
   -webkit-border-radius: 5px 5px 5px 5px;
   border-radius: 5px 5px 5px 5px;
 }
