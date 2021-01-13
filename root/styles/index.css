@@ -4,10 +4,13 @@
   --primarycolor: #377ded;
   --secondarycolor: #3070d4;
   --darkersecondary:#18386b;
+
+}
+html{
+  scroll-behavior: smooth;
 }
 
-
-body {
+body {  
   margin: 0;
   font-family: "Open Sans", sans-serif;
   width: 100%;
@@ -28,6 +31,14 @@ footer {
   width: 100%;
 }
 
+
+li:hover, a:hover,td:hover,i:hover,#download:hover{
+  transform: scale(1.2);
+}
+li:active, a:active,td:active,i:active,#download:active{
+  transform: scale(1);
+}
+
 path{
   fill:var(--primarycolor);
   fill-opacity: 1;
@@ -39,6 +50,7 @@ p {
 
 /* <!-- LOGO AND NAVIGATION --> */
 header {
+  
   display: flex;
   align-items: center;
   justify-content: space-between;
@@ -58,6 +70,7 @@ nav {
   align-items: center;
 }
 a {
+
   text-decoration: none;
   color: white;
   text-transform: uppercase;

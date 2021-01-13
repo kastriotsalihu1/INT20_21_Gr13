@@ -1,118 +1,137 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <link rel="stylesheet" href="styles/app_navigation.css" />
-    <link rel="stylesheet" href="styles/app_grades.css" />
-    <link href="dependencies/fontawesome/css/all.css" rel="stylesheet" />
-    <title>Document</title>
-  </head>
 
-  <body>
-       <div id="header"></div>
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <link rel="stylesheet" href="styles/app_navigation.css" />
+  <link rel="stylesheet" href="styles/app_grades.css" />
+  <link rel="stylesheet" href="styles/cardInformation.css" />
 
-    <div id="container">
-      <!-- side navigation menu -->
-      <div id="sidebar"></div>
-      <main>
-        
-        <div class="card box_1">
+  <script src="./scripts/cardInformation.js" type="module"></script>
 
-          <!--  information information information information information -->
-          
-          <!--  information information information information information -->
-          
-          <h1>Notat
-            <button data-modal-target="#modal" class="button"><i class="fas fa-info-circle"></i></button>
-            <div class="modal" id="modal" >
-              <div class="modal-header">
-                <div class="title">Notat</div>
-                <button data-close-button class="close-button">&times;</button>
-              </div>
-              <div class="modal-body scrollbar">
-                Lorem ipsum dolor, sit amet consectetur adipisicing elit. Placeat corporis eveniet modi exercitationem eum ipsum temporibus sapiente pariatur iusto repudiandae?Lorem ipsum dolor sit, amet consectetur adipisicing elit. Architecto, veritatis.
-              </div>
-            </div>
-           <div id="overlay">
-             
-           </div></h1>
-          <input type="text" placeholder="Subjects" />
-          <ul class="scroll">
-            <li> 
-              <span><i class="fa fa-trash"></i></span>Internet<select id="grades">
-                <option>6</option>
-                <option>7</option>
-                <option>8</option>
-                <option>9</option>
-                <option>10</option>
-              </select>
-            </li>
-            <li>
-              <span><i class="fa fa-trash"></i></span>Sinjale dhe Sisteme<select
-                id="grades">
-                <option>6</option>
-                <option>7</option>
-                <option>8</option>
-                <option>9</option>
-                <option>10</option>
-              </select>
-            </li>
-            <li> 
-              <span><i class="fa fa-trash"></i></span>POO<select id="grades">
-                <option>6</option>
-                <option>7</option>
-                <option>8</option>
-                <option>9</option>
-                <option>10</option>
-              </select>
-            </li>
-            <li> 
-              <span><i class="fa fa-trash"></i></span>Elektronike<select id="grades">
-                <option>6</option>
-                <option>7</option>
-                <option>8</option>
-                <option>9</option>
-                <option>10</option>
-              </select>
-            </li>
-            <li>
-              <span><i class="fa fa-trash"></i></span>Databaze<select
-                id="grades">
-                <option>6</option>
-                <option>7</option>
-                <option>8</option>
-                <option>9</option>
-                <option>10</option>
-              </select>
-            </li>
-            <li>
-              <span><i class="fa fa-trash"></i></span>Matematike<select id="grades">
-                <option>6</option>
-                <option>7</option>
-                <option>8</option>
-                <option>9</option>
-                <option>10</option>
-              </select>
-            </li>
-          </ul>
-          <div></div>
+  <link href="dependencies/fontawesome/css/all.css" rel="stylesheet" />
+  <title>Document</title>
+</head>
+
+<body>
+  <div id="header"></div>
+
+  <div id="container">
+    <!-- side navigation menu -->
+    <div id="sidebar"></div>
+    <main>
+
+      <div class="card box_1">
+
+        <div class="information">
+          <div class="icon"><i class="fa fa-info" aria-hidden="true"></i></div>
+          <div class="contents">
+            <h2>
+              It a very information packed!
+            </h2>
+          </div>
         </div>
-       
-        <div  class="card box_2 scrollbar" >
-          <div>
-            <h1 id="shtoLiterature">Shto Literature</h1>
+
+        <h1>Notat
+          <div class="modal" id="modal">
+            <div class="modal-header">
+              <div class="title">Notat</div>
+              <button data-close-button class="close-button">&times;</button>
+            </div>
+            <div class="modal-body scrollbar">
+              Lorem ipsum dolor, sit amet consectetur adipisicing elit. Placeat corporis eveniet modi exercitationem eum
+              ipsum temporibus sapiente pariatur iusto repudiandae?Lorem ipsum dolor sit, amet consectetur adipisicing
+              elit. Architecto, veritatis.
+            </div>
+          </div>
+          <div id="overlay">
+
+          </div>
+        </h1>
+        <input type="text" placeholder="Subjects" />
+        <ul class="scroll">
+          <li>
+            <span><i class="fa fa-trash"></i></span>Internet<select id="grades">
+              <option>6</option>
+              <option>7</option>
+              <option>8</option>
+              <option>9</option>
+              <option>10</option>
+            </select>
+          </li>
+          <li>
+            <span><i class="fa fa-trash"></i></span>Sinjale dhe Sisteme<select id="grades">
+              <option>6</option>
+              <option>7</option>
+              <option>8</option>
+              <option>9</option>
+              <option>10</option>
+            </select>
+          </li>
+          <li>
+            <span><i class="fa fa-trash"></i></span>POO<select id="grades">
+              <option>6</option>
+              <option>7</option>
+              <option>8</option>
+              <option>9</option>
+              <option>10</option>
+            </select>
+          </li>
+          <li>
+            <span><i class="fa fa-trash"></i></span>Elektronike<select id="grades">
+              <option>6</option>
+              <option>7</option>
+              <option>8</option>
+              <option>9</option>
+              <option>10</option>
+            </select>
+          </li>
+          <li>
+            <span><i class="fa fa-trash"></i></span>Databaze<select id="grades">
+              <option>6</option>
+              <option>7</option>
+              <option>8</option>
+              <option>9</option>
+              <option>10</option>
+            </select>
+          </li>
+          <li>
+            <span><i class="fa fa-trash"></i></span>Matematike<select id="grades">
+              <option>6</option>
+              <option>7</option>
+              <option>8</option>
+              <option>9</option>
+              <option>10</option>
+            </select>
+          </li>
+        </ul>
+        <div></div>
+      </div>
+
+      <div class="card box_2 scrollbar">
+
+        <div class="information">
+          <div class="icon"><i class="fa fa-info" aria-hidden="true"></i></div>
+          <div class="contents">
+            <h2>
+              It a very information packed!
+            </h2>
+          </div>
+        </div>
+        <div>
+          <h1 id="shtoLiterature">Shto Literature</h1>
           <select class="objects" id="lendet">
-            <option >Lenda</option>
+            <option>Lenda</option>
             <option value="Databaze">Databaze</option>
             <option value="POO">POO</option>
             <option value="Matematike">Matematike</option>
             <option value="SinjaledheSisteme">Sinjale dhe Sisteme</option>
             <option value="Elektronike">Elektronike</option>
             <option>Lendet</option>
-            <option value="Internet">Internet</option>  
+            <option value="Internet">Internet</option>
           </select>
-          <select id = "lloji" class="objects">
+          <select id="lloji" class="objects">
             <option>Lloji</option>
             <option value="Ligjerata">Ligjerata</option>
             <option value="Ushtrime">Ushtrime</option>
@@ -122,38 +141,45 @@
           </select>
           <input type="file" name="file" id="file" />
         </div>
-          <button id="shtoButton">Shto Literaturen</button>
-        </div>
-        <div  class="card box_3">
-          <h1>Shfaq Literaturen</h1>
-          <select id="selectLiteraturen">
-            <option value="Matematike">Matematike</option>
-            <option value="Elektronike">Elektronike</option>
-            <option value="SinjaledheSisteme">Sinjale dhe Sisteme</option>
-            <option value="Internet">Internet</option>
-            <option value="Databaze">Databaze</option>
-            <option value="POO">POO</option>
-          </select>
-          <div class="table scrollbar">
-            <table id="tabela"
-            cellpadding="4"
-            cellspacing="5">
-              <tr id="rreshti">
-                
-              </tr>
-            </table>
+        <button id="shtoButton">Shto Literaturen</button>
+      </div>
+      <div class="card box_3">
+
+        <div class="information">
+          <div class="icon"><i class="fa fa-info" aria-hidden="true"></i></div>
+          <div class="contents">
+            <h2>
+              It a very information packed!
+            </h2>
           </div>
         </div>
-        
-          
-        </div>
-        
-      </main>
-    <script src="scripts/jquery.js"></script>
-    <script src="scripts/load.js"></script>
-    <script src="scripts/main.js"></script>
-    <script src="scripts/grades.js"></script>
+        <h1>Shfaq Literaturen</h1>
+        <select id="selectLiteraturen">
+          <option value="Matematike">Matematike</option>
+          <option value="Elektronike">Elektronike</option>
+          <option value="SinjaledheSisteme">Sinjale dhe Sisteme</option>
+          <option value="Internet">Internet</option>
+          <option value="Databaze">Databaze</option>
+          <option value="POO">POO</option>
+        </select>
+        <div class="table scrollbar">
+          <table id="tabela" cellpadding="4" cellspacing="5">
+            <tr id="rreshti">
 
-  </body>
-  
+            </tr>
+          </table>
+        </div>
+      </div>
+
+
+  </div>
+
+  </main>
+  <script src="scripts/jquery.js"></script>
+  <script src="scripts/load.js"></script>
+  <script src="scripts/main.js"></script>
+  <script src="scripts/grades.js"></script>
+
+</body>
+
 </html>

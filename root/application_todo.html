@@ -5,16 +5,18 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <link rel="stylesheet" href="styles/app_navigation.css" />
     <link rel="stylesheet" href="styles/app_todo.css" />
+    <link rel="stylesheet" href="styles/cardInformation.css" />
+
+    <script src="./scripts/cardInformation.js" type="module"></script>
+
     <link href="dependencies/fontawesome/css/all.css" rel="stylesheet" />
     <title>Document</title>
   </head>
 
   <body>
-
     <div id="header"></div>
 
     <div id="container">
-      
       <div id="sidebar"></div>
 
       <!-- content -->
@@ -22,10 +24,14 @@
         <!-- to-do list -->
         <div id="todolist" class="card cardcontainer">
           <!--  information -->
-          <div class="information">
-            <i class="fas fa-info-circle"></i>
 
-            <div class="popup"></div>
+          <div class="information">
+            <div class="icon">
+              <i class="fa fa-info" aria-hidden="true"></i>
+            </div>
+            <div class="contents">
+              <h2>It a very information packed!</h2>
+            </div>
           </div>
           <!--  information -->
 
@@ -55,9 +61,14 @@
         <!-- notes -->
         <div class="card cardcontainer">
           <!--  information -->
+
           <div class="information">
-            <span><i class="fas fa-info-circle"></i></span>
-            <div class="popup"></div>
+            <div class="icon">
+              <i class="fa fa-info" aria-hidden="true"></i>
+            </div>
+            <div class="contents">
+              <h2>It a very information packed!</h2>
+            </div>
           </div>
           <!--  information -->
 

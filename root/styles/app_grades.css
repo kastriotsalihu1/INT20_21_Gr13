@@ -1,37 +1,43 @@
+:root{
+
+  --primarycolor:#C26161;
+  --secondarycolor:#be7c7c;
+  --darkprimary:#864646;
+  --lightprimary:#e2acac;
+}
+
 body {
   font-family: "Open Sans", sans-serif;
 }
 main {
-  background-color: #f8fbfc;
 
   display: grid;
 
   grid-template-columns: repeat(2, 50%);
-  grid-template-rows: repeat(2, 45%);
+  grid-template-rows: repeat(2, 50%);
 
   gap: 10px;
   grid-template-areas:
     "a b"
-    "c c"
-    ;
+    "c c";
 }
  .box_1{
   grid-area: a;
-  background-color:#2E8B57 ;
+  background-color:var(--primarycolor) ;
   display:flex;
   flex-direction:column;
   padding: 5px;
  }
  .box_2{
   padding: 5px;
-  background-color:#2E8B57 ; 
+  background-color:var(--primarycolor) ; 
   grid-area: b;
   display:flex;
   flex-direction:column;
   justify-content: space-between;
  }
  .box_3{
-  background-color:#2E8B57 ; 
+  background-color:var(--primarycolor) ; 
   grid-area: c;
   display:flex;
   flex-direction:column;
@@ -61,13 +67,13 @@ main {
 }
 select:focus{
   background: white;
-  border:  3px solid #2E8B57;
+  border:  3px solid var(--primarycolor);
   /*outline osht highlighti*/
   outline: none;
 }
 /*#29b96a*/
 h1{
-  background: #2E8B57; 
+  background: var(--primarycolor); 
   color: white;
   margin: 0;
   padding: 10px 20px;
@@ -107,7 +113,7 @@ select:nth-child(2n){
 input{
   height: 70px;
   font-size: 18px;
-  color:#2E8B57;
+  color:var(--primarycolor);
   background-color: #f7f7f7;
   width: 100%;
   box-sizing: border-box;
@@ -116,7 +122,7 @@ input{
 }
 input:focus{
   background: white;
-  border:  3px solid #2E8B57;
+  border:  3px solid var(--primarycolor);
   /*outline osht highlighti*/
   outline: none;
 }
@@ -142,21 +148,21 @@ li:hover span{
 
 .objects{
   font-size: 18px;
-  color:#2E8B57 ;
+  color:var(--primarycolor) ;
   background-color: #f7f7f7;
   width: 100%;
   box-sizing: border-box;
   padding: 10px 13px 10px 20px ;
-  border:  3px solid #2E8B57;
+  border:  3px solid var(--primarycolor);
 }
 .rezultati{
   font-size: 18px;
-  color:#2E8B57 ;
+  color:var(--primarycolor) ;
   background-color: #f7f7f7;
   width: 100%;
   box-sizing: border-box;
   padding: 13px 13px 13px 20px ;
-  border:  3px solid #2E8B57;
+  border:  3px solid var(--primarycolor);
 }
 
 .trstyle{
@@ -167,7 +173,7 @@ li:hover span{
 }
 #selectLiteraturen{
   font-size: 18px;
-  color:#2E8B57;
+  color:var(--primarycolor);
   background-color: #f7f7f7;
   width: 100%;
   box-sizing: border-box;
@@ -177,27 +183,27 @@ li:hover span{
 }
 #selectLiteraturen:focus{
   background: white;
-  border:  3px solid #2E8B57;
+  border:  3px solid var(--primarycolor);
   /*outline osht highlighti*/
   outline: none;
 }
 #file{
-  color:#2E8B57 ;
+  color:var(--primarycolor) ;
   background-color: #f7f7f7;
   width: 100%;
   box-sizing: border-box;
-  border:  3px solid #188648;
+  border:  3px solid var(--secondarycolor);
 }
 #shtoButton{
   font-size: 20px;
-  color:#2E8B57 ;
+  color:var(--primarycolor) ;
   background-color: #f7f7f7;
   box-sizing: border-box;
   padding: 20px 13px 20px 20px ;
-  border:  3px solid #219352;
+  border:  3px solid var(--secondarycolor);
 }
 #shtoButton:focus{
-  border:  3px solid #0a5129;
+  border:  3px solid var(--darkprimary);
   /*outline osht highlighti*/
   outline: none;
 }
@@ -212,7 +218,7 @@ li:hover span{
 
 .scroll::-webkit-scrollbar-thumb {
   border-radius: 3px;
-  background-color: #1f5e3a;
+  background-color: var(--darkprimary);
 } 
 .modal{
 position: fixed;
@@ -222,11 +228,11 @@ left: 50%;
 transform: translate(-50%,-50%) scale(0);
 transition: 200ms ease-in-out;
 color: black;
-border: 1px solid rgb(15, 94, 38);
+border: 1px solid var(--darkprimary);
 border-radius: 10px;
 /*me dal permi ccdo elementi*/
 z-index: 10;
-background-color: rgb(187, 230, 187);
+background-color: var(--lightprimary);
 width: 500px;
 max-width: 60%;
 height: 200px;
@@ -241,7 +247,7 @@ padding: 10px 15px;
 display: flex;
 justify-content: space-between;
 align-items: center;
-border-bottom: 1px solid #2E8B57;
+border-bottom: 1px solid var(--primarycolor);
 }
 .modal-header .title{
   font-size: 1.25rem;
@@ -272,7 +278,7 @@ border-bottom: 1px solid #2E8B57;
 
 .scrollbar::-webkit-scrollbar-thumb {
   border-radius: 3px;
-  background-color: #1f5e3a;
+  background-color: var(--darkprimary);
 } 
 
 #overlay{
@@ -299,7 +305,7 @@ border-bottom: 1px solid #2E8B57;
 }
 
 .thstyle{
-  background-color: rgb(112, 196, 105);
+  background-color: var(--lightprimary);
   color: "white";
   font-weight: "normal";
   height: 10px;

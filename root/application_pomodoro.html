@@ -5,10 +5,16 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <link rel="stylesheet" href="styles/app_navigation.css" />
     <link rel="stylesheet" href="styles/app_pomodoro.css" />
-    <link href="dependencies/fontawesome/css/all.css" rel="stylesheet" />
-    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css"/>
+    <link rel="stylesheet" href="styles/cardInformation.css" />
     <link rel="stylesheet" href="styles/music_player.css" />
-    <link rel="stylesheet" href="styles/tree.css" />
+
+    <link href="dependencies/fontawesome/css/all.css" rel="stylesheet" />
+    <link
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css"
+    />
+
+    <script src="./scripts/cardInformation.js" type="module"></script>
+
     <title>Document</title>
   </head>
 
@@ -25,31 +31,16 @@
         <!-- QITU -->
         <!-- QITU -->
         <!-- QITU -->
-        <div class="card box_2" id="pomodoro">
-          <p class="title">POMODORO</p>
-          <p id="work" class="label">Work:</p>
-          <p id="break" class="label">Break:</p>
-          <p id="cycles" class="label">Cycles:</p>
 
-          <div id="work_timer" class="timer">
-            <p id="work_minutes">25</p>
-            <p class="semicolon">:</p>
-            <p id="work_seconds">00</p>
+        <div class="card music">
+          <div class="information">
+            <div class="icon">
+              <i class="fa fa-info" aria-hidden="true"></i>
+            </div>
+            <div class="contents">
+              <h2>It a very information packed!</h2>
+            </div>
           </div>
-
-          <p id="counter" class="timer">0</p>
-
-          <div id="break_timer" class="timer">
-            <p id="break_minutes">05</p>
-            <p class="semicolon">:</p>
-            <p id="break_seconds">00</p>
-          </div>
-
-          <button id="start" class="card button">Start</button>
-          <button id="stop" class="card button">Pause</button>
-          <button id="reset" class="card button">Reset</button>
-        </div>
-        <div class="card box_1">
           <div class="main">
             <p id="logo"><i class="fa fa-music"></i>Music</p>
 
@@ -119,13 +110,52 @@
             </div>
           </div>
         </div>
+        <div class="card" id="pomodoro">
+          <div class="information">
+            <div class="icon">
+              <i class="fa fa-info" aria-hidden="true"></i>
+            </div>
+            <div class="contents">
+              <h2>It a very information packed!</h2>
+            </div>
+          </div>
+          <h2 class="cardtitle">POMODORO</h2>
+          <!-- <p id="work" class="label">Work:</p>
+          <p id="break" class="label">Break:</p>
+          <p id="cycles" class="label">Cycles:</p> -->
 
-        <div class="card box_3">
-          <p class="text">End a cycle of 4 pomodoros to plant a tree</p>
-          <canvas id="canvas" width="600" height="190" >
-          </canvas>
-          
-         
+          <div id="counter" class="timer">
+            <p id="break" class="hidden">
+              <span id="break_minutes">25</span>:<span id="break_seconds"
+                >00</span
+              >
+            </p>
+            <p id="timer">
+              <span id="work_minutes">25</span>:<span id="work_seconds"
+                >00</span
+              >
+            </p>
+            <p id="cycle">0</p>
+          </div>
+          <div id="btn_container">
+            <button id="start">Start</button>
+            <button id="stop">Pause</button>
+            <button id="reset">Reset</button>
+          </div>
+        </div>
+        <div id="trees" class="card">
+          <div class="information">
+            <div class="icon">
+              <i class="fa fa-info" aria-hidden="true"></i>
+            </div>
+            <div class="contents">
+              <h2>It a very information packed!</h2>
+            </div>
+          </div>
+          <h2 class="cardtitle">Garden</h2>
+          <div id="canvascontainer">
+            <canvas id="canvas"> </canvas>
+          </div>
         </div>
 
         <!-- QITU -->
@@ -137,9 +167,9 @@
     </div>
 
     <script src="scripts/jquery.js"></script>
-    <script src="scripts/music_player.js"></script>
-    <script src="scripts/pomodoro_main.js"></script>
     <script src="scripts/load.js"></script>
-    
+    <script src="scripts/main.js"></script>
+    <script src="scripts/pomodoro_main.js"></script>
+    <script src="scripts/music_player.js"></script>
   </body>
 </html>
