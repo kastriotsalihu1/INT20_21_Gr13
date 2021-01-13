@@ -1,4 +1,4 @@
-@import url('https://fonts.googleapis.com/css?family=Hind:300,400&display=swap');
+
  * {
 	 box-sizing: border-box;
 }
@@ -6,11 +6,11 @@
 	 box-sizing: border-box;
 }
  .main {
-	 margin: 0;
+	 margin-top:600px;
 	 padding: 0;
 	 font-family: 'open sans', sans-serif;
-	 background: #fff;
-	 color: #4d5974;
+	 background:#377ded;
+	 color: white;
 	 display: flex;
 	 min-height: 100vh;
 }
@@ -31,7 +31,7 @@
 	 text-align: left;
 	 width: 100%;
 	 padding: 1em 0;
-	 color: #7288a2;
+	 color: white;
 	 font-size: 1.15rem;
 	 font-weight: 400;
 	 border: none;
@@ -104,4 +104,85 @@
 	 font-weight: 300;
 	 margin: 2em 0;
 }
- 
+
+
+
+
+
+/* form js */
+
+
+*{
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  outline: none;
+  font-family: "Open Sans", "Sans-serif";
+}
+
+body{
+  background: #377ded;
+
+}
+
+.wrapper{
+  position: absolute;
+  top: 40%;
+  left: 50%;
+  transform: translate(-50%,-50%);
+  max-width: 650px;
+  width: 100%;
+  background: #fff;
+  padding: 25px;
+  border-radius: 5px;
+  box-shadow: 4px 4px 2px  #3070d4;
+}
+
+.wrapper h2{
+  text-align: center;
+  margin-bottom: 20px;
+  text-transform: uppercase;
+  letter-spacing: 3px;
+  color: #332902;
+}
+
+.wrapper .input_field{
+  margin-bottom: 10px;
+}
+
+.wrapper .input_field input[type="text"],
+.wrapper textarea{
+  border: 1px solid #e0e0e0;
+  width: 100%;
+  padding: 10px;
+}
+
+.wrapper textarea{
+  resize: none;
+  height: 80px;
+}
+
+.wrapper .btn input[type="submit"]{
+  border: 0px;
+  margin-top: 15px;
+  padding: 10px;
+  text-align: center;
+  width: 100%;
+  background:#377ded;
+  color: white;
+  text-transform: uppercase;
+  letter-spacing: 5px;
+  font-weight: bold;
+  border-radius: 25px;
+  cursor: pointer;
+}
+
+#error_message{
+  margin-bottom: 20px;
+  background:rgb(255, 0, 0);
+  padding: 0px;
+  text-align: center;
+  font-size: 14px;
+  transition: all 0.5s ease;
+  color:white;
+}

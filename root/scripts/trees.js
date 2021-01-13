@@ -38,9 +38,10 @@ console.log(xCoordinate, yCoordinate);
 
 
 var treeIndex = 0;
-button.addEventListener("click", function () {
+ window.onload=function() {
 
   let image = treeImages[treeIndex % treeImages.length];
+  for(let i=0; i<15; i++){
   ctx.drawImage(
    image,
     xCoordinate[treeIndex % xCoordinate.length],
@@ -49,8 +50,9 @@ button.addEventListener("click", function () {
     image.height
   );
   treeIndex++;
-  
-});
+  shuffle(array);
+  }
+}
 
 function shuffle(array) {
   var tmp,
