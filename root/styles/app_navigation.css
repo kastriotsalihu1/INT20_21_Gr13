@@ -16,7 +16,9 @@
 @import url("https://fonts.googleapis.com/css2?family=Open+Sans:wght@300;400;600;700;800&display=swap");
 
 html {
-  height: 100vh;
+    height: 100vh;
+    /* hide body unitl the document is fully loaded */
+    display: none;
 }
 
 body {
@@ -29,6 +31,7 @@ body {
   font-family: "Open Sans", sans-serif;
   display: flex;
   flex-direction: column;
+
 }
 
 a {
