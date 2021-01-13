@@ -1,5 +1,3 @@
-import "./jquery.js";
-
 $(document).ready(function () {
     $(".information").on("click", function () {
         // expand the information div
