@@ -16,7 +16,7 @@
           <div class="icon">
             <img src="images/wp_img/logo.png" width="80px"  id="icon" alt="User Icon" >
           </div>
-         <form  id="login" class="input-group" name="form" method="post">
+         <form  id="login" class="input-group" name="myForm" onsubmit = "return(validate());">
               <input type="text" name="fname" class="input-field" placeholder="Username">
               <input type="Password" name="fpassword" class="input-field"    placeholder="Password" >
               <button type="sumbit" class="submit-btn">Login</button>
@@ -25,9 +25,9 @@
               </div>
          </form>
         
-         <form  id="register"class="input-group" name="form"  method="post">
+         <form  onsubmit = "return(validate());"id="register"class="input-group" name="myForm" >
           <input type="text" name="fname" class="input-field" placeholder="Username">
-          <input type="email" name="femail" class="input-field"    placeholder="Email Address">
+          <input type="email" name="femail" id="mail"class="input-field"    placeholder="Email Address">
           <input type="password" name="fpassword" class="input-field"    placeholder="Password" minlength="6">
           <button type="sumbit" class="submit-btn">Sign up</button>
      </form>
