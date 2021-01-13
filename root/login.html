@@ -6,32 +6,49 @@
 
   </head>
   <body>
-    <div class="wrapper fadeInDown">
-      <div id="formContent">
-        <!-- Tabs Titles -->
-        <h2 class="active">Sign In</h2>
-        <h2 class="inactive underlineHover">Sign Up </h2>
-    
-        <!-- Icon -->
-        <div class="fadeIn first">
-          <img src="images/wp_img/logo.png"  
-          width="20px"
-           id="icon" alt="User Icon" />
-        </div>
-    
-        <!-- Login Form -->
-        <form>
-          <input type="text" id="login" class="fadeIn second" name="login" placeholder="Login">
-          <input type="text" id="password" class="fadeIn third" name="login" placeholder="Password">
-          <input type="submit" class="fadeIn fourth" value="Log In">
-        </form>
-    
-        <!-- Remind Passowrd -->
-        <div id="formFooter">
-          <a class="underlineHover" href="#">Forgot Password?</a>
-        </div>
-    
-      </div>
-    </div>
+     <div class="hero">
+       <div class="form-box">
+          <div class="button-box">
+            <div id="btn"> </div>
+             <button type="button" class="toggle-btn" onclick="signin()">Sign in</button>
+             <button type="button" class="toggle-btn"onclick="register()">Sign up</button>
+          </div>
+          <div class="icon">
+            <img src="images/wp_img/logo.png" width="80px"  id="icon" alt="User Icon" >
+          </div>
+         <form  id="login" class="input-group">
+              <input type="text" name="" class="input-field" placeholder="Login">
+              <input type="text" name="" class="input-field"    placeholder="Password">
+              <button type="sumbit" class="submit-btn">Login</button>
+              <div id="formFooter">
+                <a class="underlineHover" href="#">Forgot Password?</a>
+              </div>
+         </form>
+        
+         <form  id="register"class="input-group">
+          <input type="text" name="" class="input-field" placeholder="Login">
+          <input type="email" name="" class="input-field"    placeholder="Email Id">
+          <input type="text" name="" class="input-field"    placeholder="Password">
+          <button type="sumbit" class="submit-btn">Sign up</button>
+     </form>
+       </div>
+     </div>
+     <script>
+       var x=document.getElementById("login");
+       var y=document.getElementById("register");
+       var z=document.getElementById("btn");
+
+       function register(){
+          x.style.left="-400px";
+          y.style.left="50px";
+          z.style.left="110px";
+       }
+       function signin(){
+          x.style.left="50px";
+          y.style.left="450px";
+          z.style.left="0";
+       }
+     </script>
   </body>
 </html>
+
