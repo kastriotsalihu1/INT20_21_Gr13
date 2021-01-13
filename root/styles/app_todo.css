@@ -1,3 +1,9 @@
+:root {
+  --primarycolor: #5a95ff;
+  --secondarycolor: #3768c3;
+  --darkprimary: #2d5eb8;
+}
+
 main {
   display: grid;
 
@@ -16,7 +22,7 @@ main {
 
 .cardcontainer {
   position: relative;
-  background-color: #5a95ff;
+  background-color: var(--primarycolor);
   display: flex;
   flex-direction: column;
   overflow: auto;
@@ -27,7 +33,7 @@ main {
   position: relative;
   width: 100%;
   text-align: center;
-  z-index: 10;
+  z-index: 4;
 }
 
 input {
@@ -64,7 +70,7 @@ input {
 
 .scrollwheel::-webkit-scrollbar-thumb {
   border-radius: 3px;
-  background-color: #3768c3;
+  background-color: var(--secondarycolor);
 }
 
 ul {
@@ -100,7 +106,7 @@ ul li:hover {
 }
 
 ul li.checked {
-  background: #2d5eb8;
+  background: var(--darkprimary);
   color: #fff;
   text-decoration: line-through;
 }

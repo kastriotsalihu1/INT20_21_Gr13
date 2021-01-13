@@ -21,17 +21,28 @@
         <!-- username and photo -->
         <div id="user">
           <div id="photo" class="centeredicon">
-            <img src="images/profile/profile-placeholder.png" alt="Profile picture" />
+            <img
+              src="images/profile/profile-placeholder.png"
+              alt="Profile picture"
+            />
           </div>
           <div id="name">Arben Gashi</div>
           <div id="settingsicon" class="centeredicon">
             <i class="fas fa-caret-down"></i>
-            <div id="settingdropdown" style="display: none">
-              <a href="index.html"><div class="setting">LOG OUT</div></a>
-            </div>
           </div>
-
         </div>
+        <!-- dropdown -->
+        <div id="settingdropdown" style="display: none">
+          <div class="setting">
+            Dark
+            <label class="theme-switch" for="checkbox">
+              <input type="checkbox" id="checkbox" />
+              <div class="slider round"></div>
+            </label>
+          </div>
+          <a href="index.html"><div class="setting">Log out</div></a>
+        </div>
+
         <!-- notifications -->
         <div id="notification" class="centeredicon" data-badge="">
           <i class="far fa-bell fa-2x" id="notification-icon"></i>
@@ -47,9 +58,15 @@
           <a href="application_todo.html"
             ><i class="far fa-list-alt" id="todo"></i
           ></a>
-          <a href="application_grades.html"><i class="far fa-folder-open" id="grades"></i></a>
-          <a href="application_pomodoro.html"><i class="far fa-clock" id="pomodoro"></i></a>
-          <a href="application_store.html"><i class="far fa-credit-card" id="store"></i></a>
+          <a href="application_grades.html"
+            ><i class="far fa-folder-open" id="grades"></i
+          ></a>
+          <a href="application_pomodoro.html"
+            ><i class="far fa-clock" id="pomodoro"></i
+          ></a>
+          <a href="application_store.html"
+            ><i class="far fa-credit-card" id="store"></i
+          ></a>
         </div>
       </nav>
       <main></main>
