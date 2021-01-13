@@ -12,7 +12,7 @@
   background-position: center;
   background-size: cover;
   position: absolute;
-  background-color: #56baed;
+  background-color: #377ded;
 }
 
 .form-box{
@@ -55,7 +55,7 @@
   position: absolute;
   width: 110px;
   height: 100%;
-  border-bottom: 2px solid #5fbae9;
+  border-bottom: 2px solid #377ded;
   border-radius: 30px;
   transition: .5s;
 }
@@ -86,7 +86,7 @@
 }
 
 .submit-btn{
-  background-color: #56baed;
+  background-color: #377ded;
   border: none;
   color: white;
   padding: 15px 60px;
