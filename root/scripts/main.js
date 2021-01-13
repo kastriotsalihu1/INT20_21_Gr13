@@ -43,3 +43,14 @@ $(document).ready(function () {
 
   toggleSwitch.addEventListener("change", switchTheme, false);
 });
+
+
+
+
+
+
+
+
+
+
+
