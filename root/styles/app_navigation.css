@@ -223,12 +223,12 @@ nav {
   height: 100px;
 }
 
-.nav-icons .active {
+.nav-icons .activePage {
   color: #4d85fe;
   transform: translateX(4px);
 }
 
-.nav-icons > a > i:hover:not(.active) {
+.nav-icons > a > i:hover:not(.activePage) {
   box-sizing: border-box;
   color: #4d85fe;
   border-right: 4px solid #4d85fe;
