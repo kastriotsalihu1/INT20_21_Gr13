@@ -1,105 +1,112 @@
 <!DOCTYPE html>
 <html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="styles/app_navigation.css" />
+    <link rel="stylesheet" href="styles/app_todo.css" />
+    <link rel="stylesheet" href="styles/cardInformation.css" />
 
-<head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <link rel="stylesheet" href="styles/app_navigation.css" />
-  <link rel="stylesheet" href="styles/app_todo.css" />
-  <link rel="stylesheet" href="styles/cardInformation.css" />
+    <script src="./scripts/cardInformation.js" type="module"></script>
 
-  <script src="./scripts/cardInformation.js" type="module"></script>
+    <link href="dependencies/fontawesome/css/all.css" rel="stylesheet" />
+    <title>Document</title>
+  </head>
 
-  <link href="dependencies/fontawesome/css/all.css" rel="stylesheet" />
-  <title>Document</title>
-</head>
+  <body>
+    <div id="header"></div>
 
-<body>
+    <div id="container">
+      <div id="sidebar"></div>
 
-  <div id="header"></div>
+      <!-- content -->
+      <main>
+        <!-- to-do list -->
+        <div id="todolist" class="card cardcontainer">
+          <!--  information -->
 
-  <div id="container">
-
-    <div id="sidebar"></div>
-
-    <!-- content -->
-    <main>
-      <!-- to-do list -->
-      <div id="todolist" class="card cardcontainer">
-        <!--  information -->
-
-        <div class="information">
-          <div class="icon"><i class="fa fa-info" aria-hidden="true"></i></div>
-          <div class="contents">
-            <h2>
-              It a very information packed!
-            </h2>
-          </div>
-        </div>
-        <!--  information -->
-
-        <div id="listheader">
-          <h2 class="cardtitle">To-do List</h2>
-          <input type="text" id="todoinput" placeholder="Add to list..." />
-        </div>
-        <div class="cardcontent scrollwheel">
-          <ul id="itemlist">
-            <li>
-              <span class="text todotext">test</span><span class="deletetodo"><i class="fa fa-trash"></i></span>
-            </li>
-          </ul>
-        </div>
-        <div class="cardfooter">
-          <input id="displaytodo" type="image" class="displayinput" src="images/todo/add_circle_button.png" />
-        </div>
-      </div>
-      <!-- to-do list -->
-
-      <!-- notes -->
-      <div class="card cardcontainer">
-        <!--  information -->
-
-        <div class="information">
-          <div class="icon"><i class="fa fa-info" aria-hidden="true"></i></div>
-          <div class="contents">
-            <h2>
-              It a very information packed!
-            </h2>
-          </div>
-        </div>
-        <!--  information -->
-
-        <div id="noteheader">
-          <h2 class="cardtitle">Notes</h2>
-        </div>
-        <div id="notecontainer" class="cardcontent scrollwheel">
-          <div class="card note">
-            <i class="closenote fas fa-times-circle"></i>
-            <div class="notetitle scrollwheel">
-              <h2 contenteditable="true" class="smalltitle">Thy Title!</h2>
+          <div class="information">
+            <div class="icon">
+              <i class="fa fa-info" aria-hidden="true"></i>
             </div>
-            <div class="notecontent scrollwheel">
-              <p contenteditable="true" class="text">
-                I want to note something!
-              </p>
+            <div class="contents">
+              <h2>It a very information packed!</h2>
             </div>
           </div>
-        </div>
-        <div id="notefooter">
+          <!--  information -->
+
+          <div id="listheader">
+            <h2 class="cardtitle">To-do List</h2>
+            <input type="text" id="todoinput" placeholder="Add to list..." />
+          </div>
+          <div class="cardcontent scrollwheel">
+            <ul id="itemlist">
+              <li>
+                <span class="text todotext">test</span
+                ><span class="deletetodo"><i class="fa fa-trash"></i></span>
+              </li>
+            </ul>
+          </div>
           <div class="cardfooter">
-            <input id="addnote" class="displayinput" type="image" src="images/todo/add_circle_button.png" />
+            <input
+              id="displaytodo"
+              type="image"
+              class="displayinput"
+              src="images/todo/add_circle_button.png"
+            />
           </div>
         </div>
-      </div>
+        <!-- to-do list -->
 
-      <!-- notes -->
-    </main>
-  </div>
+        <!-- notes -->
+        <div class="card cardcontainer">
+          <!--  information -->
 
-  <script src="scripts/jquery.js"></script>
-  <script src="scripts/load.js"></script>
-  <script src="scripts/todo.js"></script>
-  <script src="scripts/main.js"></script>
-</body>
+          <div class="information">
+            <div class="icon">
+              <i class="fa fa-info" aria-hidden="true"></i>
+            </div>
+            <div class="contents">
+              <h2>It a very information packed!</h2>
+            </div>
+          </div>
+          <!--  information -->
 
+          <div id="noteheader">
+            <h2 class="cardtitle">Notes</h2>
+          </div>
+          <div id="notecontainer" class="cardcontent scrollwheel">
+            <div class="card note">
+              <i class="closenote fas fa-times-circle"></i>
+              <div class="notetitle scrollwheel">
+                <h2 contenteditable="true" class="smalltitle">Thy Title!</h2>
+              </div>
+              <div class="notecontent scrollwheel">
+                <p contenteditable="true" class="text">
+                  I want to note something!
+                </p>
+              </div>
+            </div>
+          </div>
+          <div id="notefooter">
+            <div class="cardfooter">
+              <input
+                id="addnote"
+                class="displayinput"
+                type="image"
+                src="images/todo/add_circle_button.png"
+              />
+            </div>
+          </div>
+        </div>
+
+        <!-- notes -->
+      </main>
+    </div>
+
+    <script src="scripts/jquery.js"></script>
+    <script src="scripts/load.js"></script>
+    <script src="scripts/todo.js"></script>
+    <script src="scripts/main.js"></script>
+  </body>
 </html>

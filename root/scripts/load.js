@@ -1,5 +1,3 @@
-
-
 $.get("application_header.html", function(data){
     $("#header").replaceWith(data);
 });

@@ -3,39 +3,37 @@
   <head>
   <title>Login Form design</title>
   <link rel="stylesheet" href="styles/login.css">
-  <!--Fontawesome-->
-  <link href="dependencies/fontawesome/css/all.css" rel="stylesheet">
 
   </head>
   <body>
-    <div class="container">
-      <div class="box" id="img"></div>
-      <div class="box" id="form"><form action="" method="get">
-        <h2>Login</h2>
-           <div class="form-group">
-             <input type="text" class="form-control" placeholder="Email" required>
-           </div>
-           <div class="form-group">
-             <input type="password" class="form-control" placeholder="Password" required minlength="6">
-           </div>
-           <div class="remember">
-             <label><input type="checkbox"  ></label>  Remember me
-           </div>
-           <div>
-             <input type="submit" class="btn" value="Sign in">
-           </div>
-           <div class="form-group">
-             <p>Don't have an account? <a 
-             class="form" href="signup.html" target=”_blank”>Sign up</a> <br>
-             <h3>Login with social media</h3>
-             <ul class="sci">
-               <li><i class="fab fa-instagram"></i></li>
-               <li><i class="fab fa-facebook"></i></li>
-               <li><i class="fab fa-twitter"></i></li>
-             </ul></p>
-           </div>
+     <div class="hero">
+       <div class="form-box">
+          <div class="button-box">
+            <div id="btn"> </div>
+             <button type="button" class="toggle-btn" onclick="signin()">Sign in</button>
+             <button type="button" class="toggle-btn"onclick="register()">Sign up</button>
+          </div>
+          <div class="icon">
+            <img src="images/wp_img/logo.png" width="80px"  id="icon" alt="User Icon" >
+          </div>
+         <form  id="login" class="input-group" name="form" method="post">
+              <input type="text" name="fname" class="input-field" placeholder="Username">
+              <input type="Password" name="fpassword" class="input-field"    placeholder="Password" >
+              <button type="sumbit" class="submit-btn">Login</button>
+              <div id="formFooter">
+                <a class="underlineHover" href="#">Forgot Password?</a>
+              </div>
          </form>
-        </div>  
+        
+         <form  id="register"class="input-group" name="form"  method="post">
+          <input type="text" name="fname" class="input-field" placeholder="Username">
+          <input type="email" name="femail" class="input-field"    placeholder="Email Address">
+          <input type="password" name="fpassword" class="input-field"    placeholder="Password" minlength="6">
+          <button type="sumbit" class="submit-btn">Sign up</button>
+     </form>
+       </div>
      </div>
+     <script src="scripts/login.js"></script>
   </body>
 </html>
+

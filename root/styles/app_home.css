@@ -1,3 +1,8 @@
+:root {
+  --primarycolor: #4d85fe;
+  --darkprimary: #3154a0;
+}
+
 main {
   display: grid;
 
@@ -12,20 +17,21 @@ main {
 
 .card:nth-child(1) {
   grid-area: a;
-  background-color:blue;
+  background-color: blue;
 }
 .card:nth-child(2) {
   grid-area: b;
-  background-color:green;
+  background-color: green;
 }
 .card:nth-child(3) {
   grid-area: c;
-  background-color:red;
+  background-color: red;
 }
 .card:nth-child(4) {
   grid-area: d;
-  background-color:orange;
-}.card:nth-child(5) {
+  background-color: orange;
+}
+.card:nth-child(5) {
   grid-area: e;
-  background-color:#161616;
+  background-color: #161616;
 }
