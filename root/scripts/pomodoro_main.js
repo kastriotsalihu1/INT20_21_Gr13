@@ -10,8 +10,8 @@ var bs = document.getElementById("break_seconds");
 
 //store a reference to a timer variable
 var startTimer;
-var pomodoroDuration = 0;
-var pomodoroBreaktime = 0;
+var pomodoroDuration = 25;
+var pomodoroBreaktime = 5;
 var pomodoroCycles = 1;
 var toggle = true;
 
@@ -21,9 +21,9 @@ window.onload = function () {
 
 start.addEventListener("click", function () {
   if (startTimer === undefined) {
-    startTimer = setInterval(timer1, 100);
+    startTimer = setInterval(timer1, 1000);
   } else {
-    alert("Timer is already running");
+    console.log("Timer is already running");
   }
 });
 
@@ -69,7 +69,6 @@ function timer1() {
       toggle = false;
     }
 
-
     if (bs.innerText != 0) {
       bs.innerText--;
     } else if (bm.innerText != 0 && bs.innerText == 0) {
@@ -94,20 +93,25 @@ function timer1() {
     document.getElementById("cycle").innerText++;
 
     if (document.getElementById("cycle").innerText % pomodoroCycles == 0) {
-      console.log(treeIndex % yCoordinate.length);
-      let image = treeImages[treeIndex % treeImages.length];
-      ctx.drawImage(
-        image,
-        xCoordinate[treeIndex % xCoordinate.length],
-        yCoordinate[treeIndex % yCoordinate.length],
-        image.width,
-        image.height
-      );
-      treeIndex++;
+      plantTree();
     }
   }
 }
 
+function plantTree(number =  1) {
+  for (let i = 0; i < number; i++) {
+    let image = treeImages[treeIndex % treeImages.length];
+    ctx.drawImage(
+      image,
+      xCoordinate[treeIndex % xCoordinate.length],
+      yCoordinate[treeIndex % yCoordinate.length],
+      image.width,
+      image.height
+    );
+    treeIndex++;
+    treeImages.push(getImage(treePaths[i]));
+  }
+}
 //Stop Timer Function
 function stopInterval() {
   clearInterval(startTimer);
@@ -146,7 +150,6 @@ for (let i = 0; i < 8; i++) {
 const canvas = document.getElementById("canvas");
 const ctx = canvas.getContext("2d");
 fitToContainer(canvas);
-
 
 var xCoordinate = [];
 var yCoordinate = [];
@@ -198,11 +201,3 @@ function fitToContainer(canvas) {
 function scaleCanvas(sSize) {
   ctx.scale(sSize, sSize, canvas.width / 2, canvas.height / 2);
 }
-
-
-
-
-
-
-
-
