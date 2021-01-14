@@ -5,11 +5,11 @@
 
        function register(){
           x.style.left="-400px";
-          y.style.left="50px";
+          y.style.left="45px";
           z.style.left="110px";
        }
        function signin(){
-          x.style.left="50px";
+          x.style.left="45px";
           y.style.left="450px";
           z.style.left="0";
         }
