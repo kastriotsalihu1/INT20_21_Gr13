@@ -1,5 +1,5 @@
 
-var x=document.getElementById("login");
+       var x=document.getElementById("login");
        var y=document.getElementById("register");
        var z=document.getElementById("btn");
 
@@ -14,3 +14,11 @@ var x=document.getElementById("login");
           z.style.left="0";
         }
 
+function validate(){
+   var username=document.getElementById("username");
+   if(username.value==""){
+     alert("no blank values allowed!");
+   } else{
+
+   }
+}

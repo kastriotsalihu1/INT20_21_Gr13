@@ -17,9 +17,9 @@
             <img src="images/wp_img/logo.png" width="80px"  id="icon" alt="User Icon" >
           </div>
          <form  id="login" class="input-group" name="myForm" >
-              <input type="text" class="input-field name" placeholder="Username">
+              <input type="text" class="input-field " placeholder="Username" id="username">
               <input type="Password" name="password" class="input-field"    placeholder="Password" >
-              <button type="submit" class="submit-btn">Login</button>
+              <button type="submit" onclick="validate()" class="submit-btn">Login</button>
               <div id="formFooter">
                 <a class="underlineHover" href="#">Forgot Password?</a>
               </div>
@@ -28,7 +28,7 @@
          <form id="register"class="input-group" name="myForm" >
           <input type="text" class="input-field" placeholder="Username" >
           <input type="email" name="femail" id="mail"class="input-field"    placeholder="Email Address" id="email" >
-          <input type="password" name="password" class="input-field"    placeholder="Password" minlength="6">
+          <input type="password" name="password" id="password" class="input-field"    placeholder="Password" minlength="6">
           <button type="submit" class="submit-btn">Sign up</button>
      </form>
        </div>
