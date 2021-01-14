@@ -18,11 +18,12 @@ body {
 #grades {
   float: right;
   width: 200px;
-  height: 40px;
+  height: 60px;
   outline: none;
   border: 0.2px solid #fff;
   font-size: 1.15em;
 }
+
 select:focus {
   background: white;
   border: 3px solid var(--primarycolor);
@@ -52,7 +53,7 @@ ul {
 
 li {
   background: #fff;
-  height: 40px;
+  height: 60px;
   /*teksti del n mes dmth e merr krejt hapsiren height */
   line-height: 40px;
   color: #666;
@@ -106,7 +107,7 @@ li:hover span {
   width: 100%;
   overflow-y: scroll;
   scrollbar-width: thin;
-  height: 245px;
+  height: 300px;
 }
 .scroll::-webkit-scrollbar {
   width: 12px;
