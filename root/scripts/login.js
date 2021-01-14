@@ -15,10 +15,16 @@
         }
 
 function validate(){
-   var username=document.getElementById("username");
-   if(username.value==""){
-     alert("no blank values allowed!");
-   } else{
-
-   }
+   var username=document.getElementById("username").value;
+     if(username==""||fpassword==""){
+     alert("No blank values allowed!");
+    } 
+    if(username.length<5){
+      alert("**Username length must be atleast 5 characters");
+     } 
+   var password=document.getElementById("fpassword").value;
+    if(password.length < 8||password.length> 15){
+     alert("**Password length must be atleast 8 characters and not exceed 15 characters");
+    }
 }
+
