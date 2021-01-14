@@ -1,12 +1,12 @@
 const treePaths = [
   "images/trees/TreeFlat_1.png",
-    "images/trees/TreeFlat_2.png",
-    "images/trees/TreeFlat_3.png",
-    "images/trees/TreeFlat_4.png",
-    "images/trees/TreeFlat_5.png",
-    "images/trees/TreeFlat_6.png",
-    "images/trees/TreeFlat_7.png",
-    "images/trees/TreeFlat_8.png",
+  "images/trees/TreeFlat_2.png",
+  "images/trees/TreeFlat_3.png",
+  "images/trees/TreeFlat_4.png",
+  "images/trees/TreeFlat_5.png",
+  "images/trees/TreeFlat_6.png",
+  "images/trees/TreeFlat_7.png",
+  "images/trees/TreeFlat_8.png",
 ];
 var treeImages = [];
 
@@ -18,41 +18,28 @@ for (let i = 0; i < 8; i++) {
 
 const canvas = document.getElementById("canvas");
 const ctx = canvas.getContext("2d");
-var button = document.getElementById("btn");
-
+fitToContainer(canvas);
 
 var xCoordinate = [];
 var yCoordinate = [];
-let canvasWidth = 500,
-  canvasHeight = 200,
+let canvasWidth = canvas.width,
+  canvasHeight = canvas.height,
   resizingFactor = 1,
-  imageH = 40,
+  imageH = 56,
   imageW = 40;
+
+scaleCanvas(ctx, 1.2);
 for (let i = 0; i < canvasWidth / imageW; i += 1) xCoordinate[i] = i * imageW;
-for (let i = 0; i < canvasHeight / imageW; i += 1) yCoordinate[i] = i * imageH;
+for (let i = 0; i < canvasHeight / imageH; i += 1) yCoordinate[i] = i * imageH;
+console.log(canvasWidth);
+if (canvasHeight % imageH != 0) yCoordinate.pop();
 
 xCoordinate = shuffle(xCoordinate);
 yCoordinate = shuffle(yCoordinate);
 
 console.log(xCoordinate, yCoordinate);
 
-
 var treeIndex = 0;
- window.onload=function() {
-
-  let image = treeImages[treeIndex % treeImages.length];
-  for(let i=0; i<15; i++){
-  ctx.drawImage(
-   image,
-    xCoordinate[treeIndex % xCoordinate.length],
-    yCoordinate[treeIndex % yCoordinate.length],
-    image.width,
-    image.height
-  );
-  treeIndex++;
-  shuffle(array);
-  }
-}
 
 function shuffle(array) {
   var tmp,
@@ -73,16 +60,13 @@ function getImage(src) {
   image.src = src;
   return image;
 }
+function fitToContainer(canvas) {
+  canvas.style.width = "100%";
+  canvas.style.height = "100%";
 
-// function scaleIt(source, scaleFactor) {
-//   var c = document.createElement("canvas");
-//   var ctx = c.getContext("2d");
-//   var w = source.width * scaleFactor;
-//   var h = source.height * scaleFactor;
-//   c.width = w;
-//   c.height = h;
-//   ctx.drawImage(source, 0, 0, w, h);
-//   return c;
-// }
-
-// function start() {}
+  canvas.width = canvas.offsetWidth;
+  canvas.height = canvas.offsetHeight;
+}
+function scaleCanvas(sSize) {
+  ctx.scale(sSize, sSize, canvas.width / 2, canvas.height / 2);
+}
