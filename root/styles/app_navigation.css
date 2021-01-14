@@ -151,7 +151,7 @@ header {
   box-shadow: 0px 0px 9px 5px rgba(0, 0, 0, 0.15);
   font-size: 25px;
   padding-left: 30px;
-  /* font-weight: bold; */
+  overflow:hidden;
   color: var(--textcolor);
 }
 .setting:hover {
@@ -263,7 +263,6 @@ main {
   position: relative;
   display: inline-block;
   margin: 1rem;
-  background-color: lightgray;
   box-shadow: 0 6px 16px rgba(0, 0, 0, 0.2);
 }
 
@@ -301,7 +300,7 @@ main {
   display: inline-block;
   height: 34px;
   position: relative;
-  width: 150px;
+  width: 90px;
   margin:0 20px;
 }
 
@@ -336,7 +335,7 @@ input:checked + .slider {
 }
 
 input:checked + .slider:before {
-  transform: translateX(115px);
+  transform: translateX(55px);
 }
 
 .slider.round {
