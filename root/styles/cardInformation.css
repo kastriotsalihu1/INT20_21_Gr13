@@ -28,13 +28,16 @@ transition: all 0.5s, border-radius 2s; */
   color: white;
   opacity: 1;
   cursor: pointer;
+  transition: transform 0.5s;
 }
 /* for all information icons that arent already displaying */
 .information:not(.displayInfo):hover .icon {
-  transform: scale(2);
+  transform: scale(1.3);
 }
 .information:not(.displayInfo):hover {
   cursor: pointer;
+  width:70px;
+  height:70px;
 }
 
 /* how information div should behave on display */
@@ -54,13 +57,13 @@ transition: all 0.5s, border-radius 2s; */
 
 /* while the information shouldn't be displayed */
 .information .contents {
-  overflow: auto;
+  overflow: hidden;
   padding: 5%;
   opacity: 0;
   visibility: hidden;
   position: relative;
   transform: scale(0.5);
-  transition: opacity 0.2s, transform 0.8s;
+  transition: opacity 1.5s, transform 0.8s;
 }
 /* how the data about the product should be displayed */
 .information .contents table {
