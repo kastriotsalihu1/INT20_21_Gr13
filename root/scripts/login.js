@@ -1,3 +1,4 @@
+
 var x=document.getElementById("login");
        var y=document.getElementById("register");
        var z=document.getElementById("btn");
@@ -12,3 +13,4 @@ var x=document.getElementById("login");
           y.style.left="450px";
           z.style.left="0";
         }
+
