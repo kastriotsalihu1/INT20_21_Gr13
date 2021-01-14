@@ -16,39 +16,24 @@
           <div class="icon">
             <img src="images/wp_img/logo.png" width="80px"  id="icon" alt="User Icon" >
           </div>
-         <form  id="login" class="input-group">
-              <input type="text" name="" class="input-field" placeholder="Login">
-              <input type="text" name="" class="input-field"    placeholder="Password">
-              <button type="sumbit" class="submit-btn">Login</button>
+         <form  id="login" class="input-group" name="myForm" >
+              <input type="text" class="input-field" placeholder="Username" id="username">
+              <input type="Password" name="password" class="input-field"    placeholder="Password" id="fpassword">
+              <button type="submit" onclick="validate()" class="submit-btn">Login</button>
               <div id="formFooter">
                 <a class="underlineHover" href="#">Forgot Password?</a>
               </div>
          </form>
         
-         <form  id="register"class="input-group">
-          <input type="text" name="" class="input-field" placeholder="Login">
-          <input type="email" name="" class="input-field"    placeholder="Email Id">
-          <input type="text" name="" class="input-field"    placeholder="Password">
-          <button type="sumbit" class="submit-btn">Sign up</button>
+         <form id="register"class="input-group" name="myForm" >
+          <input type="text" class="input-field" placeholder="Username"id="name" >
+          <input type="email" name="femail" id="mail"class="input-field"    placeholder="Email Address" id="email" >
+          <input type="password" name="password" id="password" class="input-field"    placeholder="Password" >
+          <button type="submit" class="submit-btn">Sign up</button>
      </form>
        </div>
      </div>
-     <script>
-       var x=document.getElementById("login");
-       var y=document.getElementById("register");
-       var z=document.getElementById("btn");
-
-       function register(){
-          x.style.left="-400px";
-          y.style.left="50px";
-          z.style.left="110px";
-       }
-       function signin(){
-          x.style.left="50px";
-          y.style.left="450px";
-          z.style.left="0";
-       }
-     </script>
+     <script src="scripts/login.js"></script>
   </body>
 </html>
 

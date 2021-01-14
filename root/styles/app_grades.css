@@ -1,13 +1,12 @@
-:root{
-
-  --primarycolor:#C26161;
-  --secondarycolor:#be7c7c;
-  --darkprimary:#864646;
-  --lightprimary:#e2acac;
+:root {
+  --primarycolor: #c26161;
+  --secondarycolor: #be7c7c;
+  --darkprimary: #864646;
+  --lightprimary: #e2acac;
 }
 
 body {
-  font-family: "Open Sans", sans-serif;
+  font-family: 'Open Sans', sans-serif;
 }
 main {
 
@@ -18,75 +17,75 @@ main {
 
   gap: 10px;
   grid-template-areas:
-    "a b"
-    "c c";
+    'a b'
+    'c c';
 }
- .box_1{
+.box_1 {
   grid-area: a;
-  background-color:var(--primarycolor) ;
-  display:flex;
-  flex-direction:column;
+  background-color: var(--primarycolor);
+  display: flex;
+  flex-direction: column;
   padding: 5px;
- }
- .box_2{
+}
+.box_2 {
   padding: 5px;
-  background-color:var(--primarycolor) ; 
+  background-color: var(--primarycolor);
   grid-area: b;
-  display:flex;
-  flex-direction:column;
+  display: flex;
+  flex-direction: column;
   justify-content: space-between;
- }
- .box_3{
-  background-color:var(--primarycolor) ; 
+}
+.box_3 {
+  background-color: var(--primarycolor);
   grid-area: c;
-  display:flex;
-  flex-direction:column;
+  display: flex;
+  flex-direction: column;
   padding-bottom: 5px;
- }
- .table{
-  overflow-y:auto;
- }
- table{
-   width:100%;
- }
- 
- #listcontent {
+}
+.table {
+  overflow-y: auto;
+}
+table {
+  width: 100%;
+}
+
+#listcontent {
   height: 500px;
   width: 100%;
 
-  overflow-y: scroll; 
-  overflow-x: hidden; 
+  overflow-y: scroll;
+  overflow-x: hidden;
 }
- #grades {
+#grades {
   float: right;
   width: 200px;
   height: 40px;
   outline: none;
-  border:0.2px solid #fff;
+  border: 0.2px solid #fff;
   font-size: 1.15em;
 }
-select:focus{
+select:focus {
   background: white;
-  border:  3px solid var(--primarycolor);
+  border: 3px solid var(--primarycolor);
   /*outline osht highlighti*/
   outline: none;
 }
 /*#29b96a*/
-h1{
-  background: var(--primarycolor); 
+h1 {
+  background: var(--primarycolor);
   color: white;
   margin: 0;
   padding: 10px 20px;
   text-transform: uppercase;
-  font-size:25px;
+  font-size: 25px;
   font-weight: normal;
   text-align: center;
 }
-#shtoLiterature{
+#shtoLiterature {
   height: 30px;
   border-radius: 10%;
 }
-ul{
+ul {
   /* me i hek bulletpoints*/
   list-style: none;
   margin: 0;
@@ -94,7 +93,7 @@ ul{
   width: 100%;
 }
 
-li{
+li {
   background: #fff;
   height: 40px;
   /*teksti del n mes dmth e merr krejt hapsiren height */
@@ -103,111 +102,110 @@ li{
   width: 100%;
 }
 
-li:nth-child(2n){
+li:nth-child(2n) {
   background-color: #f7f7f7;
-  }
-select:nth-child(2n){
-    background-color: #f7f7f7;
-  }
+}
+select:nth-child(2n) {
+  background-color: #f7f7f7;
+}
 
-input{
+input {
   height: 70px;
   font-size: 18px;
-  color:var(--primarycolor);
+  color: var(--primarycolor);
   background-color: #f7f7f7;
   width: 100%;
   box-sizing: border-box;
-  padding: 20px 13px 20px 20px ;
-  border:0.2px solid #f7f7f7;
+  padding: 20px 13px 20px 20px;
+  border: 0.2px solid #f7f7f7;
 }
-input:focus{
+input:focus {
   background: white;
-  border:  3px solid var(--primarycolor);
+  border: 3px solid var(--primarycolor);
   /*outline osht highlighti*/
   outline: none;
 }
 
-span{
+span {
   background: #e74c3c;
   height: 40px;
   margin-right: 20px;
   text-align: center;
   color: white;
-  width:0px;
+  width: 0px;
   display: inline-block;
-  transition: 0.2s linear ;
+  transition: 0.2s linear;
   /*mos mu shfaq ikona kur osht width 0*/
   opacity: 0;
 }
 /*all the trash have the width of 0 until u hover*/
 
-li:hover span{
+li:hover span {
   width: 40px;
-  opacity: 1.0;
+  opacity: 1;
 }
 
-.objects{
+.objects {
   font-size: 18px;
-  color:var(--primarycolor) ;
+  color: var(--primarycolor);
   background-color: #f7f7f7;
   width: 100%;
   box-sizing: border-box;
-  padding: 10px 13px 10px 20px ;
-  border:  3px solid var(--primarycolor);
+  padding: 10px 13px 10px 20px;
+  border: 3px solid var(--primarycolor);
 }
-.rezultati{
+.rezultati {
   font-size: 18px;
-  color:var(--primarycolor) ;
+  color: var(--primarycolor);
   background-color: #f7f7f7;
   width: 100%;
   box-sizing: border-box;
-  padding: 13px 13px 13px 20px ;
-  border:  3px solid var(--primarycolor);
+  padding: 13px 13px 13px 20px;
+  border: 3px solid var(--primarycolor);
 }
 
-.trstyle{
+.trstyle {
   background-color: rgb(185, 70, 70);
 }
-.rows{
+.rows {
   background: snows;
 }
-#selectLiteraturen{
+#selectLiteraturen {
   font-size: 18px;
-  color:var(--primarycolor);
+  color: var(--primarycolor);
   background-color: #f7f7f7;
   width: 100%;
   box-sizing: border-box;
-  padding: 13px 13px 13px 20px ;
-  border:0.2px solid #f7f7f7;
-
+  padding: 13px 13px 13px 20px;
+  border: 0.2px solid #f7f7f7;
 }
-#selectLiteraturen:focus{
+#selectLiteraturen:focus {
   background: white;
-  border:  3px solid var(--primarycolor);
+  border: 3px solid var(--primarycolor);
   /*outline osht highlighti*/
   outline: none;
 }
-#file{
-  color:var(--primarycolor) ;
+#file {
+  color: var(--primarycolor);
   background-color: #f7f7f7;
   width: 100%;
   box-sizing: border-box;
-  border:  3px solid var(--secondarycolor);
+  border: 3px solid var(--secondarycolor);
 }
-#shtoButton{
+#shtoButton {
   font-size: 20px;
-  color:var(--primarycolor) ;
+  color: var(--primarycolor);
   background-color: #f7f7f7;
   box-sizing: border-box;
-  padding: 20px 13px 20px 20px ;
-  border:  3px solid var(--secondarycolor);
+  padding: 20px 13px 20px 20px;
+  border: 3px solid var(--secondarycolor);
 }
-#shtoButton:focus{
-  border:  3px solid var(--darkprimary);
+#shtoButton:focus {
+  border: 3px solid var(--darkprimary);
   /*outline osht highlighti*/
   outline: none;
 }
-.scroll{
+.scroll {
   width: 100%;
   overflow-y: scroll;
   scrollbar-width: thin;
@@ -219,44 +217,44 @@ li:hover span{
 .scroll::-webkit-scrollbar-thumb {
   border-radius: 3px;
   background-color: var(--darkprimary);
-} 
-.modal{
-position: fixed;
-top: 50%;
-left: 50%;
-/*top left transform : me e qit n mes */
-transform: translate(-50%,-50%) scale(0);
-transition: 200ms ease-in-out;
-color: black;
-border: 1px solid var(--darkprimary);
-border-radius: 10px;
-/*me dal permi ccdo elementi*/
-z-index: 10;
-background-color: var(--lightprimary);
-width: 500px;
-max-width: 60%;
-height: 200px;
-font-size: 18px;
 }
-.modal.active{
-  transform: translate(-50%,-50%) scale(1);
+.modal {
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  /*top left transform : me e qit n mes */
+  transform: translate(-50%, -50%) scale(0);
+  transition: 200ms ease-in-out;
+  color: black;
+  border: 1px solid var(--darkprimary);
+  border-radius: 10px;
+  /*me dal permi ccdo elementi*/
+  z-index: 10;
+  background-color: var(--lightprimary);
+  width: 500px;
+  max-width: 60%;
+  height: 200px;
+  font-size: 18px;
+}
+.modal.active {
+  transform: translate(-50%, -50%) scale(1);
 }
 
-.modal-header{
-padding: 10px 15px;
-display: flex;
-justify-content: space-between;
-align-items: center;
-border-bottom: 1px solid var(--primarycolor);
+.modal-header {
+  padding: 10px 15px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  border-bottom: 1px solid var(--primarycolor);
 }
-.modal-header .title{
+.modal-header .title {
   font-size: 1.25rem;
   font-weight: bold;
   text-transform: uppercase;
 }
 
-.modal-header .close-button{
-  cursor:pointer;
+.modal-header .close-button {
+  cursor: pointer;
   border: none;
   outline: none;
   background: none;
@@ -264,13 +262,12 @@ border-bottom: 1px solid var(--primarycolor);
   font-weight: bold;
 }
 
-.modal-body{
+.modal-body {
   padding: 10px 15px;
   overflow-y: scroll;
   scrollbar-width: thin;
   height: 100px;
 }
-
 
 .scrollbar::-webkit-scrollbar {
   width: 12px;
@@ -279,36 +276,36 @@ border-bottom: 1px solid var(--primarycolor);
 .scrollbar::-webkit-scrollbar-thumb {
   border-radius: 3px;
   background-color: var(--darkprimary);
-} 
+}
 
-#overlay{
-  position:fixed;
+#overlay {
+  position: fixed;
   opacity: 0;
   top: 0;
   left: 0;
   right: 0;
   bottom: 0;
-  background-color: rgba(0, 0, 0,0.4);
+  background-color: rgba(0, 0, 0, 0.4);
   pointer-events: none;
   transition: 200ms ease-in-out;
 }
-#overlay.active{
+#overlay.active {
   opacity: 1;
-  pointer-events:all ;
+  pointer-events: all;
 }
 
-.tdstyle{
-  width:500px;
+.tdstyle {
+  width: 500px;
   background-color: rgb(238, 238, 238);
   color: rgb(111, 111, 111);
   padding: 20px 30px;
 }
 
-.thstyle{
+.thstyle {
   background-color: var(--lightprimary);
-  color: "white";
-  font-weight: "normal";
+  color: 'white';
+  font-weight: 'normal';
   height: 10px;
-  padding: "20px 30px";
+  padding: '20px 30px';
   text-align: center;
-  }
+}
