@@ -21,7 +21,7 @@ main {
 }
 .card:nth-child(2) {
   grid-area: b;
-  background-color: red;
+  background-color: var(--primarycolor);
 }
 .card:nth-child(3) {
   grid-area: c;
