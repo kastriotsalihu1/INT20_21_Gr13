@@ -3,11 +3,18 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    
+
     <link rel="stylesheet" href="styles/app_home.css" />
     <link rel="stylesheet" href="styles/app_navigation.css" />
-    <link rel="stylesheet" href="styles/sum_grades.css">
 
+
+    <link rel="stylesheet" type="module" href="styles/cardInformation.css" />
+
+    <!-- styles -->
+    <link rel="stylesheet" href="styles/home_todo.css" />
+    <link rel="stylesheet" href="styles/home_quotes.css" />
+    <link rel="stylesheet" href="styles/sum_grades.css">
+    
     <link href="dependencies/fontawesome/css/all.css" rel="stylesheet" />
     <title>Document</title>
   </head>
@@ -20,67 +27,122 @@
         <div id="durationcounter" class="card"></div>
         <div id="sum_grades" class="card box_2">
           
-        <h1>Notat</h1>
-      
-        <ul class="scroll">
-          <li>
-            Internet<select id="grades">
-              <option>6</option>
-              <option>7</option>
-              <option>8</option>
-              <option>9</option>
-              <option>10</option>
-            </select>
-          </li>
-          <li>
-            Sinjale dhe Sisteme<select id="grades">
-              <option>6</option>
-              <option>7</option>
-              <option>8</option>
-              <option>9</option>
-              <option>10</option>
-            </select>
-          </li>
-          <li>
-           POO<select id="grades">
-              <option>6</option>
-              <option>7</option>
-              <option>8</option>
-              <option>9</option>
-              <option>10</option>
-            </select>
-          </li>
-          <li>
-           Elektronike<select id="grades">
-              <option>6</option>
-              <option>7</option>
-              <option>8</option>
-              <option>9</option>
-              <option>10</option>
-            </select>
-          </li>
-          <li>
-           Databaze<select id="grades">
-              <option>6</option>
-              <option>7</option>
-              <option>8</option>
-              <option>9</option>
-              <option>10</option>
-            </select>
-          </li>
-          <li>
-           Matematike<select id="grades">
-              <option>6</option>
-              <option>7</option>
-              <option>8</option>
-              <option>9</option>
-              <option>10</option>
-            </select>
-          </li>
-        </ul>
+          <h1>Notat</h1>
+        
+          <ul class="scroll">
+            <li>
+              <span><i class="fa fa-trash"></i></span>Internet<select id="grades">
+                <option>6</option>
+                <option>7</option>
+                <option>8</option>
+                <option>9</option>
+                <option>10</option>
+              </select>
+            </li>
+            <li>
+              <span><i class="fa fa-trash"></i></span>Sinjale dhe Sisteme<select id="grades">
+                <option>6</option>
+                <option>7</option>
+                <option>8</option>
+                <option>9</option>
+                <option>10</option>
+              </select>
+            </li>
+            <li>
+              <span><i class="fa fa-trash"></i></span>POO<select id="grades">
+                <option>6</option>
+                <option>7</option>
+                <option>8</option>
+                <option>9</option>
+                <option>10</option>
+              </select>
+            </li> 
+            <li>
+              <span><i class="fa fa-trash"></i></span>Elektronike<select id="grades">
+                <option>6</option>
+                <option>7</option>
+                <option>8</option>
+                <option>9</option>
+                <option>10</option>
+              </select>
+            </li>
+            <li>
+              <span><i class="fa fa-trash"></i></span>Databaze<select id="grades">
+                <option>6</option>
+                <option>7</option>
+                <option>8</option>
+                <option>9</option>
+                <option>10</option>
+              </select>
+            </li>
+            <li>
+              <span><i class="fa fa-trash"></i></span>Matematike<select id="grades">
+                <option>6</option>
+                <option>7</option>
+                <option>8</option>
+                <option>9</option>
+                <option>10</option>
+              </select>
+            </li>
+          </ul>
+          </div>
+        <div id="quotes">
+          <div id="quotescard">
+            <div class="front"><p>Click to flip</p></div>
+            <div class="back"><p>Thou youself</p></div>
+          </div>
         </div>
-        <div id="motivationalquote" class="card"></div>
-        <div id="sum_todo" class="card"></div>
+        <div id="sum_todo" class="card">
+          <div id="noteheader">
+            <h2 class="cardtitle">Notes</h2>
+          </div>
+          <div id="notecontainer" class="cardcontent scrollwheel">
+            <div class="card note">
+              <i class="closenote fas fa-times-circle"></i>
+              <div class="notetitle scrollwheel">
+                <h2 contenteditable="true" class="smalltitle">Thy Title!</h2>
+              </div>
+              <div class="notecontent scrollwheel">
+                <p contenteditable="true" class="text">
+                  I want to note something!
+                </p>
+              </div>
+            </div>
+            <div class="card note">
+              <i class="closenote fas fa-times-circle"></i>
+              <div class="notetitle scrollwheel">
+                <h2 contenteditable="true" class="smalltitle">Thy Title!</h2>
+              </div>
+              <div class="notecontent scrollwheel">
+                <p contenteditable="true" class="text">
+                  I want to note something!
+                </p>
+              </div>
+            </div>
+            <div class="card note">
+              <i class="closenote fas fa-times-circle"></i>
+              <div class="notetitle scrollwheel">
+                <h2 contenteditable="true" class="smalltitle">Thy Title!</h2>
+              </div>
+              <div class="notecontent scrollwheel">
+                <p contenteditable="true" class="text">
+                  I want to note something!
+                </p>
+              </div>
+            </div>
+          </div>
+          <div id="notefooter">
+            <div class="cardfooter">
+              <input
+                id="addnote"
+                class="displayinput"
+                type="image"
+                src="images/todo/add_circle_button.png"
+              />
+            </div>
+          </div>
+        </div>
+
         <div id="sum_garden" class="card"></div>
         <div id="sum_product" class="card"></div>
       </main>
@@ -90,8 +152,9 @@
     <script src="scripts/load.js"></script>
     <script src="scripts/main.js"></script>
     <script src="scripts/navigation.js"></script>
+    <script src="scripts/todo.js"></script>
+    <script src="scripts/quotes.js"></script>
     <script src="scripts/sum_grades.js"></script>
       
-    </script>
   </body>
 </html>

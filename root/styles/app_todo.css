@@ -34,6 +34,7 @@ main {
   width: 100%;
   text-align: center;
   z-index: 4;
+  box-shadow: 0 5px 10px rgba(0, 0, 0, 0.10);
 }
 
 input {
@@ -220,4 +221,11 @@ ul li.checked::before {
 }
 .note:hover .closenote {
   font-size: 27px;
+}
+#addnote:hover{
+  transform: scale(1.2);
+}
+
+#addnote:active{
+transform: scale(1);
 }
