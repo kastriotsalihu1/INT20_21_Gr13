@@ -27,14 +27,7 @@ $("ul").on("click", "li", function(){
      $("ul").append("<li><span><i class='fas fa-trash'></i></span> " + todoText + "<select id='grades'><option >6</option><option >7</option><option >8</option><option >9</option><option >10</option></select></li>")
    }
  });
- /*me e shfaq ose me e fade away ikonen e lapsit*/
- $(".fa-pencil-alt").click(function(){
-   $("input").fadeToggle();
- })
- $("ul").on("click", "select", function(){
-  $(this).toggleClass("completed");
- });
- 
+
  var pooFiles=[{lenda:"POO",emriiFile:"Java",lloji:"Liber"},{lenda:"POO",emriiFile:"Programimi i Orientuar ne Objekte",  lloji:"Afate"}];
  var matFiles = [{lenda: "Matematike", emriiFile: "Matematika diskrete", lloji: "Ligjerata"}, {lenda: "Matematike", emriiFile: "Detyra", lloji: "Ushtrime"}];
  var SinjaleSistemeFiles=[{lenda: "SinjaleDheSisteme", emriiFile:"Serite Furie", lloji:"Afate"},

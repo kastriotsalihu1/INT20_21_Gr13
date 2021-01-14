@@ -58,8 +58,6 @@ input {
   overflow: auto;
 }
 
-
-
 .scrollwheel::-webkit-scrollbar-track {
   border-radius: 3px;
   background-color: whitesmoke;

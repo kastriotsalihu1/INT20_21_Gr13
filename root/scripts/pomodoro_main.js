@@ -98,20 +98,20 @@ function timer1() {
   }
 }
 
-function plantTree(number =  1) {
-  for (let i = 0; i < number; i++) {
-    let image = treeImages[treeIndex % treeImages.length];
-    ctx.drawImage(
-      image,
-      xCoordinate[treeIndex % xCoordinate.length],
-      yCoordinate[treeIndex % yCoordinate.length],
-      image.width,
-      image.height
-    );
-    treeIndex++;
-    treeImages.push(getImage(treePaths[i]));
-  }
-}
+// function plantTree(number =  1) {
+//   for (let i = 0; i < number; i++) {
+//     let image = treeImages[treeIndex % treeImages.length];
+//     ctx.drawImage(
+//       image,
+//       xCoordinate[treeIndex % xCoordinate.length],
+//       yCoordinate[treeIndex % yCoordinate.length],
+//       image.width,
+//       image.height
+//     );
+//     treeIndex++;
+//     treeImages.push(getImage(treePaths[i]));
+//   }
+// }
 //Stop Timer Function
 function stopInterval() {
   clearInterval(startTimer);
@@ -140,6 +140,7 @@ const treePaths = [
   "images/trees/TreeFlat_8.png",
 ];
 var treeImages = [];
+
 
 for (let i = 0; i < 8; i++) {
   treeImages.push(getImage(treePaths[i]));
@@ -200,4 +201,21 @@ function fitToContainer(canvas) {
 }
 function scaleCanvas(sSize) {
   ctx.scale(sSize, sSize, canvas.width / 2, canvas.height / 2);
+}
+
+
+
+function plantTree(number =  1) {
+  for (let i = 0; i < number; i++) {
+    let image = treeImages[treeIndex % treeImages.length];
+    ctx.drawImage(
+      image,
+      xCoordinate[treeIndex % xCoordinate.length],
+      yCoordinate[treeIndex % yCoordinate.length],
+      image.width,
+      image.height
+    );
+    treeIndex++;
+    treeImages.push(getImage(treePaths[i]));
+  }
 }

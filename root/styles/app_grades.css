@@ -91,6 +91,7 @@ ul {
   margin: 0;
   padding: 0;
   width: 100%;
+  
 }
 
 li {
@@ -154,22 +155,6 @@ li:hover span {
   padding: 10px 13px 10px 20px;
   border: 3px solid var(--primarycolor);
 }
-.rezultati {
-  font-size: 18px;
-  color: var(--primarycolor);
-  background-color: #f7f7f7;
-  width: 100%;
-  box-sizing: border-box;
-  padding: 13px 13px 13px 20px;
-  border: 3px solid var(--primarycolor);
-}
-
-.trstyle {
-  background-color: rgb(185, 70, 70);
-}
-.rows {
-  background: snows;
-}
 #selectLiteraturen {
   font-size: 18px;
   color: var(--primarycolor);
@@ -209,89 +194,19 @@ li:hover span {
   width: 100%;
   overflow-y: scroll;
   scrollbar-width: thin;
+  height: 245px;
 }
 .scroll::-webkit-scrollbar {
   width: 12px;
+}
+.scroll::-webkit-scrollbar-track {
+  border-radius: 3px;
+  background-color: var(--darkprimary);
 }
 
 .scroll::-webkit-scrollbar-thumb {
   border-radius: 3px;
   background-color: var(--darkprimary);
-}
-.modal {
-  position: fixed;
-  top: 50%;
-  left: 50%;
-  /*top left transform : me e qit n mes */
-  transform: translate(-50%, -50%) scale(0);
-  transition: 200ms ease-in-out;
-  color: black;
-  border: 1px solid var(--darkprimary);
-  border-radius: 10px;
-  /*me dal permi ccdo elementi*/
-  z-index: 10;
-  background-color: var(--lightprimary);
-  width: 500px;
-  max-width: 60%;
-  height: 200px;
-  font-size: 18px;
-}
-.modal.active {
-  transform: translate(-50%, -50%) scale(1);
-}
-
-.modal-header {
-  padding: 10px 15px;
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  border-bottom: 1px solid var(--primarycolor);
-}
-.modal-header .title {
-  font-size: 1.25rem;
-  font-weight: bold;
-  text-transform: uppercase;
-}
-
-.modal-header .close-button {
-  cursor: pointer;
-  border: none;
-  outline: none;
-  background: none;
-  font-size: 1.25rem;
-  font-weight: bold;
-}
-
-.modal-body {
-  padding: 10px 15px;
-  overflow-y: scroll;
-  scrollbar-width: thin;
-  height: 100px;
-}
-
-.scrollbar::-webkit-scrollbar {
-  width: 12px;
-}
-
-.scrollbar::-webkit-scrollbar-thumb {
-  border-radius: 3px;
-  background-color: var(--darkprimary);
-}
-
-#overlay {
-  position: fixed;
-  opacity: 0;
-  top: 0;
-  left: 0;
-  right: 0;
-  bottom: 0;
-  background-color: rgba(0, 0, 0, 0.4);
-  pointer-events: none;
-  transition: 200ms ease-in-out;
-}
-#overlay.active {
-  opacity: 1;
-  pointer-events: all;
 }
 
 .tdstyle {
