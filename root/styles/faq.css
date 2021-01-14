@@ -6,13 +6,11 @@
 	 box-sizing: border-box;
 }
  .main {
-	 margin-top:600px;
 	 padding: 0;
 	 font-family: 'open sans', sans-serif;
 	 background:#377ded;
 	 color: white;
 	 display: flex;
-	 min-height: 100vh;
 }
  .container {
 	 margin: 0 auto;
@@ -122,20 +120,17 @@
 
 body{
   background: #377ded;
-
+  padding-top:150px;
 }
 
 .wrapper{
-  position: absolute;
-  top: 40%;
-  left: 50%;
-  transform: translate(-50%,-50%);
   max-width: 650px;
   width: 100%;
   background: #fff;
   padding: 25px;
   border-radius: 5px;
   box-shadow: 4px 4px 2px  #3070d4;
+  margin:auto;
 }
 
 .wrapper h2{
