@@ -108,7 +108,7 @@ $(document).ready(function () {
       ctx.font = "58px arial";
       ctx.textAlign = "center";
       ctx.fillStyle = "#fff";
-      ctx.fillText(parseInt(score/50), c.width / 2, 100);
+      ctx.fillText(parseInt(score/50), c.width / 2, 50);
       if (player.x < 0) restart();
     }
     requestAnimationFrame(loop);
