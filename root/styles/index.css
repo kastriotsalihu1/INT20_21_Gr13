@@ -10,14 +10,7 @@ html{
   scroll-behavior: smooth;
 }
 
-body {  
-  margin: 0;
-  font-family: "Open Sans", sans-serif;
-  width: 100%;
-  padding: 0;
-  overflow-y: scroll;
-  overflow-x: hidden;
-}
+
 img {
   user-select: none;
 }

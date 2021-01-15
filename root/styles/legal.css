@@ -84,8 +84,14 @@ main li {
   color: #4b4b4b;
   font-size: 100%;
 }
+#content li{
+  list-style-Type: none;
+  padding: 0 0 4px 23px;
+  background: url(https://www.computerhope.com/cdn/arrow.png) no-repeat left center;
+ }
+
 mark {
-  background-color: #377ded;;
+  background-color: #377ded;
   color: white;
   font-size:18px;
   text-transform: initial;
@@ -116,3 +122,49 @@ hr {
 address a{
   color:blue;
 }
+
+aside {
+  width: 30%;
+  padding-left: 15px;
+  margin-left: 15px;
+  float: right;
+  font-style: italic;
+  background-color: lightgray;
+}
+
+.skewed {
+  transform: skewX(20deg); /* Equal to skew(7deg) */
+  width:100%;
+  height: 20px;
+  background-color: #377ded;
+}
+.skewed1{
+  width:100%;
+  height: 20px;
+  background-color: #377ded;
+  transform: skewX(-20deg); /* Equal to skew(7deg) */
+}
+#example1 {
+  background-image:url(../images/aboutus/todo.png), url(../images/aboutus/laptop.jpg);
+  width: 100%;
+  height: 600px;
+  
+}
+
+/* Regarding MDN (developer.mozilla.org), the CSS3 multi-column layout extends the block layout mode to allow the easy definition of multiple columns of text. */
+.tittle{
+  padding: 4rem;
+  line-height: 1.4;
+}
+	.content {
+    column-count: 3;
+    column-gap: 30px;
+    /* shorthand for count and gap using columns */
+    /* columns: 3 30px; */
+    
+    column-rule-color:  #999;
+    column-rule-style: dashed ;
+    column-rule-width:  1px;
+    /* shorthand using column-rule */
+    /* column-rule: 1px dashed #999; */
+  }
