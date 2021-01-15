@@ -84,6 +84,12 @@ main li {
   color: #4b4b4b;
   font-size: 100%;
 }
+#content li{
+  list-style-Type: none;
+  padding: 0 0 4px 23px;
+  background: url(https://www.computerhope.com/cdn/arrow.png) no-repeat left center;
+ }
+
 mark {
   background-color: #377ded;;
   color: white;
