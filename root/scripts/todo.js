@@ -42,7 +42,6 @@ $(document).ready(function () {
   });
 
   $(function () {
-    return;
     $("#notecontainer").sortable({ handle: ".dragnote" });
 
     let items = document.querySelectorAll("#itemlist li");
