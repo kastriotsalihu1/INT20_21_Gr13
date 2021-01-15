@@ -48,3 +48,11 @@ function validatesignup(){
 }
 
 
+const users = {
+  user1: {
+    username: "Arbeniboiii",
+    name: "Arben Gashi",
+    password: "arbengashi",
+    email: "arbengashi@legit.com",
+  }
+}
