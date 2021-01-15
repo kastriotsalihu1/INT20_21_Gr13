@@ -158,7 +158,8 @@ body{
 }
 
 .wrapper .btn input[type="submit"]{
-  border: 0px;
+  border-color: white;
+  border-style: ridge;
   margin-top: 15px;
   padding: 10px;
   text-align: center;
