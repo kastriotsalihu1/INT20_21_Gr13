@@ -13,7 +13,8 @@ $(document).ready(function () {
   document.querySelector("#container").appendChild(c);
   c.style.width = "100%";
   c.width = c.offsetWidth;
-  c.height = 500;
+  c.style.height = "70%";
+  c.height = c.offsetHeight;
   var perm = [];
   while (perm.length < 255) {
     while (perm.includes((val = Math.floor(Math.random() * 255))));
