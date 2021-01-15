@@ -11,7 +11,6 @@ $(document).ready(function () {
         // when the image is loaded set the active button acodingly
         // e.g. if a red version of the product is the default loaded one, then set the active button the red one
 
-        return;
         // get the colorswitcher
         let colorswitcher = $(this).siblings(".bottom").children(".colorswitcher");
         // get the url of the background image
