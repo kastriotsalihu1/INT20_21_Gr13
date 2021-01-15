@@ -39,8 +39,21 @@
           </div>
           <div class="cardcontent scrollwheel">
             <ul id="itemlist">
-              <li>
-                <span class="text todotext">test</span
+              <li draggable="true">
+                <span class="text todotext">Finish the Internet project.</span
+                ><span class="deletetodo"><i class="fa fa-trash"></i></span>
+              </li>
+              <li draggable="true">
+                <span class="text todotext"
+                  >Repeat the first biology lesson of your life.</span
+                ><span class="deletetodo"><i class="fa fa-trash"></i></span>
+              </li>
+              <li draggable="true">
+                <span class="text todotext"> dasas</span
+                ><span class="deletetodo"><i class="fa fa-trash"></i></span>
+              </li>
+              <li draggable="true">
+                <span class="text todotext">te2st</span
                 ><span class="deletetodo"><i class="fa fa-trash"></i></span>
               </li>
             </ul>
@@ -49,7 +62,7 @@
             <input
               id="displaytodo"
               type="image"
-              class="displayinput"
+              class="displayinput rotate"
               src="images/todo/add_circle_button.png"
             />
           </div>
@@ -76,6 +89,7 @@
           <div id="notecontainer" class="cardcontent scrollwheel">
             <div class="card note">
               <i class="closenote fas fa-times-circle"></i>
+              <i class="dragnote fas fa-grip-horizontal"></i>
               <div class="notetitle scrollwheel">
                 <h2 contenteditable="true" class="smalltitle">Thy Title!</h2>
               </div>
@@ -103,11 +117,11 @@
     </div>
 
     <script src="scripts/jquery.js"></script>
+    <script src="https://code.jquery.com/ui/1.10.4/jquery-ui.js"></script>
     <script src="scripts/load.js"></script>
     <script src="scripts/todo.js"></script>
     <script src="scripts/main.js"></script>
     <script src="scripts/navigation.js"></script>
     <script src="scripts/cardInformation.js"></script>
-
   </body>
 </html>

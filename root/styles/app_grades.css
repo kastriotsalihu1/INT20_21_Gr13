@@ -44,11 +44,11 @@ main {
 }
 .table {
   overflow-y: auto;
+
 }
 table {
   width: 100%;
 }
-
 #listcontent {
   height: 500px;
   width: 100%;
@@ -223,4 +223,9 @@ li:hover span {
   height: 10px;
   padding: '20px 30px';
   text-align: center;
+}
+ 
+#tabela{
+  border-width: 5px;
+  border-color: black;
 }

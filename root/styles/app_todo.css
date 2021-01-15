@@ -34,6 +34,7 @@ main {
   width: 100%;
   text-align: center;
   z-index: 4;
+  box-shadow: 0 5px 10px rgba(0, 0, 0, 0.10);
 }
 
 input {
@@ -97,6 +98,9 @@ ul li {
   -webkit-user-select: none;
   box-shadow: 0 5px 10px rgba(0, 0, 0, 0.1);
   overflow: hidden;
+}
+ .over {
+  border: 3px dotted #666;
 }
 
 ul li:hover {
@@ -168,12 +172,12 @@ ul li.checked::before {
   height: 300px;
   width: 300px;
   text-align: center;
-  transition: 0.2s;
+  transition: background-color 0.2s;
   display:flex;
   flex-direction: column;
 }
 .note:hover {
-  background: #d9e8ff;
+  background-color: #d9e8ff;
 }
 
 #notecontainer {
@@ -192,13 +196,16 @@ ul li.checked::before {
 .notecontent,.notetitle{
   border-radius: 5px;
   margin:5px 10px;
-  padding-top:5px;
+  padding-top:10px;
   background-color:white;
   overflow-y:auto;
   overflow-x:hidden;
   overscroll-behavior: contain;
 }
 
+.notetitle{
+  margin-top:15px;
+}
 .note h2,
 .note p {
   padding: 0 10px;
@@ -208,16 +215,32 @@ ul li.checked::before {
   overflow:hidden;
 }
 
-.closenote {
+.closenote,.dragnote {
   position: absolute;
-  color: #e74c3c;
   width: 30px;
   height: 30px;
   font-size: 0px;
-  right: 5px;
-  top: 5px;
   transition: 0.2s;
+  top: 5px;
+}
+
+.closenote{
+  color: #e74c3c;
+  right: 5px;
+
+}
+.dragnote{
+  color: #525252;
+  left: 5px;
+  font-size:27px;
 }
 .note:hover .closenote {
   font-size: 27px;
+}
+#addnote:hover{
+  transform: scale(1.2);
+}
+
+#addnote:active{
+transform: scale(1);
 }

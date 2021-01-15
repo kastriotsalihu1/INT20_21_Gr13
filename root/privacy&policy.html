@@ -38,14 +38,16 @@
         <p>This Privacy Policy, together with the Terms of service posted on our Website, set forth the general rules and policies governing your use of our Website. Depending on your activities when visiting our Website, you may be required to agree to additional terms of service.</p><h2 id="tableofcontents">Contents</h2>
         <p>Click below to jump to any section of this privacy policy</p>
         <ol type="1">
-            <li><a href="#PII"><strong><mark>Personally-Identifying Information</mark></strong></a>
+            <div id="content"><li><a href="#PII"><strong><mark>Personally-Identifying Information</mark></strong></a>
         </li>
             <li><a href="#Security"><strong><mark>Security</strong></mark></strong></a>
         </li>
             <li><a href="#ExternalLinks"><strong><mark>Links To External Sites</mark></strong></a>
         </li>
-            <li><a href="#Remarketing"><strong><mark>Estudent uses Google AdWords for remarketing</mark></strong></a>
-        </li>
+        
+        <li><a href="#Remarketing"><strong><mark>Estudent uses Google AdWords for remarketing</mark></strong></a>
+        </li></div>
+        <ul>
             <li><a href="#PIIProtection"><strong><mark>Protection of Certain Personally-Identifying Information</mark></strong></a>
         </li>
             <li><a href="#Stats"><strong><mark>Aggregated Statistics</strong></mark></a>
@@ -54,7 +56,7 @@
         </li>
             <li><a href="#Credit"><strong><mark>Contact Information &amp; Credit</strong></mark></a>
         </li>
-        
+        </ul>
         </ol>
         <h2 id="PII">1. Personally-Identifying Information</h2><p>Certain visitors to Estudent's websites choose to interact with Estudent in ways that require Estudent to gather personally-identifying information. The amount and type of information that Estudent gathers depends on the nature of the interaction. For example, we ask visitors who leave a comment at http://www.estudentproject.com to provide a username and email address.</p>
         
@@ -76,7 +78,8 @@
         
         <p><a href="#tableofcontents"><mark>Back to table of contents</mark></a></p><h2 id="Credit">8. Contact Information <p> <a style="color:inherit;text-decoration:none;" target="_blank"></a> <h3>If you have any questions about our Privacy Policy, please contact us via </h3><a href="mailto:estudent@gmail.com"><mark>email</mark></a> .</p>
         
-        <p><a href="#tableofcontents">Back to table of contents</a></p>       
+        <p><a href="#tableofcontents">Back to table of contents</a></p> 
+        <canvas id="canvas" width="800px" height="80" style="border:2px dotted #d3d3d3;"></canvas>      
     </main>
 
     <footer>
@@ -90,5 +93,31 @@
         <hr>
     </footer>      
 </div>       
+
+<script>
+var c = document.getElementById("canvas");
+var ctx = c.getContext("2d");
+
+ctx.beginPath();              
+ctx.lineWidth = "5";
+ctx.strokeStyle = "grey";  // Green path
+ctx.moveTo(0, 70);
+ctx.lineTo(800, 70);
+ctx.stroke();  // Draw it
+
+var grd = ctx.createLinearGradient(0, 0, 800, 0);
+grd.addColorStop(0, "white");
+grd.addColorStop(1, "grey");
+
+// Fill with gradient
+ctx.fillStyle = grd;
+ctx.fillRect(5, 10, 800, 5);
+
+
+ctx.fillStyle="black";
+ctx.font = "30px Arial";
+ctx.fillText("Not a Robot", 10, 50);
+
+</script>
 </body>
 </html>
