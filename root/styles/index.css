@@ -257,13 +257,13 @@ table td {
   font-weight: 300;
   font-size: 20px;
 }
-.newspaper {
+#newspaper {
   display: flex;
   align-items: center;
   width: 100%;
 }
 
-.newspaper input {
+#newspaper input {
   outline: none;
   border: none;
   height: 50px;
@@ -274,13 +274,13 @@ table td {
   display: inline;
 }
 
-.newspaper input[type="submit"] {
+#newspaper input[type="submit"] {
   width: 150px;
   padding: 0;
   color: white;
   background-color: var(--darkersecondary);
 }
-.newspaper input[type="email"] {
+#newspaper input[type="email"] {
   width: 100%;
 }
 
