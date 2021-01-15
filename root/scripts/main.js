@@ -31,26 +31,64 @@ $(document).ready(function () {
     }
   }
 
+  //GEOLOCATION and DARKMODE BASED ON TIME
+  var options = {
+    enableHighAccuracy: true,
+    timeout: 5000,
+    maximumAge: 0,
+  };
+
+  function success(pos) {
+    var crd = pos.coords;
+
+    getSun(crd.latitude, crd.longitude).then((data) => {
+      const sunrise = parseInt(data.results.sunrise.substring(11, 13));
+      const sunset = parseInt(data.results.sunset.substring(11, 13));
+      timedDarkMode(sunrise, sunset);
+    });
+  }
+
+  function error(err) {
+    console.warn(`ERROR(${err.code}): ${err.message}`);
+    timedDarkMode(6, 20);
+  }
+
+  function timedDarkMode(sunrise, sunset) {
+    const hours = new Date().getUTCHours();
+    const isday = hours > sunrise && hours < sunset;
+    darkMode(!isday);
+  }
+
+  navigator.geolocation.getCurrentPosition(success, error, options);
+
+  async function getSun(lat, lng) {
+    let response = await fetch(
+      "https://api.sunrise-sunset.org/json?lat=" +
+        lat +
+        "&lng=" +
+        lng +
+        "&date=today&formatted=0"
+    );
+    let data = response.json();
+    // console.log(response.json);
+    return data;
+  }
+  //GEOLOCATION and DARKMODE BASED ON TIME
+
   function switchTheme(e) {
-    if (e.target.checked) {
+    darkMode(e.target.checked);
+  }
+
+  function darkMode(value) {
+    if (value) {
       document.documentElement.setAttribute("data-theme", "dark_mode");
       localStorage.setItem("theme", "dark_mode");
     } else {
       document.documentElement.setAttribute("data-theme", "light");
       localStorage.setItem("theme", "light");
     }
+    toggleSwitch.checked = value;
   }
 
   toggleSwitch.addEventListener("change", switchTheme, false);
 });
-
-
-
-
-
-
-
-
-
-
-

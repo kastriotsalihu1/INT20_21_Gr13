@@ -1,22 +1,3 @@
-// var canvas = document.getElementById("canvas");
-// var ctx = canvas.getContext("2d");
-
-// // Create gradient
-// var gradient = ctx.createLinearGradient(0, 0, 800, 0);
-// gradient.addColorStop(0, "white");
-// gradient.addColorStop(1, "grey");
-
-// // Fill with gradient
-// ctx.fillStyle = gradient;
-// ctx.fillRect(10, 10, 1500, 100);
-
-// ctx.beginPath();
-// ctx.lineWidth = "1000";
-// ctx.strokeStyle = "black"; 
-// ctx.moveTo(0, 75);
-// ctx.lineTo(250, 75);
-// ctx.stroke(); 
-
 
 var i = 0; 			// Start Point
 var images = [];	// Images Array
