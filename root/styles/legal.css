@@ -92,7 +92,8 @@ mark {
 }
 
 .img1 {
-  float:right
+  position: absolute;
+  right:0px;
   transform: translate(-50%,-50%);
   width: 50px;
   padding: 150px;
