@@ -114,6 +114,7 @@ main {
 .product .top {
   height: 80%;
   background-position: center;
+  background-attachment: fixed;
   background-size: 100% 100%;
 }
 
