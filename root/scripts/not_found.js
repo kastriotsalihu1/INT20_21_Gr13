@@ -7,11 +7,13 @@ $(document).ready(function () {
   });
 
   var c = document.createElement("canvas");
-  var ctx = c.getContext("2d");
-  c.width = 500;
-  c.height = 350;
-  document.querySelector("#container").appendChild(c);
 
+  var ctx = c.getContext("2d");
+
+  document.querySelector("#container").appendChild(c);
+  c.style.width = "100%";
+  c.width = c.offsetWidth;
+  c.height = 500;
   var perm = [];
   while (perm.length < 255) {
     while (perm.includes((val = Math.floor(Math.random() * 255))));
@@ -24,7 +26,7 @@ $(document).ready(function () {
     return lerp(perm[Math.floor(x)], perm[Math.ceil(x)], x - Math.floor(x));
   };
 
-  var Player = function Player  () {
+  var Player = function Player() {
     this.x = c.width / 2;
     this.y = 0;
     this.ySpeed = 0;
@@ -66,7 +68,7 @@ $(document).ready(function () {
       ctx.save();
       ctx.translate(this.x, this.y - 3);
       ctx.rotate(this.rot);
-      ctx.drawImage(this.img, -15, -15, 30, 30);
+      ctx.drawImage(this.img, -15, -40, 60, 60);
       ctx.restore();
     };
   };
@@ -90,7 +92,7 @@ $(document).ready(function () {
     ctx.lineTo(c.width, c.height);
     ctx.fill();
 
-    ctx.fillStyle = "#444";
+    ctx.fillStyle = "#000";
     ctx.beginPath();
     ctx.moveTo(0, c.height);
     for (let i = 0; i < c.width; i++)
