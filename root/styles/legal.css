@@ -171,7 +171,8 @@ aside {
 
   .resize{border: 2px solid;
   padding: 20px; 
-  width: 1000px;
+  width: 80%;
+  margin: auto;
   resize: both;
   overflow: auto;
   background-color: lightgray;
