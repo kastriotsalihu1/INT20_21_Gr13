@@ -50,7 +50,8 @@ $("#shtoButton").click(
     const materiali = {
       lenda: lenda, 
       emriiFile:  emri,
-      lloji: lloji
+      lloji: lloji,
+      myDate:myDate
     }
     if(lenda === "Matematike"){
       matFiles.push(materiali);
