@@ -16,8 +16,8 @@
       />
       <nav class="primarycolor">
         <ul>
-          <li><a href="#intro">Home</a></li>
-          <li><a href="#features">Features</a></li>
+          <li><a href="#introsection">Home</a></li>
+          <li><a href="#featuressector">Features</a></li>
           <li><a href="#about">About</a></li>
           <li><a class="login" href="login.html">Log In</a></li>
         </ul>
@@ -26,7 +26,7 @@
 
     <!-- INTRO AND APPLICATION PLACEHOLDER -->
     <section id="intro" class="primarycolor">
-      <a name="intro"></a>
+      <a id="introsection"></a>
       <div>
         <h1>A simple place to keep your student life organised!</h1>
         <p>
@@ -49,7 +49,7 @@
 
     <!-- FEATURES -->
     <section id="features">
-      <a name="features"></a>
+      <a id="featuressector"></a>
       <div class="feat_content">
         <img src="./images/wp_img/tasks3.jpg" alt="Photo-Tasks" />
         <div>
@@ -185,10 +185,10 @@
           </table>
         <div class="sign_up">
           <h3>Sign up to hear about new features</h3>
-          <div class="newspaper">
-          <input type="email" placeholder="Email Address" />
-          <input type="submit" name="download"  id="download" />
-        </div>
+          <form  id="newspaper"  name="subscribe" >
+          <input type="email"  name="email" placeholder="Email Address" />
+          <input type="submit" />
+        </form>
         </div>
       </div>
       <div class="fo_container">

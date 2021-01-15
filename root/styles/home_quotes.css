@@ -42,7 +42,9 @@
   }
   #quotescard .back {
     transform: rotateY(180deg);
+
   }
   #quotescard.flipped {
     transform: rotateY(180deg);
+    
   }
