@@ -7,6 +7,19 @@
 
     <link rel="stylesheet" type="text/css" href="./styles/legal.css" />
     <link href="dependencies/fontawesome/css/all.css" rel="stylesheet" />
+    <style>
+      /* styling the search button */
+      .search{
+        border-radius: 25px;
+        background-color:  #377ded;
+        color:white;
+        padding: 10px;
+        font-weight: 700;
+        text-transform: uppercase;
+        letter-spacing: 2px;
+        outline-style:none;
+      }
+    </style>
   </head>
   <body>
     <header>
@@ -35,7 +48,30 @@
         </address>
         
         <p>It is Estudent's policy to respect your privacy regarding any information we may collect while operating our website. This Privacy Policy applies to <a href="http://www.estudentproject.com"> <mark> <u>www.estudentproject.com</u></mark></a> (hereinafter, "us", "we", or "www.estudentproject.com"). We respect your privacy and are committed to protecting personally identifiable information you may provide us through the Website. We have adopted this privacy policy ("Privacy Policy") to explain what information may be collected on our Website, how we use this information, and under what circumstances we may disclose the information to third parties. This Privacy Policy applies only to information we collect through the Website and does not apply to our collection of information from other sources.</p>
-        <p>This Privacy Policy, together with the Terms of service posted on our Website, set forth the general rules and policies governing your use of our Website. Depending on your activities when visiting our Website, you may be required to agree to additional terms of service.</p><h2 id="tableofcontents">Contents</h2>
+        <p>This Privacy Policy, together with the Terms of service posted on our Website, set forth the general rules and policies governing your use of our Website. Depending on your activities when visiting our Website, you may be required to agree to additional terms of service.</p>
+        <!-- using regEx ex1 -->
+        <p>Click the button to do a case-insensitive search for "policy" in the paragraph above.</p>
+
+             <button onclick="Search()" class="search">Search</button>
+
+              <p id="response"></p>
+        <!-- end of regEx example -->
+        <!-- using regEx ex2 -->
+        <p>Click the button to do a global search for "privacy" in the paragraph above.</p>
+
+             <button onclick="Search_1()" class="search">Search</button>
+
+              <p id="response_1"></p>
+        <!-- end of regEx example -->
+        <!-- using regEx ex3 -->
+        <p>Click the button to do a global search of any 'more than one w' the paragraph above.</p>
+
+             <button onclick="Search_2()" class="search">Search</button>
+
+              <p id="response_2"></p>
+        <!-- end of regEx example -->
+        <h2 id="tableofcontents">Contents</h2>
+        
         <p>Click below to jump to any section of this privacy policy</p>
         <ol type="1">
             <div id="content"><li><a href="#PII"><strong><mark>Personally-Identifying Information</mark></strong></a>
@@ -117,6 +153,29 @@ ctx.fillRect(5, 10, 800, 5);
 ctx.fillStyle="black";
 ctx.font = "30px Arial";
 ctx.fillText("Not a Robot", 10, 50);
+
+//regEx script
+var text="It is Estudent's policy to respect your privacy regarding any  we may collect while operating our website. This Privacy Policy applies to www.estudentproject.com (hereinafter, us, we, or www.estudentproject.com). We respect your privacy and are committed to protecting personally identifiable information you may provide us through the Website. We have adopted this privacy policy (Privacy Policy) to explain what information may be collected on our Website, how we use this information, and under what circumstances we may disclose the information to third parties. This Privacy Policy applies only to information we collect through the Website and does not apply to our collection of information from other sources.This Privacy Policy, together with the Terms of service posted on our Website, set forth the general rules and policies governing your use of our Website. Depending on your activities when visiting our Website, you may be required to agree to additional terms of service"
+
+
+function Search() {
+  //var sentence = " It is Estudent's policy to respect your privacy Policy information";
+  var regEx = /policy/i;
+  var result = text.match(regEx);
+  document.getElementById("response").innerHTML = result;
+}
+function Search_1(){
+  var regEx1 = /privacy/g;
+  var result1 = text.match(regEx1);
+  document.getElementById("response_1").innerHTML = result1;
+
+}
+function Search_2(){
+  var regEx2 = /w+/g;
+  var result2 = text.match(regEx2);
+  document.getElementById("response_2").innerHTML = result2;
+
+}
 
 </script>
 </body>
