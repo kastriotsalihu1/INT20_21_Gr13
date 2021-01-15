@@ -76,7 +76,8 @@
         
         <p><a href="#tableofcontents"><mark>Back to table of contents</mark></a></p><h2 id="Credit">8. Contact Information <p> <a style="color:inherit;text-decoration:none;" target="_blank"></a> <h3>If you have any questions about our Privacy Policy, please contact us via </h3><a href="mailto:estudent@gmail.com"><mark>email</mark></a> .</p>
         
-        <p><a href="#tableofcontents">Back to table of contents</a></p>       
+        <p><a href="#tableofcontents">Back to table of contents</a></p> 
+        <canvas id="canvas" width="800px" height="100" style="border:2px dotted #d3d3d3;"></canvas>      
     </main>
 
     <footer>
@@ -90,5 +91,31 @@
         <hr>
     </footer>      
 </div>       
+
+<script>
+var c = document.getElementById("canvas");
+var ctx = c.getContext("2d");
+
+ctx.beginPath();              
+ctx.lineWidth = "5";
+ctx.strokeStyle = "grey";  // Green path
+ctx.moveTo(0, 90);
+ctx.lineTo(800, 90);
+ctx.stroke();  // Draw it
+
+var grd = ctx.createLinearGradient(0, 0, 800, 0);
+grd.addColorStop(0, "white");
+grd.addColorStop(1, "grey");
+
+// Fill with gradient
+ctx.fillStyle = grd;
+ctx.fillRect(5, 10, 800, 10);
+
+
+ctx.fillStyle="black";
+ctx.font = "30px Arial";
+ctx.fillText("Not a Robot", 10, 50);
+
+</script>
 </body>
 </html>
