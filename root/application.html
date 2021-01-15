@@ -1,25 +1,67 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    
-    <link rel="stylesheet" href="styles/app_home.css" />
-    <link rel="stylesheet" href="styles/app_navigation.css" />
-    <link rel="stylesheet" href="styles/sum_grades.css">
 
-    <link href="dependencies/fontawesome/css/all.css" rel="stylesheet" />
-    <title>Document</title>
-  </head>
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 
-  <body>
-    <div id="header"></div>
-    <div id="container">
-      <div id="sidebar"></div>
-      <main>
-        <div id="durationcounter" class="card"></div>
-        <div id="sum_grades" class="card box_2">
-          
+  <link rel="stylesheet" href="styles/app_home.css" />
+  <link rel="stylesheet" href="styles/app_navigation.css" />
+  <link rel="stylesheet" href="styles/sum_grades.css">
+  <link rel="stylesheet" href="styles/app_product.css">
+  <link rel="stylesheet" href="styles/calculator.css">
+
+
+  <link href="dependencies/fontawesome/css/all.css" rel="stylesheet" />
+  <title>Document</title>
+</head>
+
+<body>
+  <div id="header"></div>
+  <div id="container">
+    <div id="sidebar"></div>
+    <main>
+      <div id="durationcounter" class="card">
+
+        <div id="calculator_container">
+
+          <div id="calculator">
+            <div id="result">
+              <div id="history">
+                <p id="history-value"></p>
+              </div>
+              <div id="output">
+                <p id="output-value"></p>
+              </div>
+            </div>
+            <div id="keyboard">
+              <button class="operator" id="clear">C</button>
+              <button class="operator" id="backspace">CE</button>
+              <button class="operator" id="%">%</button>
+              <button class="operator" id="/">&#247;</button>
+              <button class="number" id="7">7</button>
+              <button class="number" id="8">8</button>
+              <button class="number" id="9">9</button>
+              <button class="operator" id="*">&times;</button>
+              <button class="number" id="4">4</button>
+              <button class="number" id="5">5</button>
+              <button class="number" id="6">6</button>
+              <button class="operator" id="-">-</button>
+              <button class="number" id="1">1</button>
+              <button class="number" id="2">2</button>
+              <button class="number" id="3">3</button>
+              <button class="operator" id="+">+</button>
+              <button class="empty" id="empty"></button>
+              <button class="number" id="0">0</button>
+              <button class="empty" id="empty"></button>
+              <button class="operator" id="=">=</button>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div id="sum_grades" class="card box_2">
+
         <h1>Notat</h1>
         <input type="text" placeholder="Subjects" />
         <ul class="scroll">
@@ -78,20 +120,61 @@
             </select>
           </li>
         </ul>
-        </div>
-        <div id="motivationalquote" class="card"></div>
-        <div id="sum_todo" class="card"></div>
-        <div id="sum_garden" class="card"></div>
-        <div id="sum_product" class="card"></div>
-      </main>
-    </div>
+      </div>
+      <div id="motivationalquote" class="card"></div>
 
-    <script src="scripts/jquery.js"></script>
-    <script src="scripts/load.js"></script>
-    <script src="scripts/main.js"></script>
-    <script src="scripts/navigation.js"></script>
-    <script src="scripts/sum_grades.js"></script>
-      
-    </script>
-  </body>
+      <div id="sum_todo" class="card"></div>
+      <div id="sum_garden" class="card"></div>
+      <div id="sum_product" class="card">
+        <div class="products">
+          <div class="card product">
+            <div class="top"></div>
+            <div class="bottom">
+              <div class="details">
+                <h2>Chairsadds</h2>
+                <p>&#8364;250</p>
+              </div>
+              <div class="colorswitcher">
+                <button type="button" id="red" class="activeColor"></button>
+                <button type="button" id="blue"></button>
+                <button type="button" id="green"></button>
+                <button type="button" id="purple"></button>
+              </div>
+              <input type="number" class="amount" value="0" min="0" max="9" />
+              <div class="buy">
+                <i class="fas fa-shopping-cart" aria-hidden="true"></i>
+              </div>
+            </div>
+            <div class="inside">
+              <div class="icon">
+                <i class="fa fa-info" aria-hidden="true"></i>
+              </div>
+              <div class="contents">
+                <table>
+                  <tr>
+                    <th>Width</th>
+                    <th>Height</th>
+                  </tr>
+                  <tr>
+                    <td>3000mm</td>
+                    <td>4000mm</td>
+                  </tr>
+                </table>
+              </div>
+            </div>
+          </div>
+        </div>
+    </main>
+  </div>
+
+  <script src="scripts/jquery.js"></script>
+  <script src="scripts/load.js"></script>
+  <script src="scripts/main.js"></script>
+  <script src="scripts/navigation.js"></script>
+  <script src="scripts/sum_grades.js"></script>
+  <script src="scripts/calculator.js"></script>
+
+  </script>
+</body>
+
 </html>
