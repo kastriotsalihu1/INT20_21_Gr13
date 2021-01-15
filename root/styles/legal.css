@@ -172,9 +172,11 @@ aside {
   .resize{border: 2px solid;
   padding: 20px; 
   width: 1000px;
-  resize: horizontal;
+  resize: both;
   overflow: auto;
   background-color: lightgray;
-  outline: 4px solid #377ded;
+  border: 4px solid #377ded;
+  border-radius: 10px;
+  box-shadow: 5px 10px 8px #b7b5b5;
   outline-offset: 10px;
 }
