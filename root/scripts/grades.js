@@ -28,21 +28,27 @@ $("ul").on("click", "li", function(){
    }
  });
 
- var pooFiles=[{lenda:"POO",emriiFile:"Java",lloji:"Liber"},{lenda:"POO",emriiFile:"Programimi i Orientuar ne Objekte",  lloji:"Afate"}];
- var matFiles = [{lenda: "Matematike", emriiFile: "Matematika diskrete", lloji: "Ligjerata"}, {lenda: "Matematike", emriiFile: "Detyra", lloji: "Ushtrime"}];
- var SinjaleSistemeFiles=[{lenda: "SinjaleDheSisteme", emriiFile:"Serite Furie", lloji:"Afate"},
-{lenda:"SinjaleDheSisteme",emriiFile:"Hyrje ne Sinjale", lloji:"Ligjerata"},
-{lenda:"SinjaleDheSisteme",emriiFile:"Signals and systems", lloji:"Tjeter"}]
-var elektronikaFiles=[{lenda:"Elektronike",emriiFile:"Amplifikatoret",lloji:"Liber"}];
-var databazeFiles=[{lenda:"Databaze",emriiFile:"Tabelat relacionale",lloji:"Afate"}];
-var internetFiles=[{lenda:"Internet",emriiFile:"Hyrje ne internet",lloji:"Liber"}];
+ var myDate=new Date();
+ var Data=new Date(2020,11,21);
+ var myPastDate=new Date(2019,11,2,10,30,15);
+
+
+ var pooFiles=[{lenda:"POO",emriiFile:"Java",lloji:"Liber",myPastDate},{lenda:"POO",emriiFile:"Programimi i Orientuar ne Objekte",  lloji:"Afate", Data}];
+ var matFiles = [{lenda: "Matematike", emriiFile: "Matematika diskrete", lloji: "Ligjerata", myDate}, {lenda: "Matematike", emriiFile: "Detyra", lloji: "Ushtrime", myDate}];
+ var SinjaleSistemeFiles=[{lenda: "SinjaleDheSisteme", emriiFile:"Serite Furie", lloji:"Afate", myDate},
+{lenda:"SinjaleDheSisteme",emriiFile:"Hyrje ne Sinjale", lloji:"Ligjerata", myDate},
+{lenda:"SinjaleDheSisteme",emriiFile:"Signals and systems", lloji:"Tjeter", myDate}]
+var elektronikaFiles=[{lenda:"Elektronike",emriiFile:"Amplifikatoret",lloji:"Liber", myDate}];
+var databazeFiles=[{lenda:"Databaze",emriiFile:"Tabelat relacionale",lloji:"Afate", myDate}];
+var internetFiles=[{lenda:"Internet",emriiFile:"Hyrje ne internet",lloji:"Liber", myDate}];
+
 $("#shtoButton").click(
   function(){
     var lenda =$('#lendet').find(":selected").val();
     var lloji =$('#lloji').find(":selected").val();  
     var emri  = $("#file")[0].files[0].name;
     const materiali = {
-      lenda: lenda,
+      lenda: lenda, 
       emriiFile:  emri,
       lloji: lloji
     }
@@ -163,7 +169,7 @@ function shfaqMaterialin(lenda){
 
 }
 function getHeader(){
-  const tr = '<tr class="thstyle"><th>Lenda</th><th>Emri i file</th><th>Lloji</th></tr>';
+  const tr = '<tr class="thstyle"><th>Lenda</th><th>Emri i file</th><th>Lloji</th><th>Data</th></tr>';
   return tr;
 }
 $("#selectLiteraturen").click(
@@ -173,40 +179,6 @@ $("#selectLiteraturen").click(
     console.log(lenda);
   }
 )
-
-const openModalButtons=document.querySelectorAll('[data-modal-target]');
-const closeModalButtons=document.querySelectorAll('[data-close-button]');
-const overlay=document.getElementById('overlay');
-
-openModalButtons.forEach(button=>{
-  button.addEventListener('click',()=>{
-    const modal=document.querySelector(button.dataset.modalTarget)
-    openModal(modal)
-  })
-})
-
-closeModalButtons.forEach(button=>{
-  button.addEventListener('click',()=>{
-    const modal=button.closest('.modal')
-    closeModal(modal)
-  })
-})
-
-
- function openModal(model){
-   if(modal==null)
-     reutrn 
-   modal.classList.add('active')
- }
-
- function closeModal(model){
-  if(modal==null)return 
-  modal.classList.remove('active')
-  
-}
-
-
-
 
  
  
