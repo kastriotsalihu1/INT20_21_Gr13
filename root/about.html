@@ -5,6 +5,59 @@
     <title>About Us</title>
     <link rel="stylesheet" type="text/css" href="/root/styles/legal.css">
     <link href="dependencies/fontawesome/css/all.css" rel="stylesheet">
+    <style>
+      /* styling for the video slider */
+      .container{
+    margin:auto;
+    width: 70%;
+    height: 40vh;
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.container .slider{
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+}
+
+
+.container ul{
+    position: absolute;
+    bottom: -100px;
+    left: 45%;
+    transform: translateX(-50%);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 20;
+}
+
+.container ul li{
+    list-style: none;
+    cursor: pointer;
+    margin: 10px;
+}
+
+
+.container ul li video{
+    width: 200px;
+    transition: all 0.3s;
+}
+.container ul li video:hover{
+    transform: scale(1.1);
+}
+
+video{
+    width: 100%;
+    height: 100%;
+}
+
+    </style>
 </head>
 <body>
     <header>
@@ -50,7 +103,20 @@
                   </article>
 
                   <div class="resize">Lorem ipsum dolor sit amet consectetur adipisicing elit. Fuga id incidunt deleniti voluptas, odio voluptate cupiditate est dicta temporibus voluptatem officiis quam veritatis vero quasi quis, assumenda dolorem minima? Quas unde consequuntur animi cupiditate deserunt, nihil officiis eligendi autem voluptatem accusamus distinctio, debitis quam explicabo architecto, iste amet. Laborum, beatae ut. Molestiae quam nulla, iusto alias quia nesciunt corrupti! Facilis sit nam veniam esse nulla nostrum doloremque amet possimus impedit nobis, labore officia placeat magni, aperiam culpa? Commodi optio voluptatum veniam esse neque in dignissimos corporis error molestiae cumque, asperiores aperiam voluptas blanditiis soluta odit, ratione facilis numquam, expedita voluptatibus.</div>
-    </main>
+                  <p style="margin:auto;width:250px; padding:20px">About Us motivational videos</p>
+                  <div class="container">
+                    <video src="videos/vid1.mp4" class="slider" autoplay loop muted controls></video>
+            
+                    <ul>
+                        <li onclick="videoslider('videos/vid1.mp4')"><video src="videos/vid1.mp4"></video></li>
+                        <li onclick="videoslider('videos/vid2.mp4')"><video src="videos/vid2.mp4"></video></li>
+                    
+                    </ul>
+                </div>
+            
+  
+    
+                </main>
                         
                     <footer>
                       <hr>
@@ -62,6 +128,14 @@
                     </div>
                       <hr>
                   </footer>
+                  
+                <script>
+            
+                  function videoslider(links){
+                      document.querySelector(".slider").src = links;
+                  }
+          
+              </script>
               </body>
 
 </html>

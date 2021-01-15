@@ -62,7 +62,7 @@ function validate(){
  const storageInput= document.querySelector(".storage");
  const text = document.querySelector(".text");
  const button = document.querySelector(".button");
-const storedInput = localStorage.getItem('textinput');
+ const storedInput = localStorage.getItem('textinput');
 
  if(storageInput){
    text.textContent=storedInput
@@ -77,5 +77,7 @@ const storedInput = localStorage.getItem('textinput');
  }
 
 button.addEventListener('click', saveToLocalStorage )
-
-
+window.onload
+sessionStorage.setItem('webStorageUsed','Session Stored');
+console.log(sessionStorage('webStorageUsed'));
+sessionStorage.setItem("MyFunction","I save data until you close the tab!");
