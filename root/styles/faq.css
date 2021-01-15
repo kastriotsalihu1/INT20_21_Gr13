@@ -119,8 +119,9 @@
 }
 
 body{
-  background: #377ded;
+  background: linear-gradient(180deg, rgba(255,255,255,1) 0%, rgba(55,125,237,1) 32%);
   padding-top:150px;
+  
 }
 
 .wrapper{
@@ -158,7 +159,8 @@ body{
 }
 
 .wrapper .btn input[type="submit"]{
-  border: 0px;
+  border-color: white;
+  border-style: ridge;
   margin-top: 15px;
   padding: 10px;
   text-align: center;

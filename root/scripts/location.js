@@ -10,6 +10,7 @@ $('#location-button').click(function(){
           img.src = "https://maps.googleapis.com/maps/api/staticmap?center=" + position.coords.latitude 
           + "," + position.coords.longitude + "&zoom=14&size=400x300&sensor=false&key=AIzaSyCX8zzn0G2_b_aCEusEBbp7pYv9kbQKWhA";
           $('#output').html(img);
+
  
           
 
