@@ -59,6 +59,7 @@ li {
   line-height: 40px;
   color: #666;
   width: 100%;
+  padding-left: 10px;
 }
 li:nth-child(2n) {
   background-color: #f7f7f7;

@@ -224,3 +224,8 @@ li:hover span {
   padding: '20px 30px';
   text-align: center;
 }
+ 
+#tabela{
+  border-width: 5px;
+  border-color: black;
+}
