@@ -1,11 +1,10 @@
 $(document).ready(function () {
   $("#show").click(function () {
-    $("#container").show();
-  });
-  $("#hide").click(function () {
-    $("#container").hide();
+    startgame = true;
   });
 
+  var startgame = false;
+  var score = 0;
   var c = document.createElement("canvas");
 
   var ctx = c.getContext("2d");
@@ -15,6 +14,7 @@ $(document).ready(function () {
   c.width = c.offsetWidth;
   c.style.height = "70%";
   c.height = c.offsetHeight;
+
   var perm = [];
   while (perm.length < 255) {
     while (perm.includes((val = Math.floor(Math.random() * 255))));
@@ -29,7 +29,7 @@ $(document).ready(function () {
 
   var Player = function Player() {
     this.x = c.width / 2;
-    this.y = 0;
+    this.y = 100;
     this.ySpeed = 0;
     this.rot = 0;
     this.rSpeed = 0;
@@ -82,7 +82,8 @@ $(document).ready(function () {
   function loop() {
     speed -= (speed - (k.ArrowUp - k.ArrowDown)) * 0.01;
     t += 10 * speed;
-    ctx.fillStyle = "#19f";
+
+    ctx.fillStyle = "#377DED";
     ctx.fillRect(0, 0, c.width, c.height);
 
     ctx.fillStyle = "rgba(0,0,0,0.25)";
@@ -101,8 +102,15 @@ $(document).ready(function () {
     ctx.lineTo(c.width, c.height);
     ctx.fill();
 
-    player.draw();
-    if (player.x < 0) restart();
+    if (startgame) {
+      if (speed) score++;
+      player.draw();
+      ctx.font = "58px arial";
+      ctx.textAlign = "center";
+      ctx.fillStyle = "#fff";
+      ctx.fillText(parseInt(score/50), c.width / 2, 100);
+      if (player.x < 0) restart();
+    }
     requestAnimationFrame(loop);
   }
 
@@ -110,6 +118,7 @@ $(document).ready(function () {
   onkeyup = (d) => (k[d.key] = 0);
 
   function restart() {
+    score=0;
     player = new Player();
     t = 0;
     speed = 0;
