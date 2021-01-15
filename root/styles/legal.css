@@ -116,3 +116,27 @@ hr {
 address a{
   color:blue;
 }
+
+aside {
+  width: 30%;
+  padding-left: 15px;
+  margin-left: 15px;
+  float: right;
+  font-style: italic;
+  background-color: lightgray;
+}
+
+.skewed {
+  transform: skewX(20deg); /* Equal to skew(7deg) */
+  background-color: pink;
+  width:100%;
+  height: 20px;
+  background-color: skyblue;
+}
+.skewed1{
+  background-color: pink;
+  width:100%;
+  height: 20px;
+  background-color: skyblue;
+  transform: skewX(-20deg); /* Equal to skew(7deg) */
+}
