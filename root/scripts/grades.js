@@ -108,15 +108,15 @@ $("#shtoButton").click(function () {
       lloji: lloji,
       myDate: myDate,
     };
-    if (lenda === "Matematike") {
+    if (lenda === "Mathematics") {
       matFiles.push(materiali);
     } else if (lenda === "SignalsandSystems") {
       SinjaleSistemeFiles.push(materiali);
     } else if (lenda === "OOP") {
       pooFiles.push(materiali);
-    } else if (lenda === "Elektronike") {
+    } else if (lenda === "Electronics") {
       elektronikaFiles.push(materiali);
-    } else if (lenda === "Databaze") {
+    } else if (lenda === "Database") {
       databazeFiles.push(materiali);
     } else if (lenda === "Internet") {
       internetFiles.push(materiali);
@@ -137,7 +137,7 @@ function shfaqMaterialin(lenda) {
       }
     });
   }
-  if (lenda === "Matematike") {
+  if (lenda === "Mathematics") {
     const tabela = document.getElementById("tabela");
     tabela.innerHTML = "";
     tabela.innerHTML = getHeader();
@@ -179,7 +179,7 @@ function shfaqMaterialin(lenda) {
       }
       tabela.appendChild(tr);
     });
-  } else if (lenda === "Databaze") {
+  } else if (lenda === "Database") {
     const tabela = document.getElementById("tabela");
     tabela.innerHTML = "";
     tabela.innerHTML = getHeader();
@@ -193,7 +193,7 @@ function shfaqMaterialin(lenda) {
       }
       tabela.appendChild(tr);
     });
-  } else if (lenda === "Elektronike") {
+  } else if (lenda === "Electronics") {
     const tabela = document.getElementById("tabela");
     tabela.innerHTML = "";
     tabela.innerHTML = getHeader();
