@@ -16,12 +16,15 @@ img {
 }
 section,
 footer {
-  padding: 0 15% ;
+  
   display: flex;
   justify-content: space-between;
   align-items: center;
   box-sizing: border-box;
   width: 100%;
+}
+footer{
+  padding:0 15%;
 }
 
 
