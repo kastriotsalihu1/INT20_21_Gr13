@@ -1,6 +1,6 @@
 :root {
-  --primarycolor: rgb(37, 37, 37);
-  --darkprimary:rgb(19, 19, 19);
+  --primarycolor: #979797;
+  --darkprimary:#4d4d4d;
 }
 
 main {
@@ -14,6 +14,7 @@ main {
     "a b"
     "a c"
 }
+
 .card {
   background-color: var(--primarycolor);
 }
@@ -27,4 +28,256 @@ main {
 }
 #cart {
   grid-area: c;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+.products {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: center;
+
+  width: 100%;
+  height: 100%;
+}
+
+
+
+#latest,#featured{
+  display:flex;
+  flex-direction: column;
+  align-items: center;
+  padding:0 5%;
+}
+#featuredcontainer{
+  width: 100%;
+  height:100%;
+}
+/* information */
+.inside {
+  z-index: 9;
+  background: var(--darkprimary);
+  width: 3.5vw;
+  height: 3.5vw;
+  position: absolute;
+  top: 0px;
+  right: 0px;
+  border-radius: 0px 0px 0px 200px;
+  transition: all 0.5s, border-radius 2s;
+}
+.inside .icon {
+  position: absolute;
+  right: calc(100% / 3);
+  top: calc(100% / 3);
+  color: white;
+  opacity: 1;
+  font-size: 2vh;
+}
+.inside:hover {
+  width: 100%;
+  border-radius: 0;
+  height: 80%;
+}
+.inside:hover .icon {
+  opacity: 0;
+}
+.inside:hover .contents {
+  opacity: 1;
+  transform: scale(1);
+}
+.inside .contents {
+  padding: 5%;
+  opacity: 0;
+  transform: scale(0.5);
+  transition: opacity 0.2s, transform 0.8s;
+}
+.inside .contents table {
+  text-align: left;
+  width: 100%;
+  color: white;
+  font-size: 1vw;
+}
+
+/* pick color */
+.colorswitcher {
+  width: 70%;
+  clear: none;
+  flex-grow: 1;
+  display: flex;
+  justify-content: space-evenly;
+  align-items: flex-end;
+}
+.colorswitcher button {
+  width: 3vh;
+  height: 3vh;
+  cursor: pointer;
+  opacity: 0.7;
+}
+.colorswitcher #red {
+  background-color: red;
+}
+.colorswitcher #green {
+  background-color: green;
+}
+.colorswitcher #blue {
+  background-color: blue;
+}
+.colorswitcher #purple {
+  background-color: purple;
+}
+.activeColor {
+  height: calc(4vh) !important;
+  width: 4vh !important;
+  left: calc(100% - 8px) !important;
+  top: calc(100% - 8px) !important;
+  opacity: 1 !important;
+  border: 3px solid;
+}
+
+/* used as is in "latest product" section, also default values for the products in the other sections */
+.product {
+  background-color: white;
+  float: right;
+  width: calc((100% - 4rem) / 2);
+  height: calc((100% - 4rem) / 2);
+  border-radius: 20px 20px 20px 20px;
+  transform: scale(0.95);
+  transition: box-shadow 0.5s, transform 0.5s;
+  overflow: hidden;
+}
+.product:hover {
+  transform: scale(1);
+  box-shadow: 5px 20px 30px rgba(0, 0, 0, 0.2);
+}
+.product .top {
+  height: 80%;
+  background-position: center;
+  background-attachment: inherit;
+  background-origin: content-box;
+  background-size: 100% 100%;
+}
+.product .details h2 {
+  margin: 0;
+  position: absolute;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  max-width: 65%;
+  font-size: 3vh;
+}
+.product .details p {
+  margin: 3vh 0px;
+  max-width: 3rem;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  font-size: 2vh;
+}
+.product .details p:hover,
+.product .details h2:hover {
+  overflow: visible;
+}
+.product .details {
+  clear: none;
+  float: left;
+}
+.product .bottom {
+  display: flex;
+  padding-left: 14px;
+  position: relative;
+  height: 20%;
+  background-color: #f4f4f4;
+}
+.product .bottom .buy {
+  width: calc(30% - 2px);
+  height: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: #f1f1f1;
+  transition: background-color 0.5s;
+  border-left: solid thin rgba(0, 0, 0, 0.1);
+  cursor: pointer;
+}
+.product .bottom .buy i {
+  font-size: 5vh;
+  color: #979797;
+  animation-name: cartFlip;
+  animation-duration: 4s;
+  animation-delay: 0.4s;
+}
+.product .bottom .buy:hover {
+  background-color: #a6cdde;
+}
+.product .bottom .buy:hover i {
+  transform: translateX(5px);
+  color: #00394b;
+}
+
+
+#product1 .top {
+  background-image: url('../images/store/fletore-red.jpg');
+}
+#product2 .top {
+  background-image: url('../images/store/kimiku-blue.jpg');
+}
+#product3 .top {
+  background-image: url('../images/store/maica-green.jpg');
+}
+#product4 .top {
+  background-image: url('../images/store/qanta-purple.jpg');
+}
+
+#featured1 .top {
+  background-image: url('../images/store/fletore-green.jpg');
+}
+#featured2 .top {
+  background-image: url('../images/store/qanta-red.jpg');
+}
+
+.onCartProduct,
+.featuredProduct {
+  width: calc((100% - 4rem) / 2) !important;
+  height: calc((100% - 2rem)) !important;
+}
+.onCartProduct .bottom,
+.featuredProduct .bottom {
+  display: block;
+}
+.featuredProduct .buy,
+.onCartProduct .buy {
+  float: right;
+}
+.onCartProduct .details p,
+.featuredProduct .details p {
+  max-width: unset;
+}
+.oldPrice {
+  color: red !important;
+  text-decoration: line-through;
+}
+
+@keyframes cartFlip {
+  from {
+    transform: rotateX(0deg);
+  }
+  to {
+    transform: rotateX(360deg);
+  }
+}
+
+#cart {
+  overflow-y: auto;
+}
+
+#sectionHeader {
+  position: relative;
+  width: 100%;
+  height: 5vh;
+  text-align: center;
+  z-index: 4;
+  box-shadow: 0 5px 10px rgba(0, 0, 0, 0.10);
 }

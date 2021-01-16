@@ -1,9 +1,9 @@
 $(document).ready(function () {
 
-    $(".information").on("click",".icon", function () {
+    $(document.body).on("click",".information", function () {
         // expand the information div
         console.log(this);
-        $(this).parent().toggleClass("displayInfo");
+        $(this).toggleClass("displayInfo");
     });
 
     $(document.body).dblclick(() => {
