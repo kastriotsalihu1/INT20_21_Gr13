@@ -17,7 +17,6 @@ $(document).ready(function () {
         let imageSource = $(this).css("background-image");
 
         let imageName = getProductImageNameFromUrl(imageSource);
-        console.log(imageName)
         // the format of the image name is: <productName>-<productColor>.<imageExtension>
         let imageColor = imageName.split("-")[1].split(".")[0];
         //remove the activeColor class from the default color
@@ -71,17 +70,12 @@ $(document).ready(function () {
         $('.content').scrollTop($('.content')[2].scrollHeight);
     });
     $("#cart").on("click", ".removeCart", function () {
-        // product > info > button
-        let onCartProduct = $(this).parent().parent();
-        $(onCartProduct).remove();
+        let onCartProduct;
     });
     $('.buy').click(function () {
         $(this).parent().parent().addClass("clicked");
     });
 
-    $('.remove, .more').click(function () {
-        $(this).parent().parent().removeClass("clicked");
-    });
 });
 
 

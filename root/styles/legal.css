@@ -185,6 +185,20 @@ aside {
   outline-offset: 10px;
 }
 
+.replace {
+        border-radius: 25px;
+        background-color:  #377ded;
+        color:white;
+        padding: 25px;
+        font-weight: 700;
+        text-transform: uppercase;
+        letter-spacing: 3px;
+        outline-style:none;
+        width: 300px;
+        margin-left:-250px;
+        margin-block: 30px;
+}
+
 #borderimg1 { 
   border: 10px solid transparent;
   padding: 15px;

@@ -1,184 +1,304 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 
-    <link rel="stylesheet" href="styles/app_navigation.css" />
-    <link rel="stylesheet" href="styles/app_store.css" />
-    <link rel="stylesheet" href="styles/store.css" />
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 
-    <link href="dependencies/fontawesome/css/all.css" rel="stylesheet" />
-    <title>Document</title>
-  </head>
+  <link rel="stylesheet" href="styles/app_navigation.css" />
+  <link rel="stylesheet" href="styles/app_store.css" />
+  <link rel="stylesheet" href="styles/store.css" />
 
-  <body>
+  <link href="dependencies/fontawesome/css/all.css" rel="stylesheet" />
+  <title>Document</title>
+</head>
+
+<body>
   <div id="mask"> </div>
 
-    <div id="header"></div>
+  <div id="header"></div>
 
-    <div id="container">
-      <!-- side navigation menu -->
-      <div id="sidebar"></div>
-      <main>
-        <div id="latest" class="card">
-          <div class="products">
-            <div class="card product">
-              <div class="top"></div>
-              <div class="bottom">
-                <div class="details">
-                  <h2>Chairsadds</h2>
-                  <p>&#8364;250</p>
-                </div>
-                <div class="colorswitcher">
-                  <button type="button" id="red" class="activeColor"></button>
-                  <button type="button" id="blue"></button>
-                  <button type="button" id="green"></button>
-                  <button type="button" id="purple"></button>
-                </div>
-                <input type="number" class="amount" value="0" min="0" max="9" />
-                <div class="buy">
-                  <i class="fas fa-shopping-cart" aria-hidden="true"></i>
-                </div>
+  <div id="container">
+    <!-- side navigation menu -->
+    <div id="sidebar"></div>
+    <main>
+      <div id="latest" class="card">
+        <div class="products">
+          <div class="card product">
+            <div class="top"></div>
+            <div class="bottom">
+              <div class="details">
+                <h2>Chairsadds</h2>
+                <p>&#8364;250</p>
               </div>
-              <div class="inside">
-                <div class="icon">
-                  <i class="fa fa-info" aria-hidden="true"></i>
-                </div>
-                <div class="contents">
-                  <table>
-                    <tr>
-                      <th>Width</th>
-                      <th>Height</th>
-                    </tr>
-                    <tr>
-                      <td>3000mm</td>
-                      <td>4000mm</td>
-                    </tr>
-                  </table>
-                </div>
+              <div class="colorswitcher">
+                <button type="button" id="red" class="activeColor"></button>
+                <button type="button" id="blue"></button>
+                <button type="button" id="green"></button>
+                <button type="button" id="purple"></button>
+              </div>
+              <input type="number" class="amount" value="1" min="1" max="9" />
+              <div class="buy">
+                <i class="fas fa-shopping-cart" aria-hidden="true"></i>
               </div>
             </div>
-            <div class="card product">
-              <div class="top"></div>
-              <div class="bottom">
-                <div class="details">
-                  <h2>Chairsadds</h2>
-                  <p>&#8364;250</p>
-                </div>
-                <div class="colorswitcher">
-                  <button type="button" id="red" class="activeColor"></button>
-                  <button type="button" id="blue"></button>
-                  <button type="button" id="green"></button>
-                  <button type="button" id="purple"></button>
-                </div>
-                <input type="number" class="amount" value="0" min="0" max="9" />
-                <div class="buy">
-                  <i class="fas fa-shopping-cart" aria-hidden="true"></i>
-                </div>
+            <div class="inside">
+              <div class="icon">
+                <i class="fa fa-info" aria-hidden="true"></i>
               </div>
-              <div class="inside">
-                <div class="icon">
-                  <i class="fa fa-info" aria-hidden="true"></i>
-                </div>
-                <div class="contents">
-                  <table>
-                    <tr>
-                      <th>Width</th>
-                      <th>Height</th>
-                    </tr>
-                    <tr>
-                      <td>3000mm</td>
-                      <td>4000mm</td>
-                    </tr>
-                  </table>
-                </div>
+              <div class="contents">
+                <table>
+                  <tr>
+                    <th>Width</th>
+                    <th>Height</th>
+                  </tr>
+                  <tr>
+                    <td>3000mm</td>
+                    <td>4000mm</td>
+                  </tr>
+                </table>
               </div>
             </div>
-            <div class="card product">
-              <div class="top"></div>
-              <div class="bottom">
-                <div class="details">
-                  <h2>Chairsadds</h2>
-                  <p>&#8364;250</p>
-                </div>
-                <div class="colorswitcher">
-                  <button type="button" id="red" class="activeColor"></button>
-                  <button type="button" id="blue"></button>
-                  <button type="button" id="green"></button>
-                  <button type="button" id="purple"></button>
-                </div>
-                <input type="number" class="amount" value="0" min="0" max="9" />
-                <div class="buy">
-                  <i class="fas fa-shopping-cart" aria-hidden="true"></i>
-                </div>
+          </div>
+          <div class="card product">
+            <div class="top"></div>
+            <div class="bottom">
+              <div class="details">
+                <h2>Chairsadds</h2>
+                <p>&#8364;250</p>
               </div>
-              <div class="inside">
-                <div class="icon">
-                  <i class="fa fa-info" aria-hidden="true"></i>
-                </div>
-                <div class="contents">
-                  <table>
-                    <tr>
-                      <th>Width</th>
-                      <th>Height</th>
-                    </tr>
-                    <tr>
-                      <td>3000mm</td>
-                      <td>4000mm</td>
-                    </tr>
-                  </table>
-                </div>
+              <div class="colorswitcher">
+                <button type="button" id="red" class="activeColor"></button>
+                <button type="button" id="blue"></button>
+                <button type="button" id="green"></button>
+                <button type="button" id="purple"></button>
+              </div>
+              <input type="number" class="amount" value="1" min="1" max="9" />
+              <div class="buy">
+                <i class="fas fa-shopping-cart" aria-hidden="true"></i>
               </div>
             </div>
-            <div class="card product">
-              <div class="top"></div>
-              <div class="bottom">
-                <div class="details">
-                  <h2>Chairsadds</h2>
-                  <p>&#8364;250</p>
-                </div>
-                <div class="colorswitcher">
-                  <button type="button" id="red" class="activeColor"></button>
-                  <button type="button" id="blue"></button>
-                  <button type="button" id="green"></button>
-                  <button type="button" id="purple"></button>
-                </div>
-                <input type="number" class="amount" value="0" min="0" max="9" />
-                <div class="buy">
-                  <i class="fas fa-shopping-cart" aria-hidden="true"></i>
-                </div>
+            <div class="inside">
+              <div class="icon">
+                <i class="fa fa-info" aria-hidden="true"></i>
               </div>
-              <div class="inside">
-                <div class="icon">
-                  <i class="fa fa-info" aria-hidden="true"></i>
-                </div>
-                <div class="contents">
-                  <table>
-                    <tr>
-                      <th>Width</th>
-                      <th>Height</th>
-                    </tr>
-                    <tr>
-                      <td>3000mm</td>
-                      <td>4000mm</td>
-                    </tr>
-                  </table>
-                </div>
+              <div class="contents">
+                <table>
+                  <tr>
+                    <th>Width</th>
+                    <th>Height</th>
+                  </tr>
+                  <tr>
+                    <td>3000mm</td>
+                    <td>4000mm</td>
+                  </tr>
+                </table>
+              </div>
+            </div>
+          </div>
+          <div class="card product">
+            <div class="top"></div>
+            <div class="bottom">
+              <div class="details">
+                <h2>Chairsadds</h2>
+                <p>&#8364;250</p>
+              </div>
+              <div class="colorswitcher">
+                <button type="button" id="red" class="activeColor"></button>
+                <button type="button" id="blue"></button>
+                <button type="button" id="green"></button>
+                <button type="button" id="purple"></button>
+              </div>
+              <input type="number" class="amount" value="1" min="1" max="9" />
+              <div class="buy">
+                <i class="fas fa-shopping-cart" aria-hidden="true"></i>
+              </div>
+            </div>
+            <div class="inside">
+              <div class="icon">
+                <i class="fa fa-info" aria-hidden="true"></i>
+              </div>
+              <div class="contents">
+                <table>
+                  <tr>
+                    <th>Width</th>
+                    <th>Height</th>
+                  </tr>
+                  <tr>
+                    <td>3000mm</td>
+                    <td>4000mm</td>
+                  </tr>
+                </table>
+              </div>
+            </div>
+          </div>
+          <div class="card product">
+            <div class="top"></div>
+            <div class="bottom">
+              <div class="details">
+                <h2>Chairsadds</h2>
+                <p>&#8364;250</p>
+              </div>
+              <div class="colorswitcher">
+                <button type="button" id="red" class="activeColor"></button>
+                <button type="button" id="blue"></button>
+                <button type="button" id="green"></button>
+                <button type="button" id="purple"></button>
+              </div>
+              <input type="number" class="amount" value="1" min="1" max="9" />
+              <div class="buy">
+                <i class="fas fa-shopping-cart" aria-hidden="true"></i>
+              </div>
+            </div>
+            <div class="inside">
+              <div class="icon">
+                <i class="fa fa-info" aria-hidden="true"></i>
+              </div>
+              <div class="contents">
+                <table>
+                  <tr>
+                    <th>Width</th>
+                    <th>Height</th>
+                  </tr>
+                  <tr>
+                    <td>3000mm</td>
+                    <td>4000mm</td>
+                  </tr>
+                </table>
               </div>
             </div>
           </div>
         </div>
-        <div id="featured" class="card"></div>
-        <div id="cart" class="card"></div>
-      </main>
-    </div>
+      </div>
+      <div id="featured" class="card">
+        <div class="card product featuredProduct">
+          <div class="top"></div>
+          <div class="bottom">
+            <div class="details">
+              <h2>Chairsadds</h2>
+              <p> <span class="oldPrice">&#8364;250</span> - &#8364;200</p>
+            </div>
+            <div class="buy">
+              <i class="fas fa-shopping-cart" aria-hidden="true"></i>
+            </div>
+          </div>
+          <div class="inside">
+            <div class="icon">
+              <i class="fa fa-info" aria-hidden="true"></i>
+            </div>
+            <div class="contents">
+              <table>
+                <tr>
+                  <th>Width</th>
+                  <th>Height</th>
+                </tr>
+                <tr>
+                  <td>3000mm</td>
+                  <td>4000mm</td>
+                </tr>
+              </table>
+            </div>
+          </div>
+        </div>
+        <div class="card product featuredProduct">
+          <div class="top"></div>
+          <div class="bottom">
+            <div class="details">
+              <h2>Chairsadds</h2>
+              <p><span class="oldPrice">&#8364;250</span> - &#8364;230</p>
+            </div>
+            <div class="buy">
+              <i class="fas fa-shopping-cart" aria-hidden="true"></i>
+            </div>
+          </div>
+          <div class="inside">
+            <div class="icon">
+              <i class="fa fa-info" aria-hidden="true"></i>
+            </div>
+            <div class="contents">
+              <table>
+                <tr>
+                  <th>Width</th>
+                  <th>Height</th>
+                </tr>
+                <tr>
+                  <td>3000mm</td>
+                  <td>4000mm</td>
+                </tr>
+              </table>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div id="cart" class="card">
+        <div class="card product onCartProduct">
+          <div class="top"></div>
+          <div class="bottom">
+            <div class="details">
+              <h2>Chairsadds</h2>
+              <p>&#8364;230</p>
+            </div>
+            <div class="buy">
+              <i class="fa fa-times"></i>
+            </div>
+          </div>
+          <div class="inside">
+            <div class="icon">
+              <i class="fa fa-info" aria-hidden="true"></i>
+            </div>
+            <div class="contents">
+              <table>
+                <tr>
+                  <th>Width</th>
+                  <th>Height</th>
+                </tr>
+                <tr>
+                  <td>3000mm</td>
+                  <td>4000mm</td>
+                </tr>
+              </table>
+            </div>
+          </div>
+        </div>
+        <div class="card product onCartProduct">
+          <div class="top"></div>
+          <div class="bottom">
+            <div class="details">
+              <h2>Chairsadds</h2>
+              <p>&#8364;230</p>
+            </div>
+            <div class="buy">
+              <i class="fa fa-times"></i>
+            </div>
+          </div>
+          <div class="inside">
+            <div class="icon">
+              <i class="fa fa-info" aria-hidden="true"></i>
+            </div>
+            <div class="contents">
+              <table>
+                <tr>
+                  <th>Width</th>
+                  <th>Height</th>
+                </tr>
+                <tr>
+                  <td>3000mm</td>
+                  <td>4000mm</td>
+                </tr>
+              </table>
+            </div>
+          </div>
+        </div>
+      </div>
+    </main>
+  </div>
 
-    <script src="scripts/jquery.js"></script>
-    <script src="scripts/navigation.js"></script>
-    <script src="scripts/load.js"></script>
-    <script src="scripts/main.js"></script>
-    <script src="scripts/store.js"></script>
+  <script src="scripts/jquery.js"></script>
+  <script src="scripts/navigation.js"></script>
+  <script src="scripts/load.js"></script>
+  <script src="scripts/main.js"></script>
+  <script src="scripts/store.js"></script>
 
-  </body>
+</body>
+
 </html>
