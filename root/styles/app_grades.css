@@ -18,14 +18,14 @@ main {
     'a b'
     'c c';
 }
-.box_1 {
+#box_1 {
   grid-area: a;
   background-color: var(--primarycolor);
   display: flex;
   flex-direction: column;
   padding: 5px;
 }
-.box_2 {
+#box_2 {
   padding: 5px;
   background-color: var(--primarycolor);
   grid-area: b;
@@ -33,7 +33,7 @@ main {
   flex-direction: column;
   justify-content: space-between;
 }
-.box_3 {
+#box_3 {
   background-color: var(--primarycolor);
   grid-area: c;
   display: flex;
@@ -174,9 +174,8 @@ li:hover span {
 }
 .scroll{
   width: 100%;
-  overflow-y: scroll;
-  scrollbar-width: thin;
-  height: 245px;
+  height:100%;
+  overflow-y: auto;
 }
 .scroll::-webkit-scrollbar {
   width: 12px;
