@@ -289,3 +289,8 @@ video{
 }
  #animation{animation-name: backgroundColor;
   animation-duration: 4s;}
+
+  #socialContainer a{
+    color: #377ded;
+    font-size: 45px;
+  }
