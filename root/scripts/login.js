@@ -33,7 +33,6 @@ function validatelogin() {
 
 	let userCredentials = getUserCredentials(username);
 	if (userCredentials?.password === password) {
-		debugger;
 		window.location = "./application.html";
 	} else {
 		window.location.reload();
