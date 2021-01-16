@@ -43,7 +43,7 @@ $(document).ready(function () {
                 productPrice = details.children("p").html(),
                 image = getProductImageNameFromUrl($(this).parent().siblings(".top").css("background-image"));
             // create the new div to be inserted at the cart
-            let newProduct = OnCartProduct(productName, productPrice, image);
+            let newProduct = new OnCartProduct(productName, productPrice, image);
             let newDiv = newProduct.getDiv();
             //apend the div to the cart
             $("#cart").append(newDiv);
