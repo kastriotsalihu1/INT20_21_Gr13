@@ -1,7 +1,6 @@
 var toggleDuration = 800;
 
 window.onload = (event) => {
-
   try {
     plantTree(parseInt((xCoordinate.length * yCoordinate.length) / 8));
   } catch (e) {
@@ -21,6 +20,11 @@ window.onload = (event) => {
       "fast"
     );
   });
+
+  waitForElementToDisplay('.theme-switch input[type="checkbox"]', function () {
+    console.log("Page is fully loaded!"), 300, 9000;
+  });
+
   const toggleSwitch = document.querySelector(
     '.theme-switch input[type="checkbox"]'
   );
