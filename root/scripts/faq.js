@@ -23,6 +23,7 @@ function validate(){
   var subject = document.getElementById("subject").value;
   var phone = document.getElementById("phone").value;
   var email = document.getElementById("email").value;
+  var country=document.getElementById("yourcountry").value;
   var message = document.getElementById("message").value;
   var error_message = document.getElementById("error_message");
   
@@ -44,8 +45,14 @@ function validate(){
     error_message.innerHTML = text;
     return false;
   }
+  
   if(email.indexOf("@") == -1 || email.length < 6){
     text = "Please Enter valid Email";
+    error_message.innerHTML = text;
+    return false;
+  }
+  if(country===""){
+    text="Please select your country";
     error_message.innerHTML = text;
     return false;
   }
