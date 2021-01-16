@@ -21,7 +21,7 @@ transition: all 0.5s, border-radius 2s; */
   transition: all 0.5s, border-radius 2s;
 }
 .information .icon {
-  z-index: 99;
+  z-index: 999;
   position: absolute;
   left: 17px;
   top: 11px;
