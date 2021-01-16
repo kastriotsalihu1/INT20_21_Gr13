@@ -16,8 +16,8 @@ main {
 .inside {
   z-index: 9;
   background: #254053;
-  width: 70px;
-  height: 70px;
+  width: 3.5vw;
+  height: 3.5vw;
   position: absolute;
   top: 0px;
   right: 0px;
@@ -26,8 +26,8 @@ main {
 }
 .inside .icon {
   position: absolute;
-  right: 20px;
-  top: 20px;
+  right: calc(100% /3);
+  top: calc(100% /3);
   color: white;
   opacity: 1;
 }
@@ -52,14 +52,8 @@ main {
 .inside .contents table {
   text-align: left;
   width: 100%;
-}
-.inside .contents h1,
-.inside .contents p,
-.inside .contents table {
   color: white;
-}
-.inside .contents p {
-  font-size: 13px;
+  font-size: 1vw;
 }
 
 /* pick color */
@@ -69,8 +63,8 @@ main {
   align-items: flex-end;
 }
 .colorswitcher button {
-  width: 20px;
-  height: 20px;
+  width: 3vh;
+  height: 3vh;
   cursor: pointer;
   opacity: 0.7;
 }
@@ -87,13 +81,14 @@ main {
   background-color: purple;
 }
 .activeColor {
-  height: 28px !important;
-  width: 28px !important;
+  height: calc(4vh) !important;
+  width: 4vh !important;
   left: calc(100% - 8px) !important;
   top: calc(100% - 8px) !important;
   opacity: 1 !important;
   border: 3px solid;
 }
+
 
 .product {
   background-color: white;
@@ -114,7 +109,8 @@ main {
 .product .top {
   height: 80%;
   background-position: center;
-  background-attachment: fixed;
+  background-attachment: inherit;
+  background-origin: content-box;
   background-size: 100% 100%;
 }
 
@@ -125,6 +121,7 @@ main {
   overflow: hidden;
   text-overflow: ellipsis;
   max-width: 65%;
+  font-size: 3vh;
 }
 .product .details p {
   margin-top: 32px;
@@ -132,6 +129,7 @@ main {
   white-space: nowrap;
   overflow: hidden;
   text-overflow: ellipsis;
+  font-size: 2vh;
 }
 .product .details p:hover,
 .product .details h2:hover {
@@ -164,29 +162,29 @@ main {
   border-left: solid thin rgba(0, 0, 0, 0.1);
 }
 .product .bottom .buy i {
-  font-size: 30px;
-  padding: calc((100% - 30px) / 2);
+  font-size: 5vh;
   color: #254053;
-  transition: transform 0.5s;
+  animation-name: cartFlip;
+  animation-duration: 4s;
 }
 .product .bottom .buy:hover {
   background-color: #a6cdde;
 }
 .product .bottom .buy:hover i {
-  transform: translateX(7px);
+  transform: translateX(5px);
   color: #00394b;
 }
 .product .bottom:hover .amount {
   display: inline-block;
   width: 36px;
 }
+/* choose how much of a given product to buy */
 .product .amount:hover {
   box-shadow: inset 0 0 5px black;
 }
 .product .amount:focus {
   outline: 0;
 }
-
 .product .amount {
   background-color: #f4f4f4;
   border: 0;
@@ -196,7 +194,6 @@ main {
   transition: width 0.3s;
   transition-timing-function: linear;
 }
-
 input[type='number']::-webkit-inner-spin-button {
   opacity: 0.7;
   height: 80px;
@@ -213,4 +210,17 @@ input[type='number']::-webkit-inner-spin-button {
 }
 .product:nth-child(4) .top {
   background-image: url('../images/store/qanta-purple.jpg');
+}
+
+.featuredProduct{
+  width: calc((100% - 4rem) / 2) !important;
+  height: calc((100% - 2rem)) !important;
+}
+
+
+
+
+@keyframes cartFlip {
+  from   {transform: rotateX(0deg)}
+  to   {transform: rotateX(360deg)}
 }
