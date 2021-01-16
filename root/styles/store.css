@@ -98,7 +98,7 @@ main {
   border: 3px solid;
 }
 
-/* used as is in latest product section, also default values for the products in the other sections */
+/* used as is in "latest product" section, also default values for the products in the other sections */
 .product {
   background-color: white;
   float: right;
