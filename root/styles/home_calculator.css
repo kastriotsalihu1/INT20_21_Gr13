@@ -3,12 +3,13 @@ body{
 	background-color: black;
 }
 #calculator{
-	background-color: #eaedef;
+	background-color: var(--textcolor);
 	position: relative;
 	box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
 	display: flex;
 	flex-direction: column;
 	font-size: 2vw;
+
 }
 #result{
 	height: 18%;
@@ -22,6 +23,7 @@ body{
 	width: 100%;
 	overflow-x: hidden;
 	text-overflow: ellipsis;
+
 }
 #history{
 	text-align: right;
@@ -31,6 +33,7 @@ body{
 #output{
 	text-align: right;
 	height: 50%;
+	color:var(--contentbackground);
 }
 #output-value{
 	margin: 0;
@@ -58,7 +61,8 @@ body{
 	font-size: 2vw;
 }
 .number, .empty{
-	background-color: #eaedef;
+	background-color: var(--textcolor);
+	color:var(--contentbackground);
 }
 .number, .operator{
 	cursor: pointer;

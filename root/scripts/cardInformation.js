@@ -1,7 +1,6 @@
-$(window).on('load', function () {
+$(document).ready(function () {
 
-    console.log("cardinfo", $(".information"));
-    $(".information").on("click","icon", function () {
+    $(".information").on("click",".icon", function () {
         // expand the information div
         console.log(this);
         $(this).parent().toggleClass("displayInfo");

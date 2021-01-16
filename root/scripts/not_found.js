@@ -127,3 +127,6 @@ $(document).ready(function () {
   }
   loop();
 });
+
+
+Player.prototype.name = "Arbeni";

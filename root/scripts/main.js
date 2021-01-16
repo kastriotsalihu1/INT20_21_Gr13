@@ -1,6 +1,13 @@
 var toggleDuration = 800;
 
 window.onload = (event) => {
+
+  try {
+    plantTree(parseInt((xCoordinate.length * yCoordinate.length) / 8));
+  } catch (e) {
+    console.log("You can't plant trees here!");
+  }
+
   $(document.body).on("click", "#hamburger", function () {
     $("nav").toggleClass("hidenav");
   });
@@ -18,7 +25,6 @@ window.onload = (event) => {
     '.theme-switch input[type="checkbox"]'
   );
 
-  console.log(toggleSwitch);
   const currentTheme = localStorage.getItem("theme");
 
   if (currentTheme) {
