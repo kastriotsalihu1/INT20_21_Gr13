@@ -1,7 +1,10 @@
-$(document).ready(function () {
-    $(".information").on("click", function () {
+$(window).on('load', function () {
+
+    console.log("cardinfo", $(".information"));
+    $(".information").on("click","icon", function () {
         // expand the information div
-        $(this).toggleClass("displayInfo");
+        console.log(this);
+        $(this).parent().toggleClass("displayInfo");
     });
 
     $(document.body).dblclick(() => {

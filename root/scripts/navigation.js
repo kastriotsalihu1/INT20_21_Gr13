@@ -8,21 +8,15 @@ $("#mask").css({
 });
 
 const currentPage = $(location).attr('pathname').split("/")[2];
-console.log(currentPage);
 $(window).on('load', function () {
-    console.log("window loaded")
      $("#mask").fadeOut(600, "linear");
-    console.log(currentPage, $(`a[href="${currentPage}"]`).children("i").attr("id"), "loaded");
-
     // wait a certain time until the elements are trully, fully loaded
-    setTimeout(() =>  {$(`a[href="${currentPage}"]`).children("i").addClass("activePage"); console.log("added")} , 300);
+    setTimeout(() => $(`a[href="${currentPage}"]`).children("i").addClass("activePage") , 300);
 
     // keep track of what page is open using the navbar (sidebar)
     $(".nav-icons a").on("click", function (event) {
         let destination = $(this).attr("href");
-        console.log(destination, currentPage, "clicked");
         if (destination === currentPage) {
-            console.log("prevented", $(".activePage"));
             event.preventDefault();
         }
     });
@@ -30,7 +24,5 @@ $(window).on('load', function () {
         notificationCount--;
         $("#notification").attr("data-badge", notificationCount);
     });
-
-    
 });
 

@@ -1,9 +1,6 @@
 var toggleDuration = 800;
 
 $(document).ready(function () {
-  // $(document.body).on("click", ".information", function () {
-  //   console.log("hello");
-  // });
   $(document.body).on("click", "#hamburger", function () {
     $("nav").toggleClass("hidenav");
   });
@@ -64,10 +61,10 @@ $(document).ready(function () {
   async function getSun(lat, lng) {
     let response = await fetch(
       "https://api.sunrise-sunset.org/json?lat=" +
-        lat +
-        "&lng=" +
-        lng +
-        "&date=today&formatted=0"
+      lat +
+      "&lng=" +
+      lng +
+      "&date=today&formatted=0"
     );
     let data = response.json();
     // console.log(response.json);
