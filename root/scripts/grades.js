@@ -1,8 +1,8 @@
-// check off specific todos by clicking
+// check off specific subjects by clicking
 $("ul").on("click", "li", function(){
   $(this).toggleClass("completed");
  });
- //Click on X to delete Todo
+ //Click on X to delete subjects
  $("ul").on("click","span",function(event){
    //this=span
    $(this).parent().fadeOut(500,function(){
@@ -18,14 +18,18 @@ $("ul").on("click", "li", function(){
 
  $("input").keypress(function(event){
    if(event.which===13){
-     //grabbiing new todo text from input
-     var todoText=($(this).val());
+     if($(this).val()===""){
+       alert("No blank values allowed");
+     }else if($(this).val()!==""){
+     //grabbiing subjects text from input
+     var notat=($(this).val());
      //me e fshi qka kena shkru n input
      $(this).val("");
      //create a new li and add to ul4
      // jo me "" po me ''
-     $("ul").append("<li><span><i class='fas fa-trash'></i></span> " + todoText + "<select id='grades'><option >6</option><option >7</option><option >8</option><option >9</option><option >10</option></select></li>")
+     $("ul").append("<li><span><i class='fas fa-trash'></i></span> " + notat + "<select id='grades'><option >6</option><option >7</option><option >8</option><option >9</option><option >10</option></select></li>")
    }
+  }
  });
 
  var myDate=new Date();
@@ -181,5 +185,5 @@ $("#selectLiteraturen").click(
   }
 )
 
- 
+
  

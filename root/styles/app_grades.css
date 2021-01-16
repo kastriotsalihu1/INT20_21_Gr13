@@ -190,7 +190,7 @@ li:hover span {
   /*outline osht highlighti*/
   outline: none;
 }
-.scroll {
+.scroll{
   width: 100%;
   overflow-y: scroll;
   scrollbar-width: thin;
@@ -205,6 +205,26 @@ li:hover span {
 }
 
 .scroll::-webkit-scrollbar-thumb {
+  border-radius: 3px;
+  background-color: var(--darkprimary);
+}
+
+
+.scrollbar {
+  width: 100%;
+  overflow-y: scroll;
+  scrollbar-width: thin;
+  height: 275px;
+}
+.scrollbar::-webkit-scrollbar {
+  width: 12px;
+}
+.scrollbar::-webkit-scrollbar-track {
+  border-radius: 3px;
+  background-color: var(--darkprimary);
+}
+
+.scrollbar::-webkit-scrollbar-thumb {
   border-radius: 3px;
   background-color: var(--darkprimary);
 }
