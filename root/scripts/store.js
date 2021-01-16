@@ -1,13 +1,5 @@
-var scaleRatio = 1.25;
-var offset = 20;
-
-
 $(document).ready(function () {
-
-    //set the position of the scrollbar to the bottom
-    // $('.content').scrollTop($('.content')[0].scrollHeight);
-
-    $(".product .top").each(function () {
+    $(".product").not(".onCartProduct").children(".top").each(function () {
         // when the image is loaded set the active button acodingly
         // e.g. if a red version of the product is the default loaded one, then set the active button the red one
 
@@ -44,38 +36,45 @@ $(document).ready(function () {
             top.css("background-image", newSource);
         }
     });
-    $(".tocart").click(function () {
-        // product > info > button
-        let product = $(this).parent().parent();
-        let image = $(product).children("figure").children("img");
-        let productName = $(product).children("figure").children("figcaption").children("a");
-        let info = $(this).parent();
+    $(".addToCart").click(function () {
+        if (document.getElementById("cart").children.length < 9) {
+            let details = $(this).siblings(".details");
+            let productName = details.children("h2").html(),
+                productPrice = details.children("p").html(),
+                image = getProductImageNameFromUrl($(this).parent().siblings(".top").css("background-image"));
+            amount = $(this).siblings(".amount").attr("value");
+            // create the new div to be inserted at the cart
+            let newDiv = $(`
+                <div class="card product onCartProduct">\
+                    <div class="top" style="background-image: url('images/store/${image}');"></div>\
+                    <div class="bottom">\
+                    <div class="details">\
+                        <h2>${productName}</h2>\
+                        <p>${productPrice}</p>\
+                    </div>\
+                    <div class="buy removeFromCart">\
+                        <i class="fa fa-times"></i>\
+                    </div>\
+                    </div>\
+                </div>`);
+            //apend the div to the cart
+            $("#cart").append(newDiv);
+            //keep scrollbar at bottom
+            var d = document.getElementById('cart');
 
-        // create the new div to be inserted at the cart
-        let newDiv = $(`
-        <div class='oncart'>\
-            <div class='img'><img alt='' src='${$(image).attr("src")}'></div>\
-            <div class='info'>\
-                <a class='name' href='#'>${$(productName).html()}</a>\
-                <div class='price'>\
-                    Price:<span class="priceValue>${$(info).children(".price").html()}</span>\
-                </div>\
-                <button class="removeCart">Remove from cart</button>\
-            </div>\
-        </div>`);
-        //apend the div to the cart
-        $("#cart").append(newDiv);
+            if (d.scrollHeight > d.clientHeight) {
+                d.scrollTop = d.scrollHeight - d.clientHeight;
+            }
 
-        //keep the scrollbar at the bottom
-        $('.content').scrollTop($('.content')[2].scrollHeight);
+            if (document.getElementById("cart").children.length == 9) {
+                $(".addToCart").css('cursor', 'not-allowed');
+            }
+        }
     });
-    $("#cart").on("click", ".removeCart", function () {
-        let onCartProduct;
+    $("#cart").on("click", ".removeFromCart", function () {
+        $(this).parent().parent().remove();
+        $('.addToCart').css('cursor', 'pointer');
     });
-    $('.buy').click(function () {
-        $(this).parent().parent().addClass("clicked");
-    });
-
 });
 
 
@@ -83,7 +82,7 @@ function getProductImageNameFromUrl(url) {
     // the format of the backgroudn image is 
     // url(" <path-to-image>/<image> ")
     let slicedSource = url.split("/");
-    //remove the      ")
+    //remove the    {  ")   }
     return slicedSource[slicedSource.length - 1].slice(0, -2);
 }
 

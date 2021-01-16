@@ -8,8 +8,13 @@
   <link rel="stylesheet" href="styles/app_navigation.css" />
   <link rel="stylesheet" href="styles/app_store.css" />
   <link rel="stylesheet" href="styles/store.css" />
+  
+  <link rel="stylesheet" href="styles/cardInformation.css" />
 
   <link href="dependencies/fontawesome/css/all.css" rel="stylesheet" />
+  <!-- Simple css to remove the watermark from the hosting website -->
+  <!-- <link rel="stylesheet" href="styles/removewatermark.css"> -->
+  <!-- Simple css to remove the watermark from the hosting website -->
   <title>Document</title>
 </head>
 
@@ -23,12 +28,20 @@
     <div id="sidebar"></div>
     <main>
       <div id="latest" class="card">
+        <div class="information">
+          <div class="icon"><i class="fa fa-info" aria-hidden="true"></i></div>
+          <div class="contents">
+            <h2>
+              It a very information packed!
+            </h2>
+          </div>
+        </div>
         <div class="products">
-          <div class="card product">
+          <div class="card product" id="product1">
             <div class="top"></div>
             <div class="bottom">
               <div class="details">
-                <h2>Chairsadds</h2>
+                <h2>Fletore</h2>
                 <p>&#8364;250</p>
               </div>
               <div class="colorswitcher">
@@ -37,8 +50,7 @@
                 <button type="button" id="green"></button>
                 <button type="button" id="purple"></button>
               </div>
-              <input type="number" class="amount" value="1" min="1" max="9" />
-              <div class="buy">
+              <div class="buy addToCart">
                 <i class="fas fa-shopping-cart" aria-hidden="true"></i>
               </div>
             </div>
@@ -60,11 +72,11 @@
               </div>
             </div>
           </div>
-          <div class="card product">
+          <div class="card product" id="product2">
             <div class="top"></div>
             <div class="bottom">
               <div class="details">
-                <h2>Chairsadds</h2>
+                <h2>Kimik</h2>
                 <p>&#8364;250</p>
               </div>
               <div class="colorswitcher">
@@ -73,8 +85,7 @@
                 <button type="button" id="green"></button>
                 <button type="button" id="purple"></button>
               </div>
-              <input type="number" class="amount" value="1" min="1" max="9" />
-              <div class="buy">
+              <div class="buy addToCart">
                 <i class="fas fa-shopping-cart" aria-hidden="true"></i>
               </div>
             </div>
@@ -96,11 +107,11 @@
               </div>
             </div>
           </div>
-          <div class="card product">
+          <div class="card product" id="product3">
             <div class="top"></div>
             <div class="bottom">
               <div class="details">
-                <h2>Chairsadds</h2>
+                <h2>Maic&euml;</h2>
                 <p>&#8364;250</p>
               </div>
               <div class="colorswitcher">
@@ -109,8 +120,7 @@
                 <button type="button" id="green"></button>
                 <button type="button" id="purple"></button>
               </div>
-              <input type="number" class="amount" value="1" min="1" max="9" />
-              <div class="buy">
+              <div class="buy addToCart">
                 <i class="fas fa-shopping-cart" aria-hidden="true"></i>
               </div>
             </div>
@@ -132,11 +142,11 @@
               </div>
             </div>
           </div>
-          <div class="card product">
+          <div class="card product" id="product4">
             <div class="top"></div>
             <div class="bottom">
               <div class="details">
-                <h2>Chairsadds</h2>
+                <h2>&Ccedil;ant&euml;</h2>
                 <p>&#8364;250</p>
               </div>
               <div class="colorswitcher">
@@ -145,8 +155,7 @@
                 <button type="button" id="green"></button>
                 <button type="button" id="purple"></button>
               </div>
-              <input type="number" class="amount" value="1" min="1" max="9" />
-              <div class="buy">
+              <div class="buy addToCart">
                 <i class="fas fa-shopping-cart" aria-hidden="true"></i>
               </div>
             </div>
@@ -171,14 +180,22 @@
         </div>
       </div>
       <div id="featured" class="card">
-        <div class="card product featuredProduct">
+        <div class="information">
+          <div class="icon"><i class="fa fa-info" aria-hidden="true"></i></div>
+          <div class="contents">
+            <h2>
+              It a very information packed!
+            </h2>
+          </div>
+        </div>
+        <div class="card product featuredProduct" id="featured1">
           <div class="top"></div>
           <div class="bottom">
             <div class="details">
               <h2>Chairsadds</h2>
               <p> <span class="oldPrice">&#8364;250</span> - &#8364;200</p>
             </div>
-            <div class="buy">
+            <div class="buy addToCart">
               <i class="fas fa-shopping-cart" aria-hidden="true"></i>
             </div>
           </div>
@@ -200,14 +217,14 @@
             </div>
           </div>
         </div>
-        <div class="card product featuredProduct">
+        <div class="card product featuredProduct" id="featured2">
           <div class="top"></div>
           <div class="bottom">
             <div class="details">
               <h2>Chairsadds</h2>
-              <p><span class="oldPrice">&#8364;250</span> - &#8364;230</p>
+              <p> <span class="oldPrice">&#8364;250</span> - &#8364;200</p>
             </div>
-            <div class="buy">
+            <div class="buy addToCart">
               <i class="fas fa-shopping-cart" aria-hidden="true"></i>
             </div>
           </div>
@@ -229,64 +246,15 @@
             </div>
           </div>
         </div>
+
       </div>
       <div id="cart" class="card">
-        <div class="card product onCartProduct">
-          <div class="top"></div>
-          <div class="bottom">
-            <div class="details">
-              <h2>Chairsadds</h2>
-              <p>&#8364;230</p>
-            </div>
-            <div class="buy">
-              <i class="fa fa-times"></i>
-            </div>
-          </div>
-          <div class="inside">
-            <div class="icon">
-              <i class="fa fa-info" aria-hidden="true"></i>
-            </div>
-            <div class="contents">
-              <table>
-                <tr>
-                  <th>Width</th>
-                  <th>Height</th>
-                </tr>
-                <tr>
-                  <td>3000mm</td>
-                  <td>4000mm</td>
-                </tr>
-              </table>
-            </div>
-          </div>
-        </div>
-        <div class="card product onCartProduct">
-          <div class="top"></div>
-          <div class="bottom">
-            <div class="details">
-              <h2>Chairsadds</h2>
-              <p>&#8364;230</p>
-            </div>
-            <div class="buy">
-              <i class="fa fa-times"></i>
-            </div>
-          </div>
-          <div class="inside">
-            <div class="icon">
-              <i class="fa fa-info" aria-hidden="true"></i>
-            </div>
-            <div class="contents">
-              <table>
-                <tr>
-                  <th>Width</th>
-                  <th>Height</th>
-                </tr>
-                <tr>
-                  <td>3000mm</td>
-                  <td>4000mm</td>
-                </tr>
-              </table>
-            </div>
+        <div class="information">
+          <div class="icon"><i class="fa fa-info" aria-hidden="true"></i></div>
+          <div class="contents">
+            <h2>
+              It a very information packed!
+            </h2>
           </div>
         </div>
       </div>
@@ -298,6 +266,7 @@
   <script src="scripts/load.js"></script>
   <script src="scripts/main.js"></script>
   <script src="scripts/store.js"></script>
+  <script src="scripts/cardInformation.js"></script>
 
 </body>
 

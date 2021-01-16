@@ -1,14 +1,12 @@
 @import url("https://fonts.googleapis.com/css2?family=Open+Sans&display=swap");
 
-:root{
-  --primarycolor:#2E8B57;
-  --secondarycolor:#4b9e6f;
-  --darkprimary:#205a39;
+:root {
+  --primarycolor: #2e8b57;
+  --secondarycolor: #4b9e6f;
+  --darkprimary: #205a39;
   /* --primarycolor:#d9534f;
   --secondarycolor:#ed8684; */
-
 }
-
 
 main {
   display: grid;
@@ -39,69 +37,66 @@ main {
   flex-direction: column;
   align-items: center;
   justify-content: space-around;
-  color:white;
-  overflow-y:auto;
+  color: white;
+  overflow-y: auto;
 }
-.hidden{
+.hidden {
   display: none;
 }
 
-#counter{
+#counter {
   display: flex;
   align-items: flex-end;
-  margin-top:20px;
-  padding:0;
+  margin-top: 20px;
+  padding: 0;
 }
-h2{
-  margin:0;
-  padding:14px 0;
+h2 {
+  margin: 0;
+  padding: 14px 0;
 }
-#counter p{
-  margin:0;
+#counter p {
+  margin: 0;
   line-height: 1;
-
-} 
-
-#cycle{
-  padding-left:20px;
-  font-size:50px;
-  
 }
- #timer,#break{
-  padding:0;
-  font-size:7em;
+
+#cycle {
+  padding-left: 20px;
+  font-size: 50px;
+}
+#timer,
+#break {
+  padding: 0;
+  font-size: 7em;
   font-weight: 300;
-} 
-
-#pomodoro button{
-color:inherit;
-background-color:var(--primarycolor);
-border:2px solid white;
-border-radius: 10px;
-padding:10px 10%;
-font-size:25px;
-cursor: pointer;
 }
 
-#pomodoro button:hover{
+#pomodoro button {
+  color: inherit;
+  background-color: var(--primarycolor);
+  border: 2px solid white;
+  border-radius: 10px;
+  padding: 10px 10%;
+  font-size: 25px;
+  cursor: pointer;
+}
+
+#pomodoro button:hover {
   transform: scale(1.1);
-  }
+}
 
-  #pomodoro button:active{
-    transform: scale(1);
-    }
+#pomodoro button:active {
+  transform: scale(1);
+}
 
-#btn_container{
-  margin:30px 0;
+#btn_container {
+  margin: 30px 0;
   box-sizing: border-box;
-  padding:0 10%;
+  padding: 0 10%;
   width: 100%;
   display: flex;
   justify-content: space-around;
   padding: 0 10%;
 }
-
-
 
 p {
   color: white;
@@ -128,17 +123,20 @@ button {
   padding-top: 0;
 }
 #trees h2 {
-  padding:14px 0;
+  padding: 14px 0;
 }
 
 #canvascontainer {
-  background-color:var(--secondarycolor) ;
+  background-color: var(--secondarycolor);
   border-radius: 5px;
-  height:100%;
+  height: 100%;
   width: 100%;
   overflow: hidden;
+  box-sizing: border-box;
 }
-canvas{
-  margin:0;
-  padding:0;
+#canvascontainer canvas {
+  margin: 0;
+  padding: 0;
+  height: 100%;
+  width: 100%;
 }

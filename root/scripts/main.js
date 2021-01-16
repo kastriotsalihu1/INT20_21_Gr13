@@ -1,9 +1,9 @@
 var toggleDuration = 800;
 
 $(document).ready(function () {
-  $(document.body).on("click", ".information", function () {
-    console.log("hello");
-  });
+  // $(document.body).on("click", ".information", function () {
+  //   console.log("hello");
+  // });
   $(document.body).on("click", "#hamburger", function () {
     $("nav").toggleClass("hidenav");
   });

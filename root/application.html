@@ -17,7 +17,7 @@
   <link rel="stylesheet" href="styles/sum_grades.css">
   <link rel="stylesheet" href="styles/calculator.css">
   <link rel="stylesheet" href="styles/app_product.css">
-
+  <link rel="stylesheet" href="styles/home_pomodoro.css">
   <link href="dependencies/fontawesome/css/all.css" rel="stylesheet" />
   <title>Document</title>
 </head>
@@ -182,7 +182,20 @@
         </div>
       </div>
 
-      <div id="sum_garden" class="card"></div>
+      <div id="sum_garden" class="card">
+        <!-- <div class="information">
+          <div class="icon">
+            <i class="fa fa-info" aria-hidden="true"></i>
+          </div>
+          <div class="contents">
+            <h2>It a very information packed!</h2>
+          </div>
+        </div> -->
+        <h2 class="cardtitle">Garden</h2>
+        <div id="canvascontainer">
+          <canvas id="canvas"> </canvas>
+        </div>
+      </div>
       <div id="sum_product" class="card">
         <div class="products">
           <div class="card product">
@@ -236,7 +249,7 @@
   <script src="scripts/sum_grades.js"></script>
   <script src="scripts/calculator.js"></script>
   <script src="scripts/store.js"></script>
-
+  <script src="scripts/trees.js"></script>
 </body>
 
 </html>
