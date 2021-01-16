@@ -38,7 +38,6 @@
     </header>
 
     <main>
-      <button onclick="myFunction()" class="replace"> Replace Privacy Policy with P&P in first paragraph </button>
         <h1 >Privacy & Policy</h1>
         <h3>Your privacy is important to us</h3>
         <p> <em>Estudent is located at:</em></p>
@@ -47,8 +46,11 @@
             
         </address>
         
-        <p id="demo">It is Estudent's policy to respect your privacy regarding any information we may collect while operating our website. This Privacy Policy applies to <a href="http://www.estudentproject.com"> <mark> <u>www.estudentproject.com</u></mark></a> (hereinafter, "us", "we", or "www.estudentproject.com"). We respect your privacy and are committed to protecting personally identifiable information you may provide us through the Website. We have adopted this privacy policy ("Privacy Policy") to explain what information may be collected on our Website, how we use this information, and under what circumstances we may disclose the information to third parties. This Privacy Policy applies only to information we collect through the Website and does not apply to our collection of information from other sources.</p>
-        <p>This Privacy Policy, together with the Terms of service posted on our Website, set forth the general rules and policies governing your use of our Website. Depending on your activities when visiting our Website, you may be required to agree to additional terms of service.</p>
+        
+      <p id="demo">It is Estudent's policy to respect your privacy regarding any information we may collect while operating our website. This Privacy Policy applies to <a href="http://www.estudentproject.com"> <mark> <u>www.estudentproject.com</u></mark></a> (hereinafter, "us", "we", or "www.estudentproject.com"). We respect your privacy and are committed to protecting personally identifiable information you may provide us through the Website. We have adopted this privacy policy ("Privacy Policy") to explain what information may be collected on our Website, how we use this information, and under what circumstances we may disclose the information to third parties. This Privacy Policy applies only to information we collect through the Website and does not apply to our collection of information from other sources.</p>
+      <button onclick="myFunction()" class="replace"> Replace Privacy Policy with P&P in first paragraph </button>
+     
+      <p>This Privacy Policy, together with the Terms of service posted on our Website, set forth the general rules and policies governing your use of our Website. Depending on your activities when visiting our Website, you may be required to agree to additional terms of service.</p>
         <!-- using regEx ex1 -->
         <p>Case-insensitive search for "policy" in the paragraph above.</p>
 
@@ -128,7 +130,16 @@
         
           <p><a href="#tableofcontents">Back to table of contents</a></p> 
         <canvas id="canvas" width="800px" height="80" style="border:2px dotted #d3d3d3;"></canvas> 
-             
+        <p style="margin:auto;width:250px; padding:20px">Motivational videos</p>
+        <div class="container">
+          <video src="videos/vid1.mp4" class="slider" autoplay loop muted controls></video>
+  
+          <ul>
+              <li onclick="videoslider('videos/vid1.mp4')"><video src="videos/vid1.mp4"></video></li>
+              <li onclick="videoslider('videos/vid2.mp4')"><video src="videos/vid2.mp4"></video></li>
+          
+          </ul>
+      </div>  
     </main>
     <footer>
         <hr>
@@ -143,6 +154,7 @@
 </div>       
 
 <script>
+  //canvas
   function myFunction(){
   var str = document.getElementById("demo").innerHTML;  
   var res=str.replace(/Privacy Policy/g, "P&P");
@@ -196,6 +208,13 @@ function Search_3() {
   var result3 = regEx3.test(text);
   document.getElementById("response_3").innerHTML = result3;
 }
+
+//videoSlider
+            
+            function videoslider(links){
+                document.querySelector(".slider").src = links;
+            }
+    
 
 </script>
 </body>
