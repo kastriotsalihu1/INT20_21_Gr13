@@ -148,6 +148,8 @@ aside {
   background-image:url(../images/aboutus/todo.png), url(../images/aboutus/laptop.jpg);
   width: 100%;
   height: 600px;
+  background-repeat: no-repeat, repeat;
+}
 
 }
 
@@ -169,9 +171,11 @@ aside {
     /* column-rule: 1px dashed #999; */
   }
 
-  .resize{border: 2px solid;
+  .resize{
+  border: 2px solid;
   padding: 20px; 
-  width: 1000px;
+  width: 80%;
+  margin: 30px;
   resize: both;
   overflow: auto;
   background-color: lightgray;
@@ -180,6 +184,7 @@ aside {
   box-shadow: 5px 10px 8px #b7b5b5;
   outline-offset: 10px;
 }
+
 .replace {
         border-radius: 25px;
         background-color:  #377ded;
@@ -192,4 +197,12 @@ aside {
         width: 300px;
         margin-left:-250px;
         margin-block: 30px;
+}
+
+#borderimg1 { 
+  border: 10px solid transparent;
+  padding: 15px;
+  margin-top: 100px;
+  border-image: url(../images/aboutus/border.png) 30 round;
+  text-align: center;
 }
