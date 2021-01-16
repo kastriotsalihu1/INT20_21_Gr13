@@ -1,4 +1,3 @@
-
 const treePaths = [
   "images/trees/TreeFlat_1.png",
   "images/trees/TreeFlat_2.png",
@@ -85,3 +84,7 @@ function plantTree(number = 1) {
     positionIndex++;
   }
 }
+window.onload = (event) => {
+  plantTree(parseInt(xCoordinate.length * yCoordinate.length/8));
+};
+    

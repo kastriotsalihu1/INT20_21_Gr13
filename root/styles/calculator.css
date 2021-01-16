@@ -46,15 +46,19 @@ body{
 
 }
 #keyboard{
-	height: 78%;
+	height: 60%;
 	flex-grow: 1;
 }
 #keyboard button{
 	overflow: hidden;
 }
 .operator, .number, .empty{
-	width: 25%;
-	height: 20%;
+	width: 15%;
+	height: 19%;
+	margin:0 5%;
+	padding:0;
+	box-sizing: border-box;
+
 	float: left;
 	border-radius: 50%;
 	border-width: 0;
