@@ -1,6 +1,6 @@
 :root {
-  --primarycolor: #272727;
-  --darkprimary:#0c0c0c;
+  --primarycolor: #979797;
+  --darkprimary:#4d4d4d;
 }
 
 main {
@@ -204,7 +204,7 @@ main {
 }
 .product .bottom .buy i {
   font-size: 5vh;
-  color: #254053;
+  color: #979797;
   animation-name: cartFlip;
   animation-duration: 4s;
   animation-delay: 0.4s;
