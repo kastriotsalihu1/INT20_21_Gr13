@@ -1,227 +1,237 @@
 /* form js */
 
-
-*{
-	margin: 0;
-	padding: 0;
-	box-sizing: border-box;
-	outline: none;
-	font-family: "Open Sans", "Sans-serif";
-  }
-  
-  body{
-	background: linear-gradient(180deg, rgba(255,255,255,1) 0%, rgba(55,125,237,1) 32%);
-	padding:150px 0;
-	
-	
-  }
-  
-  .wrapper{
-	max-width: 650px;
-	width: 100%;
-	background: #fff;
-	padding: 25px;
-	border-radius: 5px;
-	box-shadow: 4px 4px 2px  #3070d4;
-	margin:auto;
-  }
-  
-  .wrapper h2{
-	text-align: center;
-	margin-bottom: 20px;
-	text-transform: uppercase;
-	letter-spacing: 3px;
-	color: #332902;
-  }
-  
-  .wrapper .input_field{
-	margin-bottom: 10px;
-  }
-  
-  .wrapper .input_field input[type="text"],
-  .wrapper textarea{
-	border: 1px solid #e0e0e0;
-	width: 100%;
-	padding: 10px;
-	}
-	
-	#yourcountry{
-		border: 1px solid #e0e0e0;
-		width: 100%;
-		padding: 10px;
-	}
-
-  
-  .wrapper textarea{
-	resize: none;
-	height: 80px;
-  }
-  
-  .wrapper .btn input[type="submit"]{
-	border-color: white;
-	border-style: ridge;
-	margin-top: 15px;
-	padding: 10px;
-	text-align: center;
-	width: 100%;
-	background:#377ded;
-	color: white;
-	text-transform: uppercase;
-	letter-spacing: 5px;
-	font-weight: bold;
-	border-radius: 25px;
-	cursor: pointer;
-  }
-  
-  #error_message{
-	margin-bottom: 20px;
-	background:rgb(255, 0, 0);
-	padding: 0px;
-	text-align: center;
-	font-size: 14px;
-	transition: all 0.5s ease;
-	color:white;
-  }
- * {
-	 box-sizing: border-box;
-}
- *::before, *::after {
-	 box-sizing: border-box;
-}
- .wrapper_2 {
-	 padding: 0;
-	 font-family: 'open sans', sans-serif;
-	 background:#377ded;
-	 color: white;
-	 display: flex;
-}
- .container {
-	 margin: 0 auto;
-	 padding: 4rem;
-	 width: 48rem;
-}
- .accordion .accordion-item {
-	 border-bottom: 1px solid #e5e5e5;
-}
- .accordion .accordion-item button[aria-expanded='true'] {
-	 border-bottom: 1px solid #03566a;
-}
- .accordion button {
-	 position: relative;
-	 display: block;
-	 text-align: left;
-	 width: 100%;
-	 padding: 1em 0;
-	 color: white;
-	 font-size: 1.15rem;
-	 font-weight: 400;
-	 border: none;
-	 background: none;
-	 outline: none;
-}
- .accordion button:hover, .accordion button:focus {
-	 cursor: pointer;
-	 color: #03566a;
-}
- .accordion button:hover::after, .accordion button:focus::after {
-	 cursor: pointer;
-	 color: #03566a;
-	 border: 1px solid #03566a;
-}
- .accordion button .accordion-title {
-	 padding: 1em 1.5em 1em 0;
-}
- .accordion button .icon {
-	 display: inline-block;
-	 position: absolute;
-	 top: 18px;
-	 right: 0;
-	 width: 22px;
-	 height: 22px;
-	 border: 1px solid;
-	 border-radius: 22px;
-}
- .accordion button .icon::before {
-	 display: block;
-	 position: absolute;
-	 content: '';
-	 top: 9px;
-	 left: 5px;
-	 width: 10px;
-	 height: 2px;
-	 background: currentColor;
-}
- .accordion button .icon::after {
-	 display: block;
-	 position: absolute;
-	 content: '';
-	 top: 5px;
-	 left: 9px;
-	 width: 2px;
-	 height: 10px;
-	 background: currentColor;
-}
- .accordion button[aria-expanded='true'] {
-	 color: #03566a;
-}
- .accordion button[aria-expanded='true'] .icon::after {
-	 width: 0;
-}
- .accordion button[aria-expanded='true'] + .accordion-content {
-	 opacity: 1;
-	 max-height: 9em;
-	 transition: all 200ms linear;
-	 will-change: opacity, max-height;
-}
- .accordion .accordion-content {
-	 opacity: 0;
-	 max-height: 0;
-	 overflow: hidden;
-	 transition: opacity 200ms linear, max-height 200ms linear;
-	 will-change: opacity, max-height;
-}
- .accordion .accordion-content p {
-	 font-size: 1rem;
-	 font-weight: 300;
-	 margin: 2em 0;
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  outline: none;
+  font-family: "Open Sans", "Sans-serif";
 }
 
-
-.wrapper_3{
-height: 150px;
-width:600px;
-background-color:white;
-margin:auto;
-border-radius: 5px;
-}
-.wrapper_3 input{
-	border: 1px solid #377ded;
-	border-radius: 5px;
-	width: 96%;
-	padding: 10px;
-	margin: 10px;
+body {
+  background: linear-gradient(
+    180deg,
+    rgba(255, 255, 255, 1) 0%,
+    rgba(55, 125, 237, 1) 32%
+  );
+  padding: 150px 0;
 }
 
-.wrapper_3 button{
-	border-color: white;
-	border-style: ridge;
-	margin-top: 15px;
-	padding: 10px;
-	text-align: center;
-	width: 100%;
-	background:#377ded;
-	color: white;
-	text-transform: uppercase;
-	letter-spacing: 5px;
-	font-weight: bold;
-	border-radius: 25px;
-	cursor: pointer;
-}
-.wrapper_3 p{
-
-text-align: center;
-color:#18386b;
+.wrapper {
+  max-width: 650px;
+  width: 100%;
+  background: #fff;
+  padding: 25px;
+  border-radius: 5px;
+  box-shadow: 4px 4px 2px #3070d4;
+  margin: auto;
 }
 
+.wrapper h2 {
+  text-align: center;
+  margin-bottom: 20px;
+  text-transform: uppercase;
+  letter-spacing: 3px;
+  color: #332902;
+}
 
+.wrapper .input_field {
+  margin-bottom: 10px;
+}
+.input_field p {
+  display: inline;
+  padding-left:10px;
+}
+.input_field {
+  color: #3a3a3a;
+  margin: 20px 0;
+  font-size:15px;
+}
+.input_field input[type="radio"]{
+	margin-left:20px;
+}
 
+.wrapper .input_field input[type="text"],
+.wrapper textarea {
+  border: 1px solid #e0e0e0;
+  width: 100%;
+  padding: 10px;
+}
+
+#yourcountry {
+  border: 1px solid #e0e0e0;
+  width: 100%;
+  padding: 10px;
+}
+
+.wrapper textarea {
+  resize: none;
+  height: 80px;
+}
+
+.wrapper .btn input[type="submit"] {
+  border-color: white;
+  border-style: ridge;
+  margin-top: 15px;
+  padding: 10px;
+  text-align: center;
+  width: 100%;
+  background: #377ded;
+  color: white;
+  text-transform: uppercase;
+  letter-spacing: 5px;
+  font-weight: bold;
+  border-radius: 25px;
+  cursor: pointer;
+}
+
+#error_message {
+  margin-bottom: 20px;
+  background: rgb(255, 0, 0);
+  padding: 0px;
+  text-align: center;
+  font-size: 14px;
+  transition: all 0.5s ease;
+  color: white;
+}
+* {
+  box-sizing: border-box;
+}
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+.wrapper_2 {
+  padding: 0;
+  font-family: "open sans", sans-serif;
+  background: #377ded;
+  color: white;
+  display: flex;
+}
+.container {
+  margin: 0 auto;
+  padding: 4rem;
+  width: 48rem;
+}
+.accordion .accordion-item {
+  border-bottom: 1px solid #e5e5e5;
+}
+.accordion .accordion-item button[aria-expanded="true"] {
+  border-bottom: 1px solid #03566a;
+}
+.accordion button {
+  position: relative;
+  display: block;
+  text-align: left;
+  width: 100%;
+  padding: 1em 0;
+  color: white;
+  font-size: 1.15rem;
+  font-weight: 400;
+  border: none;
+  background: none;
+  outline: none;
+}
+.accordion button:hover,
+.accordion button:focus {
+  cursor: pointer;
+  color: #03566a;
+}
+.accordion button:hover::after,
+.accordion button:focus::after {
+  cursor: pointer;
+  color: #03566a;
+  border: 1px solid #03566a;
+}
+.accordion button .accordion-title {
+  padding: 1em 1.5em 1em 0;
+}
+.accordion button .icon {
+  display: inline-block;
+  position: absolute;
+  top: 18px;
+  right: 0;
+  width: 22px;
+  height: 22px;
+  border: 1px solid;
+  border-radius: 22px;
+}
+.accordion button .icon::before {
+  display: block;
+  position: absolute;
+  content: "";
+  top: 9px;
+  left: 5px;
+  width: 10px;
+  height: 2px;
+  background: currentColor;
+}
+.accordion button .icon::after {
+  display: block;
+  position: absolute;
+  content: "";
+  top: 5px;
+  left: 9px;
+  width: 2px;
+  height: 10px;
+  background: currentColor;
+}
+.accordion button[aria-expanded="true"] {
+  color: #03566a;
+}
+.accordion button[aria-expanded="true"] .icon::after {
+  width: 0;
+}
+.accordion button[aria-expanded="true"] + .accordion-content {
+  opacity: 1;
+  max-height: 9em;
+  transition: all 200ms linear;
+  will-change: opacity, max-height;
+}
+.accordion .accordion-content {
+  opacity: 0;
+  max-height: 0;
+  overflow: hidden;
+  transition: opacity 200ms linear, max-height 200ms linear;
+  will-change: opacity, max-height;
+}
+.accordion .accordion-content p {
+  font-size: 1rem;
+  font-weight: 300;
+  margin: 2em 0;
+}
+
+.wrapper_3 {
+  height: 150px;
+  width: 600px;
+  background-color: white;
+  margin: auto;
+  border-radius: 5px;
+}
+.wrapper_3 input {
+  border: 1px solid #377ded;
+  border-radius: 5px;
+  width: 96%;
+  padding: 10px;
+  margin: 10px;
+}
+
+.wrapper_3 button {
+  border-color: white;
+  border-style: ridge;
+  margin-top: 15px;
+  padding: 10px;
+  text-align: center;
+  width: 100%;
+  background: #377ded;
+  color: white;
+  text-transform: uppercase;
+  letter-spacing: 5px;
+  font-weight: bold;
+  border-radius: 25px;
+  cursor: pointer;
+}
+.wrapper_3 p {
+  text-align: center;
+  color: #18386b;
+}
