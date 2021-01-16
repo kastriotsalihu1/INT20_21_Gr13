@@ -33,15 +33,15 @@ $("ul").on("click", "li", function(){
  });
 
  var myDate=new Date();
- var Data=new Date(2020,11,21);
+ var Data=new Date(2020,11,21); 
  var myPastDate=new Date(2019,11,2,10,30,15);
 
 
  var pooFiles=[{lenda:"OOP",emriiFile:"Java",lloji:"Books",myPastDate},{lenda:"OOP",emriiFile:"Programimi i Orientuar ne Objekte",  lloji:"Exams", Data}];
  var matFiles = [{lenda: "Mathematics", emriiFile: "Matematika diskrete", lloji: "Lectures", myDate}, {lenda: "Mathematics", emriiFile: "Detyra", lloji: "Excercises", myDate}];
- var SinjaleSistemeFiles=[{lenda: "Signals and Systems", emriiFile:"Serite Furie", lloji:"Exams", myDate},
-{lenda:"Signals and Systems",emriiFile:"Hyrje ne Sinjale", lloji:"Lectures", myDate},
-{lenda:"SSignals and Systems",emriiFile:"Signals and systems", lloji:"Tjeter", myDate}]
+ var SinjaleSistemeFiles=[{lenda: "SignalsandSystems", emriiFile:"Serite Furie", lloji:"Exams", myDate},
+{lenda:"SignalsandSystems",emriiFile:"Hyrje ne Sinjale", lloji:"Lectures", myDate},
+{lenda:"SignalsandSystems",emriiFile:"Signals and systems", lloji:"Tjeter", myDate}]
 var elektronikaFiles=[{lenda:"Electronics",emriiFile:"Amplifikatoret",lloji:"Books", myDate}];
 var databazeFiles=[{lenda:"Database",emriiFile:"Tabelat relacionale",lloji:"Exams", myDate}];
 var internetFiles=[{lenda:"Internet",emriiFile:"Hyrje ne internet",lloji:"Books", myDate}];
@@ -59,9 +59,9 @@ $("#shtoButton").click(
     }
     if(lenda === "Matematike"){
       matFiles.push(materiali);
-    }else if(lenda === "SinjaledheSisteme"){
+    }else if(lenda === "SignalsandSystems"){
       SinjaleSistemeFiles.push(materiali);
-    }else if(lenda === "POO"){
+    }else if(lenda === "OOP"){
       pooFiles.push(materiali);
     }else if(lenda==="Elektronike"){
       elektronikaFiles.push(materiali);
@@ -100,7 +100,7 @@ function shfaqMaterialin(lenda){
       }
       tabela.appendChild(tr);
     });
-  }else if(lenda==="SinjaledheSisteme"){
+  }else if(lenda==="SignalsandSystems"){
     const tabela = document.getElementById("tabela");
     tabela.innerHTML = "";
     tabela.innerHTML = getHeader();
@@ -114,7 +114,7 @@ function shfaqMaterialin(lenda){
       }
       tabela.appendChild(tr);
     })
-  }else if(lenda==="POO"){
+  }else if(lenda==="OOP"){
     const tabela = document.getElementById("tabela");
     tabela.innerHTML = "";
     tabela.innerHTML = getHeader();
