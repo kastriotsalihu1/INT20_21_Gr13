@@ -42,6 +42,7 @@ main {
 }
 .table {
   overflow-y: auto;
+  height:100%;
 }
 table {
   width: 100%;
@@ -192,7 +193,6 @@ li:hover span {
   width: 100%;
   overflow-y: scroll;
   scrollbar-width: thin;
-  height: 275px;
 }
 .scrollbar::-webkit-scrollbar {
   width: 12px;
