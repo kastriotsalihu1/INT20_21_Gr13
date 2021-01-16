@@ -60,13 +60,9 @@ function fitToContainer(canvas) {
   canvas.width = canvas.offsetWidth;
   canvas.height = canvas.offsetHeight;
 }
-function scaleCanvas(sSize) {
-  ctx.scale(sSize, sSize, canvas.width / 2, canvas.height / 2);
-}
 
 var positionIndex = 0;
 function plantTree(number = 1) {
-  console.log("You asd  !");
   for (let i = 0; i < number; i++) {
     if (positionIndex >= xCoordinate.length * yCoordinate.length) {
       console.log("You have planted the whole garden!");

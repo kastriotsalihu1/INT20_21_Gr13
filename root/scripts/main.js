@@ -1,6 +1,6 @@
 var toggleDuration = 800;
 
-$(document).ready(function () {
+window.onload = (event) => {
   $(document.body).on("click", "#hamburger", function () {
     $("nav").toggleClass("hidenav");
   });
@@ -14,10 +14,11 @@ $(document).ready(function () {
       "fast"
     );
   });
-
   const toggleSwitch = document.querySelector(
     '.theme-switch input[type="checkbox"]'
   );
+
+  console.log(toggleSwitch);
   const currentTheme = localStorage.getItem("theme");
 
   if (currentTheme) {
@@ -61,10 +62,10 @@ $(document).ready(function () {
   async function getSun(lat, lng) {
     let response = await fetch(
       "https://api.sunrise-sunset.org/json?lat=" +
-      lat +
-      "&lng=" +
-      lng +
-      "&date=today&formatted=0"
+        lat +
+        "&lng=" +
+        lng +
+        "&date=today&formatted=0"
     );
     let data = response.json();
     // console.log(response.json);
@@ -88,4 +89,4 @@ $(document).ready(function () {
   }
 
   toggleSwitch.addEventListener("change", switchTheme, false);
-});
+};

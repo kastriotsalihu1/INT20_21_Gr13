@@ -39,11 +39,9 @@
   .cardcontent {
     height: 100%;
     width: 100%;
-    padding-bottom: 150px;
     overflow: auto;
   }
 
-  
   
   .scrollwheel::-webkit-scrollbar-track {
     border-radius: 3px;
@@ -62,7 +60,7 @@
   .cardfooter {
     width: 100%;
     position: absolute;
-    bottom: 10px;
+    bottom: 20px;
     text-align: center;
     -webkit-user-select: none;
   }
@@ -72,8 +70,8 @@
     padding:20px 0 5px 0;
     position: relative;
     background-color:aliceblue;
-    height: 300px;
-    width: 300px;
+    height: 280px;
+    width: 280px;
     text-align: center;
     transition: 0.2s;
     display:flex;
@@ -113,23 +111,10 @@
     border: none;
     overflow:hidden;
   }
-  
-  .closenote {
-    position: absolute;
-    color: #e74c3c;
-    width: 30px;
-    height: 30px;
-    font-size: 0px;
-    right: 5px;
-    top: 5px;
-    transition: 0.2s;
-  }
-  .note:hover .closenote {
-    font-size: 27px;
-  }
+
   .displayinput {
     padding: 0;
-    margin-bottom: 10px;
+    /* margin-bottom: 10px; */
     outline: none;
     float: none;
     height: 100px;
