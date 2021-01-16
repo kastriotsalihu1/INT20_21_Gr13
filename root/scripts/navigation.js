@@ -30,5 +30,7 @@ $(window).on('load', function () {
         notificationCount--;
         $("#notification").attr("data-badge", notificationCount);
     });
+
+    
 });
 

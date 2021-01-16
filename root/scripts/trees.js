@@ -1,3 +1,4 @@
+
 const treePaths = [
   "images/trees/TreeFlat_1.png",
   "images/trees/TreeFlat_2.png",
@@ -10,11 +11,9 @@ const treePaths = [
 ];
 var treeImages = [];
 
-for (let i = 0; i < 8; i++) {
+for (let i = 0; i < treePaths.length; i++) {
   treeImages.push(getImage(treePaths[i]));
 }
-// console.log(treePaths);
-// console.log(treeImages);
 
 const canvas = document.getElementById("canvas");
 const ctx = canvas.getContext("2d");
@@ -24,22 +23,17 @@ var xCoordinate = [];
 var yCoordinate = [];
 let canvasWidth = canvas.width,
   canvasHeight = canvas.height,
-  resizingFactor = 1,
   imageH = 56,
   imageW = 40;
 
-scaleCanvas(ctx, 1.2);
 for (let i = 0; i < canvasWidth / imageW; i += 1) xCoordinate[i] = i * imageW;
 for (let i = 0; i < canvasHeight / imageH; i += 1) yCoordinate[i] = i * imageH;
-console.log(canvasWidth);
+
 if (canvasHeight % imageH != 0) yCoordinate.pop();
+if (canvasWidth % imageW != 0) xCoordinate.pop();
 
 xCoordinate = shuffle(xCoordinate);
 yCoordinate = shuffle(yCoordinate);
-
-console.log(xCoordinate, yCoordinate);
-
-var treeIndex = 0;
 
 function shuffle(array) {
   var tmp,
@@ -69,4 +63,25 @@ function fitToContainer(canvas) {
 }
 function scaleCanvas(sSize) {
   ctx.scale(sSize, sSize, canvas.width / 2, canvas.height / 2);
+}
+
+var positionIndex = 0;
+function plantTree(number = 1) {
+  console.log("You asd  !");
+  for (let i = 0; i < number; i++) {
+    if (positionIndex >= xCoordinate.length * yCoordinate.length) {
+      console.log("You have planted the whole garden!");
+      return;
+    }
+    let image = treeImages[parseInt(Math.random() * treeImages.length)];
+
+    ctx.drawImage(
+      image,
+      xCoordinate[positionIndex % xCoordinate.length],
+      yCoordinate[positionIndex % yCoordinate.length],
+      image.width,
+      image.height
+    );
+    positionIndex++;
+  }
 }
