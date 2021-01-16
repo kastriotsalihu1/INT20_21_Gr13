@@ -7,7 +7,8 @@ $("#mask").css({
     "height": "100%",
 });
 
-const currentPage = $(location).attr('pathname').split("/")[2];
+const currentPagePath = $(location).attr('pathname').split("/");
+const currentPage = currentPagePath[currentPagePath.length-1];
 $(window).on('load', function () {
      $("#mask").fadeOut(600, "linear");
     // wait a certain time until the elements are trully, fully loaded
