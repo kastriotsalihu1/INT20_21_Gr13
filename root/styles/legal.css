@@ -184,6 +184,21 @@ aside {
   box-shadow: 5px 10px 8px #b7b5b5;
   outline-offset: 10px;
 }
+.animation{
+width: 10px;
+height:10px;
+background:#377ded;
+position: relative;
+animation-name: Animate;
+animation-duration: 2s;
+animation-direction: alternate;
+
+}
+@keyframes Animate{
+  0%{left: 0}
+  50%{left: 100%;}
+  100%{left: 0}
+}
 
 .replace {
         border-radius: 25px;
@@ -197,6 +212,7 @@ aside {
         margin:auto;
        
 }
+
 
 #borderimg1 { 
   border: 10px dotted transparent;
