@@ -2,7 +2,7 @@
   --contentbackground: #f6f7fb;
   --navcolor: white;
   --naviconcolor: #9b9b9b;
-  --textcolor: black;
+  --textcolor: rgb(31, 31, 31);
 }
 
 [data-theme="dark_mode"] {
@@ -20,7 +20,7 @@ html {
 }
 
 body {
-  background-color: var(--contentbackground);
+  background-color: var( --navcolor);
 
   padding: 0;
   margin: 0;
