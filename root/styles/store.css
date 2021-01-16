@@ -1,3 +1,7 @@
+* {
+  /* box-sizing: border-box; */
+}
+
 .products {
   display: flex;
   flex-wrap: wrap;
@@ -6,7 +10,6 @@
 
   width: 100%;
   height: 100%;
-
 }
 
 main {
@@ -26,8 +29,8 @@ main {
 }
 .inside .icon {
   position: absolute;
-  right: calc(100% /3);
-  top: calc(100% /3);
+  right: calc(100% / 3);
+  top: calc(100% / 3);
   color: white;
   opacity: 1;
 }
@@ -58,6 +61,9 @@ main {
 
 /* pick color */
 .colorswitcher {
+  width: 70%;
+  clear: none;
+  flex-grow: 1;
   display: flex;
   justify-content: space-evenly;
   align-items: flex-end;
@@ -88,7 +94,6 @@ main {
   opacity: 1 !important;
   border: 3px solid;
 }
-
 
 .product {
   background-color: white;
@@ -124,7 +129,7 @@ main {
   font-size: 3vh;
 }
 .product .details p {
-  margin-top: 32px;
+  margin: 3vh 0px;
   max-width: 3rem;
   white-space: nowrap;
   overflow: hidden;
@@ -147,10 +152,6 @@ main {
   height: 20%;
   background-color: #f4f4f4;
 }
-.product .colorswitcher {
-  clear: none;
-  flex-grow: 1;
-}
 .product .bottom .buy {
   width: calc(30% - 2px);
   height: 100%;
@@ -166,6 +167,7 @@ main {
   color: #254053;
   animation-name: cartFlip;
   animation-duration: 4s;
+  animation-delay: 0.4s;
 }
 .product .bottom .buy:hover {
   background-color: #a6cdde;
@@ -212,15 +214,33 @@ input[type='number']::-webkit-inner-spin-button {
   background-image: url('../images/store/qanta-purple.jpg');
 }
 
-.featuredProduct{
+.onCartProduct,
+.featuredProduct {
   width: calc((100% - 4rem) / 2) !important;
   height: calc((100% - 2rem)) !important;
 }
-
-
-
+.onCartProduct .bottom,
+.featuredProduct .bottom {
+  display: block;
+}
+.onCartProduct .buy,
+.featuredProduct .buy {
+  float: right;
+}
+.onCartProduct .details p,
+.featuredProduct .details p {
+  max-width: unset;
+}
+.featuredProduct .oldPrice {
+  color: red !important;
+  text-decoration: line-through;
+}
 
 @keyframes cartFlip {
-  from   {transform: rotateX(0deg)}
-  to   {transform: rotateX(360deg)}
+  from {
+    transform: rotateX(0deg);
+  }
+  to {
+    transform: rotateX(360deg);
+  }
 }
