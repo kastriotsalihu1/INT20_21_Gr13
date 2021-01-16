@@ -1,3 +1,12 @@
+#sum_product {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  background-color: #686868;
+  padding:20px;
+  padding-top:0;
+}
+
 .products {
   display: flex;
   flex-wrap: wrap;
@@ -10,7 +19,7 @@
 
 .inside {
   z-index: 9;
-  background: #254053;
+  background: #2f2f2f;
   width: 3.5vw;
   height: 3.5vw;
   position: absolute;
@@ -91,16 +100,17 @@
 .product {
   background-color: white;
   float: right;
-  width: calc(100% - 2rem);
-  height: calc(100% - 4rem);
-  border-radius: 20px 20px 20px 20px;
+  width: 100%;
+  height: 100%;
+  border-radius: 10px;
   transform: scale(0.95);
   transition: box-shadow 0.5s, transform 0.5s;
   overflow: hidden;
 }
+
 .product:hover {
   transform: scale(1);
-  box-shadow: 5px 20px 30px rgba(0, 0, 0, 0.2);
+  box-shadow: 5px 20px 30px #00000033;
 }
 
 .product .top {
@@ -125,7 +135,6 @@
   overflow: hidden;
   text-overflow: ellipsis;
   font-size: 2vh;
-
 }
 .product .details p:hover,
 .product .details h2:hover {
@@ -157,7 +166,7 @@
 .product .bottom .buy i {
   font-size: 5vh;
   padding: calc((100% - 30px) / 2);
-  color: #254053;
+  color: #2f2f2f;
   transition: transform 0.5s;
 }
 .product .bottom .buy:hover {
@@ -165,18 +174,18 @@
 }
 .product .bottom .buy:hover i {
   transform: translateX(5px);
-  color: #00394b;
+  color: #2f2f2f;
 }
 
 .product:nth-child(1) .top {
-  background-image: url('../images/store/fletore-red.jpg');
+  background-image: url("../images/store/fletore-red.jpg");
 }
 .product:nth-child(2) .top {
-  background-image: url('../images/store/kimiku-blue.jpg');
+  background-image: url("../images/store/kimiku-blue.jpg");
 }
 .product:nth-child(3) .top {
-  background-image: url('../images/store/maica-green.jpg');
+  background-image: url("../images/store/maica-green.jpg");
 }
 .product:nth-child(4) .top {
-  background-image: url('../images/store/qanta-purple.jpg');
+  background-image: url("../images/store/qanta-purple.jpg");
 }
