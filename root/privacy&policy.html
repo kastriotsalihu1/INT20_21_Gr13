@@ -3,7 +3,7 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Footer</title>
+    <title>Privacy&Policy</title>
 
     <link rel="stylesheet" type="text/css" href="./styles/legal.css" />
     <link href="dependencies/fontawesome/css/all.css" rel="stylesheet" />
@@ -198,22 +198,7 @@ function Search_3() {
   var result3 = regEx3.test(text);
   document.getElementById("response_3").innerHTML = result3;
 }
-function myFunction() {
-  var message, x;
-  message = document.getElementById("p01");
-  message.innerHTML = "";
-  x = document.getElementById("demo").value;
-  try { 
-    if(x == "")  throw "empty";
-    if(isNaN(x)) throw "not a number";
-    if(x < 5)  throw "too low";
-    if(x > 10)   throw "too high";
-    x = Number(x);
-  }
-  catch(err) {
-    message.innerHTML = "Input is " + err;
-  }
-}
+
 </script>
 </body>
 </html>
