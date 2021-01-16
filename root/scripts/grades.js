@@ -37,14 +37,14 @@ $("ul").on("click", "li", function(){
  var myPastDate=new Date(2019,11,2,10,30,15);
 
 
- var pooFiles=[{lenda:"POO",emriiFile:"Java",lloji:"Liber",myPastDate},{lenda:"POO",emriiFile:"Programimi i Orientuar ne Objekte",  lloji:"Afate", Data}];
- var matFiles = [{lenda: "Matematike", emriiFile: "Matematika diskrete", lloji: "Ligjerata", myDate}, {lenda: "Matematike", emriiFile: "Detyra", lloji: "Ushtrime", myDate}];
- var SinjaleSistemeFiles=[{lenda: "SinjaleDheSisteme", emriiFile:"Serite Furie", lloji:"Afate", myDate},
-{lenda:"SinjaleDheSisteme",emriiFile:"Hyrje ne Sinjale", lloji:"Ligjerata", myDate},
-{lenda:"SinjaleDheSisteme",emriiFile:"Signals and systems", lloji:"Tjeter", myDate}]
-var elektronikaFiles=[{lenda:"Elektronike",emriiFile:"Amplifikatoret",lloji:"Liber", myDate}];
-var databazeFiles=[{lenda:"Databaze",emriiFile:"Tabelat relacionale",lloji:"Afate", myDate}];
-var internetFiles=[{lenda:"Internet",emriiFile:"Hyrje ne internet",lloji:"Liber", myDate}];
+ var pooFiles=[{lenda:"OOP",emriiFile:"Java",lloji:"Books",myPastDate},{lenda:"OOP",emriiFile:"Programimi i Orientuar ne Objekte",  lloji:"Exams", Data}];
+ var matFiles = [{lenda: "Mathematics", emriiFile: "Matematika diskrete", lloji: "Lectures", myDate}, {lenda: "Mathematics", emriiFile: "Detyra", lloji: "Excercises", myDate}];
+ var SinjaleSistemeFiles=[{lenda: "Signals and Systems", emriiFile:"Serite Furie", lloji:"Exams", myDate},
+{lenda:"Signals and Systems",emriiFile:"Hyrje ne Sinjale", lloji:"Lectures", myDate},
+{lenda:"SSignals and Systems",emriiFile:"Signals and systems", lloji:"Tjeter", myDate}]
+var elektronikaFiles=[{lenda:"Electronics",emriiFile:"Amplifikatoret",lloji:"Books", myDate}];
+var databazeFiles=[{lenda:"Database",emriiFile:"Tabelat relacionale",lloji:"Exams", myDate}];
+var internetFiles=[{lenda:"Internet",emriiFile:"Hyrje ne internet",lloji:"Books", myDate}];
 
 $("#shtoButton").click(
   function(){
@@ -174,7 +174,7 @@ function shfaqMaterialin(lenda){
 
 }
 function getHeader(){
-  const tr = '<tr class="thstyle"><th>Lenda</th><th>Emri i file</th><th>Lloji</th><th>Data</th></tr>';
+  const tr = '<tr class="thstyle"><th>Subject</th><th>Filename</th><th>Type</th><th>Data</th></tr>';
   return tr;
 }
 $("#selectLiteraturen").click(

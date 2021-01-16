@@ -4,12 +4,10 @@
   --darkprimary: #864646;
   --lightprimary: #e2acac;
 }
-
 body {
   font-family: 'Open Sans', sans-serif;
 }
 main {
-
   display: grid;
 
   grid-template-columns: repeat(2, 50%);
@@ -44,7 +42,6 @@ main {
 }
 .table {
   overflow-y: auto;
-
 }
 table {
   width: 100%;
@@ -67,10 +64,8 @@ table {
 select:focus {
   background: white;
   border: 3px solid var(--primarycolor);
-  /*outline osht highlighti*/
   outline: none;
 }
-/*#29b96a*/
 h1 {
   background: var(--primarycolor);
   color: white;
@@ -86,30 +81,24 @@ h1 {
   border-radius: 10%;
 }
 ul {
-  /* me i hek bulletpoints*/
   list-style: none;
   margin: 0;
   padding: 0;
   width: 100%;
-  
 }
-
 li {
   background: #fff;
   height: 40px;
-  /*teksti del n mes dmth e merr krejt hapsiren height */
   line-height: 40px;
   color: #666;
   width: 100%;
 }
-
 li:nth-child(2n) {
   background-color: #f7f7f7;
 }
 select:nth-child(2n) {
   background-color: #f7f7f7;
 }
-
 input {
   height: 70px;
   font-size: 18px;
@@ -123,7 +112,6 @@ input {
 input:focus {
   background: white;
   border: 3px solid var(--primarycolor);
-  /*outline osht highlighti*/
   outline: none;
 }
 
@@ -136,16 +124,12 @@ span {
   width: 0px;
   display: inline-block;
   transition: 0.2s linear;
-  /*mos mu shfaq ikona kur osht width 0*/
   opacity: 0;
 }
-/*all the trash have the width of 0 until u hover*/
-
 li:hover span {
   width: 40px;
   opacity: 1;
 }
-
 .objects {
   font-size: 18px;
   color: var(--primarycolor);
@@ -167,7 +151,6 @@ li:hover span {
 #selectLiteraturen:focus {
   background: white;
   border: 3px solid var(--primarycolor);
-  /*outline osht highlighti*/
   outline: none;
 }
 #file {
@@ -187,7 +170,6 @@ li:hover span {
 }
 #shtoButton:focus {
   border: 3px solid var(--darkprimary);
-  /*outline osht highlighti*/
   outline: none;
 }
 .scroll{
@@ -203,13 +185,10 @@ li:hover span {
   border-radius: 3px;
   background-color: var(--darkprimary);
 }
-
 .scroll::-webkit-scrollbar-thumb {
   border-radius: 3px;
   background-color: var(--darkprimary);
 }
-
-
 .scrollbar {
   width: 100%;
   overflow-y: scroll;
@@ -223,19 +202,16 @@ li:hover span {
   border-radius: 3px;
   background-color: var(--darkprimary);
 }
-
 .scrollbar::-webkit-scrollbar-thumb {
   border-radius: 3px;
   background-color: var(--darkprimary);
 }
-
 .tdstyle {
   width: 500px;
   background-color: rgb(238, 238, 238);
   color: rgb(111, 111, 111);
   padding: 20px 30px;
 }
-
 .thstyle {
   background-color: var(--lightprimary);
   color: 'white';
@@ -244,7 +220,6 @@ li:hover span {
   padding: '20px 30px';
   text-align: center;
 }
- 
 #tabela{
   border-width: 5px;
   border-color: black;
