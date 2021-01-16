@@ -23,7 +23,7 @@ footer {
   box-sizing: border-box;
   width: 100%;
 }
-footer{
+#intro,footer{
   padding:0 15%;
 }
 
