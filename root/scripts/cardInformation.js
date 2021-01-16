@@ -1,7 +1,5 @@
 $(document).ready(function () {
 
-    console.log("cardinfo", $(".information"), document);
-
     $(".information").on("click",".icon", function () {
         // expand the information div
         console.log(this);
