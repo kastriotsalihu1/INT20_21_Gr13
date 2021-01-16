@@ -29,9 +29,7 @@
   <div id="container">
     <div id="sidebar"></div>
     <main>
-      <div id="durationcounter" class="card">
-        <div id="calculator_container">
-          <div id="calculator">
+          <div id="calculator" class="card">
             <div id="result">
               <div id="history">
                 <p id="history-value"></p>
@@ -63,15 +61,12 @@
               <button class="operator" id="=">=</button>
             </div>
           </div>
-        </div>
-      </div>
-      <div id="sum_grades" class="card box_2">
-
-        <h1>Notat</h1>
+      <div id="sum_grades" class="card">
+        <h2 class="cardtitle">Grades</h2>
 
         <ul class="scroll">
           <li>
-            Internet<select id="grades">
+            Internet<select class="grades">
               <option>6</option>
               <option>7</option>
               <option>8</option>
@@ -80,7 +75,7 @@
             </select>
           </li>
           <li>
-            Sinjale dhe Sisteme<select id="grades">
+            Sinjale dhe Sisteme<select class="grades">
               <option>6</option>
               <option>7</option>
               <option>8</option>
@@ -89,7 +84,7 @@
             </select>
           </li>
           <li>
-            POO<select id="grades">
+            POO<select class="grades">
               <option>6</option>
               <option>7</option>
               <option>8</option>
@@ -98,7 +93,7 @@
             </select>
           </li>
           <li>
-            Elektronike<select id="grades">
+            Elektronike<select class="grades">
               <option>6</option>
               <option>7</option>
               <option>8</option>
@@ -107,7 +102,7 @@
             </select>
           </li>
           <li>
-            Databaze<select id="grades">
+            Databaze<select class="grades">
               <option>6</option>
               <option>7</option>
               <option>8</option>
@@ -116,7 +111,7 @@
             </select>
           </li>
           <li>
-            Matematike<select id="grades">
+            Matematike<select class="grades">
               <option>6</option>
               <option>7</option>
               <option>8</option>
@@ -211,7 +206,6 @@
                 <button type="button" id="green"></button>
                 <button type="button" id="purple"></button>
               </div>
-              <input type="number" class="amount" value="0" min="0" max="9" />
               <div class="buy">
                 <i class="fas fa-shopping-cart" aria-hidden="true"></i>
               </div>
