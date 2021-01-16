@@ -1,46 +1,31 @@
-:root {
-  --primarycolor: #c26161;
-  --secondarycolor: #be7c7c;
-  --darkprimary: #864646;
-  --lightprimary: #e2acac;
-}
-
 body {
   font-family: 'Open Sans', sans-serif;
 }
-.box_2{
-  background-color: var(--primarycolor);
+#sum_grades{
+  background-color: #c26161;
   display: flex;
   flex-direction: column;
-  padding: 5px;
+  padding: 10px;
+  padding-top:0;
+ display: flex;
+ align-items: center;
 }
 
-#grades {
+.grades {
   float: right;
   width: 200px;
   height: 60px;
   outline: none;
   border: 0.2px solid #fff;
-  font-size: 1.15em;
-  background-color: rgba(253, 253, 253, 0.63);
+  font-size: 1.5em;
+  background-color: #fdfdfda1;
 }
 
 select:focus {
   background: white;
-  border: 3px solid var(--primarycolor);
+  border: 3px solid #c26161;
   /*outline osht highlighti*/
   outline: none;
-}
-
-h1 {
-  background: var(--primarycolor);
-  color: white;
-  margin: 0;
-  padding: 10px 20px;
-  text-transform: uppercase;
-  font-size: 25px;
-  font-weight: normal;
-  text-align: center;
 }
 
 ul {
@@ -60,30 +45,14 @@ li {
   color: #666;
   width: 100%;
   padding-left: 10px;
+  box-sizing: border-box;
+  font-size:1.3em;
 }
 li:nth-child(2n) {
   background-color: #f7f7f7;
 }
 select:nth-child(2n) {
   background-color: #f7f7f7;
-}
-
-input {
-  height: 70px;
-  font-size: 18px;
-  color: var(--primarycolor);
-  background-color: #f7f7f7;
-  width: 100%;
-  box-sizing: border-box;
-  padding: 20px 13px 20px 20px;
-  border: 0.2px solid #f7f7f7;
-}
-
-input:focus {
-  background: white;
-  border: 3px solid var(--primarycolor);
-  /*outline osht highlighti*/
-  outline: none;
 }
 
 span {
@@ -107,19 +76,20 @@ li:hover span {
 
 .scroll {
   width: 100%;
-  overflow-y: scroll;
+  overflow-y: auto;
   scrollbar-width: thin;
-  height: 300px;
+  /* height: 100%; */
+  border-radius: 5px;
 }
 .scroll::-webkit-scrollbar {
   width: 12px;
 }
 .scroll::-webkit-scrollbar-track {
   border-radius: 3px;
-  background-color: var(--darkprimary);
+  background-color: #864646;
 }
 
 .scroll::-webkit-scrollbar-thumb {
   border-radius: 3px;
-  background-color: var(--darkprimary);
+  background-color: #864646;
 }
