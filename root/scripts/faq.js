@@ -80,4 +80,4 @@ button.addEventListener('click', saveToLocalStorage )
 window.onload
 sessionStorage.setItem('webStorageUsed','Session Stored');
 console.log(sessionStorage('webStorageUsed'));
-sessionStorage.setItem("MyFunction","I save data until you close the tab!");
+
