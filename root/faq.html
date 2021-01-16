@@ -29,6 +29,16 @@
           <div class="input_field">
               <input type="text" placeholder="Email" id="email">
           </div>
+          <div class="input_field"> 
+            <input placeholder="Country"  list="country" id="yourcountry"list="country" />
+            <datalist id="country">
+                <option value="Albania">
+                <option value="Kosovo">
+                <option value="Germany">
+                <option value="Italy">
+                <option value="Macedonia">
+            </datalist>
+          </div>
           <div class="input_field">
               <textarea placeholder="Message" id="message"></textarea>
           </div>
@@ -77,7 +87,8 @@
             </div>
           </div>
     </div>
-    <div class="wrapper_3">
+    <div class="wrapper_3" style=" outline: 1px solid white;
+    outline-offset: 15px;" >
        
         <input class="storage" type="text" placeholder="You cant remember particular info? Type it down and we save it for you!">
         <p class="text">Local store</p>
