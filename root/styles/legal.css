@@ -31,6 +31,10 @@ a {
   font-size: 25px;
   font-weight: 500;
 }
+article{
+  margin: 10px;
+}
+
 main ol {
   text-decoration: none;
   color: #3070d4;
