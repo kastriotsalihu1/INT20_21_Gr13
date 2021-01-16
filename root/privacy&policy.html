@@ -128,7 +128,16 @@
         
           <p><a href="#tableofcontents">Back to table of contents</a></p> 
         <canvas id="canvas" width="800px" height="80" style="border:2px dotted #d3d3d3;"></canvas> 
-             
+        <p style="margin:auto;width:250px; padding:20px">Motivational videos</p>
+        <div class="container">
+          <video src="videos/vid1.mp4" class="slider" autoplay loop muted controls></video>
+  
+          <ul>
+              <li onclick="videoslider('videos/vid1.mp4')"><video src="videos/vid1.mp4"></video></li>
+              <li onclick="videoslider('videos/vid2.mp4')"><video src="videos/vid2.mp4"></video></li>
+          
+          </ul>
+      </div>  
     </main>
     <footer>
         <hr>
@@ -143,6 +152,7 @@
 </div>       
 
 <script>
+  //canvas
   function myFunction(){
   var str = document.getElementById("demo").innerHTML;  
   var res=str.replace(/Privacy Policy/g, "P&P");
@@ -196,6 +206,13 @@ function Search_3() {
   var result3 = regEx3.test(text);
   document.getElementById("response_3").innerHTML = result3;
 }
+
+//videoSlider
+            
+            function videoslider(links){
+                document.querySelector(".slider").src = links;
+            }
+    
 
 </script>
 </body>
