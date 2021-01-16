@@ -61,42 +61,6 @@
   font-size: 1vw;
 }
 
-/* pick color */
-.colorswitcher {
-  width: 70%;
-  clear: none;
-  flex-grow: 1;
-  display: flex;
-  justify-content: space-evenly;
-  align-items: flex-end;
-}
-.colorswitcher button {
-  width: 3vh;
-  height: 3vh;
-  cursor: pointer;
-  opacity: 0.7;
-}
-.colorswitcher #red {
-  background-color: red;
-}
-.colorswitcher #green {
-  background-color: green;
-}
-.colorswitcher #blue {
-  background-color: blue;
-}
-.colorswitcher #purple {
-  background-color: purple;
-}
-.activeColor {
-  height: calc(4vh) !important;
-  width: 4vh !important;
-  left: calc(100% - 8px) !important;
-  top: calc(100% - 8px) !important;
-  opacity: 1 !important;
-  border: 3px solid;
-}
-
 .product {
   background-color: white;
   float: right;
@@ -125,12 +89,10 @@
   white-space: nowrap;
   overflow: hidden;
   text-overflow: ellipsis;
-  max-width: 65%;
   font-size: 3vh;
 }
 .product .details p {
   margin: 3vh 0px;
-  max-width: 3rem;
   white-space: nowrap;
   overflow: hidden;
   text-overflow: ellipsis;
@@ -152,7 +114,11 @@
   height: 20%;
   background-color: #f4f4f4;
 }
-.product .bottom .buy {
+.bottom{
+  width:100%;
+  justify-content: space-between;
+}
+.product .buy {
   width: calc(30% - 2px);
   height: 100%;
   display: flex;
@@ -179,13 +145,4 @@
 
 .product:nth-child(1) .top {
   background-image: url("../images/store/fletore-red.jpg");
-}
-.product:nth-child(2) .top {
-  background-image: url("../images/store/kimiku-blue.jpg");
-}
-.product:nth-child(3) .top {
-  background-image: url("../images/store/maica-green.jpg");
-}
-.product:nth-child(4) .top {
-  background-image: url("../images/store/qanta-purple.jpg");
 }

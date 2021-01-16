@@ -66,7 +66,6 @@ function scaleCanvas(sSize) {
 
 var positionIndex = 0;
 function plantTree(number = 1) {
-  console.log("You asd  !");
   for (let i = 0; i < number; i++) {
     if (positionIndex >= xCoordinate.length * yCoordinate.length) {
       console.log("You have planted the whole garden!");
