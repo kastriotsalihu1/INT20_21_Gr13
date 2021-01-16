@@ -10,9 +10,9 @@ var bs = document.getElementById("break_seconds");
 
 //store a reference to a timer variable
 var startTimer;
-var pomodoroDuration = 0;
-var pomodoroBreaktime = 0;
-var pomodoroCycles = 3;
+var pomodoroDuration = 25;
+var pomodoroBreaktime = 5;
+var pomodoroCycles = 4;
 var toggle = true;
 
 window.onload = function () {

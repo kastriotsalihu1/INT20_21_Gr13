@@ -184,7 +184,7 @@ header {
 
 /* Notification pop-up badge */
 #notification[data-badge]:after {
-  content: attr(data-badge);
+  content: "2";
   position: relative;
   left: 15px;
   top: -16px;
@@ -198,8 +198,8 @@ header {
   border-radius: 50%;
   box-shadow: 0 0 1px rgb(51, 51, 51);
 }
-#notification[data-badge=""]::after {
-  /* visibility: hidden; */
+#notification[data-badge="2"]::after {
+
   display: none;
 }
 

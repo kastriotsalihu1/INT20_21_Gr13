@@ -24,8 +24,8 @@ $(window).on("load", function () {
       event.preventDefault();
     }
   });
-  $("#notification").on("click", function () {
-    notificationCount--;
-    $("#notification").attr("data-badge", notificationCount);
-  });
+  // $("#notification").on("click", function () {
+  //   notificationCount--;
+  //   $("#notification").attr("data-badge", notificationCount);
+  // });
 });
