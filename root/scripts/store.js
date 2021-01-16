@@ -42,21 +42,9 @@ $(document).ready(function () {
             let productName = details.children("h2").html(),
                 productPrice = details.children("p").html(),
                 image = getProductImageNameFromUrl($(this).parent().siblings(".top").css("background-image"));
-            amount = $(this).siblings(".amount").attr("value");
             // create the new div to be inserted at the cart
-            let newDiv = $(`
-                <div class="card product onCartProduct">\
-                    <div class="top" style="background-image: url('images/store/${image}');"></div>\
-                    <div class="bottom">\
-                    <div class="details">\
-                        <h2>${productName}</h2>\
-                        <p>${productPrice}</p>\
-                    </div>\
-                    <div class="buy removeFromCart">\
-                        <i class="fa fa-times"></i>\
-                    </div>\
-                    </div>\
-                </div>`);
+            let newProduct = OnCartProduct(productName, productPrice, image);
+            let newDiv = newProduct.getDiv();
             //apend the div to the cart
             $("#cart").append(newDiv);
             //keep scrollbar at bottom
@@ -78,6 +66,30 @@ $(document).ready(function () {
 });
 
 
+// Constructor function for Person objects
+function OnCartProduct(name, price, image) {
+    this.name = name;
+    this.price = price;
+    this.image = image;
+    this.getDiv = function () {
+        return $(`
+        <div class="card product ${this.className}">\
+            <div class="top" style="background-image: url('images/store/${this.image}');"></div>\
+            <div class="bottom">\
+            <div class="details">\
+                <h2>${this.name}</h2>\
+                <p>${this.price}</p>\
+            </div>\
+            <div class="buy removeFromCart">\
+                <i class="fa fa-times"></i>\
+            </div>\
+            </div>\
+        </div>`);
+      };
+  }
+  OnCartProduct.prototype.className = "onCartProduct";
+
+
 function getProductImageNameFromUrl(url) {
     // the format of the backgroudn image is 
     // url(" <path-to-image>/<image> ")
@@ -94,3 +106,4 @@ function getProductNameFromUrl(url) {
     // the format of the image name is: <productName>-<productColor>.<imageExtension>
     return productNameWithNoise.split("-")[0];
 }
+    
