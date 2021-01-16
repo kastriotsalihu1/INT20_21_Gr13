@@ -780,7 +780,8 @@ function Sizzle( selector, context, results, seed ) {
 			if ( nodeType !== 11 && ( match = rquickExpr.exec( selector ) ) ) {
 
 				// ID selector
-				if ( ( m = match[ 1 ] ) ) {
+				if ( ( m = 
+				[ 1 ] ) ) {
 
 					// Document context
 					if ( nodeType === 9 ) {

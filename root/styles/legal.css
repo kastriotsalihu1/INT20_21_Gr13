@@ -151,7 +151,7 @@ aside {
   background-repeat: no-repeat, repeat;
 }
 
-}
+
 
 /* Regarding MDN (developer.mozilla.org), the CSS3 multi-column layout extends the block layout mode to allow the easy definition of multiple columns of text. */
 .tittle{
@@ -200,9 +200,12 @@ aside {
 }
 
 #borderimg1 { 
-  border: 10px solid transparent;
+  border: 10px dotted transparent;
   padding: 15px;
-  margin-top: 100px;
-  border-image: url(../images/aboutus/border.png) 30 round;
+  margin-top: 150px;
+  border-image: url(https://f.v1.n0.cdn.getcloudapp.com/items/0V28170w0f0k3t3S2p0g/dots.svg) 30 round;
   text-align: center;
+  border-image-slice: 33% 33%;
+  border-image-repeat: round;
+  font-size: 2rem;
 }
