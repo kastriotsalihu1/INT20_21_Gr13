@@ -1,7 +1,17 @@
+$("#mask").css({
+    "background-color": "var(--primarycolor)",
+    "z-index": "99",
+    "position": "absolute",
+    "top": "0px",
+    "width": "100%",
+    "height": "100%",
+});
+
 const currentPage = $(location).attr('pathname').split("/")[2];
 console.log(currentPage);
 $(window).on('load', function () {
-    $("html").fadeIn(250, "linear");
+    console.log("window loaded")
+     $("#mask").fadeOut(600, "linear");
     console.log(currentPage, $(`a[href="${currentPage}"]`).children("i").attr("id"), "loaded");
 
     // wait a certain time until the elements are trully, fully loaded
