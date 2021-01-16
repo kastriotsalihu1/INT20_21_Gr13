@@ -56,11 +56,17 @@ function validate(){
     error_message.innerHTML = text;
     return false;
   }
+  
+  
+
+  /*
   if(message.length <= 140){
     text = "Please Enter More Than 140 Characters";
     error_message.innerHTML = text;
     return false;
-  }
+  }*/
+
+
   alert("Form Submitted Successfully!");
   return true;
 }
