@@ -56,7 +56,6 @@ header {
 #hamburger {
   flex-shrink: 0;
   background-color: var(--navcolor);
-  /* box-sizing: border-box; */
   width: 100px;
   height: 100%;
   z-index: 9;

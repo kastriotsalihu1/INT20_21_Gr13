@@ -103,11 +103,11 @@ p {
   text-align: center;
 }
 
-.label {
+/* .label {
   align-self: center;
   justify-self: center;
   font-size: 30px;
-}
+} */
 button {
   border: none;
   outline: none;
