@@ -79,7 +79,7 @@ main {
 .inside:hover {
   width: 100%;
   border-radius: 0;
-  height: 80%;
+  height: 75%;
 }
 .inside:hover .icon {
   opacity: 0;
@@ -153,7 +153,7 @@ main {
   box-shadow: 5px 20px 30px rgba(0, 0, 0, 0.2);
 }
 .product .top {
-  height: 80%;
+  height: 75%;
   background-position: center;
   background-attachment: inherit;
   background-origin: content-box;
@@ -188,7 +188,7 @@ main {
   display: flex;
   padding-left: 14px;
   position: relative;
-  height: 20%;
+  height: 25%;
   background-color: #f4f4f4;
 }
 .product .bottom .buy {

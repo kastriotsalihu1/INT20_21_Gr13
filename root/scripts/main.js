@@ -1,6 +1,7 @@
 var toggleDuration = 800;
 
 window.onload = (event) => {
+  
   try {
     plantTree(parseInt((xCoordinate.length * yCoordinate.length) / 8));
   } catch (e) {
@@ -11,7 +12,7 @@ window.onload = (event) => {
     $("nav").toggleClass("hidenav");
   });
 
-  $("#user").on("click", function (e) {
+  $(document.body).on("click", "#user", function (e) {
     $("#settingdropdown").animate(
       {
         height: "toggle",
@@ -20,24 +21,32 @@ window.onload = (event) => {
       "fast"
     );
   });
+  var toggleSwitch;
 
-  waitForElementToDisplay('.theme-switch input[type="checkbox"]', function () {
-    console.log("Page is fully loaded!"), 300, 9000;
-  });
+  waitForElementToDisplay(
+    '.theme-switch input[type="checkbox"]',
+    function () {
+      console.log("Page is fully loaded!");
+      toggleSwitch = document.querySelector(
+        '.theme-switch input[type="checkbox"]'
+      );
 
-  const toggleSwitch = document.querySelector(
-    '.theme-switch input[type="checkbox"]'
+      const currentTheme = localStorage.getItem("theme");
+
+      if (currentTheme) {
+        document.documentElement.setAttribute("data-theme", currentTheme);
+
+        if (currentTheme === "dark_mode") {
+          toggleSwitch.checked = true;
+        }
+      }
+      toggleSwitch.addEventListener("change", switchTheme, false);
+
+      navigator.geolocation.getCurrentPosition(success, error, options);
+    },
+    500,
+    5000
   );
-
-  const currentTheme = localStorage.getItem("theme");
-
-  if (currentTheme) {
-    document.documentElement.setAttribute("data-theme", currentTheme);
-
-    if (currentTheme === "dark_mode") {
-      toggleSwitch.checked = true;
-    }
-  }
 
   //GEOLOCATION and DARKMODE BASED ON TIME
   var options = {
@@ -67,8 +76,6 @@ window.onload = (event) => {
     darkMode(!isday);
   }
 
-  navigator.geolocation.getCurrentPosition(success, error, options);
-
   async function getSun(lat, lng) {
     let response = await fetch(
       "https://api.sunrise-sunset.org/json?lat=" +
@@ -97,6 +104,4 @@ window.onload = (event) => {
     }
     toggleSwitch.checked = value;
   }
-
-  toggleSwitch.addEventListener("change", switchTheme, false);
 };

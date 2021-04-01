@@ -3,12 +3,13 @@
   font-family: myFont;
   src: url("https://fonts.googleapis.com/css2?family=Open+Sans&display=swap");
 }
+
 :root {
   --primarycolor: #377ded;
   --secondarycolor: #3070d4;
   --darkersecondary:#18386b;
-
 }
+
 html{
   scroll-behavior: smooth;
   font-family: myFont;
@@ -20,13 +21,13 @@ img {
 }
 section,
 footer {
-  
   display: flex;
   justify-content: space-between;
   align-items: center;
   box-sizing: border-box;
   width: 100%;
 }
+
 #intro,footer{
   padding:0 15%;
 }

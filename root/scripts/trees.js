@@ -8,6 +8,7 @@ const treePaths = [
   "images/trees/TreeFlat_7.png",
   "images/trees/TreeFlat_8.png",
 ];
+
 var treeImages = [];
 
 for (let i = 0; i < treePaths.length; i++) {
@@ -16,6 +17,7 @@ for (let i = 0; i < treePaths.length; i++) {
 
 const canvas = document.getElementById("canvas");
 const ctx = canvas.getContext("2d");
+
 fitToContainer(canvas);
 
 var xCoordinate = [];
@@ -30,7 +32,7 @@ for (let i = 0; i < canvasHeight / imageH; i += 1) yCoordinate[i] = i * imageH;
 
 if (canvasHeight % imageH != 0) yCoordinate.pop();
 if (canvasWidth % imageW != 0) xCoordinate.pop();
-
+   
 xCoordinate = shuffle(xCoordinate);
 yCoordinate = shuffle(yCoordinate);
 
@@ -53,6 +55,7 @@ function getImage(src) {
   image.src = src;
   return image;
 }
+
 function fitToContainer(canvas) {
   canvas.style.width = "100%";
   canvas.style.height = "100%";
