@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
   <head>
-  <title>LogIn & SignUp</title>
+  <title>LogIn</title>
   <link rel="stylesheet" href="styles/login.css">
   <!-- Simple css to remove the watermark from the hosting website -->
   <link rel="stylesheet" href="styles/removewatermark.css">
@@ -13,8 +13,8 @@
        <div class="form-box">
           <div class="button-box">
             <div id="btn"> </div>
-             <button type="button" class="toggle-btn" onclick="signin()">Sign in</button>
-             <button type="button" class="toggle-btn"onclick="register()">Sign up</button>
+             <button type="button" class="toggle-btn" id="one" >Sign in</button>
+             <button type="button" class="toggle-btn" id="two"><a href="register.html">Sign up</a></button>
           </div>
           <div class="icon">
             <a href="index.html">
@@ -22,23 +22,18 @@
           </a>
           </div>
          <form  id="login" class="input-group" name="myForm" >
-              <input type="text" class="input-field" placeholder="Username"  value="Arbeni" id="username" autofocus>
-              <input type="Password" name="password" class="input-field"   value="arbengashi" placeholder="Password" id="password" >
-              <button type="button" onclick="validatelogin()" class="submit-btn">Login</button>
+              <input type="text" class="input-field" placeholder="Username"   id="username" autofocus>
+              <input type="Password" name="password" class="input-field"   placeholder="Password" id="password" >
+              <button type="button" onclick="validatelogin()" class="submit-btn"><b>Sign in
+              </b></button>
               <div id="formFooter">
                 <a class="underlineHover" href="#">Forgot Password?</a>
               </div>
          </form>
         
-         <form id="register"class="input-group" name="myForm" >
-          <input type="text" class="input-field" placeholder="Username"id="name" >
-          <input type="email" name="femail"class="input-field" autocomplete="on"   placeholder="Email Address" id="email" >
-          <input type="password" name="password" id="fpassword" class="input-field"    placeholder="Password" >
-          <button type="submit" class="submit-btn" onclick="validatesignup()">Sign up</button>
-     </form>
        </div>
      </div>
-     <script src="scripts/login.js"></script>
+     
   </body>
 </html>
 
