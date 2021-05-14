@@ -9,13 +9,16 @@ $("#mask").css({
 
 const currentPagePath = $(location).attr("pathname").split("/");
 const currentPage = currentPagePath[currentPagePath.length - 1];
+
 $(window).on("load", function () {
   $("#mask").fadeOut(600, "linear");
-  waitForElementToDisplay(`a[href="${currentPage}"] i`, function () {
-    console.log("Navigation initialized!"), 300, 9000;
-  });
 
-  $(`a[href="${currentPage}"]`).children("i").addClass("activePage");
+  waitForElementToDisplay(
+    `a[href="${currentPage}"] i`,
+    () => $(`a[href="${currentPage}"]`).children("i").addClass("activePage"),
+    300,
+    9000
+  );
 
   // keep track of what page is open using the navbar (sidebar)
   $(".nav-icons a").on("click", function (event) {

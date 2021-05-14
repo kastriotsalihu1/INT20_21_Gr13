@@ -10,7 +10,7 @@ $(document).ready(function () {
 
       $("#todoinput").val("");
       var addlisteners = document.querySelector("#itemlist li");
-      console.log(addlisteners);
+
       dragAndDrop(addlisteners);
     }
   });

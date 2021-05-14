@@ -12,27 +12,25 @@ let present = document.querySelector('#present');
 let total = document.querySelector('#total');
 let artist = document.querySelector('#artist');
 
-
-
 let timer;
 let autoplay = 0;
 
 let index_no = 0;
-let Playing_song = false;
+let isPlayingSong = false;
 
 //create a audio Element
 let track = document.createElement('audio');
-
-function Song(name, path, img, singer) {
-  this.name = name;
-  this.path = path;
-  this.img = img;
-  this.singer = singer;
+class Song {
+  constructor(name, path, img, singer) {
+    this.name = name;
+    this.path = path;
+    this.img = img;
+    this.singer = singer;
+  }
 }
 
 //All songs list
-//All songs list
-let All_song = [
+let songs = [
   new Song("Four Seasons",
     "videos/Four seasons- Vivaldi.mp3",
     "images/pomodoro_img/four seasons.jpg",
@@ -93,68 +91,54 @@ let All_song = [
 
 // All functions
 
-
-// function load the track
+// load the track
 function load_track(index_no) {
   clearInterval(timer);
   reset_slider();
 
-  track.src = All_song[index_no].path;
-  title.innerHTML = All_song[index_no].name;
-  track_image.src = All_song[index_no].img;
-  artist.innerHTML = All_song[index_no].singer;
+  track.src = songs[index_no].path;
+  title.innerHTML = songs[index_no].name;
+  track_image.src = songs[index_no].img;
+  artist.innerHTML = songs[index_no].singer;
   track.load();
 
   timer = setInterval(range_slider, 1000);
-  total.innerHTML = All_song.length;
+  total.innerHTML = songs.length;
   present.innerHTML = index_no + 1;
 }
 
 load_track(index_no);
 
-
-//mute sound function
+//mute sound
 function mute_sound() {
   track.volume = 0;
   volume.value = 0;
   volume_show.innerHTML = 0;
 }
 
-
 // checking.. the song is playing or not
-function justplay() {
-  if (Playing_song == false) {
-    playsong();
-
-  } else {
-    pausesong();
-  }
-}
-
+const justplay = () => isPlayingSong ? pausesong() : playsong();
 
 // reset song slider
-function reset_slider() {
-  slider.value = 0;
-}
+const reset_slider = () => slider.value = 0;
 
 // play song
 function playsong() {
   track.play();
-  Playing_song = true;
+  isPlayingSong = true;
   play.innerHTML = '<i class="fa fa-pause" aria-hidden="true"></i>';
 }
 
 //pause song
 function pausesong() {
   track.pause();
-  Playing_song = false;
+  isPlayingSong = false;
   play.innerHTML = '<i class="fa fa-play" aria-hidden="true"></i>';
 }
 
-
 // next song
 function next_song() {
-  if (index_no < All_song.length - 1) {
+  if (index_no < songs.length - 1) {
     index_no += 1;
     load_track(index_no);
     playsong();
@@ -162,10 +146,8 @@ function next_song() {
     index_no = 0;
     load_track(index_no);
     playsong();
-
   }
 }
-
 
 // previous song
 function previous_song() {
@@ -175,15 +157,14 @@ function previous_song() {
     playsong();
 
   } else {
-    index_no = All_song.length;
+    index_no = songs.length;
     load_track(index_no);
     playsong();
   }
 }
 
-
 // change volume
-function volume_change() {
+function changeVolume() {
   volume_show.innerHTML = recent_volume.value;
   track.volume = recent_volume.value / 100;
 }
@@ -205,7 +186,6 @@ function autoplay_switch() {
   }
 }
 
-
 function range_slider() {
   let position = 0;
 
@@ -214,7 +194,6 @@ function range_slider() {
     position = track.currentTime * (100 / track.duration);
     slider.value = position;
   }
-
 
   // function will run when the song is over
   if (track.ended) {

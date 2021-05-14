@@ -26,7 +26,6 @@ main {
 }
 .music {
   grid-area: a;
-  line-height: 10px;
   text-align: center;
   background-color: var(--primarycolor);
   padding: 20px 0;

@@ -42,21 +42,21 @@ $(document).ready(function () {
             let productName = details.children("h2").html(),
                 productPrice = details.children("p").html(),
                 image = getProductImageNameFromUrl($(this).parent().siblings(".top").css("background-image"));
+
             // create the new div to be inserted at the cart
             let newProduct = new OnCartProduct(productName, productPrice, image);
             let newDiv = newProduct.getDiv();
+
             //apend the div to the cart
             $("#cart").append(newDiv);
+
             //keep scrollbar at bottom
             var d = document.getElementById('cart');
-
-            if (d.scrollHeight > d.clientHeight) {
+            if (d.scrollHeight > d.clientHeight)
                 d.scrollTop = d.scrollHeight - d.clientHeight;
-            }
 
-            if (document.getElementById("cart").children.length == 9) {
+            if (document.getElementById("cart").children.length == 9)
                 $(".addToCart").css('cursor', 'not-allowed');
-            }
         }
     });
     $("#cart").on("click", ".removeFromCart", function () {
@@ -85,9 +85,9 @@ function OnCartProduct(name, price, image) {
             </div>\
             </div>\
         </div>`);
-      };
-  }
-  OnCartProduct.prototype.className = "onCartProduct";
+    };
+}
+OnCartProduct.prototype.className = "onCartProduct";
 
 
 function getProductImageNameFromUrl(url) {
@@ -106,4 +106,3 @@ function getProductNameFromUrl(url) {
     // the format of the image name is: <productName>-<productColor>.<imageExtension>
     return productNameWithNoise.split("-")[0];
 }
-    
