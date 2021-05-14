@@ -1,3 +1,44 @@
+<?php
+$connection = new mysqli('localhost','root','','eStudent');
+  if($connection->connect_error){
+    die("Database connection failed!". $connection->connect_error);
+  }
+
+$Subjects="CREATE TABLE Subjects (
+   subjectid INTEGER  UNSIGNED AUTO_INCREMENT,
+   name VARCHAR(30) NOT NULL,
+   grade INTEGER,
+   PRIMARY KEY (subjectid)
+)";
+
+if ($connection->query($Subjects) === TRUE) {
+  echo "Table MyGuests created successfully";
+} else {
+  echo "Error creating table: " . $connection->error;
+}
+/*Literature:
+		literatureid | name | subject | type | file | submitDate??
+ */
+$Literature="CREATE TABLE Literature (
+  literatureid INTEGER  UNSIGNED AUTO_INCREMENT,
+  name VARCHAR(30) NOT NULL,
+  subject VARCHAR(30),
+  type VARCHAR(60),
+  submitDate TIMESTAMP DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP,
+  PRIMARY KEY (literatureid)
+)";
+if ($connection->query($Literature) === TRUE) {
+  echo "Table MyGuests created successfully";
+} else {
+  echo "Error creating table: " . $connection->error;
+}
+
+
+$connection->close();
+
+?>
+
+
 <!DOCTYPE html>
 <html lang="en">
 
@@ -132,7 +173,6 @@
         <button id="shtoButton">Add Literature</button>
       </div>
       <div id="box_3"class="card">
-
         <div class="information">
           <div class="icon"><i class="fa fa-info" aria-hidden="true"></i></div>
           <div class="contents">
@@ -154,6 +194,7 @@
           <table id="tabela" cellpadding="4" cellspacing="5">
           </table>
         </div>
+        
       </div>
 
 
