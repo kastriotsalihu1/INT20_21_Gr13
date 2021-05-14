@@ -1,9 +1,5 @@
-// check off specific subjects by clicking
-$("ul").on("click", "li", function () {
-  $(this).toggleClass("completed");
-});
 //Click on X to delete subjects
-$("ul").on("click", "span", function (event) {
+$("ul").on("click", "span", function () {
   //this=span
   $(this)
     .parent()
@@ -11,11 +7,6 @@ $("ul").on("click", "span", function (event) {
       //this=li
       $(this).remove();
     });
-  event.stopPropagation(); /* mos mu ekzekutu line-throughi i cili pasi spani osht brenda li(event bubbling) bohet line-through*/
-});
-
-$("#math").on("click", function (event) {
-  $(this).parent(), remove();
 });
 
 $("input").keypress(function (event) {

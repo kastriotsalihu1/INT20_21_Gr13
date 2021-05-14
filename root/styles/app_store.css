@@ -58,7 +58,7 @@ main {
 }
 /* information */
 .inside {
-  z-index: 9;
+  z-index:9;
   background: var(--darkprimary);
   width: 3.5vw;
   height: 3.5vw;
