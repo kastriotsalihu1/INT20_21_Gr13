@@ -9,6 +9,21 @@
 
   </head>
   <body>
+      <?php
+     if(isset($_POST['form'])){
+        if($_POST['name']==""){
+           $error_msg['name']="Name is required!";
+        }
+        $name=$_POST['name'];
+        if(!preg_match("/^[a-zA-Z-]*$/",$name)){
+         $error_msg['name']="Only letters allowed!";
+        }
+     }
+         
+
+
+      ?>
+
      <div class="hero">
        <div class="form-box">
           <div class="button-box">
@@ -21,10 +36,10 @@
             <img src="images/wp_img/logo.png" width="80px"  id="icon" alt="User Icon" >
           </a>
           </div>
-         <form  id="register" class="input-group" name="myForm" >
+         <form  id="register" method="post" action="" class="input-group" name="form" >
              <div class="column" id="left">
-                <input type="text" class="input-field" placeholder="Username"   id="username" autofocus>
-               <input type="email" class="input-field" placeholder="Email"   id="email" autofocus>
+               <input type="text" class="input-field" placeholder="Username"   id="username" autofocus>
+                <input type="email" class="input-field" placeholder="Email"   id="email" autofocus>
                 <input type="Password" name="password" class="input-field"    placeholder="Password" id="password" >
                 <input type="Password" name="password" class="input-field"    placeholder="Confirm Password" id="password" >
                 
@@ -32,6 +47,11 @@
 
              <div class="column">
                 <input type="text" class="input-field" placeholder="Firstname"   id="firstname" autofocus>
+                  <?php  
+                   if(isset($error_msg['firstname'])){
+                      echo "<div class='error' >".$error_msg['name']."</div>";
+                   }
+                  ?>
                 <input type="text" class="input-field" placeholder="Lastname"   id="lastname" autofocus>
                 <input type="text" name="phonenumber" class="input-field"   placeholder="Phonenumber" id="phone" >
                 <input list="genders" placeholder="Country"  class="input-field" name="gender" id="gender" autofocus>

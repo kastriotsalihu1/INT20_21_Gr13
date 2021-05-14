@@ -70,7 +70,11 @@
     margin: 0px 0px 0px 0px; 
     color: #00000080;
   }
-  
+  .error{
+color:red;
+padding-top:5px;
+
+  }
   #btn{
     top: 0;
     left: 0;
