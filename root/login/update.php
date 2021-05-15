@@ -1,7 +1,55 @@
+<?php 
+session_start();
+require_once("../dbConfig.php");
+require_once("functions.php");
+$username=$_SESSION['username'];
+
+
+if(isset($_POST['update'])){
+   $con= dbConfig::connect();
+   
+   $username = funksioni::validateString($_POST['username']);
+   $email = funksioni::validateString($_POST['email']);
+   $password = funksioni::hashedPw($_POST['pw']);
+   $confirmPassword = funksioni::hashedPw($_POST['pwConfirm']);
+   $firstname = funksioni::validateString($_POST['firstname']);
+   $lastname = funksioni::validateString($_POST['lastname']);
+   $phonenumber = funksioni::validateString($_POST['phonenumber']);
+   $address = funksioni::validateString($_POST['address']);
+   
+   if(!funksioni::checkUserNameExists($con, $username)){
+     echo "username already exists";
+     return;
+   }
+   if(!funksioni::checkEmailExists($con, $email)){
+     echo "Email already exists";
+     return;
+   }
+ 
+   $currentUserName = $_SESSION['username'];
+   $query = $con->prepare("
+     SELECT * from usera WHERE username=:username
+   ");
+   $query->bindParam(":username", $currentUserName);
+   $query->execute();
+   $result = $query->fetch(PDO::FETCH_ASSOC);
+   $id=$result['userid'];
+   
+   if(funksioni::updateInfo($con,$id,$username, $email, $password, $confirmPassword, $firstname, $lastname, $phonenumber, $address)){
+   $_SESSION['username']= $username;
+   header("Location:profile.php");
+   
+  }
+ 
+ }
+
+?>
+
+
 <!DOCTYPE html>
 <html>
   <head>
-  <title> SignUp</title>
+  <title>Edit profile</title>
   <link rel="stylesheet" href="styles/register.css">
   <!-- Simple css to remove the watermark from the hosting website -->
   <link rel="stylesheet" href="styles/removewatermark.css">
@@ -9,118 +57,7 @@
 
   </head>
   <body>
-  <?php
-      require_once("../dbConfig.php");
-      require("functions.php");
     
-      if(isset($_POST['register'])){
-         //validimi per firstname
-             if($_POST['firstname']==""){
-                $error_msg['firstname']="Name is required!";
-             }
-             $name=$_POST['firstname'];
-             if(!preg_match("/^[a-zA-Z-]*$/",$name)){
-                $error_msg['firstname']="Only letters allowed!";
-             }
- 
-          //validimi per lastname
-             if($_POST['lastname']==""){
-                $error_msg['lastname']="Lastname is required!";
-             }
-             $lastname=$_POST['lastname'];
-             if(!preg_match("/^[a-zA-Z-]*$/",$lastname)){
-                $error_msg['lastname']="Only letters allowed!";
-             }
- 
-          //validimi per phonenumber
-          //^(\+383\s)?\d{2}[\s.-]\d{3}[\s.-]\d{3}$
-            if($_POST['phonenumber']==""){
-               $error_msg['phonenumber']="Phonenumber is required!";
-            }
-            $phone=$_POST['phonenumber'];
-            if(!preg_match("/^(\+383\s)?\d{2}[\s.-]\d{3}[\s.-]\d{3}$/",$phone)){
-               $error_msg['phonenumber']="Format is (+383 44 132 765) or (+383 44-132-765)!";
-            }
-            //validimi per username
-            //^(?=.{8,20}$)(?=.*[0-9])(?!.*[_.]{2})(?=.*[a-zA-Z])[a-zA-Z0-9._]+(?<![_.])$
-            //8-20 ch, smundet me fillu as me mbaru me . ose _
-            //duhet patjeter me permbajt 1 numer dhe 1 shkronje
-            if($_POST['username']==""){
-              $error_msg['username']="Username is required!";
-             }
-            $uname=$_POST['username'];
-            if(!preg_match("/^(?=.{8,20}$)(?=.*[0-9])(?!.*[_.]{2})(?=.*[a-zA-Z])[a-zA-Z0-9._]+(?<![_.])$/",$uname)){
-             $error_msg['username']="Username must have 8-20 chars and it must have a letter and a number, can't start or end with (. or _), but can contain a (. or _)!";
-            }
-            //validimi per email
-            //^[\w-\.]+@([\w-]+\.)+[\w-]{2,4}$
-            if($_POST['email']==""){
-             $error_msg['email']="Email is required!";
-            }
-            $email=$_POST['email'];
-            if(!preg_match("/^\S+@\S+\.\S+$/",$email)){
-             $error_msg['email']="Email has the format test@gmail.com!";
-            }
-            //validimi per password
-            //Minimum eight characters, at least one uppercase letter,
-            // one lowercase letter, one number and one special character
-            if($_POST['pw']==""){
-             $error_msg['pw']="Password is required!";
-            }
-            $pw=$_POST['pw'];
-            if(!preg_match("/^(?=.*[A-Za-z])(?=.*\d)(?=.*[@$!%*#?&])[A-Za-z\d@$!%*#?&]{8,}$/",$pw)){
-             $error_msg['pw']="Password must have a minimum of 8ch, at least one uppercase|lowerlase letter, a number and a special character !";
-            }
-            //validimi per konfirmim te passwordit
-            if($_POST['pwConfirm']==""){
-             $error_msg['pwConfirm']="Confirm your password!";
-            }
-            $pwCon=$_POST['pwConfirm'];
-            if($pwCon!=$_POST['pw']){
-             $error_msg['pwConfirm']="Passwords should match!";
-            }
-            //radio Buttons gender
-            if($_POST['country'] == -1)
-              $error_msg['country']="Choose one option!";
-
-           if( empty($error_msg['firstname']) && 
-               empty($error_msg['lastname']) &&
-               empty($error_msg['username']) &&
-               empty($error_msg['pw']) &&
-               empty($error_msg['pwConfirm']) &&
-               empty($error_msg['email']) &&
-               empty($error_msg['phonenumber'])
-             ){
-               $con= dbConfig::connect();
- 
-               $username = funksioni::validateString($_POST['username']);
-               $email = funksioni::validateString($_POST['email']);
-               $password = funksioni::hashedPw($_POST['pw']);
-               $confirmPassword = funksioni::hashedPw($_POST['pwConfirm']);
-               $firstname = funksioni::validateString($_POST['firstname']);
-               $lastname = funksioni::validateString($_POST['lastname']);
-               $phonenumber = funksioni::validateString($_POST['phonenumber']);
-               $address = funksioni::validateString($_POST['address']);
-             
-              if(!funksioni::checkUserNameExists($con, $username)){
-                echo "Username already exists.";
-                return;
-              }
-              if(!funksioni::checkEmailExists($con, $email)){
-               echo "Emails already exists.";
-               return;
-             }
-              if(funksioni::insert($con,$username, $email, $password, $confirmPassword, $firstname, $lastname, $phonenumber, $address)){
-                $_SESSION['username']= $username;
-                header("Location:../application.html");
-               
-              }
-
-              }
-
-     }
-      
-      ?>
      <div class="hero">
        <div class="form-box">
           <div class="button-box">
@@ -130,7 +67,7 @@
           </div>
           <div class="icon">
             <a href="index.html">
-            <img src="../images/wp_img/logo.png" width="80px"  id="icon" alt="User Icon" >
+            <img src="images/wp_img/logo.png" width="80px"  id="icon" alt="User Icon" >
           </a>
           </div>
          <form  id="register" method="post" action="" class="input-group" name="form" >
@@ -197,7 +134,7 @@
                       echo "<div class='error' >".$error_msg['country']."</div>";
                    }
                   ?>
-                <button type="submit"  class="submit-btn" name="register"><b>Sign Up</b></button>
+                <button type="submit"  class="submit-btn" name="update"><b>Update</b></button>
                 
              </div>
              <div class="column">
@@ -226,4 +163,3 @@
      
   </body>
 </html>
-

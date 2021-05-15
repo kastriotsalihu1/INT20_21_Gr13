@@ -218,26 +218,6 @@ main {
 }
 
 
-#product1 .top {
-  background-image: url('../images/store/fletore-red.jpg');
-}
-#product2 .top {
-  background-image: url('../images/store/kimiku-blue.jpg');
-}
-#product3 .top {
-  background-image: url('../images/store/maica-green.jpg');
-}
-#product4 .top {
-  background-image: url('../images/store/qanta-purple.jpg');
-}
-
-#featured1 .top {
-  background-image: url('../images/store/fletore-green.jpg');
-}
-#featured2 .top {
-  background-image: url('../images/store/qanta-red.jpg');
-}
-
 .onCartProduct,
 .featuredProduct {
   width: calc((100% - 4rem) / 2) !important;
@@ -260,16 +240,7 @@ main {
   text-decoration: line-through;
 }
 
-@keyframes cartFlip {
-  from {
-    transform: rotateX(0deg);
-  }
-  to {
-    transform: rotateX(360deg);
-  }
-}
-
-#cart {
+#cart, #featured {
   overflow-y: auto;
 }
 
