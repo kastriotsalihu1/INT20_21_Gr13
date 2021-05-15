@@ -83,7 +83,20 @@ try {
 
 echo "<br/>";
 
+// Execute the query to create the "motivation" table
+$createNoteTable =
+    "CREATE TABLE motivation(
+        id INTEGER UNSIGNED AUTO_INCREMENT PRIMARY KEY,
+        content VARCHAR(150) NOT NULL UNIQUE
+    )";
 
+try {
+    $con->exec($createNoteTable);
+} catch (PDOException $e) {
+    echo $e->getMessage();
+}
+
+echo "<br/>";
 
 
 ?>

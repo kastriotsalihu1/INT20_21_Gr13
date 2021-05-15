@@ -18,26 +18,27 @@ $(document).ready(function () {
         // when a button that controls the color of the product is cliked
         // replace the existing image with the image of the product with that color
 
-        const previousColor = $(this).parent().find('.activeColor');
-        if (previousColor.attr("id") != $(this).attr("id")) {
+        const newColor = $(this).attr("id");
+        const previousButton = $(this).parent().find('.activeColor')
+        // if the active button has been clicked ignore it
+        const previousColor = previousButton.attr("id");
+        if (newColor === previousColor) return;
 
-            const product = $(this).parent().parent().parent();
-            const newProductColor = $(this).attr("id");
+        const product = $(this).parent().parent().parent();
 
-            const productName = $(this).parent().siblings(".details").children("h2").html();
+        const productName = $(this).parent().siblings(".details").children("h2").html();
 
-            getProduct({ name: productName, color: newProductColor })
-                .then(response => {
-                    const newProductProperties = JSON.parse(response);
-                    $(this).parent().siblings(".details").children("p").text(newProductProperties.price);
-                    product.attr("id", newProductProperties.id);
-                    product.children(".top").css("background-image", `url(${newProductProperties.imageSrc})`);
+        getProduct({ name: productName, color: newColor })
+            .then(response => {
+                const newProductProperties = JSON.parse(response);
+                $(this).parent().siblings(".details").children("p").text(newProductProperties.price);
+                product.attr("id", newProductProperties.id);
+                product.children(".top").css("background-image", `url(${newProductProperties.imageSrc})`);
 
-                    // if a new button has been clicked, set it as the active one
-                    previousColor.removeClass('activeColor');
-                    $(this).addClass('activeColor');
-                })
-        }
+                // if a new button has been clicked, set it as the active one
+                previousButton.removeClass('activeColor');
+                $(this).addClass('activeColor');
+            })
     });
 
     /**
