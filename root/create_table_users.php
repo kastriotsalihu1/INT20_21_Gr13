@@ -16,8 +16,11 @@ $sql = "CREATE TABLE  users
      address VARCHAR(200),
      data_regjistrimit TIMESTAMP DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP
     )";
+
     $con->exec($sql);
     echo "Tabela u krijua.";
+    
+
 
 ?>
 

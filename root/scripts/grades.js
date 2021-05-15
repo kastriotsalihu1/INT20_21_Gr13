@@ -92,13 +92,21 @@ $("#shtoButton").click(function () {
     var lenda = $("#lendet").find(":selected").val();
     var lloji = $("#lloji").find(":selected").val();
 
-    console.log(emri);
     const materiali = {
       lenda: lenda,
       emriiFile: emri,
       lloji: lloji,
       myDate: myDate,
     };
+  
+   $.ajax({
+     url:"application_grades.php",
+     method="post",
+     data: emri,
+     success:function(res){
+       console.log(res);
+     }
+   })
     if (lenda === "Mathematics") {
       matFiles.push(materiali);
     } else if (lenda === "SignalsandSystems") {
@@ -128,6 +136,7 @@ function shfaqMaterialin(lenda) {
       }
     });
   }
+
   if (lenda === "Mathematics") {
     const tabela = document.getElementById("tabela");
     tabela.innerHTML = "";
@@ -222,5 +231,4 @@ function getHeader() {
 $("#selectLiteraturen").click(function () {
   var lenda = $("#selectLiteraturen").find(":selected").val();
   shfaqMaterialin(lenda);
-  console.log(lenda);
 });
