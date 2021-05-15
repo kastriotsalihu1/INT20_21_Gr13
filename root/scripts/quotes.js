@@ -4,7 +4,7 @@ $(document).ready(function () {
 
   getMotivationalQuote()
     .then(response => {
-      $(".back h2").html(response);
+      $(".back h2").text(response);
     })
     .catch(err => console.log(err))
 });
@@ -14,7 +14,7 @@ $("#quotes").on("click", function () {
   if ($("#quotescard").hasClass("flipped")) {
     getMotivationalQuote()
       .then(response => {
-        $(".back h2").html(response)
+        $(".back h2").text(response)
       })
       .catch(err => console.log(err))
   }
