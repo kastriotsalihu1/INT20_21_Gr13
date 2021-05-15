@@ -1,55 +1,61 @@
-import { SUCCESS_CODE } from "./constants/constants.js";
+import { getAllProducts, getProduct, getProductDetails } from "./services/storeService.js";
 
-
-const getProducts = () => {
-    const xmlhttp = new XMLHttpRequest();
-    xmlhttp.onreadystatechange = function () {
-        if (this.readyState == 4 && this.status == SUCCESS_CODE) {
-            const products = JSON.parse(this.responseText);
-            const productCategories = {};
-
-            products.forEach(product => {
-                if (productCategories[product.name])
-                    productCategories[product.name].push(product);
-                else
-                    productCategories[product.name] = [product];
-
-                if (product.discountPercentage && product.discountPercentage > 0) {
-                    console.log("added")
-                    const featuredProductDiv = new FeaturedProduct(product.id, product.name, product.price, product.imageSrc, product.color, product.discountPercentage).getDiv();
-                    $("#featuredcontainer").append(featuredProductDiv);
-                }
-            });
-
-            for (const productCategory in productCategories) {
-                const category = productCategories[productCategory];
-                const randomElementIndex = Math.floor(Math.random() * category.length);
-                const product = category[randomElementIndex];
-                const productDiv = new Product(product.id, product.name, product.price, product.imageSrc, product.color).getDiv();
-                $("#latest").find(".products").append(productDiv);
-            }
-        }
-    };
-    xmlhttp.open("GET", "modules/getProducts.php", true);
-    xmlhttp.send();
-}
+let products = [];
+const productCategories = {};
 
 $(document).ready(function () {
 
-    getProducts()
+    getAllProducts()
+        .then(response => {
+            products = JSON.parse(response);
+            populateProductCategories(productCategories, products);
+            renderProducts(productCategories);
+            renderFeaturedProducts();
+        })
+        .catch(err => console.log(err))
 
-    $(".colorswitcher button").on("click", function () {
+    $(document).on("click", ".colorswitcher button", function () {
         // when a button that controls the color of the product is cliked
         // replace the existing image with the image of the product with that color
 
+        const previousColor = $(this).parent().find('.activeColor');
+        if (previousColor.attr("id") != $(this).attr("id")) {
 
+            const product = $(this).parent().parent().parent();
+            const newProductColor = $(this).attr("id");
+
+            const productName = $(this).parent().siblings(".details").children("h2").html();
+
+            getProduct({ name: productName, color: newProductColor })
+                .then(response => {
+                    const newProductProperties = JSON.parse(response);
+                    $(this).parent().siblings(".details").children("p").text(newProductProperties.price);
+                    product.attr("id", newProductProperties.id);
+                    product.children(".top").css("background-image", `url(${newProductProperties.imageSrc})`);
+
+                    // if a new button has been clicked, set it as the active one
+                    previousColor.removeClass('activeColor');
+                    $(this).addClass('activeColor');
+                })
+        }
     });
 
+    /**
+     * Add event listener for the button to add a product to the user cart
+     */
     $(document).on("click", ".addToCart", function () {
         const getImageURLFromCss = bgImageCss => {
-            // url("source")
+            // background image in css is in the format of: {url("source")}
             return bgImageCss.substring(5, bgImageCss.length - 2);
         }
+
+        const bringDownScrollbarPosition = (elementId) => {
+            //keep scrollbar at bottom
+            const d = document.getElementById(elementId);
+            if (d.scrollHeight > d.clientHeight)
+                d.scrollTop = d.scrollHeight - d.clientHeight;
+        }
+
         if (document.getElementById("cart").children.length < 9) {
             const details = $(this).siblings(".details"),
                 productName = details.children("h2").html(),
@@ -57,26 +63,28 @@ $(document).ready(function () {
                 image = getImageURLFromCss($(this).parent().siblings(".top").css("background-image")),
                 id = $(this).parent().parent().attr("id");
 
-            // create the new div to be inserted at the cart
-            const newProduct = new OnCartProduct(id, productName, productPrice, image);
-            const newDiv = newProduct.getDiv();
-            //apend the div to the cart
-            $("#cart").append(newDiv);
+            //apend new div to the cart
+            $("#cart").append(new OnCartProduct(id, productName, productPrice, image).getDiv());
 
-            //keep scrollbar at bottom
-            const d = document.getElementById('cart');
-            if (d.scrollHeight > d.clientHeight)
-                d.scrollTop = d.scrollHeight - d.clientHeight;
+            bringDownScrollbarPosition("cart");
 
+            // only allow a certain number of products in cart
             if (document.getElementById("cart").children.length == 9)
                 $(".addToCart").css('cursor', 'not-allowed');
         }
     });
 
     $(document).on("mouseenter mouseleave", ".inside", function () {
-        // if the details have already been defined then leave
+        // if the details have already been defined then no need to get them again from db
         if (this.querySelector(".contents").innerHTML.trim()) return;
-        getProductDetails($(this).parent().attr("id"));
+
+        const productId = $(this).parent().attr("id");
+
+        getProductDetails(productId)
+            .then(response => {
+                document.getElementById(productId).querySelector(".contents").innerHTML = response;
+            })
+            .catch(err => console.log(err))
     });
 
     $("#cart").on("click", ".removeFromCart", function () {
@@ -86,83 +94,42 @@ $(document).ready(function () {
 });
 
 
-// Constructor function for Person objects
-function OnCartProduct(id, name, price, image) {
-    this.name = name;
-    this.price = price;
-    this.image = image;
-    this.className = "onCartProduct";
-    this.getDiv = function () {
-        return $(`
-        <div class="card product ${this.className}" id="${id}">\
-            <div class="top" style="background-image: url(${this.image});"></div>\
-            <div class="bottom">\
-            <div class="details">\
-                <h2>${this.name}</h2>\
-                <p>${this.price}</p>\
-            </div>\
-            <div class="buy removeFromCart">\
-                <i class="fa fa-times"></i>\
-            </div>\
-            </div>\
-        </div>`);
-    };
+const populateProductCategories = (productCategories, products) => {
+    products.forEach(product => {
+        if (productCategories[product.name])
+            productCategories[product.name].push(product);
+        else
+            productCategories[product.name] = [product];
+    });
 }
-
-function Product(id, name, price, image, color) {
-    this.id = id;
-    this.name = name;
-    this.price = price;
-    this.image = image;
-    this.color = color;
-
-    this.getDiv = function () {
-        return $(`
-            <div class="card product" id="${this.id}">
-                <div class="top" style="background-image: url(${this.image});"></div>
-                <div class="inside">
-                    <div class="icon">
-                        <i class="fa fa-info" aria-hidden="true"></i>
-                    </div>
-                    <div class="contents">
-                    </div>
-                </div>
-                <div class="bottom">
-                    <div class="details">
-                        <h2>${this.name}</h2>
-                        <p>&#8364;${this.price}</p>
-                    </div>
-                    <div class="colorswitcher">
-                        <button type="button" id="red" class="${this.color === "red" ? "activeColor" : ""}"></button>
-                        <button type="button" id="blue" class="${this.color === "blue" ? "activeColor" : ""}"></button>
-                        <button type="button" id="green" class="${this.color === "green" ? "activeColor" : ""}"></button>
-                        <button type="button" id="purple" class="${this.color === "purple" ? "activeColor" : ""}"></button>
-                    </div>
-                    <div class="buy addToCart">
-                        <i class="fas fa-shopping-cart" aria-hidden="true"></i>
-                    </div>
-                </div>
-            </div>
-        `)
+const renderProducts = (productCategories) => {
+    for (const productCategory in productCategories) {
+        const category = productCategories[productCategory];
+        const randomElementIndex = Math.floor(Math.random() * category.length);
+        const product = category[randomElementIndex];
+        const productDiv = new Product(product.id, product.name, product.price, product.imageSrc, product.color).getDiv();
+        $("#latest").find(".products").append(productDiv);
     }
 }
-
-const getProductDetails = (productId) => {
-    if (!productId) return;
-    console.log(productId)
-
-    const xmlhttp = new XMLHttpRequest();
-    xmlhttp.onreadystatechange = function () {
-        if (this.readyState == 4 && this.status == SUCCESS_CODE) {
-            document.getElementById(productId).querySelector(".contents").innerHTML = this.responseText;
+const renderFeaturedProducts = () => {
+    products.forEach(product => {
+        if (product.discountPercentage && product.discountPercentage > 0) {
+            const featuredProductDiv = new FeaturedProduct(product.id, product.name, product.price, product.imageSrc, product.color, product.discountPercentage).getDiv();
+            $("#featuredcontainer").append(featuredProductDiv);
         }
-    };
-    xmlhttp.open("GET", "modules/getProductDetails.php?q=" + productId, true);
-    xmlhttp.send();
+    });
 }
 
 
-
+/**
+ * Create object to genereate div for products that are featured (have discount, are recommended etc.)
+ * @param {Integer} id Product id from db
+ * @param {*} name 
+ * @param {*} price 
+ * @param {*} image 
+ * @param {*} color 
+ * @param {*} discountPercentage 
+ */
 function FeaturedProduct(id, name, price, image, color, discountPercentage) {
     this.id = id;
     this.name = name;
@@ -198,3 +165,81 @@ function FeaturedProduct(id, name, price, image, color, discountPercentage) {
         `);
     }
 }
+
+/**
+* Create object to genereate div for product
+* @param {Integer} id product id in db
+* @param {*} name Product name
+* @param {*} price Product price
+* @param {*} image Product image
+* @param {*} color Product color
+*/
+function Product(id, name, price, image, color) {
+    this.id = id;
+    this.name = name;
+    this.price = price;
+    this.image = image;
+    this.color = color;
+
+    this.getDiv = function () {
+        return $(`
+        <div class="card product" id="${this.id}">
+            <div class="top" style="background-image: url(${this.image});"></div>
+            <div class="inside">
+                <div class="icon">
+                    <i class="fa fa-info" aria-hidden="true"></i>
+                </div>
+                <div class="contents">
+                </div>
+            </div>
+            <div class="bottom">
+                <div class="details">
+                    <h2>${this.name}</h2>
+                    <p>&#8364;${this.price}</p>
+                </div>
+                <div class="colorswitcher">
+                    <button type="button" id="red" class="${this.color === "red" ? "activeColor" : ""}"></button>
+                    <button type="button" id="blue" class="${this.color === "blue" ? "activeColor" : ""}"></button>
+                    <button type="button" id="green" class="${this.color === "green" ? "activeColor" : ""}"></button>
+                    <button type="button" id="purple" class="${this.color === "purple" ? "activeColor" : ""}"></button>
+                </div>
+                <div class="buy addToCart">
+                    <i class="fas fa-shopping-cart" aria-hidden="true"></i>
+                </div>
+            </div>
+        </div>
+    `)
+    }
+}
+
+
+/**
+ * Create new object to genereate the div for the product that has been added to the cart
+ * @param {Integer} id Productid on db
+ * @param {*} name Product name
+ * @param {*} price Product price
+ * @param {*} image Product image URL
+*/
+function OnCartProduct(id, name, price, image) {
+    this.name = name;
+    this.price = price;
+    this.image = image;
+    this.className = "onCartProduct";
+    this.getDiv = function () {
+        return $(`
+            <div class="card product ${this.className}" id="${id}">\
+                <div class="top" style="background-image: url(${this.image});"></div>\
+                <div class="bottom">\
+                <div class="details">\
+                    <h2>${this.name}</h2>\
+                    <p>${this.price}</p>\
+                </div>\
+                <div class="buy removeFromCart">\
+                    <i class="fa fa-times"></i>\
+                </div>\
+                </div>\
+            </div>`
+        );
+    };
+}
+

@@ -16,7 +16,7 @@
     $details = json_decode($detailsJson);
 
     foreach ($details as $property => $value) {
-        echo "$property: $value" . "<br/>";
+        printf("<span style=\"color: white\"> %s: %s <span/> <br/>", $property, $value);
     }
     ?>
 
