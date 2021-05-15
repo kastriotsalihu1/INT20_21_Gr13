@@ -1,6 +1,6 @@
 <?php 
 session_start();
-require_once("dbConfig.php");
+require_once("../dbConfig.php");
 echo "Welcome ".$_SESSION['username'];
 
 echo "<a href='logout.php' >LOG OUT</a>";

@@ -10,7 +10,7 @@
   </head>
   <body>
   <?php
-      require_once("dbConfig.php");
+      require_once("../dbConfig.php");
       require("functions.php");
     
       if(isset($_POST['register'])){
@@ -112,7 +112,7 @@
              }
               if(funksioni::insert($con,$username, $email, $password, $confirmPassword, $firstname, $lastname, $phonenumber, $address)){
                 $_SESSION['username']= $username;
-                header("Location:profile.php");
+                header("Location:../application.html");
                
               }
 
@@ -130,7 +130,7 @@
           </div>
           <div class="icon">
             <a href="index.html">
-            <img src="images/wp_img/logo.png" width="80px"  id="icon" alt="User Icon" >
+            <img src="../images/wp_img/logo.png" width="80px"  id="icon" alt="User Icon" >
           </a>
           </div>
          <form  id="register" method="post" action="" class="input-group" name="form" >

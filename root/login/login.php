@@ -1,22 +1,3 @@
-<?php
-require_once("dbConfig.php");
-require("functions.php");
-if(isset($_POST['login'])){
-  $con= dbConfig::connect();
- 
-  $username = funksioni::validateString($_POST['username']);
-  $password = funksioni::hashedPw($_POST['pw']);
-  
-  if(funksioni::checkLogin($con, $username, $password)){
-    $_SESSION['username']= $username;
-    header("Location:profile.php");
-  }else{
-    echo"Username or password is incorrect!";
-  }
- 
-}
-
-?>
 
 <!DOCTYPE html>
 <html>
@@ -29,6 +10,25 @@ if(isset($_POST['login'])){
 
   </head>
   <body>
+  <?php
+    require_once("../dbConfig.php");
+    require("functions.php");
+    if(isset($_POST['login'])){
+      $con= dbConfig::connect();
+
+      $username = funksioni::validateString($_POST['username']);
+      $password = funksioni::hashedPw($_POST['pw']);
+      
+      if(funksioni::checkLogin($con, $username, $password)){
+        $_SESSION['username']= $username;
+        header("Location:../application.html");
+      }else{
+        $error_msg['pw']="Username or password is incorrect!";
+      }
+    
+    }
+
+?>
      <div class="hero">
        <div class="form-box">
           <div class="button-box">
@@ -38,12 +38,17 @@ if(isset($_POST['login'])){
           </div>
           <div class="icon">
             <a href="index.html">
-            <img src="images/wp_img/logo.png" width="80px"  id="icon" alt="User Icon" >
+            <img src="../images/wp_img/logo.png" width="80px"  id="icon" alt="User Icon" >
           </a>
           </div>
          <form  id="login" class="input-group" name="login" method="post" action=""  >
               <input type="text" class="input-field" placeholder="Username"   name="username" autofocus>
               <input type="Password" name="pw" class="input-field"   placeholder="Password" autofocus >
+              <?php  
+                   if(isset($error_msg['pw'])){
+                      echo "<div class='error' >".$error_msg['pw']."</div>";
+                   }
+                  ?>
               <button type="submit"  name="login"  class="submit-btn"><b>Sign in
               </b></button>
               <div id="formFooter">
