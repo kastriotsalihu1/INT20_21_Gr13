@@ -1,272 +1,80 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 
-    <link rel="stylesheet" href="styles/app_navigation.css" />
-    <link rel="stylesheet" href="styles/app_store.css" />
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 
-    <link rel="stylesheet" href="styles/cardInformation.css" />
+  <link rel="stylesheet" href="styles/app_navigation.css" />
+  <link rel="stylesheet" href="styles/app_store.css" />
 
-    <link href="dependencies/fontawesome/css/all.css" rel="stylesheet" />
-    <!-- Simple css to remove the watermark from the hosting website -->
-    <link rel="stylesheet" href="styles/removewatermark.css" />
-    <!-- Simple css to remove the watermark from the hosting website -->
-    <title>Store</title>
-  </head>
+  <link rel="stylesheet" href="styles/cardInformation.css" />
 
-  <body>
-    <div id="mask"></div>
+  <link href="dependencies/fontawesome/css/all.css" rel="stylesheet" />
+  <!-- Simple css to remove the watermark from the hosting website -->
+  <link rel="stylesheet" href="styles/removewatermark.css" />
+  <!-- Simple css to remove the watermark from the hosting website -->
+  <title>Store</title>
+</head>
 
-    <div id="header"></div>
+<body>
+  <div id="mask"></div>
 
-    <div id="container">
-      <!-- side navigation menu -->
-      <div id="sidebar"></div>
-      <main>
-        <div id="latest" class="card">
-          <div class="information">
-            <div class="icon">
-              <i class="fa fa-info" aria-hidden="true"></i>
-            </div>
-            <div class="contents">
-              <h2>The latest products from the best vendors from around the world!</h2>
-            </div>
+  <div id="header"></div>
+
+  <div id="container">
+    <!-- side navigation menu -->
+    <div id="sidebar"></div>
+    <main>
+      <div id="latest" class="card">
+        <div class="information">
+          <div class="icon">
+            <i class="fa fa-info" aria-hidden="true"></i>
           </div>
-          <h2 class="cardtitle">Latest</h2>
-          <div class="products">
-            <div class="card product" id="product1">
-              <div class="top"></div>
-              <div class="bottom">
-                <div class="details">
-                  <h2>Fletore</h2>
-                  <p>&#8364;250</p>
-                </div>
-                <div class="colorswitcher">
-                  <button type="button" id="red" class="activeColor"></button>
-                  <button type="button" id="blue"></button>
-                  <button type="button" id="green"></button>
-                  <button type="button" id="purple"></button>
-                </div>
-                <div class="buy addToCart">
-                  <i class="fas fa-shopping-cart" aria-hidden="true"></i>
-                </div>
-              </div>
-              <div class="inside">
-                <div class="icon">
-                  <i class="fa fa-info" aria-hidden="true"></i>
-                </div>
-                <div class="contents">
-                  <table>
-                    <tr>
-                      <th>Width</th>
-                      <th>Height</th>
-                    </tr>
-                    <tr>
-                      <td>210 mm</td>
-                      <td>297 mm</td>
-                    </tr>
-                  </table>
-                </div>
-              </div>
-            </div>
-            <div class="card product" id="product2">
-              <div class="top"></div>
-              <div class="bottom">
-                <div class="details">
-                  <h2>Kimik</h2>
-                  <p>&#8364;250</p>
-                </div>
-                <div class="colorswitcher">
-                  <button type="button" id="red" class="activeColor"></button>
-                  <button type="button" id="blue"></button>
-                  <button type="button" id="green"></button>
-                  <button type="button" id="purple"></button>
-                </div>
-                <div class="buy addToCart">
-                  <i class="fas fa-shopping-cart" aria-hidden="true"></i>
-                </div>
-              </div>
-              <div class="inside">
-                <div class="icon">
-                  <i class="fa fa-info" aria-hidden="true"></i>
-                </div>
-                <div class="contents">
-                  <table>
-                    <tr>
-                      <th>Material</th>
-                      <th>Thickness</th>
-                    </tr>
-                    <tr>
-                      <td>Plastic</td>
-                      <td>0.5</td>
-                    </tr>
-                  </table>
-                </div>
-              </div>
-            </div>
-            <div class="card product" id="product3">
-              <div class="top"></div>
-              <div class="bottom">
-                <div class="details">
-                  <h2>Maic&euml;</h2>
-                  <p>&#8364;250</p>
-                </div>
-                <div class="colorswitcher">
-                  <button type="button" id="red" class="activeColor"></button>
-                  <button type="button" id="blue"></button>
-                  <button type="button" id="green"></button>
-                  <button type="button" id="purple"></button>
-                </div>
-                <div class="buy addToCart">
-                  <i class="fas fa-shopping-cart" aria-hidden="true"></i>
-                </div>
-              </div>
-              <div class="inside">
-                <div class="icon">
-                  <i class="fa fa-info" aria-hidden="true"></i>
-                </div>
-                <div class="contents">
-                  <table>
-                    <tr>
-                      <th>Number</th>
-                      <th>Model</th>
-                    </tr>
-                    <tr>
-                      <td>Slim</td>
-                      <td>Short sleeves wide t-shirt</td>
-                    </tr>
-                  </table>
-                </div>
-              </div>
-            </div>
-            <div class="card product" id="product4">
-              <div class="top"></div>
-              <div class="bottom">
-                <div class="details">
-                  <h2>&Ccedil;ant&euml;</h2>
-                  <p>&#8364;250</p>
-                </div>
-                <div class="colorswitcher">
-                  <button type="button" id="red" class="activeColor"></button>
-                  <button type="button" id="blue"></button>
-                  <button type="button" id="green"></button>
-                  <button type="button" id="purple"></button>
-                </div>
-                <div class="buy addToCart">
-                  <i class="fas fa-shopping-cart" aria-hidden="true"></i>
-                </div>
-              </div>
-              <div class="inside">
-                <div class="icon">
-                  <i class="fa fa-info" aria-hidden="true"></i>
-                </div>
-                <div class="contents">
-                  <table>
-                    <tr>
-                      <th>Material</th>
-                      <th>Dimensions</th>
-                    </tr>
-                    <tr>
-                      <td>Paper</td>
-                      <td>200mm x 300</td>
-                    </tr>
-                  </table>
-                </div>
-              </div>
-            </div>
+          <div class="contents">
+            <h2>The latest products from the best vendors from around the world!</h2>
           </div>
         </div>
-        <div id="featured" class="card">
-          <div class="information">
-            <div class="icon">
-              <i class="fa fa-info" aria-hidden="true"></i>
-            </div>
-            <div class="contents">
-              <h2>The best deals, and the most curated products for you!</h2>
-            </div>
-          </div>
-          <h2 class="cardtitle">Featured</h2>
-          <div id="featuredcontainer">
-            <div class="card product featuredProduct" id="featured1">
-              <div class="top"></div>
-              <div class="bottom">
-                <div class="details">
-                  <h2>Fletore</h2>
-                  <p><span class="oldPrice">&#8364;250</span> - &#8364;200</p>
-                </div>
-                <div class="buy addToCart">
-                  <i class="fas fa-shopping-cart" aria-hidden="true"></i>
-                </div>
-              </div>
-              <div class="inside">
-                <div class="icon">
-                  <i class="fa fa-info" aria-hidden="true"></i>
-                </div>
-                <div class="contents">
-                  <table>
-                    <tr>
-                      <th>Width1</th>
-                      <th>Height</th>
-                    </tr>
-                    <tr>
-                      <td>3000mm</td>
-                      <td>4000mm</td>
-                    </tr>
-                  </table>
-                </div>
-              </div>
-            </div>
-            <div class="card product featuredProduct" id="featured2">
-              <div class="top"></div>
-              <div class="bottom">
-                <div class="details">
-                  <h2>&Ccedil;ant&euml;</h2>
-                  <p><span class="oldPrice">&#8364;250</span> - &#8364;200</p>
-                </div>
-                <div class="buy addToCart">
-                  <i class="fas fa-shopping-cart" aria-hidden="true"></i>
-                </div>
-              </div>
-              <div class="inside">
-                <div class="icon">
-                  <i class="fa fa-info" aria-hidden="true"></i>
-                </div>
-                <div class="contents">
-                  <table>
-                    <tr>
-                      <th>Material</th>
-                      <th>Dimensions</th>
-                    </tr>
-                    <tr>
-                      <td>Paper</td>
-                      <td>210mm x 297</td>
-                    </tr>
-                  </table>
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
-        <div id="cart" class="card">
-          <div class="information">
-            <div class="icon">
-              <i class="fa fa-info" aria-hidden="true"></i>
-            </div>
-            <div class="contents">
-              <h2>This is your cart. The products you choose to buy will appear here, for further consideration.</h2>
-            </div>
-          </div>
-        </div>
-      </main>
-    </div>
+        <h2 class="cardtitle">Latest</h2>
 
-    <script src="scripts/jquery.js"></script>
-    <script src="scripts/load.js"></script>
-    <script src="scripts/navigation.js"></script>
-    <script src="scripts/main.js"></script>
-    <script src="scripts/store.js"></script>
-    <script src="scripts/cardInformation.js"></script>
-  </body>
+        <div class="products">
+        </div>
+
+      </div>
+      <div id="featured" class="card">
+        <div class="information">
+          <div class="icon">
+            <i class="fa fa-info" aria-hidden="true"></i>
+          </div>
+          <div class="contents">
+            <h2>The best deals, and the most curated products for you!</h2>
+          </div>
+        </div>
+        <h2 class="cardtitle">Featured</h2>
+
+        <div id="featuredcontainer">
+        </div>
+
+      </div>
+      <div id="cart" class="card">
+        <div class="information">
+          <div class="icon">
+            <i class="fa fa-info" aria-hidden="true"></i>
+          </div>
+          <div class="contents">
+            <h2>This is your cart. The products you choose to buy will appear here, for further consideration.</h2>
+          </div>
+        </div>
+      </div>
+    </main>
+  </div>
+
+  <script src="scripts/jquery.js"></script>
+  <script src="scripts/load.js"></script>
+  <script src="scripts/navigation.js"></script>
+  <script src="scripts/main.js"></script>
+  <script src="scripts/store.js" type="module"></script>
+  <script src="scripts/cardInformation.js"></script>
+</body>
+
 </html>
