@@ -4,7 +4,6 @@ require_once("../dbConfig.php");
 require_once("functions.php");
 $username=$_SESSION['username'];
 
-
 if(isset($_POST['update'])){
    $con= dbConfig::connect();
    
@@ -37,7 +36,7 @@ if(isset($_POST['update'])){
    
    if(funksioni::updateInfo($con,$id,$username, $email, $password, $confirmPassword, $firstname, $lastname, $phonenumber, $address)){
    $_SESSION['username']= $username;
-   header("Location:profile.php");
+   header("Location:../application.html");
    
   }
  
@@ -67,7 +66,7 @@ if(isset($_POST['update'])){
           </div>
           <div class="icon">
             <a href="index.html">
-            <img src="images/wp_img/logo.png" width="80px"  id="icon" alt="User Icon" >
+            <img src="../images/wp_img/logo.png" width="80px"  id="icon" alt="User Icon" >
           </a>
           </div>
          <form  id="register" method="post" action="" class="input-group" name="form" >

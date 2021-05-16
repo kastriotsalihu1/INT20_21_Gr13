@@ -1,4 +1,4 @@
-$.get("application_header.html", function (data) {
+$.get("application_header.php", function (data) {
   $("#header").replaceWith(data);
 });
 

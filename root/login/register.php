@@ -10,6 +10,7 @@
   </head>
   <body>
   <?php
+      session_start();
       require_once("../dbConfig.php");
       require("functions.php");
     
@@ -103,11 +104,11 @@
                $address = funksioni::validateString($_POST['address']);
              
               if(!funksioni::checkUserNameExists($con, $username)){
-                echo "Username already exists.";
+               $error_msg['username']="Username already exists!";
                 return;
               }
               if(!funksioni::checkEmailExists($con, $email)){
-               echo "Emails already exists.";
+               $error_msg['email']="Email already exists!";
                return;
              }
               if(funksioni::insert($con,$username, $email, $password, $confirmPassword, $firstname, $lastname, $phonenumber, $address)){

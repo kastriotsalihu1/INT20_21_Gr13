@@ -15,7 +15,13 @@
           alt="Profile picture"
         />
       </div>
-      <div id="name">Arben Gashi</div>
+      <div id="name">
+        <?php 
+        session_start();
+        require_once("dbConfig.php");
+        echo $_SESSION['username'];
+        
+        ?></div>
       <div id="settingsicon" class="centeredicon">
         <i class="fas fa-caret-down"></i>
       </div>
@@ -29,8 +35,8 @@
           <div class="slider round"></div>
         </label>
       </div>
-      <a href="index.html"  class="setting">Edit</a>
-      <a href="index.html"  class="setting">Log out</a>
+      <a href="login/update.php"  class="setting">Edit</a>
+      <a href="login/logout.php"  class="setting">Log out</a>
       
     </div>
 
