@@ -86,27 +86,26 @@ var internetFiles = [
   { lenda: "Internet", emriiFile: "Hyrje ne internet", lloji: "Books", myDate },
 ];
 
-$("#shtoButton").click(function () {
-  for (var i = 0; i < $("#file")[0].files.length; ++i) {
-    var emri = $("#file").get(0).files[i].name;
-    var lenda = $("#lendet").find(":selected").val();
-    var lloji = $("#lloji").find(":selected").val();
+// $("#shtoLiteraturen").on("submit",function (event) {
+//     event.preventDefault();
+//     alert("test");
+//     var emri = $("#file")[0].files[0].name;
+//     var lenda = $("#lendet").find(":selected").val();
+//     var lloji = $("#lloji").find(":selected").val();
 
-    const materiali = {
-      lenda: lenda,
-      emriiFile: emri,
-      lloji: lloji,
-      myDate: myDate,
-    };
+//     console.log(emri);
+//     console.log(lenda);
+//     console.log(lloji);
+
+   
+//     const materiali = {
+//       lenda: lenda,
+//       emriiFile: emri,
+//       lloji: lloji,
+//       myDate: myDate,
+//     };
   
-   $.ajax({
-     url:"application_grades.php",
-     method="post",
-     data: emri,
-     success:function(res){
-       console.log(res);
-     }
-   })
+/*
     if (lenda === "Mathematics") {
       matFiles.push(materiali);
     } else if (lenda === "SignalsandSystems") {
@@ -120,12 +119,12 @@ $("#shtoButton").click(function () {
     } else if (lenda === "Internet") {
       internetFiles.push(materiali);
     }
-  }
-  $("#lendet option:selected").prop("selected", false);
-  $("#lloji option:selected").prop("selected", false);
-  shfaqMaterialin(lenda);
-  $("#file").val(null);
-});
+*/
+//   $("#lendet option:selected").prop("selected", false);
+//   $("#lloji option:selected").prop("selected", false);
+//   //shfaqMaterialin(lenda);
+//   $("#file").val(null);
+// });
 
 function shfaqMaterialin(lenda) {
   var shfaqLenda = $("#selectLiteraturen").find(":selected").val();
@@ -228,7 +227,13 @@ function getHeader() {
     '<tr class="thstyle"><th>Subject</th><th>Filename</th><th>Type</th><th>Data</th></tr>';
   return tr;
 }
+
 $("#selectLiteraturen").click(function () {
   var lenda = $("#selectLiteraturen").find(":selected").val();
   shfaqMaterialin(lenda);
 });
+
+<script
+  src="https://code.jquery.com/jquery-3.6.0.js"
+  integrity="sha256-H+K7U5CnXl1h5ywQfKtSj8PCmoN9aaq30gDh27Xc0jk="
+  crossorigin="anonymous"></script>
