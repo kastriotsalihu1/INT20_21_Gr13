@@ -12,7 +12,7 @@ let present = document.querySelector('#present');
 let total = document.querySelector('#total');
 let artist = document.querySelector('#artist');
 
-
+var jsonSongs ='<?php ?>';
 
 let timer;
 let autoplay = 0;
@@ -29,6 +29,7 @@ function Song(name, path, img, singer) {
   this.img = img;
   this.singer = singer;
 }
+
 
 //All songs list
 //All songs list
