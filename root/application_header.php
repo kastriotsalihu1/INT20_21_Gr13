@@ -19,7 +19,7 @@
         <?php 
         session_start();
         require_once("dbConfig.php");
-        echo $_SESSION['username'];
+        echo isset($_SESSION['username']) ? $_SESSION['username'] : null;
         
         ?></div>
       <div id="settingsicon" class="centeredicon">
