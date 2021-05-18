@@ -52,7 +52,7 @@ $createProductTable =
         color VARCHAR(10),
         details JSON,
         imageSrc VARCHAR(200),
-        discountPercentage DECIMAL(3,3) UNSIGNED
+        discountPercentage DECIMAL(3,2) UNSIGNED
     )";
 
 try {
