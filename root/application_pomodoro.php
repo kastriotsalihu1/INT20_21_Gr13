@@ -191,10 +191,7 @@
     <script src="scripts/music_player.js"></script>
     <script src="scripts/cardInformation.js"></script>
     <script src="scripts/main.js"></script>
-    <script src="../root/Bootstrap/js/bootstrap.min.js"></script>
-
-
-
+    <!-- <script src="../root/Bootstrap/js/bootstrap.min.js"></script> -->
 
     
     

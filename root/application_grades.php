@@ -199,7 +199,7 @@ $con= dbConfig::connect();
       lenda: lenda,
       emriiFile: emri,
       lloji: lloji,
-      myDate: myDate,
+      // myDate: myDate,
     };
    /*
     if (lenda === "Mathematics") {
