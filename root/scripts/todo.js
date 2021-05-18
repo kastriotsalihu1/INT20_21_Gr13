@@ -1,17 +1,28 @@
 $(document).ready(function () {
   $("#todoinput").keypress(function (event) {
+
     var keycode = event.keyCode ? event.keyCode : event.which;
     if (keycode == "13" && $("#todoinput").val() != "") {
-      $("#itemlist").prepend(
+      event.preventDefault();
+      $("#itemlist").append(
         '<li draggable="true"><span class="text todotext">' +
           $("#todoinput").val() +
           '</span><span class="deletetodo"><i class="fa fa-trash"></i></span> </li>'
       );
-
-      $("#todoinput").val("");
       var addlisteners = document.querySelector("#itemlist li");
-
       dragAndDrop(addlisteners);
+
+      $.ajax({
+        url: '../root/php/todo/setTodo.php',
+        type: 'POST',
+        data: {
+            todoinput: $("#todoinput").val()
+        },
+        success: function(msg) {
+          $("#todoinput").val("");
+        }               
+    });
+
     }
   });
 
