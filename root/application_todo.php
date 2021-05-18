@@ -18,10 +18,10 @@
   <body>
   <div id="mask"> </div>
 
-    <div id="header"></div>
+    <?php include 'application_header.php';?>
 
     <div id="container">
-      <div id="sidebar"></div>
+    <?php include 'application_sidebar.php';?>
 
       <!-- content -->
       <main>
@@ -41,19 +41,27 @@
 
           <div id="listheader">
             <h2 class="cardtitle">To-do List</h2>
-            <input type="text" id="todoinput" placeholder="Add to list..." />
+            <form name="todoForm" method="post">
+            <input type="text" name="todoinput" id="todoinput" placeholder="Add to list..." />
+            </form>
           </div>
           <div class="cardcontent scrollwheel">
             <ul id="itemlist">
-              <li draggable="true">
-                <span class="text todotext">Finish the Internet project.</span
-                ><span class="deletetodo"><i class="fa fa-trash"></i></span>
-              </li>
-              <li draggable="true">
-                <span class="text todotext"
-                  >Repeat the first biology lesson of your life.</span
-                ><span class="deletetodo"><i class="fa fa-trash"></i></span>
-              </li>
+            <?php 
+            require_once("dbConfig.php");
+            $conn = dbConfig::connect();
+
+            $sql = "SELECT * FROM todo WHERE userid = 0 ORDER BY id ASC";
+            $stmt = $conn->query($sql);
+
+            while ($row = $stmt->fetch()) {
+              echo ('<li draggable="true">
+              <span class="text todotext">' . $row["text"] . '</span
+              ><span class="deletetodo"><i class="fa fa-trash"></i></span>
+            </li>');
+            }
+            $conn = null;
+            ?>
             </ul>
           </div>
           <div class="cardfooter">
