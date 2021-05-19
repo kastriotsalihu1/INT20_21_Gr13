@@ -267,7 +267,7 @@ table td {
   font-size: 20px;
 }
 #newspaper {
-  display: flex;
+  display:block;
   align-items: center;
   width: 100%;
 }
