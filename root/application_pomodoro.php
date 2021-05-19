@@ -115,6 +115,29 @@
             </div>
           </div>
         </div>
+        <div class="card" id="musicForm">
+          <div class="information">
+              <div class="icon">
+                <i class="fa fa-info" aria-hidden="true"></i>
+              </div>
+              <div class="contents">
+                <h2>
+                  Form to help you upload a song to the page and then listen to it whenever you're logged in.
+                </h2>
+              </div>
+            </div> 
+            <h2 class="cardtitle">UPLOAD SONG</h2>
+              <form action="music.php" method="POST" enctype="multipart/form-data">
+                <input type="text" placeholder="TITLE" name="title">
+                <input type="text" placeholder="ARTIST" name="artist">
+                <input type="file"  id="file1"  name="audio">
+                <label for="file1" id="audiolabel">Choose Audio</label>
+                <input type="file" id="file2" name="pic" accept="image/*">
+                <label for="file2" id="piclabel">Choose Picture</label>
+                <input  type="submit" value="Add to playlist" name="addsong">
+
+              </form>
+        </div>
         <div class="card" id="pomodoro">
           <div class="information">
             <div class="icon">
@@ -171,13 +194,6 @@
         </div>
       </main>
     </div>
-    <form action="music.php" method="POST" enctype="multipart/form-data">
-    <input type="text" placeholder="titulli" name="title">
-    <input type="text" placeholder="artist" name="artist">
-    <input type="file"  name="audio">
-    <input type="file"  name="pic">
-    <input type="submit" value="submit" name="addsong">
-    </form>
     <script src="scripts/jquery.js"></script>
     <script src="scripts/navigation.js"></script>
     <script src="scripts/load.js"></script>
