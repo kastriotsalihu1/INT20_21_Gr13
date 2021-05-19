@@ -50,8 +50,6 @@ if(isset($_POST['addsong'])){
             mkdir(dirname($audio_path));
             move_uploaded_file($audio['tmp_name'], $audio_path);
         }
-        
-
     }
 
 

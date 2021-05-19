@@ -27,7 +27,7 @@ if(isset($_POST['update'])){
  
    $currentUserName = $_SESSION['username'];
    $query = $con->prepare("
-     SELECT * from usera WHERE username=:username
+     SELECT * from user WHERE username=:username
    ");
    $query->bindParam(":username", $currentUserName);
    $query->execute();

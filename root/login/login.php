@@ -22,7 +22,7 @@
       
       if(funksioni::checkLogin($con, $username, $password)){
         $_SESSION['username']= $username;
-        $query="Select * from usera where username=:username";
+        $query="Select * from user where username=:username";
         $statement =$con->prepare($query);
         $statement->bindValue(":username", $username);
         $statement->execute();
