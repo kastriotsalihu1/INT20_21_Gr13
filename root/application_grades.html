@@ -1,11 +1,3 @@
-<?php
-require_once("dbConfig.php");
-$con= dbConfig::connect();
-
-
-
-?>
-
 
 <!DOCTYPE html>
 <html lang="en">
@@ -116,7 +108,7 @@ $con= dbConfig::connect();
             </h2>
           </div>
         </div>
-        <form id="shtoLiteraturen">
+        <form id="shtoLiteraturen" >
         <div>
           <h1 id="shtoLiterature">Upload literature</h1>
           <select name="lenda" class="objects" id="lendet" >
@@ -139,7 +131,7 @@ $con= dbConfig::connect();
           <input type="file"  id="file" name="file"/>
         </div>
         <!--multiple-->
-        <button  id="shtoButton" type="submit">Add Literature</button>
+        <button  id="shtoButton" name='submit' type="submit">Add Literature</button>
         </form>
       </div>
       <div id="box_3"class="card">
@@ -181,27 +173,34 @@ $con= dbConfig::connect();
   <script src="scripts/load.js"></script>
   <script src="scripts/cardInformation.js" ></script>
   <script src="scripts/main.js"></script>
-  <script src="scripts/grades.js"></script>
+  <!-- <script src="scripts/grades.js"></script> -->
   <script>
-  $("#shtoLiteraturen").on("submit",function (event) {
-    event.preventDefault();
-    var emri = $("#file")[0].files[0].name;
-    var lenda = $("#lendet").find(":selected").val();
-    var lloji = $("#lloji").find(":selected").val();
 
-    console.log(emri);
-    console.log(lenda);
-    console.log(lloji);
+    document.getElementById('shtoLiteraturen').addEventListener('submit',postName);
 
+    function postName(e){
+          
+          var emri = $("#file")[0].files[0].name;
+          var lenda = $("#lendet").find(":selected").val();
+          var lloji = $("#lloji").find(":selected").val();
+          var myDate = new Date();
+           
+          var params="file="+emri+"lenda="+lenda+"lloji="+lloji;
+          var params = `file=${emri}&lenda=${lenda}&lloji=${lloji}`;
 
-   
-    const materiali = {
-      lenda: lenda,
-      emriiFile: emri,
-      lloji: lloji,
-      myDate: myDate,
-    };
-   /*
+          e.preventDefault();
+          var xhr=new XMLHttpRequest();
+          xhr.open('POST','process.php',true);
+          xhr.setRequestHeader('Content-type','application/x-www-form-urlencoded');
+
+          xhr.onload=function(){
+            console.log(this.responseText);
+          }
+
+          xhr.send(params);
+
+    }
+  /*
     if (lenda === "Mathematics") {
       matFiles.push(materiali);
     } else if (lenda === "SignalsandSystems") {
@@ -215,12 +214,13 @@ $con= dbConfig::connect();
     } else if (lenda === "Internet") {
       internetFiles.push(materiali);
     }
-*/
+ 
   $("#lendet option:selected").prop("selected", false);
   $("#lloji option:selected").prop("selected", false);
   //shfaqMaterialin(lenda);
   $("#file").val(null);
-}); 
+ */ 
+
 
   </script> 
 </body>

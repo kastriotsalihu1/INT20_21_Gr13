@@ -11,9 +11,9 @@ $Subjects="CREATE TABLE Subjects (
  $Literature="CREATE TABLE Literature (
     literatureid INTEGER  UNSIGNED AUTO_INCREMENT,
     name VARCHAR(30) NOT NULL,
-    subject VARCHAR(30),
-    type VARCHAR(60),
-    submitDate TIMESTAMP DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP,
+    subject VARCHAR(30) NOT NULL,
+    type VARCHAR(60) NOT NULL,
+    submitDate TIMESTAMP DEFAULT CURRENT_TIMESTAMP,
     PRIMARY KEY (literatureid)
   )";
   
