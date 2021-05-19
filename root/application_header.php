@@ -19,8 +19,10 @@
         <?php 
         session_start();
         require_once("dbConfig.php");
-        echo $_SESSION['username'];
-        
+        echo isset($_SESSION['username']) ? $_SESSION['username'] : null;
+        echo '<pre>';
+        var_dump($_SESSION);
+        echo '</pre>';
         ?></div>
       <div id="settingsicon" class="centeredicon">
         <i class="fas fa-caret-down"></i>

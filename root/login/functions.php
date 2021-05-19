@@ -4,14 +4,13 @@ Class funksioni{
         public static function insert($con, $username, $email, $password, $confirmPassword, $firstname, $lastname, $phonenumber, $address){
 
         $query = $con->prepare("
-        INSERT INTO usera ( username, email, password, confirmPassword, firstname, lastname, phonenumber, address)
-        VALUES ( :username, :email, :password, :confirmPassword, :firstname, :lastname, :phonenumber, :address)
+        INSERT INTO usera ( username, email, password, firstname, lastname, phonenumber, address)
+        VALUES ( :username, :email, :password, :firstname, :lastname, :phonenumber, :address)
         ");
         
         $query->bindParam(":username", $username);
         $query->bindParam(":email", $email);
         $query->bindParam(":password", $password);
-        $query->bindParam(":confirmPassword", $confirmPassword);
         $query->bindParam(":firstname", $firstname);
         $query->bindParam(":lastname", $lastname);
         $query->bindParam(":phonenumber", $phonenumber);
@@ -52,13 +51,12 @@ Class funksioni{
       public static function updateInfo($con,$id,$username, $email, $password, $confirmPassword, $firstname, $lastname, $phonenumber, $address){
           $query= $con->prepare("
           Update usera SET username=:username, email=:email, password=:password,
-           confirmPassword=:confirmPassword, firstname=:firstname, lastname=:lastname,
+           firstname=:firstname, lastname=:lastname,
             phonenumber=:phonenumber, address=:address where userid=:id
           ");
           $query->bindParam(":username", $username);
           $query->bindParam(":email", $email);
           $query->bindParam(":password", $password);
-          $query->bindParam(":confirmPassword", $confirmPassword);
           $query->bindParam(":firstname", $firstname);
           $query->bindParam(":lastname", $lastname);
           $query->bindParam(":phonenumber", $phonenumber);

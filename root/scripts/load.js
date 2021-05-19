@@ -1,10 +1,10 @@
-$.get("application_header.php", function (data) {
-  $("#header").replaceWith(data);
-});
+// $.get("application_header.php", function (data) {
+//   $("#header").replaceWith(data);
+// });
 
-$.get("application_sidebar.html", function (data) {
-  $("#sidebar").replaceWith(data);
-});
+// $.get("application_sidebar.html", function (data) {
+//   $("#sidebar").replaceWith(data);
+// });
 
 function waitForElementToDisplay(
   selector,
