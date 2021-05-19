@@ -72,11 +72,6 @@
                 />
               </div>
             </div>
-            <div>
-              <button class="btn-danger">Add</button>
-              <input type="text">
-
-            </div>
             <!--- right part --->
             <div class="right">
               <div class="show_song_no">
@@ -86,8 +81,8 @@
               </div>
 
               <!--- song title & artist name --->
-              <p id="title">title.mp3</p>
-              <p id="artist">Artist name</p>
+              <p id="title"></p>
+              <p id="artist"></p>
 
               <!--- middle part --->
               <div class="middle">
@@ -191,7 +186,7 @@
     <script src="scripts/music_player.js"></script>
     <script src="scripts/cardInformation.js"></script>
     <script src="scripts/main.js"></script>
-    <script src="../root/Bootstrap/js/bootstrap.min.js"></script>
+    
 
 
 

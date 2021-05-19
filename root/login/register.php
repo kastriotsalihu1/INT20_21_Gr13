@@ -113,7 +113,8 @@
              }
               if(funksioni::insert($con,$username, $email, $password, $confirmPassword, $firstname, $lastname, $phonenumber, $address)){
                 $_SESSION['username']= $username;
-                header("Location:../application.html");
+               // $_SESSION['userid']=$id;
+                header("Location:../index.html");
                
               }
 

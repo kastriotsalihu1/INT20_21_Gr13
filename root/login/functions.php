@@ -4,7 +4,7 @@ Class funksioni{
         public static function insert($con, $username, $email, $password, $confirmPassword, $firstname, $lastname, $phonenumber, $address){
 
         $query = $con->prepare("
-        INSERT INTO user ( username, email, password, firstname, lastname, phonenumber, address)
+        INSERT INTO usera ( username, email, password, firstname, lastname, phonenumber, address)
         VALUES ( :username, :email, :password, :firstname, :lastname, :phonenumber, :address)
         ");
         
@@ -20,7 +20,7 @@ Class funksioni{
       
      public static function checkLogin($con, $username, $password){
       $query = $con->prepare(
-       " SELECT* FROM user where username=:username AND password=:password"
+       " SELECT* FROM usera where username=:username AND password=:password"
       );
       
        $query->bindParam(":username", $username);
@@ -50,7 +50,7 @@ Class funksioni{
       
       public static function updateInfo($con,$id,$username, $email, $password, $confirmPassword, $firstname, $lastname, $phonenumber, $address){
           $query= $con->prepare("
-          Update user SET username=:username, email=:email, password=:password,
+          Update usera SET username=:username, email=:email, password=:password,
            firstname=:firstname, lastname=:lastname,
             phonenumber=:phonenumber, address=:address where userid=:id
           ");
@@ -68,7 +68,7 @@ Class funksioni{
       
       public static function checkUserNameExists($con, $username){
         $query= $con->prepare("
-        select * from user where username=:username
+        select * from usera where username=:username
         ");
         $query->bindParam(":username", $username);
         $query->execute();
@@ -79,7 +79,7 @@ Class funksioni{
       }
       public static function checkEmailExists($con, $email){
         $query= $con->prepare("
-        select * from user where email=:email
+        select * from usera where email=:email
         ");
         $query->bindParam(":email", $email);
         $query->execute();
