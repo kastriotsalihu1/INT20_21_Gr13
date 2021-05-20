@@ -1,6 +1,6 @@
 <?php   
 require_once("../../dbConfig.php");
- $conn = dbConfig::connect();
+$conn = dbConfig::connect();
 
 
 $input =  $_REQUEST['todoinput'];

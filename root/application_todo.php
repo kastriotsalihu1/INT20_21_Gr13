@@ -19,7 +19,6 @@
   <div id="mask"> </div>
 
     <?php include 'application_header.php';?>
-
     <div id="container">
     <?php include 'application_sidebar.php';?>
 
@@ -51,7 +50,7 @@
             require_once("dbConfig.php");
             $conn = dbConfig::connect();
 
-            $sql = "SELECT * FROM todo WHERE userid = 0 ORDER BY id ASC";
+            $sql = "SELECT * FROM todo WHERE userid = 0 ORDER BY id DESC";
             $stmt = $conn->query($sql);
 
             while ($row = $stmt->fetch()) {
@@ -131,5 +130,6 @@
     <script src="scripts/todo.js"></script>
     <script src="scripts/main.js"></script>
     <script src="scripts/cardInformation.js"></script>
+    <script src="scripts/notification.js"></script>
   </body>
 </html>

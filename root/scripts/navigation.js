@@ -7,6 +7,7 @@ $("#mask").css({
   height: "100%",
 });
 
+let notificationValue = 0; 
 const currentPagePath = $(location).attr("pathname").split("/");
 const currentPage = currentPagePath[currentPagePath.length - 1];
 
@@ -30,5 +31,6 @@ $(window).on("load", function () {
   // $("#notification").on("click", function () {
   //   notificationCount--;
   //   $("#notification").attr("data-badge", notificationCount);
-  // });
+  // })
 });
+
