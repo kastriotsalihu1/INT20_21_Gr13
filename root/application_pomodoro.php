@@ -22,11 +22,7 @@
 </head>
 
 <body>
-<?php include 'application_header.php'; ?>
 
-<div id="container">
-  <!-- side navigation menu -->
-  <?php include 'application_sidebar.php'; ?>
   <div id="mask"></div>
 
     <main>
