@@ -55,7 +55,7 @@
             $stmt = $conn->query($sql);
 
             while ($row = $stmt->fetch()) {
-              echo ('<li draggable="true">
+              echo ('<li id="todo_' .$row["id"].  '" draggable="true">
               <span class="text todotext">' . $row["text"] . '</span
               ><span class="deletetodo"><i class="fa fa-trash"></i></span>
             </li>');

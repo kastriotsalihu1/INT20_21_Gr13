@@ -94,9 +94,16 @@ function timer1() {
     document.getElementById("cycle").innerText++;
 
     if (document.getElementById("cycle").innerText % pomodoroCycles == 0) {
-      plantTree()
-      
-    
+      plantTree();
+      console.log("nita");
+
+      var xhr = new XMLHttpRequest();
+      xhr.open('GET', 'http://localhost/INT20_21_Gr13/root/insertTrees.php', true);
+
+      xhr.onload= function (){
+        console.log(this.responseText);
+      }
+      xhr.send();
     }
   }
 }

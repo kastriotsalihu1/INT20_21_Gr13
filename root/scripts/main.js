@@ -3,13 +3,30 @@ var toggleDuration = 800;
 window.onload = (event) => {
   
   try {
-    plantTree(parseInt((xCoordinate.length * yCoordinate.length) / 8));
+    fetch('http://localhost/INT20_21_Gr13/root/fetchTrees.php')
+        .then(response => response.json())
+        .then(data => {
+          trees = data;
+          console.log(trees[0]['COUNT(*)']);
+          plantTree(trees[0]['COUNT(*)']);
+        })
+        .catch(err => console.error(err));
   } catch (e) {
     console.log("You can't plant trees here!");
   }
 
   $(document.body).on("click", "#hamburger", function () {
     $("nav").toggleClass("hidenav");
+  });
+
+  $(document.body).on("click", "#notification", function (e) {
+    $("#notification .dropdown").animate(
+      {
+        height: "toggle",
+        opacity: "toggle",
+      },
+      "fast"
+    );
   });
 
   $(document.body).on("click", "#user", function (e) {
@@ -21,6 +38,7 @@ window.onload = (event) => {
       "fast"
     );
   });
+
   var toggleSwitch;
 
   waitForElementToDisplay(

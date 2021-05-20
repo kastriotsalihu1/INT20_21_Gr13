@@ -26,8 +26,8 @@
       </div>
     </div>
     <!-- dropdown -->
-    <div id="settingdropdown" style="display: none">
-      <div class="setting">
+    <div id="settingdropdown" class="dropdown" style="display: none">
+      <div class="setting" >
         Dark
         <label class="theme-switch" for="checkbox">
           <input type="checkbox" id="checkbox" />
@@ -47,8 +47,16 @@
     </div>
 
     <!-- notifications -->
-    <div id="notification" class="centeredicon" data-badge="">
+    <div id="notification" class="centeredicon" data-badge="" >
       <i class="far fa-bell fa-2x" id="notification-icon"></i>
+      <div class="dropdown" style="display: none">
+        <div id="notificationcontainer" class="scrollwheel">
+        <div class="notif read">ky eshte nje notifikacion i jepun i palexuar</div>
+        <div class="notif read">ky eshte nje notifikacion i jepun i palexuar</div>
+        <div class="notif ">ky eshte nje notifikacion i jepun i lexuar</div>
+        <div class="notif ">ky eshte nje notifikacion i jepun  i lexuar</div>
+        </div>
+      </div>
     </div>
   </div>
 </header>

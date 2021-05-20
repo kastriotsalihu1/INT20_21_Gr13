@@ -4,25 +4,28 @@ $(document).ready(function () {
     var keycode = event.keyCode ? event.keyCode : event.which;
     if (keycode == "13" && $("#todoinput").val() != "") {
       event.preventDefault();
-      $("#itemlist").append(
-        '<li draggable="true"><span class="text todotext">' +
-          $("#todoinput").val() +
-          '</span><span class="deletetodo"><i class="fa fa-trash"></i></span> </li>'
-      );
-      var addlisteners = document.querySelector("#itemlist li");
-      dragAndDrop(addlisteners);
-
+      var value = "todo_";
       $.ajax({
         url: '../root/php/todo/setTodo.php',
         type: 'POST',
         data: {
             todoinput: $("#todoinput").val()
         },
-        success: function(msg) {
+        success: function(data) {        
+          value += data;
+          console.log(value);
+          $("#itemlist").append(
+            '<li id="'+value+'" draggable="true"><span class="text todotext">' +
+              $("#todoinput").val() +
+              '</span><span class="deletetodo"><i class="fa fa-trash"></i></span> </li>'
+          );
+          var addlisteners = document.querySelector("#itemlist li");
+          dragAndDrop(addlisteners);
           $("#todoinput").val("");
         }               
     });
 
+      
     }
   });
 
@@ -49,7 +52,20 @@ $(document).ready(function () {
   });
 
   $(document.body).on("click", ".deletetodo", function () {
-    $(this).closest("li").remove();
+    var value = $(this).closest('li').attr('id');
+    var element = $(this).closest("li");
+    $.ajax({
+      url: '../root/php/todo/removeTodo.php',
+      type: 'POST',
+      data: {
+          id: value
+      },
+      success: function(msg) {
+        console.log(value);
+        element.remove();
+      }
+  });
+
   });
 
   $(function () {
@@ -95,12 +111,17 @@ function handleDrop(e) {
   if (dragSrcEl != this) {
     dragSrcEl.innerHTML = this.innerHTML;
     this.innerHTML = e.dataTransfer.getData("text/html");
+    
+    var transferedClass = dragSrcEl.classList;
+    dragSrcEl.classList = this.classList;
+    this.classList = transferedClass;
   }
 
   return false;
 }
 
 function handleDragEnd(e) {
+
   this.style.opacity = "1";
   let items = document.querySelectorAll("#itemlist li");
   items.forEach(function (item) {
