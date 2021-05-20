@@ -1,33 +1,4 @@
-//Click on X to delete subjects
-$("ul").on("click", "span", function () {
-  //this=span
-  $(this)
-    .parent()
-    .fadeOut(500, function () {
-      //this=li
-      $(this).remove();
-    });
-});
 
-$("input").keypress(function (event) {
-  if (event.which === 13) {
-    if ($(this).val() === "") {
-      alert("No blank values allowed");
-    } else if ($(this).val() !== "") {
-      //grabbiing subjects text from input
-      var notat = $(this).val();
-      //me e fshi qka kena shkru n input
-      $(this).val("");
-      //create a new li and add to ul4
-      // jo me "" po me ''
-      $("ul").append(
-        "<li><span><i class='fas fa-trash'></i></span> " +
-          notat +
-          "<select id='grades'><option >6</option><option >7</option><option >8</option><option >9</option><option >10</option></select></li>"
-      );
-    }
-  }
-});
 
 var myDate = new Date();
 var Data = new Date(2020, 11, 21);
@@ -126,15 +97,7 @@ var internetFiles = [
 //   $("#file").val(null);
 // });
 
-function shfaqMaterialin(lenda) {
-  var shfaqLenda = $("#selectLiteraturen").find(":selected").val();
-  if (lenda != shfaqLenda) {
-    $("#selectLiteraturen option").each(function () {
-      if ($(this).val() == lenda) {
-        $(this).prop("selected", true);
-      }
-    });
-  }
+
 
   if (lenda === "Mathematics") {
     const tabela = document.getElementById("tabela");
@@ -222,11 +185,7 @@ function shfaqMaterialin(lenda) {
     });
   }
 }
-function getHeader() {
-  const tr =
-    '<tr class="thstyle"><th>Subject</th><th>Filename</th><th>Type</th><th>Data</th></tr>';
-  return tr;
-}
+
 
 $("#selectLiteraturen").click(function () {
   var lenda = $("#selectLiteraturen").find(":selected").val();
