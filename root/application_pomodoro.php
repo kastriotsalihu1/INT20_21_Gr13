@@ -22,8 +22,12 @@
 </head>
 
 <body>
-
   <div id="mask"></div>
+
+  <?php include 'application_header.php'; ?>
+  <div id="container">
+
+    <?php include 'application_sidebar.php'; ?>
 
     <main>
       <div class="card music">
@@ -178,19 +182,18 @@
           <div>
             <input type="text" name="name" id="name" placeholder="Write song title">
           </div>
-          <button type="submit" >Search</button>
+          <button type="submit">Search</button>
         </form>
-       
-              <h3>Results</h3>
-            
-              <table id="nita">
-              </table>
-           
+
+        <h3>Results</h3>
+
+        <table id="nita">
+        </table>
+
       </div>
     </main>
   </div>
   <script>
-  
     document.getElementById('songs').addEventListener('submit', loadSongs);
 
     function loadSongs(e) {
@@ -257,4 +260,3 @@
 </body>
 
 </html>
-

@@ -10,7 +10,7 @@ export const makeHTTPRequest = (method, url, requestHeaders) => {
             }
         };
         xmlhttp.open(method, url, true);
-        requestHeaders.forEach(header => {
+        requestHeaders?.forEach(header => {
             xmlhttp.setRequestHeader(header.name, header.value)
         });
         xmlhttp.send();
@@ -25,7 +25,7 @@ export const makeRequest = (method, url, callback, requestHeaders) => {
         }
     };
     xmlhttp.open(method, url, true);
-    requestHeaders.forEach(header => {
+    requestHeaders?.forEach(header => {
         xmlhttp.setRequestHeader(header.name, header.value)
     });
     xmlhttp.send();

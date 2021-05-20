@@ -1,16 +1,16 @@
 var toggleDuration = 800;
 
 window.onload = (event) => {
-  
+
   try {
     fetch('http://localhost/INT20_21_Gr13/root/fetchTrees.php')
-        .then(response => response.json())
-        .then(data => {
-          trees = data;
-          console.log(trees[0]['COUNT(*)']);
-          plantTree(trees[0]['COUNT(*)']);
-        })
-        .catch(err => console.error(err));
+      .then(response => response.json())
+      .then(data => {
+        trees = data;
+        console.log(trees[0]['COUNT(*)']);
+        plantTree(trees[0]['COUNT(*)']);
+      })
+      .catch(err => console.error(err));
   } catch (e) {
     console.log("You can't plant trees here!");
   }
@@ -97,10 +97,10 @@ window.onload = (event) => {
   async function getSun(lat, lng) {
     let response = await fetch(
       "https://api.sunrise-sunset.org/json?lat=" +
-        lat +
-        "&lng=" +
-        lng +
-        "&date=today&formatted=0"
+      lat +
+      "&lng=" +
+      lng +
+      "&date=today&formatted=0"
     );
     let data = response.json();
     // console.log(response.json);

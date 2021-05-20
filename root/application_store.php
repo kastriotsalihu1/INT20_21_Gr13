@@ -24,7 +24,6 @@
 
   <div id="container">
     <!-- side navigation menu -->
-    <div id="sidebar"></div>
     <?php include 'application_sidebar.php'; ?>
     <main>
       <div id="latest" class="card">
@@ -33,7 +32,7 @@
             <i class="fa fa-info" aria-hidden="true"></i>
           </div>
           <div class="contents">
-            <h2>The latest products from the best vendors from around the world!</h2>
+            <h2>The latest products from the best vendors from around the world! (For legal reasons, that is a joke)</h2>
           </div>
         </div>
         <h2 class="cardtitle">Latest</h2>
@@ -66,13 +65,6 @@
             <h2>This is your cart. The products you choose to buy will appear here, for further consideration.</h2>
           </div>
         </div>
-        <!-- <div id="notefooter"> -->
-        <div class="cardfooter">
-          <input id="addnote" class="displayinput" alt="Button to add a note." type="image" src="images/todo/add_circle_button.png" />
-        </div>
-        <!-- </div> -->
-
-
       </div>
     </main>
   </div>
