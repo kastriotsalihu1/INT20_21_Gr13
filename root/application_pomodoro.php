@@ -22,13 +22,12 @@
 </head>
 
 <body>
+<?php include 'application_header.php'; ?>
+
+<div id="container">
+  <!-- side navigation menu -->
+  <?php include 'application_sidebar.php'; ?>
   <div id="mask"></div>
-
-  <?php include 'application_header.php'; ?>
-
-  <div id="container">
-    <!-- side navigation menu -->
-    <?php include 'application_sidebar.php'; ?>
 
     <main>
       <div class="card music">
@@ -137,12 +136,12 @@
 
         <div id="counter" class="timer">
           <p id="break" class="hidden">
-            <span id="break_minutes">25</span>:<span id="break_seconds">00</span>
+            <span id="break_minutes">00</span>:<span id="break_seconds">00</span>
           </p>
           <p id="timer">
-            <span id="work_minutes">25</span>:<span id="work_seconds">00</span>
+            <span id="work_minutes">00</span>:<span id="work_seconds">05</span>
           </p>
-          <p id="cycle">0</p>
+          <p id="cycle">3</p>
         </div>
         <div id="btn_container">
           <button id="start">Start</button>
@@ -180,36 +179,25 @@
         </div>
         <h2 class="cardtitle">SEARCH SONGS</h2>
         <form id="songs">
-          <input type="hidden" name="idUpdata" id="idUpdata">
-
           <div>
             <input type="text" name="name" id="name" placeholder="Write song title">
           </div>
-          <button type="submit" name="editCitizen">Search</button>
+          <button type="submit" >Search</button>
         </form>
-        <div class="">
-          <div>
-            <div>
+       
               <h3>Results</h3>
-            </div>
-            <div>
-
+            
               <table id="nita">
-
               </table>
-            </div>
-          </div>
-        </div>
-
-
+           
       </div>
     </main>
   </div>
   <script>
-    //document.getElementById('news').addEventListener('click', loadNews);
-    document.getElementById('songs').addEventListener('submit', loadNews);
+  
+    document.getElementById('songs').addEventListener('submit', loadSongs);
 
-    function loadNews(e) {
+    function loadSongs(e) {
       e.preventDefault();
       var name = document.getElementById('name').value;
       console.log(name);
@@ -257,7 +245,7 @@
 
   <script src="scripts/jquery.js"></script>
   <script src="scripts/navigation.js"></script>
-  <script src="scripts/load.js"></script>
+  <!-- <script src="scripts/load.js"></script> -->
   <script src="scripts/pomodoro_main.js"></script>
   <script src="scripts/trees.js"></script>
   <script src="scripts/music_player.js"></script>
@@ -273,3 +261,4 @@
 </body>
 
 </html>
+
