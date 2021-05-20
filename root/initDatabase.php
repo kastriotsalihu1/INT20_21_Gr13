@@ -1,22 +1,17 @@
-
-
-
 <?php
-
 require_once("dbConfig.php");
 $con = dbConfig::connect();
 
 // Execute the query to create the database
 $createDatabaseSQL =
     "CREATE database  estudent";
-
 try {
     $con->exec($createDatabaseSQL);
 } catch (PDOException $e) {
     echo $e->getMessage();
 }
+echo "<br/>"; 
 
-echo "<br/>";
 
 // Execute the query to create the "user" table
 $createUserTable =
@@ -35,12 +30,12 @@ $createUserTable =
     )";
 
 try {
-    $con->exec($createUserTable);
+  $con->exec($createUserTable);
 } catch (PDOException $e) {
-    echo $e->getMessage();
+  echo $e->getMessage();
 }
-
 echo "<br/>";
+
 
 // Execute the query to create the "product" table
 $createProductTable =
@@ -60,8 +55,8 @@ try {
 } catch (PDOException $e) {
     echo $e->getMessage();
 }
-
 echo "<br/>";
+
 
 // Execute the query to create the "note" table
 $createNoteTable =
@@ -80,8 +75,8 @@ try {
 } catch (PDOException $e) {
     echo $e->getMessage();
 }
-
 echo "<br/>";
+
 
 // Execute the query to create the "motivation" table
 $createNoteTable =
@@ -96,8 +91,43 @@ try {
 } catch (PDOException $e) {
     echo $e->getMessage();
 }
-
 echo "<br/>";
 
 
+// Execute the query to create the "GRADES" table
+$Subjects=
+    "CREATE TABLE Subjects (
+       subjectid INTEGER  UNSIGNED AUTO_INCREMENT,
+       name VARCHAR(30) NOT NULL,
+       grade INTEGER,
+       PRIMARY KEY (subjectid),
+       userid INTEGER UNSIGNED,
+       FOREIGN KEY (userid) REFERENCES user(userid)
+    )";
+
+try {
+    $con->exec($Subjects);
+} catch (PDOException $e) {
+    echo $e->getMessage();
+}
+echo "<br/>";
+
+
+// Execute the query to create the "UPLOAD LITERATURE" table
+$Literature=
+    "CREATE TABLE Literature (
+       literatureid INTEGER  UNSIGNED AUTO_INCREMENT,
+       name VARCHAR(30) NOT NULL,
+       subject VARCHAR(30) NOT NULL,
+       type VARCHAR(60) NOT NULL,
+       submitDate TIMESTAMP DEFAULT CURRENT_TIMESTAMP,
+       userid INTEGER UNSIGNED,
+       PRIMARY KEY (literatureid),
+       FOREIGN KEY (userid) REFERENCES user(userid)
+    )";
+try {
+    $con->exec($Literature);
+} catch (PDOException $e) {
+    echo $e->getMessage();
+}  
 ?>
