@@ -4,25 +4,28 @@ $(document).ready(function () {
     var keycode = event.keyCode ? event.keyCode : event.which;
     if (keycode == "13" && $("#todoinput").val() != "") {
       event.preventDefault();
-      $("#itemlist").append(
-        '<li draggable="true"><span class="text todotext">' +
-          $("#todoinput").val() +
-          '</span><span class="deletetodo"><i class="fa fa-trash"></i></span> </li>'
-      );
-      var addlisteners = document.querySelector("#itemlist li");
-      dragAndDrop(addlisteners);
-
+      var value = "todo_";
       $.ajax({
         url: '../root/php/todo/setTodo.php',
         type: 'POST',
         data: {
             todoinput: $("#todoinput").val()
         },
-        success: function(msg) {
+        success: function(data) {        
+          value += data;
+          console.log(value);
+          $("#itemlist").append(
+            '<li id="'+value+'" draggable="true"><span class="text todotext">' +
+              $("#todoinput").val() +
+              '</span><span class="deletetodo"><i class="fa fa-trash"></i></span> </li>'
+          );
+          var addlisteners = document.querySelector("#itemlist li");
+          dragAndDrop(addlisteners);
           $("#todoinput").val("");
         }               
     });
 
+      
     }
   });
 
@@ -49,16 +52,18 @@ $(document).ready(function () {
   });
 
   $(document.body).on("click", ".deletetodo", function () {
+    var value = $(this).closest('li').attr('id');
+    var element = $(this).closest("li");
     $.ajax({
       url: '../root/php/todo/removeTodo.php',
       type: 'POST',
       data: {
-          id:  $(this).closest('li').attr('id')
+          id: value
       },
       success: function(msg) {
-        console.log("removed " + $(this).closest('li').attr('id'))
-        $(this).closest("li").remove();
-      }              
+        console.log(value);
+        element.remove();
+      }
   });
 
   });
