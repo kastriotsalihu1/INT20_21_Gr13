@@ -3,9 +3,12 @@
 
     abstract class Sortable
     {
+        abstract public function setSortAscending($sortAscending);
+        abstract public function setSortProperty($sortProperty);
+
         function __constructor($sortableBy)
         {
-            $this->_sortableBy = $sortableBy;
+            $this->_sortableBy = sort($sortableBy, SORT_STRING);
         }
         abstract protected function sortBy($property, $ascending);
 
@@ -31,8 +34,13 @@
     {
         function __construct()
         {
-            parent::__constructor(array("value"));
+            parent::__constructor(array("categoryName"));
             $this->productCategories = array();
+        }
+
+        function __destruct()
+        {
+            echo json_encode($this);
         }
 
         function addCategory($categoryName)
@@ -52,20 +60,35 @@
             return $this->productCategories;
         }
 
+        function setProductCategories($productCategories)
+        {
+            $this->productCategories = $productCategories;
+        }
+
+        function setSortAscending($sortAscending)
+        {
+            $this->sortAscending = $sortAscending;
+        }
+
+        function setSortProperty($sortProperty)
+        {
+            $this->sortProperty = $sortProperty;
+        }
+
         function sortBy($property, $ascending)
         {
-            if (in_array("value", $this->_sortableBy)) {
-                if ($ascending) {
-                    ksort($this->productCategories);
-                } else {
-                    krsort($this->productCategories);
-                }
+            if (!in_array("categoryName", $this->_sortableBy)) return;
+
+            if ($ascending) {
+                ksort($this->productCategories);
+            } else {
+                krsort($this->productCategories);
             }
         }
 
         public function jsonSerialize()
         {
-            return $this->productCategories;
+            return array_unique($this->productCategories);
         }
     }
 
@@ -82,15 +105,30 @@
             $this->products[] = $product;
         }
 
-        public function jsonSerialize()
+        function getProducts()
         {
             return $this->products;
         }
 
+        public function jsonSerialize()
+        {
+            return array_unique($this->products);
+        }
+
+        function setSortAscending($sortAscending)
+        {
+            $this->sortAscending = $sortAscending;
+        }
+
+        function setSortProperty($sortProperty)
+        {
+            $this->sortProperty = $sortProperty;
+        }
+
         function sortBy($property, $ascending)
         {
-            $this->sortProperty = $property;
-            $this->sortAscending = $ascending;
+            $this->setSortProperty($property);
+            $this->setSortAscending($ascending);
             if (is_string($this->sortProperty)) {
                 usort($this->products, "parent::string_sortBy");
             } else {
@@ -121,6 +159,6 @@
         $productCategory->sortBy("price", TRUE);
     }
 
-    echo json_encode($productsCatalog);
+    // products catalog destructor call
 
     ?>
