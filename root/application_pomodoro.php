@@ -1,4 +1,3 @@
-
 <!DOCTYPE html>
 <html lang="en">
 
@@ -25,11 +24,11 @@
 <body>
   <div id="mask"></div>
 
-  <div id="header"></div>
+  <?php include 'application_header.php'; ?>
 
   <div id="container">
     <!-- side navigation menu -->
-    <div id="sidebar"></div>
+    <?php include 'application_sidebar.php'; ?>
 
     <main>
       <div class="card music">

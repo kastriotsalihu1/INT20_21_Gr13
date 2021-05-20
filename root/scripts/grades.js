@@ -68,14 +68,14 @@ var internetFiles = [
 //     console.log(lenda);
 //     console.log(lloji);
 
-   
+
 //     const materiali = {
 //       lenda: lenda,
 //       emriiFile: emri,
 //       lloji: lloji,
 //       myDate: myDate,
 //     };
-  
+
 /*
     if (lenda === "Mathematics") {
       matFiles.push(materiali);
@@ -99,91 +99,90 @@ var internetFiles = [
 
 
 
-  if (lenda === "Mathematics") {
-    const tabela = document.getElementById("tabela");
-    tabela.innerHTML = "";
-    tabela.innerHTML = getHeader();
-    matFiles.forEach((matfile) => {
-      const tr = document.createElement("tr");
-      for (const key in matfile) {
-        const td = document.createElement("td");
-        td.innerText = matfile[key];
-        td.classList.add("tdstyle");
-        tr.appendChild(td);
-      }
-      tabela.appendChild(tr);
-    });
-  } else if (lenda === "SignalsandSystems") {
-    const tabela = document.getElementById("tabela");
-    tabela.innerHTML = "";
-    tabela.innerHTML = getHeader();
-    SinjaleSistemeFiles.forEach((ssfile) => {
-      const tr = document.createElement("tr");
-      for (const key in ssfile) {
-        const td = document.createElement("td");
-        td.innerText = ssfile[key];
-        td.classList.add("tdstyle");
-        tr.appendChild(td);
-      }
-      tabela.appendChild(tr);
-    });
-  } else if (lenda === "OOP") {
-    const tabela = document.getElementById("tabela");
-    tabela.innerHTML = "";
-    tabela.innerHTML = getHeader();
-    pooFiles.forEach((poofile) => {
-      const tr = document.createElement("tr");
-      for (const key in poofile) {
-        const td = document.createElement("td");
-        td.innerText = poofile[key];
-        td.classList.add("tdstyle");
-        tr.appendChild(td);
-      }
-      tabela.appendChild(tr);
-    });
-  } else if (lenda === "Database") {
-    const tabela = document.getElementById("tabela");
-    tabela.innerHTML = "";
-    tabela.innerHTML = getHeader();
-    databazeFiles.forEach((databazefile) => {
-      const tr = document.createElement("tr");
-      for (const key in databazefile) {
-        const td = document.createElement("td");
-        td.innerText = databazefile[key];
-        td.classList.add("tdstyle");
-        tr.appendChild(td);
-      }
-      tabela.appendChild(tr);
-    });
-  } else if (lenda === "Electronics") {
-    const tabela = document.getElementById("tabela");
-    tabela.innerHTML = "";
-    tabela.innerHTML = getHeader();
-    elektronikaFiles.forEach((elektronikefile) => {
-      const tr = document.createElement("tr");
-      for (const key in elektronikefile) {
-        const td = document.createElement("td");
-        td.innerText = elektronikefile[key];
-        td.classList.add("tdstyle");
-        tr.appendChild(td);
-      }
-      tabela.appendChild(tr);
-    });
-  } else if (lenda === "Internet") {
-    const tabela = document.getElementById("tabela");
-    tabela.innerHTML = "";
-    tabela.innerHTML = getHeader();
-    internetFiles.forEach((internetfile) => {
-      const tr = document.createElement("tr");
-      for (const key in internetfile) {
-        const td = document.createElement("td");
-        td.innerText = internetfile[key];
-        td.classList.add("tdstyle");
-        tr.appendChild(td);
-      }
-      tabela.appendChild(tr);
-    });
-  }
+if (lenda === "Mathematics") {
+  const tabela = document.getElementById("tabela");
+  tabela.innerHTML = "";
+  tabela.innerHTML = getHeader();
+  matFiles.forEach((matfile) => {
+    const tr = document.createElement("tr");
+    for (const key in matfile) {
+      const td = document.createElement("td");
+      td.innerText = matfile[key];
+      td.classList.add("tdstyle");
+      tr.appendChild(td);
+    }
+    tabela.appendChild(tr);
+  });
+} else if (lenda === "SignalsandSystems") {
+  const tabela = document.getElementById("tabela");
+  tabela.innerHTML = "";
+  tabela.innerHTML = getHeader();
+  SinjaleSistemeFiles.forEach((ssfile) => {
+    const tr = document.createElement("tr");
+    for (const key in ssfile) {
+      const td = document.createElement("td");
+      td.innerText = ssfile[key];
+      td.classList.add("tdstyle");
+      tr.appendChild(td);
+    }
+    tabela.appendChild(tr);
+  });
+} else if (lenda === "OOP") {
+  const tabela = document.getElementById("tabela");
+  tabela.innerHTML = "";
+  tabela.innerHTML = getHeader();
+  pooFiles.forEach((poofile) => {
+    const tr = document.createElement("tr");
+    for (const key in poofile) {
+      const td = document.createElement("td");
+      td.innerText = poofile[key];
+      td.classList.add("tdstyle");
+      tr.appendChild(td);
+    }
+    tabela.appendChild(tr);
+  });
+} else if (lenda === "Database") {
+  const tabela = document.getElementById("tabela");
+  tabela.innerHTML = "";
+  tabela.innerHTML = getHeader();
+  databazeFiles.forEach((databazefile) => {
+    const tr = document.createElement("tr");
+    for (const key in databazefile) {
+      const td = document.createElement("td");
+      td.innerText = databazefile[key];
+      td.classList.add("tdstyle");
+      tr.appendChild(td);
+    }
+    tabela.appendChild(tr);
+  });
+} else if (lenda === "Electronics") {
+  const tabela = document.getElementById("tabela");
+  tabela.innerHTML = "";
+  tabela.innerHTML = getHeader();
+  elektronikaFiles.forEach((elektronikefile) => {
+    const tr = document.createElement("tr");
+    for (const key in elektronikefile) {
+      const td = document.createElement("td");
+      td.innerText = elektronikefile[key];
+      td.classList.add("tdstyle");
+      tr.appendChild(td);
+    }
+    tabela.appendChild(tr);
+  });
+} else if (lenda === "Internet") {
+  const tabela = document.getElementById("tabela");
+  tabela.innerHTML = "";
+  tabela.innerHTML = getHeader();
+  internetFiles.forEach((internetfile) => {
+    const tr = document.createElement("tr");
+    for (const key in internetfile) {
+      const td = document.createElement("td");
+      td.innerText = internetfile[key];
+      td.classList.add("tdstyle");
+      tr.appendChild(td);
+    }
+    tabela.appendChild(tr);
+  });
 }
 
 
@@ -191,8 +190,3 @@ $("#selectLiteraturen").click(function () {
   var lenda = $("#selectLiteraturen").find(":selected").val();
   shfaqMaterialin(lenda);
 });
-
-<script
-  src="https://code.jquery.com/jquery-3.6.0.js"
-  integrity="sha256-H+K7U5CnXl1h5ywQfKtSj8PCmoN9aaq30gDh27Xc0jk="
-  crossorigin="anonymous"></script>

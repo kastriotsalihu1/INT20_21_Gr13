@@ -31,7 +31,7 @@
         echo '<pre>';
         var_dump($_SESSION);
         echo '</pre>';
-        header("Location:../application.html");
+        header("Location:../application.php");
       }else{
         $error_msg['pw']="Username or password is incorrect!";
       }

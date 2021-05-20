@@ -12,6 +12,16 @@ window.onload = (event) => {
     $("nav").toggleClass("hidenav");
   });
 
+  $(document.body).on("click", "#notification", function (e) {
+    $("#notification .dropdown").animate(
+      {
+        height: "toggle",
+        opacity: "toggle",
+      },
+      "fast"
+    );
+  });
+
   $(document.body).on("click", "#user", function (e) {
     $("#settingdropdown").animate(
       {
@@ -21,6 +31,7 @@ window.onload = (event) => {
       "fast"
     );
   });
+
   var toggleSwitch;
 
   waitForElementToDisplay(

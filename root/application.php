@@ -29,11 +29,11 @@
 <body>
   <div id="mask"></div>
 
-  <div id="header"></div>
+  <?php include 'application_header.php'; ?>
 
 
   <div id="container">
-    <div id="sidebar"></div>
+    <?php include 'application_sidebar.php'; ?>
     <main>
       <div id="calculator" class="card">
         <div id="result">
@@ -177,8 +177,7 @@
         <div id="notefooter">
           <div class="cardfooter">
             <a href="application_todo.html">
-              <input id="addnote" class="displayinput" type="image" alt="Button to redirect you to the todo page."
-                src="images/todo/add_circle_button.png" />
+              <input id="addnote" class="displayinput" type="image" alt="Button to redirect you to the todo page." src="images/todo/add_circle_button.png" />
             </a>
           </div>
         </div>
