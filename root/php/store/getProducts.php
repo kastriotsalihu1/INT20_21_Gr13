@@ -8,7 +8,8 @@
 
         function __constructor($sortableBy)
         {
-            $this->_sortableBy = sort($sortableBy, SORT_STRING);
+            sort($sortableBy, SORT_STRING);
+            $this->_sortableBy = $sortableBy;
         }
         abstract protected function sortBy($property, $ascending);
 
@@ -88,7 +89,7 @@
 
         public function jsonSerialize()
         {
-            return array_unique($this->productCategories);
+            return $this->productCategories;
         }
     }
 
@@ -112,7 +113,7 @@
 
         public function jsonSerialize()
         {
-            return array_unique($this->products);
+            return $this->products;
         }
 
         function setSortAscending($sortAscending)
