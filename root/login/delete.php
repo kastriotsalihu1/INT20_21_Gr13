@@ -6,7 +6,7 @@ $con= dbConfig::connect();
 
 $username=$_SESSION['username'];
 $query=$con->prepare("
-DELETE from usera where username=:username
+DELETE from user where username=:username
 ");
 $query->bindParam(":username", $username);
 

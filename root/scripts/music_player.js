@@ -23,207 +23,243 @@ let Playing_song = false;
 //create a audio Element
 let track = document.createElement('audio');
 
-function Song(name, path, img, singer) {
-  this.name = name;
-  this.path = path;
-  this.img = img;
-  this.singer = singer;
+
+
+function getSongs(){
+
+  fetch('http://localhost/INT20_21_Gr13/root/fetchSongs.php')
+      .then(response => response.json())
+      .then(data => {
+        songs = data;
+        console.log(songs);
+        return songs;
+      })
+      .catch(err => console.error(err));
 }
-
-
-//All songs list
-//All songs list
-let All_song = [
-  new Song("Four Seasons",
-    "videos/Four seasons- Vivaldi.mp3",
-    "images/pomodoro_img/four seasons.jpg",
-    "Vivaldi"),
-  new Song("Fur Elise",
-    "videos/Fur Elise- Beethoven.mp3",
-    "images/pomodoro_img/fur elise.jpg",
-    "Beethoven"),
-  new Song("Classical Play",
-    "videos/Mozart.mp3",
-    "images/pomodoro_img/mozart1.jpg",
-    "Mozart"),
-  new Song("Piano Play",
-    "videos/Piano Music- Marc Robillard.mp3",
-    "images/pomodoro_img/piano1.jpg",
-    "Marc Robillard"),
-  new Song("Ambient Music",
-    "videos/ambient music.mp3",
-    "images/pomodoro_img/ambient music.jpg",
-    "DJ"),
-  new Song("Rain Sounds",
-    "videos/Rain Sound.mp3",
-    "images/pomodoro_img/rain.jpg",
-    "The Sky"),
-  new Song("The Girl I Met",
-    "videos/Kudasai - the girl i haven't met.mp3",
-    "images/pomodoro_img/kudasai.gif",
-    "Kudasai"),
-  new Song("Ocean Waves",
-    "videos/Ocean Wave.mp3",
-    "images/pomodoro_img/ocean.jpg",
-    "Ocean"),
-  new Song("Sorry I Like You",
-    "videos/Burbank - sorry i like you.mp3",
-    "images/pomodoro_img/burbank.jpg",
-    "Burbank"),
-  new Song("Lo-fi Song",
-    "videos/Lo-Fi Hiphop Beats Study Timer.mp3",
-    "images/pomodoro_img/lofi1.png",
-    "DJ"),
-  new Song("Chill Guitar",
-    "videos/Chill Guitar.mp3",
-    "images/pomodoro_img/chill guitar.jpg",
-    "Unknown"),
-  new Song("Piano Music",
-    "videos/Piano Music.mp3",
-    "images/pomodoro_img/piano2.jpg",
-    "Unknown"),
-  new Song("Lofi Song",
-    "videos/Lo-fi song.mp3",
-    "images/pomodoro_img/lofi2.jpg",
-    "DJ"),
-  new Song("Classical Music",
-    "videos/Classical music.mp3",
-    "images/pomodoro_img/classical music.jpg",
-    "Haydn")
-];
+// console.log(getSongs(), 'asdasd')
 
 // All functions
-
-
 // function load the track
-function load_track(index_no) {
-  clearInterval(timer);
-  reset_slider();
 
-  track.src = All_song[index_no].path;
-  title.innerHTML = All_song[index_no].name;
-  track_image.src = All_song[index_no].img;
-  artist.innerHTML = All_song[index_no].singer;
-  track.load();
+      function load_track(index_no) {
 
-  timer = setInterval(range_slider, 1000);
-  total.innerHTML = All_song.length;
-  present.innerHTML = index_no + 1;
-}
+        fetch('http://localhost/INT20_21_Gr13/root/fetchSongs.php')
+            .then(response => response.json())
+            .then(data => {
+              songs = data;
+              console.log(songs[index_no].artist);
+              clearInterval(timer);
+              reset_slider();
+              track.src = songs[index_no].audio;
+              artist.innerHTML = songs[index_no].artist;
+              title.innerHTML = songs[index_no].title;
+              track_image.src = songs[index_no].pic;
+              track.load();
 
-load_track(index_no);
+              timer = setInterval(range_slider, 1000);
+              total.innerHTML = Object.keys(songs).length;
+              present.innerHTML = index_no + 1;
+
+            })
+            .catch(err => console.error(err));
+      }
+
+      load_track(index_no);
 
 
 //mute sound function
-function mute_sound() {
-  track.volume = 0;
-  volume.value = 0;
-  volume_show.innerHTML = 0;
-}
+      function mute_sound() {
+        fetch('http://localhost/INT20_21_Gr13/root/fetchSongs.php')
+            .then(response => response.json())
+            .then(data => {
+              songs = data;
+              console.log(songs);
+              track.volume = 0;
+              volume.value = 0;
+              volume_show.innerHTML = 0;
+
+            })
+            .catch(err => console.error(err));
+      }
 
 
 // checking.. the song is playing or not
-function justplay() {
-  if (Playing_song == false) {
-    playsong();
+      function justplay() {
+        fetch('http://localhost/INT20_21_Gr13/root/fetchSongs.php')
+            .then(response => response.json())
+            .then(data => {
+              songs = data;
+              console.log(songs);
+              if (Playing_song == false) {
+                playsong();
 
-  } else {
-    pausesong();
-  }
-}
+              } else {
+                pausesong();
+              }
+
+            })
+            .catch(err => console.error(err));
+      }
 
 
 // reset song slider
-function reset_slider() {
-  slider.value = 0;
-}
+      function reset_slider() {
+        fetch('http://localhost/INT20_21_Gr13/root/fetchSongs.php')
+            .then(response => response.json())
+            .then(data => {
+              songs = data;
+              console.log(songs);
+              slider.value = 0;
+
+            })
+            .catch(err => console.error(err));
+      }
 
 // play song
-function playsong() {
-  track.play();
-  Playing_song = true;
-  play.innerHTML = '<i class="fa fa-pause" aria-hidden="true"></i>';
-}
+      function playsong() {
+        fetch('http://localhost/INT20_21_Gr13/root/fetchSongs.php')
+            .then(response => response.json())
+            .then(data => {
+              songs = data;
+              console.log(songs);
+              track.play();
+              Playing_song = true;
+              play.innerHTML = '<i class="fa fa-pause" aria-hidden="true"></i>';
+
+            })
+            .catch(err => console.error(err));
+      }
 
 //pause song
-function pausesong() {
-  track.pause();
-  Playing_song = false;
-  play.innerHTML = '<i class="fa fa-play" aria-hidden="true"></i>';
-}
+      function pausesong()
+      {
+        fetch('http://localhost/INT20_21_Gr13/root/fetchSongs.php')
+            .then(response => response.json())
+            .then(data => {
+              songs = data;
+              console.log(songs);
+              track.pause();
+              Playing_song = false;
+              play.innerHTML = '<i class="fa fa-play" aria-hidden="true"></i>';
+
+            })
+            .catch(err => console.error(err));
+      }
 
 
 // next song
-function next_song() {
-  if (index_no < All_song.length - 1) {
-    index_no += 1;
-    load_track(index_no);
-    playsong();
-  } else {
-    index_no = 0;
-    load_track(index_no);
-    playsong();
+      function next_song() {
+        fetch('http://localhost/INT20_21_Gr13/root/fetchSongs.php')
+            .then(response => response.json())
+            .then(data => {
+              songs = data;
+              console.log(songs);
 
-  }
-}
+              if (index_no < Object.keys(songs).length - 1) {
+                index_no += 1;
+                load_track(index_no);
+                playsong();
+              } else {
+                index_no = 0;
+                load_track(index_no);
+                playsong();
+
+              }
+
+            })
+            .catch(err => console.error(err));
+      }
 
 
 // previous song
-function previous_song() {
-  if (index_no > 0) {
-    index_no -= 1;
-    load_track(index_no);
-    playsong();
+      function previous_song() {
 
-  } else {
-    index_no = All_song.length;
-    load_track(index_no);
-    playsong();
-  }
-}
+        fetch('http://localhost/INT20_21_Gr13/root/fetchSongs.php')
+            .then(response => response.json())
+            .then(data => {
+              songs = data;
+              console.log(songs);
+              if (index_no > 0) {
+                index_no -= 1;
+                load_track(index_no);
+                playsong();
+
+              } else {
+                index_no = Object.keys(songs).length;
+                load_track(index_no);
+                playsong();
+              }
+
+            })
+            .catch(err => console.error(err));
+      }
 
 
 // change volume
-function volume_change() {
-  volume_show.innerHTML = recent_volume.value;
-  track.volume = recent_volume.value / 100;
-}
+      function volume_change() {
+        fetch('http://localhost/INT20_21_Gr13/root/fetchSongs.php')
+            .then(response => response.json())
+            .then(data => {
+              songs = data;
+              console.log(songs);
+              volume_show.innerHTML = recent_volume.value;
+              track.volume = recent_volume.value / 100;
 
-// change slider position 
-function change_duration() {
-  slider_position = track.duration * (slider.value / 100);
-  track.currentTime = slider_position;
-}
+            })
+            .catch(err => console.error(err));
+      }
+
+// change slider position
+      function change_duration() {
+        fetch('http://localhost/INT20_21_Gr13/root/fetchSongs.php')
+            .then(response => response.json())
+            .then(data => {
+              songs = data;
+              console.log(songs);
+              slider_position = track.duration * (slider.value / 100);
+              track.currentTime = slider_position;
+
+            })
+            .catch(err => console.error(err));
+      }
 
 // autoplay function
-function autoplay_switch() {
-  if (autoplay == 1) {
-    autoplay = 0;
-    auto_play.style.background = "rgba(75, 158, 111,0.5)";
-  } else {
-    autoplay = 1;
-    auto_play.style.background = "rgb(62, 145, 98)";
-  }
-}
+      function autoplay_switch() {
+        fetch('http://localhost/INT20_21_Gr13/root/fetchSongs.php')
+            .then(response => response.json())
+            .then(data => {
+              songs = data;
+              console.log(songs);
+              if (autoplay == 1) {
+                autoplay = 0;
+                auto_play.style.background = "rgba(75, 158, 111,0.5)";
+              } else {
+                autoplay = 1;
+                auto_play.style.background = "rgb(62, 145, 98)";
+              }
+
+            })
+            .catch(err => console.error(err));
+      }
 
 
-function range_slider() {
-  let position = 0;
+      function range_slider() {
+        let position = 0;
 
-  // update slider position
-  if (!isNaN(track.duration)) {
-    position = track.currentTime * (100 / track.duration);
-    slider.value = position;
-  }
+        // update slider position
+        if (!isNaN(track.duration)) {
+          position = track.currentTime * (100 / track.duration);
+          slider.value = position;
+        }
 
 
-  // function will run when the song is over
-  if (track.ended) {
-    play.innerHTML = '<i class="fa fa-play" aria-hidden="true"></i>';
-    if (autoplay == 1) {
-      index_no += 1;
-      load_track(index_no);
-      playsong();
-    }
-  }
-}
+        // function will run when the song is over
+        if (track.ended) {
+          play.innerHTML = '<i class="fa fa-play" aria-hidden="true"></i>';
+          if (autoplay == 1) {
+            index_no += 1;
+            load_track(index_no);
+            playsong();
+          }
+        }
+      }

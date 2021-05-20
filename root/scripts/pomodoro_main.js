@@ -1,3 +1,4 @@
+
 var start = document.getElementById("start");
 var stop = document.getElementById("stop");
 var reset = document.getElementById("reset");
@@ -93,7 +94,9 @@ function timer1() {
     document.getElementById("cycle").innerText++;
 
     if (document.getElementById("cycle").innerText % pomodoroCycles == 0) {
-      plantTree();
+      plantTree()
+      
+    
     }
   }
 }
@@ -108,3 +111,5 @@ function configurePomodoro(tDuration, tBreak) {
   wm.innerText = tDuration;
   bm.innerText = tBreak;
 }
+
+

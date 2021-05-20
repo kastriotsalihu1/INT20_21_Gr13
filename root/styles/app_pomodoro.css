@@ -10,14 +10,14 @@
 
 main {
   display: grid;
-
-  grid-template-columns: 50% 50%;
+  
+  grid-template-columns:10% 10% 10% 10% 10% 10% 10% 10% 10% 10%;
   grid-template-rows: 60% 40%;
 
   gap: 10px;
   grid-template-areas:
-    "a a"
-    "b c";
+    "d d a a a a a a p p"
+    "b b b b b c c c c c";
 }
 .title {
   position: absolute;
@@ -30,7 +30,23 @@ main {
   background-color: var(--primarycolor);
   padding: 20px 0;
 }
+#musicForm{
+  grid-area: d;
+  display: block;
+  text-align: center;
+  background-color: var(--primarycolor);
+  padding: 20px 0;
+
+}
+#searchMusic{
+  grid-area: p;
+  display: block;
+  text-align: center;
+  background-color: var(--primarycolor);
+  padding: 20px 0;
+}
 #pomodoro {
+  grid-area: b;
   background-color: var(--primarycolor);
   display: flex;
   flex-direction: column;
@@ -113,6 +129,7 @@ button {
 }
 
 #trees {
+  grid-area: c;
   display: flex;
   flex-direction: column;
   align-items: center;
