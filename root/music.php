@@ -1,5 +1,5 @@
 <?php 
-
+session_start();
 require_once("dbConfig.php");
 $con= dbConfig::connect();
 
@@ -50,8 +50,6 @@ if(isset($_POST['addsong'])){
             mkdir(dirname($audio_path));
             move_uploaded_file($audio['tmp_name'], $audio_path);
         }
-        
-
     }
 
 
@@ -65,10 +63,10 @@ if(isset($_POST['addsong'])){
     $statement->bindValue(':artist',$artist);
     $statement->bindValue(':pic',$image_path);
     $statement->bindValue(':audio',$audio_path);
-    $statement->bindValue(':id',34);
+    $statement->bindValue(':id',$_SESSION['userid']);
     $statement->execute();
 
-
+    header("Location: application_pomodoro.php");
    
 
     // echo '<pre>';

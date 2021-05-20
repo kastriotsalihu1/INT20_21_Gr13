@@ -1,3 +1,9 @@
+#searchMusic ul{
+color:white;
+}
+
+
+
 #box_1{
     margin: 0;
     padding: 0;
@@ -54,7 +60,61 @@ body{
     border-radius: 15px;
     box-shadow: 1px 0px 25px 10px rgba(0,0,0,0.1);
 }
- 
+ #musicForm input[type='text']{
+     border-radius: 5px;
+     margin-bottom: 20px;
+     height: 30px;
+     border: none;
+     width: 176px;
+ }
+ #musicForm input[type='file']{
+ display: none;
+}
+#musicForm ::placeholder{
+    text-align: center;
+}
+#musicForm label{
+    padding-top: 5px;
+    display: block;
+    color:white;
+    width: 180px;
+    height: 28px;
+    border-radius: 5px; 
+    background-color:  rgb(32, 90, 57);
+   }
+   #piclabel{
+    position:absolute;
+    margin: auto;
+    top: 13px;
+    bottom: 0;
+    left: 0;
+    right: 0;
+   }
+   #audiolabel{
+    position:absolute;
+    margin: auto;
+    top: 128px;
+    bottom: 0;
+    left: 0;
+    right: 0;
+   }
+ #musicForm input[type="submit"]{
+    border-radius: 5px;
+    height: 40px;
+    border: none;
+    width:170px;
+    color: white;
+    text-transform: uppercase;
+    font-weight: 600;
+    border-radius: 5px;
+    background-color:  rgb(32, 90, 57);
+    position:absolute;
+    margin: auto;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: -280px;
+}
 /* both range slider part */
 input[type="range"] {
     -webkit-appearance: none;

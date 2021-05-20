@@ -197,14 +197,14 @@ header {
   
 }
 
-#notification{
+#notification, #share{
   width: 125px;
   box-shadow: 0px -1px 8px 0px rgba(0, 0, 0, 0.13);
   flex-direction: column;
   z-index: inherit;
 }
 
-#notification:hover {
+#notification:hover, #share:hover{
   color: var(--primarycolor);
 }
 

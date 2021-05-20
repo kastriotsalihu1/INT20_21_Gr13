@@ -22,7 +22,16 @@
       
       if(funksioni::checkLogin($con, $username, $password)){
         $_SESSION['username']= $username;
-        header("Location:../application.html");
+        $query="Select * from user where username=:username";
+        $statement =$con->prepare($query);
+        $statement->bindValue(":username", $username);
+        $statement->execute();
+        $row =$statement->fetch(PDO::FETCH_ASSOC);
+        $_SESSION['userid']= $row['userid'];
+        echo '<pre>';
+        var_dump($_SESSION);
+        echo '</pre>';
+        header("Location:../application.php");
       }else{
         $error_msg['pw']="Username or password is incorrect!";
       }
