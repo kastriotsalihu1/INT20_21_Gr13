@@ -1,7 +1,7 @@
 import { READY_STATE_CODE, SUCCESS_CODE } from "../../scripts/constants/constants.js";
 
 
-export const makeHTTPRequest = (method, url) => {
+export const makeHTTPRequest = (method, url, requestHeaders) => {
     return new Promise((resolve, reject) => {
         const xmlhttp = new XMLHttpRequest();
         xmlhttp.onreadystatechange = function () {
@@ -10,11 +10,14 @@ export const makeHTTPRequest = (method, url) => {
             }
         };
         xmlhttp.open(method, url, true);
+        requestHeaders?.forEach(header => {
+            xmlhttp.setRequestHeader(header.name, header.value)
+        });
         xmlhttp.send();
     })
 }
 
-export const makeRequest = (method, url, callback) => {
+export const makeRequest = (method, url, callback, requestHeaders) => {
     const xmlhttp = new XMLHttpRequest();
     xmlhttp.onreadystatechange = function () {
         if (this.readyState == READY_STATE_CODE && this.status == SUCCESS_CODE) {
@@ -22,5 +25,8 @@ export const makeRequest = (method, url, callback) => {
         }
     };
     xmlhttp.open(method, url, true);
+    requestHeaders?.forEach(header => {
+        xmlhttp.setRequestHeader(header.name, header.value)
+    });
     xmlhttp.send();
 }

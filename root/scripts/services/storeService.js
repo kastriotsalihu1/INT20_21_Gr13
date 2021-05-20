@@ -1,7 +1,7 @@
 import { makeHTTPRequest } from "../../modules/dbRequests/XMHttpRequest.js";
 
 export const getAllProducts = () => {
-    return makeHTTPRequest("GET", "modules/getProducts.php");
+    return makeHTTPRequest("GET", "php/store/getProducts.php");
 }
 
 export const getProduct = (productProperties) => {
@@ -11,10 +11,10 @@ export const getProduct = (productProperties) => {
     }
     const condition = conditions.join("&");
 
-    return makeHTTPRequest("GET", "modules/getProduct.php?" + condition);
+    return makeHTTPRequest("GET", "php/store/getProduct.php?" + condition);
 }
 
 export const getProductDetails = (productId) => {
-    return makeHTTPRequest("GET", "modules/getProductDetails.php?q=" + productId);
+    return makeHTTPRequest("GET", "php/store/getProductDetails.php?q=" + productId);
 }
 

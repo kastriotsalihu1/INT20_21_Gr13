@@ -14,12 +14,12 @@
       </div>
       <div id="name">
         <?php
-        session_start();
-        require_once("dbConfig.php");
-        echo isset($_SESSION['username']) ? $_SESSION['username'] : null;
-        echo '<pre>';
-        var_dump($_SESSION);
-        echo '</pre>';
+        // session_start();
+        // require_once("dbConfig.php");
+        // echo isset($_SESSION['username']) ? $_SESSION['username'] : null;
+        // echo '<pre>';
+        // var_dump($_SESSION);
+        // echo '</pre>';
         ?></div>
       <div id="settingsicon" class="centeredicon">
         <i class="fas fa-caret-down"></i>
@@ -27,7 +27,7 @@
     </div>
     <!-- dropdown -->
     <div id="settingdropdown" class="dropdown" style="display: none">
-      <div class="setting" >
+      <div class="setting">
         Dark
         <label class="theme-switch" for="checkbox">
           <input type="checkbox" id="checkbox" />
@@ -48,8 +48,8 @@
       </div>
     </div>
 
-        <!-- notifications -->
-        <div id="share" class="centeredicon" data-badge="">
+        <!-- share -->
+        <div id="share" class="centeredicon">
       <a class="twitter-share-button" href="https://twitter.com/intent/tweet?text=Checkout%20my%20pomodoro%20progress&url=https://estudentproject.com/application_pomodoro.php" data-size="large" target="_blank">
         <i class="fas fa-retweet fa-2x" id="share-icon"></i>
       </a>

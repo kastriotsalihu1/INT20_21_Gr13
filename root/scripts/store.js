@@ -1,14 +1,13 @@
 import { getAllProducts, getProduct, getProductDetails } from "./services/storeService.js";
 
-let products = [];
-const productCategories = {};
+let productCategories = {};
 
 $(document).ready(function () {
 
     getAllProducts()
         .then(response => {
-            products = JSON.parse(response);
-            populateProductCategories(productCategories, products);
+            console.log(response);
+            productCategories = JSON.parse(response);
             renderProducts(productCategories);
             renderFeaturedProducts();
         })
@@ -95,30 +94,23 @@ $(document).ready(function () {
 });
 
 
-const populateProductCategories = (productCategories, products) => {
-    products.forEach(product => {
-        if (productCategories[product.name])
-            productCategories[product.name].push(product);
-        else
-            productCategories[product.name] = [product];
-    });
-}
 const renderProducts = (productCategories) => {
     for (const productCategory in productCategories) {
         const category = productCategories[productCategory];
-        const randomElementIndex = Math.floor(Math.random() * category.length);
-        const product = category[randomElementIndex];
+        const product = category[0];
         const productDiv = new Product(product.id, product.name, product.price, product.imageSrc, product.color).getDiv();
         $("#latest").find(".products").append(productDiv);
     }
 }
 const renderFeaturedProducts = () => {
-    products.forEach(product => {
-        if (product.discountPercentage && product.discountPercentage > 0) {
-            const featuredProductDiv = new FeaturedProduct(product.id, product.name, product.price, product.imageSrc, product.color, product.discountPercentage).getDiv();
-            $("#featuredcontainer").append(featuredProductDiv);
-        }
-    });
+    for (const productCategory in productCategories) {
+        productCategories[productCategory].forEach(product => {
+            if (product.discountPercentage && product.discountPercentage > 0) {
+                const featuredProductDiv = new FeaturedProduct(product.id, product.name, product.price, product.imageSrc, product.color, product.discountPercentage).getDiv();
+                $("#featuredcontainer").append(featuredProductDiv);
+            }
+        });
+    }
 }
 
 
