@@ -10,7 +10,7 @@ function showLiterature(str) {
       document.getElementById("txtHint").innerHTML=this.responseText;
     }
   }
-  xmlhttp.open("GET","application_grades_ajaxGetMethod.php?lenda="+str,true);
+  xmlhttp.open("GET","application_grades_AjaxGetMethod.php?lenda="+str,true);
   xmlhttp.send();
 }
   
@@ -20,8 +20,7 @@ function postName(e){
           var emri = $("#file")[0].files[0].name;
           var lenda = $("#lendet").find(":selected").val();
           var lloji = $("#lloji").find(":selected").val();
-          var myDate = new Date();
-           
+
           var params = `file=${emri}&lenda=${lenda}&lloji=${lloji}`;
 
           e.preventDefault();

@@ -107,7 +107,7 @@
             </h2>
           </div>
         </div>
-        <form id="shtoLiteraturen" >
+        <form id="shtoLiteraturen">
         <div>
           <h1 id="shtoLiterature">Upload literature</h1>
           <select name="lenda" class="objects" id="lendet" >
@@ -164,6 +164,7 @@
   <script src="scripts/cardInformation.js" ></script>
   <script src="scripts/main.js"></script>
   <script src="scripts/gradesAjax.js"></script>
+ 
 </body>
 </html>
 
