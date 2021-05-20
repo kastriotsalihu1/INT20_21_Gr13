@@ -39,7 +39,7 @@
 
     <!-- notifications -->
     <div id="share" class="centeredicon" data-badge="">
-      <a class="twitter-share-button" href="https://twitter.com/intent/tweet?text=Checkout%20my%20pomodoro%20progress&url=https://estudentproject.com/application_pomodoro.php" data-size="large" target="_blank" text="what what">
+      <a class="twitter-share-button" href="https://twitter.com/intent/tweet?text=Checkout%20my%20pomodoro%20progress&url=https://estudentproject.com/application_pomodoro.php" data-size="large" target="_blank">
         <i class="fas fa-retweet fa-2x" id="share-icon"></i>
       </a>
     </div>

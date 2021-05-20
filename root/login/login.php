@@ -22,7 +22,7 @@
       
       if(funksioni::checkLogin($con, $username, $password)){
         $_SESSION['username']= $username;
-        header("Location:../application.html");
+        header("Location:../application.php");
       }else{
         $error_msg['pw']="Username or password is incorrect!";
       }

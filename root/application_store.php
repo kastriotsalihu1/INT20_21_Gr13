@@ -20,11 +20,12 @@
 <body>
   <div id="mask"></div>
 
-  <div id="header"></div>
+  <?php include 'application_header.php'; ?>
 
   <div id="container">
     <!-- side navigation menu -->
     <div id="sidebar"></div>
+    <?php include 'application_sidebar.php'; ?>
     <main>
       <div id="latest" class="card">
         <div class="information">
@@ -56,7 +57,7 @@
         </div>
 
       </div>
-      <div id="cart" class="card">
+      <div id="cart" class="card cardcontainer">
         <div class="information">
           <div class="icon">
             <i class="fa fa-info" aria-hidden="true"></i>
@@ -65,8 +66,13 @@
             <h2>This is your cart. The products you choose to buy will appear here, for further consideration.</h2>
           </div>
         </div>
+        <!-- <div id="notefooter"> -->
+        <div class="cardfooter">
+          <input id="addnote" class="displayinput" alt="Button to add a note." type="image" src="images/todo/add_circle_button.png" />
+        </div>
+        <!-- </div> -->
 
-        
+
       </div>
     </main>
   </div>
