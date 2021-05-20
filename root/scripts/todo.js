@@ -49,7 +49,18 @@ $(document).ready(function () {
   });
 
   $(document.body).on("click", ".deletetodo", function () {
-    $(this).closest("li").remove();
+    $.ajax({
+      url: '../root/php/todo/removeTodo.php',
+      type: 'POST',
+      data: {
+          id:  $(this).closest('li').attr('id')
+      },
+      success: function(msg) {
+        console.log("removed " + $(this).closest('li').attr('id'))
+        $(this).closest("li").remove();
+      }              
+  });
+
   });
 
   $(function () {
@@ -95,12 +106,17 @@ function handleDrop(e) {
   if (dragSrcEl != this) {
     dragSrcEl.innerHTML = this.innerHTML;
     this.innerHTML = e.dataTransfer.getData("text/html");
+    
+    var transferedClass = dragSrcEl.classList;
+    dragSrcEl.classList = this.classList;
+    this.classList = transferedClass;
   }
 
   return false;
 }
 
 function handleDragEnd(e) {
+
   this.style.opacity = "1";
   let items = document.querySelectorAll("#itemlist li");
   items.forEach(function (item) {
