@@ -14,7 +14,7 @@ $(document).ready(function () {
         success: function(data) {        
           value += data;
           console.log(value);
-          $("#itemlist").append(
+          $("#itemlist").prepend(
             '<li id="'+value+'" draggable="true"><span class="text todotext">' +
               $("#todoinput").val() +
               '</span><span class="deletetodo"><i class="fa fa-trash"></i></span> </li>'
@@ -77,7 +77,6 @@ $(document).ready(function () {
 });
 
 var dragSrcEl = null;
-
 function handleDragStart(e) {
   this.style.opacity = "0.4";
 
@@ -111,10 +110,18 @@ function handleDrop(e) {
   if (dragSrcEl != this) {
     dragSrcEl.innerHTML = this.innerHTML;
     this.innerHTML = e.dataTransfer.getData("text/html");
+
+    $this = $(this);
+    $source = $(dragSrcEl);
+
+    var thisChecked = $this.hasClass("checked");
+    var sourceChecked = $source.hasClass("checked");
     
-    var transferedClass = dragSrcEl.classList;
-    dragSrcEl.classList = this.classList;
-    this.classList = transferedClass;
+    $this.toggleClass("checked", sourceChecked);
+    $source.toggleClass("checked", thisChecked);
+
+    // var id = $this.id();
+    // $this.id = $source.id();
   }
 
   return false;
@@ -127,6 +134,8 @@ function handleDragEnd(e) {
   items.forEach(function (item) {
     item.classList.remove("over");
   });
+
+
 }
 
 function dragAndDrop(item) {
