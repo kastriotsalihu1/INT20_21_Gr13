@@ -12,9 +12,12 @@ $query="CREATE TABLE songs (
     PRIMARY KEY (songid)
     -- FOREIGN KEY (userid) REFERENCES usera(userid);
  )";
-
+  
   $con->exec($query);
   echo "Tabela songs  u krijua.";
+
+  
+  
 
 
   ?>

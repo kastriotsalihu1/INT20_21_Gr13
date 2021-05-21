@@ -1,20 +1,23 @@
 <?php  
 require("Mail/PHPMailerAutoload.php");
-$mail = new PHPMailer();
-$mail->isSMTP();
-$mail->SMTPAuth = true;                               
-$mail->SMTPSecure='ssl';
-$mail->Host='smtp.gmail.com';
-$mail->Port='465';
-$mail->isHTML();
-$mail->Username='estudentgroup@gmail.com';
-$mail->Password='estudent123$';
-$mail->SetFrom('estudentgroup@gmail.com','E-Student');
-$mail->addReplyTo('estudentgroup@gmail.com');
-$mail->Subject='User Feedback';
-$mail->Body= $_POST['feedback'];
-$mail->AddAddress('estudentgroup@gmail.com','E-Student');
-$mail->Send();
+if(isset($_POST['submit'])){
+  $mail = new PHPMailer();
+  $mail->isSMTP();
+  $mail->SMTPAuth = true;                               
+  $mail->SMTPSecure='ssl';
+  $mail->Host='smtp.gmail.com';
+  $mail->Port='465';
+  $mail->isHTML();
+  $mail->Username='estudentgroup@gmail.com';
+  $mail->Password='estudent123$';
+  $mail->SetFrom('estudentgroup@gmail.com','E-Student');
+  $mail->addReplyTo('estudentgroup@gmail.com');
+  $mail->Subject='User Feedback';
+  $mail->Body= $_POST['feedback'];
+  $mail->AddAddress('estudentgroup@gmail.com','E-Student');
+  $mail->Send();
+}
+
 
 ?>
 <!DOCTYPE html>
@@ -233,7 +236,7 @@ $mail->Send();
         <form id="newspaper" name="subscribe" method="post" action="">
           <textarea cols ="28" rows="5" name="feedback" placeholder="Write feedback anonymously"></textarea>
           <br><br>
-          <input type="submit" value="SEND EMAIL" form="newspaper" />
+          <input type="submit" name="submit" value="SEND EMAIL" form="newspaper" />
           
         </form>
       </div>
