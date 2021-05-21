@@ -80,12 +80,10 @@
             $stmt = $conn->query($sql);
 
             while ($row = $stmt->fetch()) {
-                $gradeNumber = "<select id='grades'>";
-                for ($x = 5; $x <= 10; $x++) {
+                $gradeNumber = "<select class='grades'>";
+                for ($x = 3; $x <= 10; $x++) {
                     if ($row['grade']==$x) {
                         $gradeNumber.= '<option selected>';
-                    } else {
-                        $gradeNumber .='<option>';
                     }
                     $gradeNumber .= $x.'</option>';
                 }

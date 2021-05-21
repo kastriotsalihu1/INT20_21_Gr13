@@ -8,7 +8,7 @@ $input =  $_REQUEST['subject'];
 $userid=$_SESSION['userid'];
 
 $sql = $conn->prepare('INSERT INTO `subjects`(`name`, `grade`,`userid`) VALUES (?, ?, ?)');
-$sql->execute([$input,'0',$userid]);
+$sql->execute([$input,'5',$userid]);
 
 $sql = "SELECT * FROM `subjects` WHERE userid=$userid";
 $stmt = $conn->prepare($sql);

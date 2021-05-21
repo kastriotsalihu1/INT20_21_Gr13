@@ -1,6 +1,5 @@
 <!-- this is the header -->
 <header>
-
   <?php
   require_once "login/authCookieSessionValidate.php";
 
