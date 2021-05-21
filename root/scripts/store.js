@@ -6,7 +6,6 @@ $(document).ready(function () {
 
     getAllProducts()
         .then(response => {
-            console.log(response);
             productCategories = JSON.parse(response);
             renderProducts(productCategories);
             renderFeaturedProducts();

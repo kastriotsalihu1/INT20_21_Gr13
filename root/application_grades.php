@@ -40,60 +40,6 @@
         <h1>Grades</h1>
         <input id="subjects" type="text" placeholder="Subjects" />
         <ul class="scroll">
-          <li>
-            <span><i class="fa fa-trash"></i></span>Internet<select id="grades">
-              <option>6</option>
-              <option>7</option>
-              <option>8</option>
-              <option>9</option>
-              <option>10</option>
-            </select>
-          </li>
-          <li>
-            <span><i class="fa fa-trash"></i></span>Signals and Systems<select id="grades">
-              <option>6</option>
-              <option>7</option>
-              <option>8</option>
-              <option>9</option>
-              <option>10</option>
-            </select>
-          </li>
-          <li>
-            <span><i class="fa fa-trash"></i></span>OOP<select id="grades">
-              <option>6</option>
-              <option>7</option>
-              <option>8</option>
-              <option>9</option>
-              <option>10</option>
-            </select>
-          </li>
-          <li>
-            <span><i class="fa fa-trash"></i></span>Electronics<select id="grades">
-              <option>6</option>
-              <option>7</option>
-              <option>8</option>
-              <option>9</option>
-              <option>10</option>
-            </select>
-          </li>
-          <li>
-            <span><i class="fa fa-trash"></i></span>Database<select id="grades">
-              <option>6</option>
-              <option>7</option>
-              <option>8</option>
-              <option>9</option>
-              <option>10</option>
-            </select>
-          </li>
-          <li>
-            <span><i class="fa fa-trash"></i></span>Mathematics<select id="grades">
-              <option>6</option>
-              <option>7</option>
-              <option>8</option>
-              <option>9</option>
-              <option>10</option>
-            </select>
-          </li>
         </ul>
       </div>
 
@@ -107,7 +53,7 @@
             </h2>
           </div>
         </div>
-        <form id="shtoLiteraturen">
+        <form action="php/literature/uploadLiterature.php" method="post" enctype="multipart/form-data" id="shtoLiteraturen">
           <div>
             <h1 id="shtoLiterature">Upload literature</h1>
             <select name="lenda" class="objects" id="lendet">
@@ -127,7 +73,7 @@
               <option value="Exams">Exams</option>
               <option value="Others">Others</option>
             </select>
-            <input type="file" id="file" name="file" />
+            <input type="file" id="fileToUpload" name="fileToUpload" />
           </div>
           <button id="shtoButton" name='submit' type="submit">Add Literature</button>
         </form>
@@ -164,6 +110,7 @@
   <script src="scripts/cardInformation.js"></script>
   <script src="scripts/main.js"></script>
   <script src="scripts/gradesAjax.js"></script>
+  <script src="scripts/grades.js" type="module"></script>
 </body>
 
 </html>
