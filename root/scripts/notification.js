@@ -1,11 +1,10 @@
-function SendNotification(message, time, url, icontype) {
+function SendNotification(message, url, icontype) {
     $(document).ready(function () {
         $.ajax({
             url: '../root/php/misc/notification.php',
             type: 'POST',
             data: {
                 message: message,
-                time: time,
                 url: url,
                 icontype: icontype,
                 function:1,
