@@ -27,12 +27,18 @@
     </div>
     <!-- dropdown -->
     <div id="settingdropdown" class="dropdown" style="display: none">
-      <div class="setting">
+      <div id="darkmode" class="setting">
+      <div class="darkmodeContainer">
+      Geo
+      <input type="checkbox" checked="checked">
+      </div>
+      <div class="darkmodeContainer">
         Dark
         <label class="theme-switch" for="checkbox">
           <input type="checkbox" id="checkbox" />
           <div class="slider round"></div>
         </label>
+        </div>
       </div>
       <a href="login/update.php" class="setting">Edit</a>
       <a href="login/logout.php" class="setting">Log out</a>

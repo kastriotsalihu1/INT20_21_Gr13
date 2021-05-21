@@ -138,6 +138,28 @@ header {
   background-color: inherit;
 }
 
+#darkmode{
+  flex-direction: column;
+  justify-content: space-around;
+  height:100px;
+  padding-right: 40px;
+}
+
+.darkmodeContainer{
+  width:100%;
+  height:40%;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.darkmodeContainer input{
+  height:30px;
+  width:120px;
+  border-radius: 10px;
+}
+
+
 .setting {
   text-transform: uppercase;
 }

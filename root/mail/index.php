@@ -4,7 +4,7 @@ require("PHPMailerAutoload.php");
 
 $mail = new PHPMailer();
  
-$mail->SMTPDebug = 4;
+// $mail->SMTPDebug = 4;
 
 
 $mail->isSMTP();
