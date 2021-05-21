@@ -6,7 +6,10 @@ $con= dbConfig::connect();
 //GET 
 $lenda = ($_GET['lenda']);
 $userid=$_SESSION['userid'];
-$sql =$con->prepare("SELECT subject,name,type,submitDate FROM literature WHERE subject= '".$lenda."' and userid=$userid");
+$sql =$con->prepare("SELECT 
+     subject,name,type,submitDate FROM literature
+     WHERE subject= '".$lenda."' and userid=$userid"
+     );
 $sql->execute();
 
 echo "<table>
