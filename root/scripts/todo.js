@@ -97,6 +97,14 @@ $(document).ready(function () {
       },
     });
   });
+  
+  $(document.body).on('DOMSubtreeModified', '.notetitle h2', function(){
+    updateNote($(this));
+  });
+  $(document.body).on('DOMSubtreeModified', '.notecontent p', function(){
+    updateNote($(this));
+  });
+
 
   $(function () {
     $("#notecontainer").sortable({ handle: ".dragnote" });
@@ -105,6 +113,24 @@ $(document).ready(function () {
     items.forEach(dragAndDrop);
   });
 });
+
+function updateNote(item){
+  var element = item.closest("div.note");
+  var id = element.attr("id");
+  var title = element.find(".notetitle h2").text();
+  var text = element.find(".notecontent p").text();
+  $.ajax({
+    url: "../root/php/todo/modifyNote.php",
+    type: "POST",
+    data: {
+      id: id,
+      title: title,
+      text: text,
+    }, success: function (msg) {
+      console.log(msg);
+    },
+  });
+}
 
 var dragSrcEl = null;
 function handleDragStart(e) {
