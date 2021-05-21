@@ -50,7 +50,7 @@
             require_once("dbConfig.php");
             $conn = dbConfig::connect();
 
-            $sql = "SELECT * FROM todo WHERE userid = 0 ORDER BY id DESC";
+            $sql = "SELECT * FROM `todo` WHERE `userid` = '".$_SESSION['userid']."' ORDER BY `id` DESC";
             $stmt = $conn->query($sql);
 
             while ($row = $stmt->fetch()) {
