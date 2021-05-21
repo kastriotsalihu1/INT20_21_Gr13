@@ -251,13 +251,7 @@
   <script src="scripts/music_player.js"></script>
   <script src="scripts/cardInformation.js"></script>
   <script src="scripts/main.js"></script>
-
-
-
-
-
-
-
+  <script src="scripts/notification.js"></script>
 </body>
 
 </html>

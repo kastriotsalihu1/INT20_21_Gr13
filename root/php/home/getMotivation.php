@@ -1,7 +1,7 @@
 
 <?php
 
-require_once("../dbConfig.php");
+require_once("../../dbConfig.php");
 $con = dbConfig::connect();
 
 $row = $con->query(
