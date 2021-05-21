@@ -12,26 +12,6 @@ $(document).ready(function () {
         })
         .catch(err => console.log(err))
 
-    /* When the user clicks on the button, 
-    toggle between hiding and showing the dropdown content */
-    function myFunction() {
-        document.getElementById("myDropdown").classList.toggle("show");
-    }
-
-    // Close the dropdown if the user clicks outside of it
-    window.onclick = function (event) {
-        if (!event.target.matches('.dropbtn')) {
-            var dropdowns = document.getElementsByClassName("dropdown-content");
-            var i;
-            for (i = 0; i < dropdowns.length; i++) {
-                var openDropdown = dropdowns[i];
-                if (openDropdown.classList.contains('show')) {
-                    openDropdown.classList.remove('show');
-                }
-            }
-        }
-    }
-
     $(document).on("click", ".colorswitcher button", function () {
         // when a button that controls the color of the product is cliked
         // replace the existing image with the image of the product with that color
@@ -63,9 +43,9 @@ $(document).ready(function () {
      * Add event listener for the button to add a product to the user cart
      */
     $(document).on("click", ".addToCart", function () {
-        const getImageURLFromCss = bgImageCss => {
+        const getImageURLFromCss = bgImageCSS => {
             // background image in css is in the format of: {url("source")}
-            return bgImageCss.substring(5, bgImageCss.length - 2);
+            return bgImageCSS.substring(5, bgImageCSS.length - 2);
         }
 
         const bringDownScrollbarPosition = (elementId) => {
@@ -81,7 +61,8 @@ $(document).ready(function () {
                 productPrice = details.children("p").html(),
                 image = getImageURLFromCss($(this).parent().siblings(".top").css("background-image")),
                 id = $(this).parent().parent().attr("id");
-
+        
+            SendNotification(productName + " added to cart!", "application_store.php", 4);
             //apend new div to the cart
             $("#cart").append(new OnCartProduct(id, productName, productPrice, image).getDiv());
 

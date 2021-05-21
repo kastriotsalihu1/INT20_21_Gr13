@@ -66,7 +66,7 @@
         </div>
       </div>
       <div id="sum_grades" class="card">
-        <a href="application_grades.html">
+        <a href="application_grades.php">
           <h2 class="cardtitle">Grades</h2>
         </a>
         <ul class="scroll">
@@ -144,7 +144,7 @@
         </div>
         <div id="notefooter">
           <div class="cardfooter">
-            <a href="application_todo.html">
+            <a href="application_todo.php">
               <input id="addnote" class="displayinput" type="image" alt="Button to redirect you to the todo page." src="images/todo/add_circle_button.png" />
             </a>
           </div>
@@ -171,7 +171,7 @@
         <h2 class="cardtitle">FEATURED</h2>
         <div class="products">
           <div class="product">
-            <a href="application_store.html">
+            <a href="application_store.php">
               <div class="top"></div>
               <div class="bottom">
                 <div class="details">

@@ -14,19 +14,6 @@
   <?php
   session_start();
 
-  require_once "Auth.php";
-  require_once "Util.php";
-
-  $auth = new Auth();
-  $util = new Util();
-
-  require_once "authCookieSessionValidate.php";
-
-  // echo "<script> alert(" . $isLoggedIn . ")</script>";
-  if ($isLoggedIn) {
-    // $util->redirect("../application.php");
-  }
-
   require_once("../dbConfig.php");
   require("functions.php");
 
@@ -39,36 +26,22 @@
 
     if (funksioni::checkLogin($con, $username, $password)) {
 
-      // // Set Auth Cookies if 'Remember Me' checked
-      // if (!empty($_POST["remember"])) {
-      //   setcookie("member_login", $username, $cookie_expiration_time);
-
-      //   $random_password = $util->getToken(16);
-      //   setcookie("random_password", $random_password, $cookie_expiration_time);
-
-      //   $random_selector = $util->getToken(32);
-      //   setcookie("random_selector", $random_selector, $cookie_expiration_time);
-
-      //   $random_password_hash = password_hash($random_password, PASSWORD_DEFAULT);
-      //   $random_selector_hash = password_hash($random_selector, PASSWORD_DEFAULT);
-
-      //   $expiry_date = date("Y-m-d H:i:s", $cookie_expiration_time);
-
-      //   // mark existing token as expired
-      //   $userToken = $auth->getTokenByUsername($username, 0);
-      //   if (!empty($userToken[0]["id"])) {
-      //     $auth->markAsExpired($userToken[0]["id"]);
-      //   }
-      //   // Insert new token
-      //   $auth->insertToken($username, $random_password_hash, $random_selector_hash, $expiry_date);
-      // } else {
-      //   $util->clearAuthCookie();
-      // }
+      if (!empty($_COOKIE["remember_login"])) {
+        setcookie("username", $_POST["username"], time() + 3600);
+        setcookie("password", $_POST["password"], time() + 3600);
+      } else {
+        setcookie("username", "");
+        setcookie("password", "");
+      }
 
       $_SESSION['username'] = $username;
-      $_SESSION['userid'] = funksioni::getUserId($username, $con);
-      $isLoggedIn = true;
-      
+      $query = "Select * from user where username=:username";
+      $statement = $con->prepare($query);
+      $statement->bindValue(":username", $username);
+      $statement->execute();
+      $row = $statement->fetch(PDO::FETCH_ASSOC);
+      $_SESSION['userid'] = $row['id'];
+
       echo '<pre>';
       var_dump($_SESSION);
       echo '</pre>';
@@ -92,16 +65,19 @@
         </a>
       </div>
       <form id="login" class="input-group" name="login" method="post" action="">
-        <input type="text" class="input-field" placeholder="Username" name="username" autofocus>
-
-        <input type="Password" name="pw" class="input-field" placeholder="Password" autofocus>
+        <input type="text" class="input-field" placeholder="Username" name="username" autofocus value="<?php if (isset($_COOKIE["username"])) {
+                                                                                                          echo $_COOKIE["username"];
+                                                                                                        } ?>">
+        <input type="Password" name="pw" class="input-field" placeholder="Password" autofocus value="<?php if (isset($_COOKIE["password"])) {
+                                                                                                        echo $_COOKIE["password"];
+                                                                                                      } ?>">
         <?php
         if (isset($error_msg['pw'])) {
           echo "<div class='error' >" . $error_msg['pw'] . "</div>";
         }
         ?>
         <div>
-          <input type="checkbox" name="remember" id="remember" <?php if (isset($_COOKIE["member_login"])) { ?> checked <?php } ?> /> <label for="remember-me">Remember me</label>
+          <input type="checkbox" name="remember" id="remember"> <label for="remember-me">Remember me</label>
         </div>
         <button type="submit" name="login" class="submit-btn">
           <b>Sign in </b>

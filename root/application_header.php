@@ -1,16 +1,6 @@
 <!-- this is the header -->
 <header>
 
-  <?php
-  require_once "login/authCookieSessionValidate.php";
-
-
-  if (!$isLoggedIn) {
-    // echo "<script>alert(" . $isLoggedIn . ")</script>";
-    // header("Location: index.php");
-  }
-  ?>
-
   <!-- opens and closes the side navigation bar -->
   <div id="hamburger" class="centeredicon">
     <i class="fas fa-bars fa-2x"></i>
@@ -28,9 +18,6 @@
         session_start();
         require_once("dbConfig.php");
         echo isset($_SESSION['username']) ? $_SESSION['username'] : null;
-        // echo '<pre>';
-        // var_dump($_SESSION);
-        // echo '</pre>';
         ?></div>
       <div id="settingsicon" class="centeredicon">
         <i class="fas fa-caret-down"></i>
