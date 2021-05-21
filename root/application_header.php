@@ -1,5 +1,12 @@
 <!-- this is the header -->
 <header>
+  <?php
+  session_start();
+
+  if ($_SESSION['userid'] == null) {
+    header("Location: index.php");
+  }
+  ?>
 
   <!-- opens and closes the side navigation bar -->
   <div id="hamburger" class="centeredicon">
@@ -15,7 +22,7 @@
       </div>
       <div id="name">
         <?php
-        session_start();
+
         require_once("dbConfig.php");
         echo isset($_SESSION['username']) ? $_SESSION['username'] : null;
         ?></div>
@@ -26,19 +33,19 @@
     <!-- dropdown -->
     <div id="settingdropdown" class="dropdown" style="display: none">
       <div id="darkmode" class="setting">
-      <div class="darkmodeContainer">
-      Geo
-      <label class="geo-switch" for="geoCheckbox">
-          <input type="checkbox" id="geoCheckbox" />
-          <div class="slider round"></div>
-        </label>
-      </div>
-      <div class="darkmodeContainer">
-        Dark
-        <label class="theme-switch" for="checkbox">
-          <input type="checkbox" id="checkbox" />
-          <div class="slider round"></div>
-        </label>
+        <div class="darkmodeContainer">
+          Geo
+          <label class="geo-switch" for="geoCheckbox">
+            <input type="checkbox" id="geoCheckbox" />
+            <div class="slider round"></div>
+          </label>
+        </div>
+        <div class="darkmodeContainer">
+          Dark
+          <label class="theme-switch" for="checkbox">
+            <input type="checkbox" id="checkbox" />
+            <div class="slider round"></div>
+          </label>
         </div>
       </div>
       <a href="login/update.php" class="setting">Edit</a>
