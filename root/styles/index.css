@@ -271,6 +271,11 @@ table td {
   align-items: center;
   width: 100%;
 }
+textarea::placeholder{
+  text-transform: uppercase;
+  text-align: center;
+  vertical-align: middle;
+}
 
 #newspaper input {
   outline: none;
