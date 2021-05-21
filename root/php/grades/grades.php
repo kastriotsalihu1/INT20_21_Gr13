@@ -4,8 +4,8 @@ $conn = dbConfig::connect();
 
 $input =  $_REQUEST['subject'];
 
-$sql = $conn->prepare('INSERT INTO `subjects`(`name`, `grade`) VALUES (?, ?)');
-$sql->execute([$input,'0']);
+$sql = $conn->prepare('INSERT INTO `subjects`(`name`, `grade`,`userid`) VALUES (?, ?,?)');
+$sql->execute([$input,'0','1']);
 
 $sql = "SELECT * FROM `subjects` WHERE user=1";
 $stmt = $conn->prepare($sql);
