@@ -61,9 +61,9 @@
           <!--- right part --->
           <div class="right">
             <div class="show_song_no">
-              <p id="present">1</p>
+              <p id="present"></p>
               <p>/</p>
-              <p id="total">14</p>
+              <p id="total"></p>
             </div>
 
             <!--- song title & artist name --->
@@ -183,12 +183,12 @@
           <div>
             <input type="text" name="name" id="name4" placeholder="Write song title">
           </div>
-          <button type="submit">Search</button>
+          <input type="submit" value="SEARCH">
         </form>
+        <br>
+        <h3 style="color:white">Results</h3>
 
-        <h3>Results</h3>
-
-        <table id="nita">
+        <table id="nita" style="padding-left:50px;">
         </table>
 
       </div>
@@ -218,7 +218,7 @@
           var output = '';
           //
           console.log(title);
-          for (var i = 0; i < 5; i++) {
+          for (var i = 0; i < 2; i++) {
             output += '<tr><td style=" margin-left:5px; color:white;text-align:left; font-weight:600";max-width:50px;word-wrap:break-word;>' + song[i].result.title + '</td> ' +
               '<td style="color:white; margin-left:5px; text-align:left; font-weight:600";max-width:50px;word-wrap:break-word;><a href = "' + song[i].result.url + '">Lyrics' + '</a></td>' +
               '<td ><img src = "' + song[i].result.header_image_thumbnail_url + '" width="30" ></td></tr>'
