@@ -216,6 +216,7 @@
   <script src="scripts/calculator.js"></script>
   <script src="scripts/store.js" type="module"></script>
   <script src="scripts/trees.js"></script>
+  <script src="scripts/notification.js"></script>
 </body>
 
 </html>

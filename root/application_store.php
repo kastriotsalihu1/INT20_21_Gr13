@@ -75,6 +75,7 @@
   <script src="scripts/main.js"></script>
   <script src="scripts/store.js" type="module"></script>
   <script src="scripts/cardInformation.js"></script>
+  <script src="scripts/notification.js"></script>
 </body>
 
 </html>
