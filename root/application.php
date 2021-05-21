@@ -111,6 +111,20 @@
           <h2 class="cardtitle">Notes</h2>
         </div>
         <div id="notecontainer" class="cardcontent scrollwheel">
+        <?php
+            $conn = dbConfig::connect();
+
+            $sql = "SELECT * FROM `note` WHERE `userid` = '".$_SESSION['userid']."' ORDER BY `id` DESC LIMIT 2";
+            $stmt = $conn->query($sql);
+
+            while ($row = $stmt->fetch()) {
+              echo('<div class="card note" id="note_'.$row['id'].
+              '"><div class="notetitle scrollwheel"><h2 class="smalltitle">'.
+              $row['title'].'</h2></div><div class="notecontent scrollwheel">'.
+              '<p contenteditable="true" class="text">'.$row['text'].'</p></div></div>');
+            }
+            $conn = null;
+            ?>
         </div>
         <div id="notefooter">
           <div class="cardfooter">
