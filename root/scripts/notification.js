@@ -62,9 +62,6 @@ $(document).ready(function () {
             data: {
                 id: id,
                 function:2,
-            },
-            success: function(response) {
-                console.log("removed "+id);
             }
         });
         LoadNotification();
