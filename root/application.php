@@ -66,64 +66,34 @@
         </div>
       </div>
       <div id="sum_grades" class="card">
-        <a href="application_grades.html">
+        <a href="application_grades.php">
           <h2 class="cardtitle">Grades</h2>
         </a>
         <ul class="scroll">
-          <li>
-            Internet<select class="grades">
-              <option>6</option>
-              <option>7</option>
-              <option>8</option>
-              <option>9</option>
-              <option selected="selected">10</option>
-            </select>
-          </li>
-          <li>
-            Signals and Systems<select class="grades">
-              <option selected="selected">6</option>
-              <option>7</option>
-              <option>8</option>
-              <option>9</option>
-              <option>10</option>
-            </select>
-          </li>
-          <li>
-            OOP<select class="grades">
-              <option>6</option>
-              <option>7</option>
-              <option>8</option>
-              <option>9</option>
-              <option selected="selected">10</option>
-            </select>
-          </li>
-          <li>
-            Electronics<select class="grades">
-              <option>6</option>
-              <option>7</option>
-              <option selected="selected">8</option>
-              <option>9</option>
-              <option>10</option>
-            </select>
-          </li>
-          <li>
-            Database<select class="grades">
-              <option>6</option>
-              <option>7</option>
-              <option>8</option>
-              <option selected="selected">9</option>
-              <option>10</option>
-            </select>
-          </li>
-          <li>
-            Mathematics<select class="grades">
-              <option>6</option>
-              <option selected="selected">7</option>
-              <option>8</option>
-              <option>9</option>
-              <option>10</option>
-            </select>
-          </li>
+        <?php
+        require_once("dbConfig.php");
+            $conn = dbConfig::connect();
+            $userid3=$_SESSION['userid'];
+            
+            $sql = "SELECT * FROM subjects WHERE userid=$userid3 ORDER BY id DESC";
+               
+            $stmt = $conn->query($sql);
+
+            while ($row = $stmt->fetch()) {
+                $gradeNumber = "<select id='grades'>";
+                for ($x = 5; $x <= 10; $x++) {
+                    if ($row['grade']==$x) {
+                        $gradeNumber.= '<option selected>';
+                    } else {
+                        $gradeNumber .='<option>';
+                    }
+                    $gradeNumber .= $x.'</option>';
+                }
+                $gradeNumber.='</select>';
+                echo  "<li>".$row["name"].$gradeNumber."</li>";
+            }
+            $conn = null;
+            ?>
         </ul>
       </div>
       <div id="quotes">
