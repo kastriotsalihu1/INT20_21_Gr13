@@ -41,11 +41,19 @@
         </form>
         <ul class="scroll">
         <?php
+
             require_once("dbConfig.php");
             $conn = dbConfig::connect();
+            $userid3=$_SESSION['userid'];
 
-            $sql = "SELECT * FROM subjects WHERE userid=3 ORDER BY id DESC";
+            
+
+            $sql = "SELECT * FROM subjects WHERE userid=$userid3 ORDER BY id DESC";
+               
             $stmt = $conn->query($sql);
+            // echo '<pre>';
+            // var_dump($row = $stmt->fetch());
+            // echo '</pre>';
 
             while ($row = $stmt->fetch()) {
                 $gradeNumber = "<select id='grades'>";
