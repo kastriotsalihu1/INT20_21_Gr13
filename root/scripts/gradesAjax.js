@@ -1,4 +1,3 @@
-
 //AJAX GET method
 function showLiterature(str) {
   if (str == "") {
@@ -55,17 +54,28 @@ $("input").keypress(function (event) {
       alert("No blank values allowed");
     } else if ($(this).val() !== "") {
       //grabbiing subjects text from input
-      var notat = $(this).val();
-      //me e fshi qka kena shkru n input
+      var subject = $(this).val();
+      event.preventDefault();
+      $.ajax({
+        url: '../root/php/grades/grades.php',
+        type: 'POST',
+        data: {
+           subject: subject
+        },
+        success: function() {        
+          $("ul").prepend(
+            "<li><span><i class='fas fa-trash'></i></span> " +subject+
+              "<select id='grades'><option >6</option><option >7</option><option >8</option><option >9</option><option >10</option></select></li>"
+          );
+        }
+      }
+    )
       $(this).val("");
-      //create a new li and add to ul4
-      // jo me "" po me ''
-      $("ul").append(
-        "<li><span><i class='fas fa-trash'></i></span> " + notat +
-        "<select id='grades'><option >6</option><option >7</option><option >8</option><option >9</option><option >10</option></select></li>"
-      );
     }
   }
-});
+}
+);
+
+
 
 

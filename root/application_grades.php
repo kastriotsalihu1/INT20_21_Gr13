@@ -1,12 +1,11 @@
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 
   <link rel="stylesheet" href="styles/app_grades.css" />
-
+  
   <link rel="stylesheet" href="styles/app_navigation.css" />
   <link rel="stylesheet" href="styles/cardInformation.css" />
 
@@ -36,10 +35,24 @@
             </h2>
           </div>
         </div>
-
         <h1>Grades</h1>
-        <input id="subjects" type="text" placeholder="Subjects" />
+        <form  method="post">
+        <input id="subjects" name="subjects" type="text" placeholder="Subjects" />
+        </form>
         <ul class="scroll">
+        <?php 
+            require_once("dbConfig.php");
+            $conn = dbConfig::connect();
+
+            $sql = "SELECT * FROM subjects WHERE userid=1";
+            $stmt = $conn->query($sql);
+
+            while ($row = $stmt->fetch()) {
+             echo  "<li><span><i class='fas fa-trash'></i></span> " .$row["name"].
+              "<select id='grades'><option >6</option><option >7</option><option >8</option><option >9</option><option >10</option></select></li>";
+            }
+            $conn = null;
+            ?>
         </ul>
       </div>
 
@@ -98,7 +111,7 @@
         </select>
         <div class="table scrollbar">
           <table id="tabela" cellpadding="4" cellspacing="5">
-            <p id="txtHint" class="tdstyle">Your Literature</p>
+          <p id="txtHint" class="tdstyle">Your Literature</p>
           </table>
         </div>
       </div>
@@ -107,14 +120,10 @@
   <script src="scripts/jquery.js"></script>
   <script src="scripts/navigation.js"></script>
   <script src="scripts/load.js"></script>
-  <script src="scripts/cardInformation.js"></script>
+  <script src="scripts/cardInformation.js" ></script>
   <script src="scripts/main.js"></script>
   <script src="scripts/gradesAjax.js"></script>
-<<<<<<< HEAD
-  <script src="scripts/grades.js" type="module"></script>
-=======
+  
  
->>>>>>> f0c35bcdb08e59d6af76e96b17cb6417ed8a8169
 </body>
-
 </html>
