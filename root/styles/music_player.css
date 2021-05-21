@@ -122,6 +122,10 @@ body{
     border: none;
     width: 176px;
 }
+#searchMusic ::placeholder{
+    text-align: center;
+    text-transform:uppercase;
+}
 #searchMusic input[type="submit"]{
     border-radius: 5px;
     height: 40px;

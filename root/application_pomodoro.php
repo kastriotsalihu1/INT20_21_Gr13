@@ -181,7 +181,7 @@
         <h2 class="cardtitle">SEARCH SONGS</h2>
         <form id="songs">
           <div>
-            <input type="text" name="name" id="name4" placeholder="Write song title">
+            <input type="text" name="name" id="name4" placeholder="song title">
           </div>
           <input type="submit" value="SEARCH">
         </form>
