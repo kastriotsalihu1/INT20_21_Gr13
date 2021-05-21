@@ -24,10 +24,10 @@
 <body>
   <div id="mask"></div>
 
-  <?php include 'application_header.php'; ?>
+  <!-- <?php include 'application_header.php'; ?> -->
   <div id="container">
 
-    <?php include 'application_sidebar.php'; ?>
+    <!-- <?php include 'application_sidebar.php'; ?> -->
 
     <main>
       <div class="card music">
