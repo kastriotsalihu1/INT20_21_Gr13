@@ -11,9 +11,31 @@ function showLiterature(str) {
       document.getElementById("txtHint").innerHTML = this.responseText;
     }
   }
-  xmlhttp.open("GET", "application_grades_ajaxGetMethod.php?lenda=" + str, true);
+  xmlhttp.open("GET","application_grades_AjaxGetMethod.php?lenda="+str,true);
   xmlhttp.send();
 }
+  
+//AJAX POST method
+document.getElementById('shtoLiteraturen').addEventListener('submit',postName);
+function postName(e){    
+          var emri = $("#file")[0].files[0].name;
+          var lenda = $("#lendet").find(":selected").val();
+          var lloji = $("#lloji").find(":selected").val();
+
+          var params = `file=${emri}&lenda=${lenda}&lloji=${lloji}`;
+
+          e.preventDefault();
+          var xhr=new XMLHttpRequest();
+          xhr.open('POST','application_grades_ajaxPostMethod.php',true);
+          xhr.setRequestHeader('Content-type','application/x-www-form-urlencoded');
+
+          xhr.onload=function(){
+            console.log(this.responseText);
+          }
+          xhr.send(params);
+}
+
+
 
 //Click on trash icon to delete subjects
 $("ul").on("click", "span", function () {

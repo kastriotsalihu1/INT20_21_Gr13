@@ -110,7 +110,11 @@
   <script src="scripts/cardInformation.js"></script>
   <script src="scripts/main.js"></script>
   <script src="scripts/gradesAjax.js"></script>
+<<<<<<< HEAD
   <script src="scripts/grades.js" type="module"></script>
+=======
+ 
+>>>>>>> f0c35bcdb08e59d6af76e96b17cb6417ed8a8169
 </body>
 
 </html>
