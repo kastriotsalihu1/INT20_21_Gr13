@@ -108,11 +108,9 @@ if(isset($_POST['submit'])){
       <div>
         <h2>Do better in your studies</h2>
         <p>
-          A recent study done in the BS university has come to a conclusion that using the eStudent application will
-          increase your productivity by 28.2%, making it the best modern tool for students. If cramming all of your
-          study time into a few long days isn’t working for you then it’s time to try something new and less stressful.
-          What you do every day is more important than what you do occasionally, so make time for studying every single
-          day, with or without exams coming up. Let it be a routine, using eStudent while studying.
+      <?php  $data=readfile("data.txt"); 
+
+      ?>
         </p>
       </div>
     </div>
@@ -208,20 +206,26 @@ if(isset($_POST['submit'])){
     <div id="register" class="primarycolor">
       <h2>Start organizing your life now!</h2>
       <p>Create your own account and make things right today!</p>
-      <a class="login" href="login.html">REGISTER NOW</a>
+      <a class="login" href="login/login.php">REGISTER NOW</a>
     </div>
   </div>
-
+  <?php  
+  $file=fopen("data1.txt","w");
+  $nonsenceData1="I am writing this text inside data.txt folder";
+  fwrite($file,$nonsenceData1);
+  fclose($file);
+  ?>
 
   <!-- FOOTER -->
   <footer class="secondarycolor">
     <a name="footer"></a>
     <div class="fo_container">
+      
       <table>
         <tr>
           <td><a href="#intro">HOME</a></td>
           <td><a href="contact_faq.html">CONTACT US</a></td>
-          <td><a href="login.html">SIGN UP</a></td>
+          <td><a href="login/login.php">SIGN UP</a></td>
 
         </tr>
         <tr>
@@ -238,12 +242,12 @@ if(isset($_POST['submit'])){
           <br><br>
           <input type="submit" name="submit" value="SEND EMAIL" form="newspaper" />
           
-        </form>
+        
       </div>
     </div>
     <div class="fo_container">
       <p>&copy; 2020 eStudent</p>
-      <div class="fb-share-button" data-href="https://estudentproject.com/application.html" data-layout="button" data-size="large"><a target="_blank" href="https://www.facebook.com/sharer/sharer.php?u=https%3A%2F%2Festudentproject.com%2Fapplication.html&amp;src=sdkpreparse" class="fb-xfbml-parse-ignore">Share</a></div>
+      <div class="fb-share-button" data-href="https://estudentproject.com/application.php" data-layout="button" data-size="large"><a target="_blank" href="https://www.facebook.com/sharer/sharer.php?u=https%3A%2F%2Festudentproject.com%2Fapplication.html&amp;src=sdkpreparse" class="fb-xfbml-parse-ignore">Share</a></div>
       <div id="icons">
         <a href="/files/Facebook_Guide_for_Beginners.pdf"><i class="fab fa-facebook-square"></i></a>
         <a href="https://www.linkedin.com/in/midie-merovci-2167891b3/"><i class="fab fa-linkedin"></i></a>

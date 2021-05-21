@@ -41,10 +41,13 @@
         </form>
         <ul class="scroll">
         <?php
+
             require_once("dbConfig.php");
             $conn = dbConfig::connect();
-
-            $sql = "SELECT * FROM subjects WHERE userid=3 ORDER BY id DESC";
+            $userid3=$_SESSION['userid'];
+            
+            $sql = "SELECT * FROM subjects WHERE userid=$userid3 ORDER BY id DESC";
+               
             $stmt = $conn->query($sql);
 
             while ($row = $stmt->fetch()) {

@@ -10,6 +10,15 @@ body {
   align-items: center;
 }
 
+select #grades {
+  float: right;
+  width: 80px;
+  height: 40px;
+  outline: none;
+  border: 0.2px solid #fff;
+  font-size: 1.50em;
+}
+
 .grades {
   float: right;
   width: 200px;

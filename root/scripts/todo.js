@@ -12,7 +12,6 @@ $(document).ready(function () {
         },
         success: function (data) {
           value += data;
-          console.log(value);
           $("#itemlist").prepend(
             '<li id="' +
               value +
@@ -43,7 +42,20 @@ $(document).ready(function () {
   });
 
   $(document.body).on("click", ".closenote", function () {
-    $(this).closest("div.note").remove();
+    var element = $(this).closest("div.note");
+    var value = element.attr("id");
+
+    $.ajax({
+      url: "../root/php/todo/removeNote.php",
+      type: "POST",
+      data: {
+        id: value,
+      },
+      success: function (msg) {
+        console.log(value);
+        element.remove();
+      },
+    });
   });
 
   $("#displaytodo").click(function () {
@@ -52,12 +64,22 @@ $(document).ready(function () {
   });
 
   $("#addnote").click(function () {
-    $("#notecontainer").prepend(
-      '<div class="card note"><i class="closenote fas fa-times-circle">' +
-        '</i>    <i class="dragnote fas fa-grip-horizontal"></i><div class="notetitle scrollwheel"><h2 contenteditable="true" class="smalltitle">' +
-        'Thy Title!</h2></div><div class="notecontent scrollwheel">' +
-        '<p contenteditable="true" class="text">I want to note something!</p></div>'
-    );
+    var value = "note_";
+    $.ajax({
+      url: "../root/php/todo/setNote.php",
+      type: "POST",
+      success: function (data) {
+        value += data;
+        $("#notecontainer").prepend(
+          '<div class="card note" id="' +
+            value +
+            '"><i class="closenote fas fa-times-circle">' +
+            '</i>    <i class="dragnote fas fa-grip-horizontal"></i><div class="notetitle scrollwheel"><h2 contenteditable="true" class="smalltitle">' +
+            'Thy Title!</h2></div><div class="notecontent scrollwheel">' +
+            '<p contenteditable="true" class="text">I want to note something!</p></div>'
+        );
+      },
+    });
   });
 
   $(document.body).on("click", ".deletetodo", function () {
@@ -75,6 +97,14 @@ $(document).ready(function () {
       },
     });
   });
+  
+  $(document.body).on('DOMSubtreeModified', '.notetitle h2', function(){
+    updateNote($(this));
+  });
+  $(document.body).on('DOMSubtreeModified', '.notecontent p', function(){
+    updateNote($(this));
+  });
+
 
   $(function () {
     $("#notecontainer").sortable({ handle: ".dragnote" });
@@ -83,6 +113,24 @@ $(document).ready(function () {
     items.forEach(dragAndDrop);
   });
 });
+
+function updateNote(item){
+  var element = item.closest("div.note");
+  var id = element.attr("id");
+  var title = element.find(".notetitle h2").text();
+  var text = element.find(".notecontent p").text();
+  $.ajax({
+    url: "../root/php/todo/modifyNote.php",
+    type: "POST",
+    data: {
+      id: id,
+      title: title,
+      text: text,
+    }, success: function (msg) {
+      console.log(msg);
+    },
+  });
+}
 
 var dragSrcEl = null;
 function handleDragStart(e) {
@@ -149,7 +197,7 @@ function handleDrop(e) {
         firstChecked: firstChecked,
         secondChecked: secondChecked,
         function: 1,
-      }
+      },
     });
   }
 
