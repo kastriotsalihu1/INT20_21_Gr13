@@ -32,11 +32,11 @@ if(isset($_POST['update'])){
    $query->bindParam(":username", $currentUserName);
    $query->execute();
    $result = $query->fetch(PDO::FETCH_ASSOC);
-   $id=$result['userid'];
+   $id=$result['id'];
    
    if(funksioni::updateInfo($con,$id,$username, $email, $password, $confirmPassword, $firstname, $lastname, $phonenumber, $address)){
    $_SESSION['username']= $username;
-   header("Location:../application.html");
+   header("Location: login.php");
    
   }
  

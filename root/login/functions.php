@@ -52,7 +52,7 @@ Class funksioni{
           $query= $con->prepare("
           Update user SET username=:username, email=:email, password=:password,
            firstname=:firstname, lastname=:lastname,
-            phonenumber=:phonenumber, address=:address where userid=:id
+            phonenumber=:phonenumber, address=:address where id=:id
           ");
           $query->bindParam(":username", $username);
           $query->bindParam(":email", $email);
