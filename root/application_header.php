@@ -6,7 +6,7 @@
 
 
   if (!$isLoggedIn) {
-    echo "<script>alert(" . $isLoggedIn . ")</script>";
+    // echo "<script>alert(" . $isLoggedIn . ")</script>";
     // header("Location: index.php");
   }
   ?>
