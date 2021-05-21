@@ -20,15 +20,15 @@
 
   <title>Pomodoro | Music</title>
 </head>
-
+<?php include 'application_header.php'; ?> 
 <body>
   <div id="mask"></div>
 
-  <?php include 'application_header.php'; ?>
+  
 
   <div id="container">
 
-    <?php include 'application_sidebar.php'; ?>
+     <?php include 'application_sidebar.php'; ?>
 
     <main>
       <div class="card music">
@@ -181,7 +181,7 @@
         <h2 class="cardtitle">SEARCH SONGS</h2>
         <form id="songs">
           <div>
-            <input type="text" name="name" id="name" placeholder="Write song title">
+            <input type="text" name="name" id="name4" placeholder="Write song title">
           </div>
           <button type="submit">Search</button>
         </form>
@@ -199,7 +199,7 @@
 
     function loadSongs(e) {
       e.preventDefault();
-      var name = document.getElementById('name').value;
+      var name = document.getElementById('name4').value;
       console.log(name);
       const data = null;
       var search = name.replace(" ", "%20");
