@@ -20,15 +20,15 @@
 
   <title>Pomodoro | Music</title>
 </head>
-
+<?php include 'application_header.php'; ?> 
 <body>
   <div id="mask"></div>
 
-  <?php include 'application_header.php'; ?>
+  
 
   <div id="container">
 
-    <?php include 'application_sidebar.php'; ?>
+     <?php include 'application_sidebar.php'; ?>
 
     <main>
       <div class="card music">
@@ -61,9 +61,9 @@
           <!--- right part --->
           <div class="right">
             <div class="show_song_no">
-              <p id="present">1</p>
+              <p id="present"></p>
               <p>/</p>
-              <p id="total">14</p>
+              <p id="total"></p>
             </div>
 
             <!--- song title & artist name --->
@@ -181,14 +181,14 @@
         <h2 class="cardtitle">SEARCH SONGS</h2>
         <form id="songs">
           <div>
-            <input type="text" name="name" id="name" placeholder="Write song title">
+            <input type="text" name="name" id="name4" placeholder="song title">
           </div>
-          <button type="submit">Search</button>
+          <input type="submit" value="SEARCH">
         </form>
+        <br>
+        <h3 style="color:white">Results</h3>
 
-        <h3>Results</h3>
-
-        <table id="nita">
+        <table id="nita" style="padding-left:50px;">
         </table>
 
       </div>
@@ -199,7 +199,7 @@
 
     function loadSongs(e) {
       e.preventDefault();
-      var name = document.getElementById('name').value;
+      var name = document.getElementById('name4').value;
       console.log(name);
       const data = null;
       var search = name.replace(" ", "%20");
@@ -218,7 +218,7 @@
           var output = '';
           //
           console.log(title);
-          for (var i = 0; i < 5; i++) {
+          for (var i = 0; i < 2; i++) {
             output += '<tr><td style=" margin-left:5px; color:white;text-align:left; font-weight:600";max-width:50px;word-wrap:break-word;>' + song[i].result.title + '</td> ' +
               '<td style="color:white; margin-left:5px; text-align:left; font-weight:600";max-width:50px;word-wrap:break-word;><a href = "' + song[i].result.url + '">Lyrics' + '</a></td>' +
               '<td ><img src = "' + song[i].result.header_image_thumbnail_url + '" width="30" ></td></tr>'
@@ -251,13 +251,7 @@
   <script src="scripts/music_player.js"></script>
   <script src="scripts/cardInformation.js"></script>
   <script src="scripts/main.js"></script>
-
-
-
-
-
-
-
+  <script src="scripts/notification.js"></script>
 </body>
 
 </html>

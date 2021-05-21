@@ -29,11 +29,9 @@
 <body>
   <div id="mask"></div>
 
-  <?php include 'application_header.php'; ?>
-
-
-  <div id="container">
-    <?php include 'application_sidebar.php'; ?>
+  <?php include 'application_header.php';?>
+    <div id="container">
+    <?php include 'application_sidebar.php';?> 
     <main>
       <div id="calculator" class="card">
         <div id="result">
@@ -143,36 +141,6 @@
           <h2 class="cardtitle">Notes</h2>
         </div>
         <div id="notecontainer" class="cardcontent scrollwheel">
-          <div class="card note">
-            <div class="notetitle scrollwheel">
-              <h2 contenteditable="true" class="smalltitle">Mathematics</h2>
-            </div>
-            <div class="notecontent scrollwheel">
-              <p contenteditable="true" class="text">
-                The project now is postponed until further notice!
-              </p>
-            </div>
-          </div>
-          <div class="card note">
-            <div class="notetitle scrollwheel">
-              <h2 contenteditable="true" class="smalltitle">Circuit</h2>
-            </div>
-            <div class="notecontent scrollwheel">
-              <p contenteditable="true" class="text">
-                We have to bring our own toasters to laboratory this month!
-              </p>
-            </div>
-          </div>
-          <div class="card note">
-            <div class="notetitle scrollwheel">
-              <h2 contenteditable="true" class="smalltitle">Database!</h2>
-            </div>
-            <div class="notecontent scrollwheel">
-              <p contenteditable="true" class="text">
-                Don't forget to re-color the tables!
-              </p>
-            </div>
-          </div>
         </div>
         <div id="notefooter">
           <div class="cardfooter">
@@ -182,7 +150,6 @@
           </div>
         </div>
       </div>
-
       <div id="sum_garden" class="card">
         <!-- <div class="information">
           <div class="icon">
@@ -249,6 +216,7 @@
   <script src="scripts/calculator.js"></script>
   <script src="scripts/store.js" type="module"></script>
   <script src="scripts/trees.js"></script>
+  <script src="scripts/notification.js"></script>
 </body>
 
 </html>

@@ -2,7 +2,7 @@
 
 class funksioni
 {
-  public static function insert($con, $username, $email, $password, $confirmPassword, $firstname, $lastname, $phonenumber, $address)
+  public static function insert($con, $username, $email, $password, $firstname, $lastname, $phonenumber, $address)
   {
 
     $query = $con->prepare("
@@ -46,7 +46,8 @@ class funksioni
     return $string;
   }
 
-  public static function getUserId($username, $con){
+  public static function getUserId($username, $con)
+  {
     $query = "SELECT * FROM user WHERE username=:username";
     $statement = $con->prepare($query);
     $statement->bindValue(":username", $username);

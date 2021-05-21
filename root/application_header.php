@@ -2,14 +2,11 @@
 <header>
 
   <?php
-  session_start();
-
   require_once "login/authCookieSessionValidate.php";
 
-  echo $isLoggedIn;
 
   if (!$isLoggedIn) {
-    // echo "<script>alert(" . $isLoggedIn . ")</script>";
+    echo "<script>alert(" . $isLoggedIn . ")</script>";
     // header("Location: index.php");
   }
   ?>
@@ -31,11 +28,10 @@
         session_start();
         require_once("dbConfig.php");
         echo isset($_SESSION['username']) ? $_SESSION['username'] : null;
-        echo '<pre>';
-        var_dump($_SESSION);
-        echo '</pre>';
-        ?>
-      </div>
+        // echo '<pre>';
+        // var_dump($_SESSION);
+        // echo '</pre>';
+        ?></div>
       <div id="settingsicon" class="centeredicon">
         <i class="fas fa-caret-down"></i>
       </div>
@@ -43,20 +39,23 @@
     <!-- dropdown -->
     <div id="settingdropdown" class="dropdown" style="display: none">
       <div id="darkmode" class="setting">
-        <div class="darkmodeContainer">
-          Geo
-          <input type="checkbox" checked="checked">
-        </div>
-        <div class="darkmodeContainer">
-          Dark
-          <label class="theme-switch" for="checkbox">
-            <input type="checkbox" id="checkbox" />
-            <div class="slider round"></div>
-          </label>
+      <div class="darkmodeContainer">
+      Geo
+      <label class="geo-switch" for="geoCheckbox">
+          <input type="checkbox" id="geoCheckbox" />
+          <div class="slider round"></div>
+        </label>
+      </div>
+      <div class="darkmodeContainer">
+        Dark
+        <label class="theme-switch" for="checkbox">
+          <input type="checkbox" id="checkbox" />
+          <div class="slider round"></div>
+        </label>
         </div>
       </div>
       <a href="login/update.php" class="setting">Edit</a>
-      <a href="login/logout.php" class="setting">Log out</a>
+      <a href="index.php" class="setting">Log out</a>
 
     </div>
 

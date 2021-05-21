@@ -1,21 +1,21 @@
 <?php
 
+session_start();
 require_once("../../dbConfig.php");
 $conn = dbConfig::connect();
 
 function SendNotification() {
     global $conn;
     $message=$_REQUEST['message'];
-    $time=$_REQUEST['time'];
     $iconType=$_REQUEST['icontype'];
     $url=$_REQUEST['url'];
 
-    $sql = $conn->prepare('INSERT INTO `notification`(`userid`, `text`, `time`, `url`, `icontype`, `unread`) VALUES (?,?,?,?,?,?)');
-    $sql->execute(['0',$message,$time, $url,$iconType,1]);
+    $sql = $conn->prepare('INSERT INTO `notification`(`userid`, `text`, `url`, `icontype`, `unread`) VALUES (?,?,?,?,?)');
+    $sql->execute([$_SESSION['userid'],$message, $url,$iconType,1]);
 }
 function UpdateNotifications(){
     global $conn;
-    $sql = "SELECT * FROM `notification` WHERE userid = 0 ORDER BY id DESC";
+    $sql = "SELECT *, `notification`.`id` as `nid` FROM `notification` RIGHT JOIN `icon` ON `icon`.`id` = `notification`.`icontype`WHERE `notification`.`userid` = ".$_SESSION['userid']." ORDER BY `nid` DESC";
     $stmt = $conn->query($sql);
 
     $notificatinCount = 0;
@@ -24,9 +24,9 @@ function UpdateNotifications(){
         if($row['unread']=="1"){
           $class="notificatonUnread";
         }
-        echo('<a href="'.$row['url'].'" class="notificationItem notification_'.$row['id'].'">
+        echo('<a href="'.$row['url'].'" class="notificationItem notification_'.$row['nid'].'">
         <div>
-          <i class="fas '.$row['icontype'].' fa-2x notificationImage centeredicon"></i>
+          <i class="'.$row['name'].' fa-2x notificationImage centeredicon"></i>
         </div>
         <div class="notificationTextContainer">
           <span class="notificationText">'.$row['text'].'</span>
@@ -39,7 +39,7 @@ function UpdateNotifications(){
 
 function UnreadNotificationNumber(){
     global $conn;
-    $sql = "SELECT `unread`,'userid' FROM `notification` WHERE `unread` = 1 AND 'userid' = 0";
+    $sql = "SELECT `unread`,'userid' FROM `notification` WHERE `unread` = 1 AND `userid` = ".$_SESSION['userid'];
     $stmt = $conn->prepare($sql);
     $stmt->execute();
 
@@ -48,7 +48,7 @@ function UnreadNotificationNumber(){
 
 function modifyNotification($id){
   global $conn;
-  $sql = "UPDATE `notification` SET `unread`= 0 WHERE id = ".$id." AND userid = 0";
+  $sql = "UPDATE `notification` SET `unread`= 0 WHERE `id` = ".$id." AND `userid` = ".$_SESSION['userid'];
   $stmt = $conn->prepare($sql);
   $stmt->execute();
 }

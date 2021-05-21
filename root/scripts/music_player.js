@@ -116,19 +116,19 @@ function getSongs(){
       }
 
 // play song
-      function playsong() {
-        fetch('http://localhost/INT20_21_Gr13/root/fetchSongs.php')
-            .then(response => response.json())
-            .then(data => {
-              songs = data;
-              console.log(songs);
-              track.play();
-              Playing_song = true;
-              play.innerHTML = '<i class="fa fa-pause" aria-hidden="true"></i>';
+function playsong() {
+  fetch('http://localhost/INT20_21_Gr13/root/fetchSongs.php')
+      .then(response => response.json())
+      .then(data => {
+        songs = data;
+        console.log(songs);
+        track.play();
+        Playing_song = true;
+        play.innerHTML = '<i class="fa fa-pause" aria-hidden="true"></i>';
 
-            })
-            .catch(err => console.error(err));
-      }
+      })
+      .catch(err => console.error(err));
+}
 
 //pause song
       function pausesong()
