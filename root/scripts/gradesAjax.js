@@ -1,13 +1,14 @@
+
 //AJAX GET method
 function showLiterature(str) {
-  if (str=="") {
-    document.getElementById("txtHint").innerHTML="";
+  if (str == "") {
+    document.getElementById("txtHint").innerHTML = "";
     return;
   }
-  var xmlhttp=new XMLHttpRequest();
-  xmlhttp.onreadystatechange=function() {
-    if (this.readyState==4 && this.status==200) {
-      document.getElementById("txtHint").innerHTML=this.responseText;
+  var xmlhttp = new XMLHttpRequest();
+  xmlhttp.onreadystatechange = function () {
+    if (this.readyState == 4 && this.status == 200) {
+      document.getElementById("txtHint").innerHTML = this.responseText;
     }
   }
   xmlhttp.open("GET","application_grades_AjaxGetMethod.php?lenda="+str,true);
@@ -60,8 +61,8 @@ $("input").keypress(function (event) {
       //create a new li and add to ul4
       // jo me "" po me ''
       $("ul").append(
-        "<li><span><i class='fas fa-trash'></i></span> " +notat+
-          "<select id='grades'><option >6</option><option >7</option><option >8</option><option >9</option><option >10</option></select></li>"
+        "<li><span><i class='fas fa-trash'></i></span> " + notat +
+        "<select id='grades'><option >6</option><option >7</option><option >8</option><option >9</option><option >10</option></select></li>"
       );
     }
   }
