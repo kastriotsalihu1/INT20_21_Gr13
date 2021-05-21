@@ -1,7 +1,7 @@
 <?php 
 
 Class funksioni{
-        public static function insert($con, $username, $email, $password, $confirmPassword, $firstname, $lastname, $phonenumber, $address){
+        public static function insert($con, $username, $email, $password, $firstname, $lastname, $phonenumber, $address){
 
         $query = $con->prepare("
         INSERT INTO user ( username, email, password, firstname, lastname, phonenumber, address)
@@ -48,7 +48,7 @@ Class funksioni{
       
       }
       
-      public static function updateInfo($con,$id,$username, $email, $password, $confirmPassword, $firstname, $lastname, $phonenumber, $address){
+      public static function updateInfo($con,$id,$username, $email, $password,$firstname, $lastname, $phonenumber, $address){
           $query= $con->prepare("
           Update user SET username=:username, email=:email, password=:password,
            firstname=:firstname, lastname=:lastname,

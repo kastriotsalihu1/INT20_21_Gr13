@@ -27,7 +27,7 @@
         $statement->bindValue(":username", $username);
         $statement->execute();
         $row =$statement->fetch(PDO::FETCH_ASSOC);
-        $_SESSION['userid']= $row['userid'];
+        $_SESSION['userid']= $row['id'];
         echo '<pre>';
         var_dump($_SESSION);
         echo '</pre>';

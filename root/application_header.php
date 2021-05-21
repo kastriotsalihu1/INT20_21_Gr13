@@ -14,12 +14,12 @@
       </div>
       <div id="name">
         <?php
-        // session_start();
-        // require_once("dbConfig.php");
-        // echo isset($_SESSION['username']) ? $_SESSION['username'] : null;
-        // echo '<pre>';
-        // var_dump($_SESSION);
-        // echo '</pre>';
+        session_start();
+        require_once("dbConfig.php");
+        echo isset($_SESSION['username']) ? $_SESSION['username'] : null;
+        echo '<pre>';
+        var_dump($_SESSION);
+        echo '</pre>';
         ?></div>
       <div id="settingsicon" class="centeredicon">
         <i class="fas fa-caret-down"></i>
@@ -41,7 +41,7 @@
         </div>
       </div>
       <a href="login/update.php" class="setting">Edit</a>
-      <a href="login/logout.php" class="setting">Log out</a>
+      <a href="index.php" class="setting">Log out</a>
 
     </div>
     

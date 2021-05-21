@@ -97,7 +97,6 @@
                $username = funksioni::validateString($_POST['username']);
                $email = funksioni::validateString($_POST['email']);
                $password = funksioni::hashedPw($_POST['pw']);
-               $confirmPassword = funksioni::hashedPw($_POST['pwConfirm']);
                $firstname = funksioni::validateString($_POST['firstname']);
                $lastname = funksioni::validateString($_POST['lastname']);
                $phonenumber = funksioni::validateString($_POST['phonenumber']);
@@ -111,10 +110,10 @@
                $error_msg['email']="Email already exists!";
                return;
              }
-              if(funksioni::insert($con,$username, $email, $password, $confirmPassword, $firstname, $lastname, $phonenumber, $address)){
+              if(funksioni::insert($con,$username, $email, $password, $firstname, $lastname, $phonenumber, $address)){
                 $_SESSION['username']= $username;
-               // $_SESSION['userid']=$id;
-                header("Location:../index.html");
+                $_SESSION['userid']=$id;
+                header("Location: login.php");
                
               }
 
