@@ -60,6 +60,7 @@ window.onload = (event) => {
       }
       toggleSwitch.addEventListener("change", switchTheme, false);
 
+      
       navigator.geolocation.getCurrentPosition(success, error, options);
     },
     500,

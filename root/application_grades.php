@@ -44,11 +44,11 @@
             require_once("dbConfig.php");
             $conn = dbConfig::connect();
 
-            $sql = "SELECT * FROM subjects WHERE userid=1";
+            $sql = "SELECT * FROM subjects WHERE userid=3 ORDER BY id DESC";
             $stmt = $conn->query($sql);
 
             while ($row = $stmt->fetch()) {
-             echo  "<li><span><i class='fas fa-trash'></i></span> " .$row["name"].
+             echo  "<li><span><i class='fas fa-trash'></i></span>".$row["name"].
               "<select id='grades'><option >6</option><option >7</option><option >8</option><option >9</option><option >10</option></select></li>";
             }
             $conn = null;

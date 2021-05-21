@@ -40,7 +40,24 @@ function postName(e) {
 
 //Click on trash icon to delete subjects
 $("ul").on("click", "span", function () {
-  //this=span
+  var text = $(this)
+    .parent()
+    .clone() //clone the element
+    .children() //select all the children
+    .remove() //remove all the children
+    .end() //again go back to selected element
+    .text();
+
+  $.ajax({
+    url: "../root/php/grades/removeGrades.php",
+    type: "POST",
+    data: {
+      text: text,
+    },
+    success: function (event) {
+      console.log(event);
+    },
+  });
   $(this)
     .parent()
     .fadeOut(500, function () {
@@ -71,9 +88,9 @@ $("input").keypress(function (event) {
               subject +
               "<select id='grades'><option >5</option><option >6</option><option >7</option><option >8</option><option >9</option><option >10</option></select></li>"
           );
-          $(this).val("");
         },
       });
+      $(this).val("");
     }
   }
 });
@@ -90,16 +107,16 @@ $("li select").on("change", function (event) {
     .end() //again go back to selected element
     .text();
 
+  console.log(value + "---" + text);
   $.ajax({
-    url: '../root/php/grades/modifyGrades.php',
-    type: 'POST',
+    url: "../root/php/grades/modifyGrades.php",
+    type: "POST",
     data: {
-       text: text,
-       value:value,
+      text: text,
+      value: value,
     },
-    success: function(event) {
-     console.log(event);
-    }
-  }
-  )
+    success: function (event) {
+      console.log(event);
+    },
+  });
 });
