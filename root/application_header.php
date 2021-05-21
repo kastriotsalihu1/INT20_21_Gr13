@@ -1,5 +1,16 @@
 <!-- this is the header -->
 <header>
+
+  <?php
+  require_once "login/authCookieSessionValidate.php";
+
+
+  if (!$isLoggedIn) {
+    // echo "<script>alert(" . $isLoggedIn . ")</script>";
+    // header("Location: index.php");
+  }
+  ?>
+
   <!-- opens and closes the side navigation bar -->
   <div id="hamburger" class="centeredicon">
     <i class="fas fa-bars fa-2x"></i>
@@ -47,7 +58,7 @@
       <a href="index.php" class="setting">Log out</a>
 
     </div>
-    
+
     <!-- notifications -->
     <div id="notification" class="centeredicon" data-badge>
       <i class="far fa-bell fa-2x" id="notification-icon"></i>
@@ -57,8 +68,8 @@
       </div>
     </div>
 
-        <!-- share -->
-        <div id="share" class="centeredicon">
+    <!-- share -->
+    <div id="share" class="centeredicon">
       <a class="twitter-share-button" href="https://twitter.com/intent/tweet?text=Checkout%20my%20pomodoro%20progress&url=https://estudentproject.com/application_pomodoro.php" data-size="large" target="_blank">
         <i class="fas fa-retweet fa-2x" id="share-icon"></i>
       </a>

@@ -54,7 +54,7 @@
             $stmt = $conn->query($sql);
 
             while ($row = $stmt->fetch()) {
-              echo ('<li id="todo_' .$row["id"].  '" draggable="true">
+              echo ('<li id="todo_' .$row["id"].  '" '.($row["checked"]==0?'':'class="checked"').'draggable="true">
               <span class="text todotext">' . $row["text"] . '</span
               ><span class="deletetodo"><i class="fa fa-trash"></i></span>
             </li>');

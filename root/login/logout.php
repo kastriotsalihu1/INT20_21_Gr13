@@ -1,5 +1,16 @@
 <?php 
+session_start();
+
+require "Util.php";
+$util = new Util();
+
+//Clear Session
+$_SESSION["member_id"] = "";
 session_destroy();
-header("Location:../index.html");
+
+// clear cookies
+$util->clearAuthCookie();
+
+header("Location:../index.php");
 ?>
 

@@ -65,7 +65,7 @@ if(isset($_POST['update'])){
              <button type="button" class="toggle-btn" id="two">Sign up</button>
           </div>
           <div class="icon">
-            <a href="index.html">
+            <a href="index.php">
             <img src="../images/wp_img/logo.png" width="80px"  id="icon" alt="User Icon" >
           </a>
           </div>
