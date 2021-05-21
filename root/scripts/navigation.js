@@ -27,6 +27,13 @@ $(window).on("load", function () {
       event.preventDefault();
     }
   });
+
+  $("a[href$='index.php']").on("click", function (event) {
+    $.ajax({
+      url: "../root/php/misc/destroySession.php",
+      type: "POST",
+    });
+  });
   // $("#notification").on("click", function () {
   //   notificationCount--;
   //   $("#notification").attr("data-badge", notificationCount);
