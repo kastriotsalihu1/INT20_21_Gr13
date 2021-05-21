@@ -39,29 +39,37 @@ window.onload = (event) => {
     );
   });
 
-  var toggleSwitch;
+  var darkmodeSwitch;
+  var geoSwitch;
+
 
   waitForElementToDisplay(
     '.theme-switch input[type="checkbox"]',
     function () {
       console.log("Page is fully loaded!");
-      toggleSwitch = document.querySelector(
+      darkmodeSwitch = document.querySelector(
         '.theme-switch input[type="checkbox"]'
+      );
+      geoSwitch = document.querySelector(
+        '#geoCheckbox'
       );
 
       const currentTheme = localStorage.getItem("theme");
+      const currentGeo = localStorage.getItem("geo");
 
       if (currentTheme) {
         document.documentElement.setAttribute("data-theme", currentTheme);
-
+        
         if (currentTheme === "dark_mode") {
-          toggleSwitch.checked = true;
+         darkMode(false);
         }
       }
-      toggleSwitch.addEventListener("change", switchTheme, false);
-
-      
-      navigator.geolocation.getCurrentPosition(success, error, options);
+      if(currentGeo === "enabled"){
+        geoMode(true);
+      }
+      darkmodeSwitch.addEventListener("change", switchTheme, false);
+      darkmodeSwitch.addEventListener("click", stopGeo, false);
+      geoSwitch.addEventListener("change", switchGeo, false);
     },
     500,
     5000
@@ -112,6 +120,24 @@ window.onload = (event) => {
   function switchTheme(e) {
     darkMode(e.target.checked);
   }
+  function stopGeo(){
+    geoMode(false);
+  }
+
+  function switchGeo(e) {
+    geoMode(e.target.checked);
+  }
+
+  function geoMode(value){
+    $(geoSwitch).parent().children("div").toggleClass("isChecked",value);
+    if(value){
+      navigator.geolocation.getCurrentPosition(success, error, options);
+      localStorage.setItem("geo", "enabled");
+    }else{
+      localStorage.setItem("geo", "disabled");
+    }
+    geoSwitch.checked = value;
+  }
 
   function darkMode(value) {
     if (value) {
@@ -121,6 +147,7 @@ window.onload = (event) => {
       document.documentElement.setAttribute("data-theme", "light");
       localStorage.setItem("theme", "light");
     }
-    toggleSwitch.checked = value;
+    $(darkmodeSwitch).parent().children("div").toggleClass("isChecked",value);
+    darkmodeSwitch.checked = value;
   }
 };

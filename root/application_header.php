@@ -30,7 +30,10 @@
       <div id="darkmode" class="setting">
       <div class="darkmodeContainer">
       Geo
-      <input type="checkbox" checked="checked">
+      <label class="geo-switch" for="geoCheckbox">
+          <input type="checkbox" id="geoCheckbox" />
+          <div class="slider round"></div>
+        </label>
       </div>
       <div class="darkmodeContainer">
         Dark

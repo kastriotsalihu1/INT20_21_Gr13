@@ -396,7 +396,7 @@ main {
   padding: 10px;
   height: 1px;
 }
-.theme-switch {
+.theme-switch,.geo-switch {
   display: inline-block;
   height: 34px;
   position: relative;
@@ -430,13 +430,15 @@ main {
   width: 26px;
 }
 
-input:checked + .slider {
+
+.isChecked {
   background-color: #66bb6a;
 }
 
-input:checked + .slider:before {
+.isChecked:before {
   transform: translateX(55px);
 }
+
 
 .slider.round {
   border-radius: 34px;
