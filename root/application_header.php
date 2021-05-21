@@ -1,8 +1,12 @@
 <!-- this is the header -->
 <header>
   <?php
+  session_start();
   require_once "login/authCookieSessionValidate.php";
 
+  if($_SESSION['userid'] == null){
+    header("Location: index.php");
+  }
 
   if (!$isLoggedIn) {
     // echo "<script>alert(" . $isLoggedIn . ")</script>";
@@ -24,7 +28,7 @@
       </div>
       <div id="name">
         <?php
-        session_start();
+
         require_once("dbConfig.php");
         echo isset($_SESSION['username']) ? $_SESSION['username'] : null;
         // echo '<pre>';
