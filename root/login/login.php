@@ -66,9 +66,13 @@
       // }
 
       $_SESSION['username'] = $username;
-      $_SESSION['userid'] = funksioni::getUserId($username, $con);
       $isLoggedIn = true;
-      
+      $query="Select * from user where username=:username";
+      $statement =$con->prepare($query);
+      $statement->bindValue(":username", $username);
+      $statement->execute();
+      $row =$statement->fetch(PDO::FETCH_ASSOC);
+      $_SESSION['userid']= $row['id'];
       echo '<pre>';
       var_dump($_SESSION);
       echo '</pre>';

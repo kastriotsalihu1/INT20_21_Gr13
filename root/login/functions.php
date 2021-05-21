@@ -46,15 +46,7 @@ class funksioni
     return $string;
   }
 
-  public static function getUserId($username, $con)
-  {
-    $query = "SELECT * FROM user WHERE username=:username";
-    $statement = $con->prepare($query);
-    $statement->bindValue(":username", $username);
-    $statement->execute();
-    return $statement->fetch(PDO::FETCH_ASSOC)["userid"];
-  }
-
+ 
   public static function updateInfo($con, $id, $username, $email, $password, $confirmPassword, $firstname, $lastname, $phonenumber, $address)
   {
     $query = $con->prepare("

@@ -206,7 +206,7 @@ if(isset($_POST['submit'])){
     <div id="register" class="primarycolor">
       <h2>Start organizing your life now!</h2>
       <p>Create your own account and make things right today!</p>
-      <a class="login" href="login.html">REGISTER NOW</a>
+      <a class="login" href="login/login.php">REGISTER NOW</a>
     </div>
   </div>
   <?php  
@@ -225,7 +225,7 @@ if(isset($_POST['submit'])){
         <tr>
           <td><a href="#intro">HOME</a></td>
           <td><a href="contact_faq.html">CONTACT US</a></td>
-          <td><a href="login.html">SIGN UP</a></td>
+          <td><a href="login/login.php">SIGN UP</a></td>
 
         </tr>
         <tr>
