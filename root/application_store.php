@@ -35,7 +35,7 @@
             <h2>The latest products from the best vendors from around the world! (For legal reasons, that is a joke)</h2>
           </div>
         </div>
-        <h2 class="cardtitle">Latest</h2>
+        <h2 class="cardtitle"> Latest </h2>
 
         <div class="products">
         </div>

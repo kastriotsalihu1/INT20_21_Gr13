@@ -114,7 +114,7 @@
               if(funksioni::insert($con,$username, $email, $password, $confirmPassword, $firstname, $lastname, $phonenumber, $address)){
                 $_SESSION['username']= $username;
                // $_SESSION['userid']=$id;
-                header("Location:../index.html");
+                header("Location:../index.php");
                
               }
 
@@ -131,7 +131,7 @@
              <button type="button" class="toggle-btn" id="two">Sign up</button>
           </div>
           <div class="icon">
-            <a href="index.html">
+            <a href="index.php">
             <img src="../images/wp_img/logo.png" width="80px"  id="icon" alt="User Icon" >
           </a>
           </div>
