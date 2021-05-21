@@ -55,7 +55,7 @@ body{
     /* song image */
 .left img{
     object-fit: contain;
-     height: 180px;
+     height: 160px;
     /* width: 60%; */
     border-radius: 15px;
     box-shadow: 1px 0px 25px 10px rgba(0,0,0,0.1);
@@ -85,7 +85,7 @@ body{
    #piclabel{
     position:absolute;
     margin: auto;
-    top: 13px;
+    top: 50px;
     bottom: 0;
     left: 0;
     right: 0;
@@ -93,7 +93,7 @@ body{
    #audiolabel{
     position:absolute;
     margin: auto;
-    top: 128px;
+    top: 135px;
     bottom: 0;
     left: 0;
     right: 0;
@@ -113,7 +113,35 @@ body{
     top: 0;
     left: 0;
     right: 0;
-    bottom: -280px;
+    bottom: -250px;
+}
+#searchMusic input[type="text"]{
+    border-radius: 5px;
+    margin-bottom: 20px;
+    height: 30px;
+    border: none;
+    width: 176px;
+}
+#searchMusic ::placeholder{
+    text-align: center;
+    text-transform:uppercase;
+}
+#searchMusic input[type="submit"]{
+    border-radius: 5px;
+    height: 40px;
+    border: none;
+    width:170px;
+    color: white;
+    text-transform: uppercase;
+    font-weight: 600;
+    border-radius: 5px;
+    background-color:  rgb(32, 90, 57);
+    position:absolute;
+    margin: auto;
+    top: -50px;
+    left: 0;
+    right: 0;
+    bottom:0;
 }
 /* both range slider part */
 input[type="range"] {
@@ -138,7 +166,7 @@ input[type="range"]::-webkit-slider-thumb{
 /* volume part */
 .left .volume{
     position: absolute;
-    bottom: 10%;
+    bottom: 8%;
     left: 0;
     width: 100%;
     height: 30px;
@@ -189,7 +217,7 @@ input[type="range"]::-webkit-slider-thumb{
 }
 .right #title{
     position: absolute;
-    top: 20px;
+    top: 6px;
     left: 50%;
     transform: translateX(-50%);
     text-transform: capitalize;
@@ -198,7 +226,7 @@ input[type="range"]::-webkit-slider-thumb{
 }
 .right #artist{
     position: absolute;
-    top: 60px;
+    top: 50px;
     left: 50%;
     transform: translateX(-50%);
     text-transform: capitalize;
@@ -207,7 +235,7 @@ input[type="range"]::-webkit-slider-thumb{
 }
 .right .duration{
     position: absolute;
-    bottom: 11%;
+    bottom: 8%;
     left: 50%;
     transform: translateX(-50%);
     display: flex;
