@@ -13,7 +13,6 @@ const currentPage = currentPagePath[currentPagePath.length - 1];
 
 $(window).on("load", function () {
   $("#mask").fadeOut(600, "linear");
-
   waitForElementToDisplay(
     `a[href="${currentPage}"] i`,
     () => $(`a[href="${currentPage}"]`).children("i").addClass("activePage"),

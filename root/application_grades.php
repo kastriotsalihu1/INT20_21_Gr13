@@ -40,16 +40,25 @@
         <input id="subjects" name="subjects" type="text" placeholder="Subjects" />
         </form>
         <ul class="scroll">
-        <?php 
+        <?php
             require_once("dbConfig.php");
             $conn = dbConfig::connect();
 
-            $sql = "SELECT * FROM subjects WHERE userid=1";
+            $sql = "SELECT * FROM subjects WHERE userid=3 ORDER BY id DESC";
             $stmt = $conn->query($sql);
 
             while ($row = $stmt->fetch()) {
-             echo  "<li><span><i class='fas fa-trash'></i></span> " .$row["name"].
-              "<select id='grades'><option >6</option><option >7</option><option >8</option><option >9</option><option >10</option></select></li>";
+                $gradeNumber = "<select id='grades'>";
+                for ($x = 5; $x <= 10; $x++) {
+                    if ($row['grade']==$x) {
+                        $gradeNumber.= '<option selected>';
+                    } else {
+                        $gradeNumber .='<option>';
+                    }
+                    $gradeNumber .= $x.'</option>';
+                }
+                $gradeNumber.='</select>';
+                echo  "<li><span><i class='fas fa-trash'></i></span>".$row["name"].$gradeNumber."</li>";
             }
             $conn = null;
             ?>
