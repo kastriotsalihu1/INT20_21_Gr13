@@ -16,5 +16,4 @@ $row = $stmt->fetch();
 
 $conn = null;
 exit(trim($row["id"]));
-
 ?>
