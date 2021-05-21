@@ -46,7 +46,7 @@
           </div>
           <div class="cardcontent scrollwheel">
             <ul id="itemlist">
-            <?php 
+            <?php
             require_once("dbConfig.php");
             $conn = dbConfig::connect();
 
@@ -54,7 +54,7 @@
             $stmt = $conn->query($sql);
 
             while ($row = $stmt->fetch()) {
-              echo ('<li id="todo_' .$row["id"].  '" '.($row["checked"]==0?'':'class="checked"').'draggable="true">
+                echo('<li id="todo_' .$row["id"].  '" '.($row["checked"]==0?'':'class="checked"').'draggable="true">
               <span class="text todotext">' . $row["text"] . '</span
               ><span class="deletetodo"><i class="fa fa-trash"></i></span>
             </li>');
@@ -93,18 +93,21 @@
             <h2 class="cardtitle">Notes</h2>
           </div>
           <div id="notecontainer" class="cardcontent scrollwheel">
-            <div class="card note">
-              <i class="closenote fas fa-times-circle"></i>
-              <i class="dragnote fas fa-grip-horizontal"></i>
-              <div class="notetitle scrollwheel">
-                <h2 contenteditable="true" class="smalltitle">Thy Title!</h2>
-              </div>
-              <div class="notecontent scrollwheel">
-                <p contenteditable="true" class="text">
-                  I want to note something!
-                </p>
-              </div>
-            </div>
+          <?php
+            $conn = dbConfig::connect();
+
+            $sql = "SELECT * FROM `note` WHERE `userid` = '".$_SESSION['userid']."' ORDER BY `id` DESC";
+            $stmt = $conn->query($sql);
+
+            while ($row = $stmt->fetch()) {
+              echo('<div class="card note" id="note_'.$row['id'].
+              '"><i class="closenote fas fa-times-circle">'.
+              '</i>    <i class="dragnote fas fa-grip-horizontal"></i><div class="notetitle scrollwheel"><h2 contenteditable="true" class="smalltitle">'.
+              $row['title'].'</h2></div><div class="notecontent scrollwheel">'.
+              '<p contenteditable="true" class="text">'.$row['text'].'</p></div></div>');
+            }
+            $conn = null;
+            ?>
           </div>
           <div id="notefooter">
             <div class="cardfooter">

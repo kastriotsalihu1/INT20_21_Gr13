@@ -1,3 +1,5 @@
+
+
 <!DOCTYPE html>
 <html lang="en">
 
@@ -106,6 +108,7 @@
           </div>
         </div>
         <h2 class="cardtitle">UPLOAD SONG</h2>
+      
         <form action="music.php" method="POST" enctype="multipart/form-data">
           <input type="text" placeholder="TITLE" name="title">
           <input type="text" placeholder="ARTIST" name="artist">
@@ -114,7 +117,6 @@
           <input type="file" id="file2" name="pic" accept="image/*">
           <label for="file2" id="piclabel">Choose Picture</label>
           <input type="submit" value="Add to playlist" name="addsong">
-
         </form>
       </div>
       <div class="card" id="pomodoro">
@@ -188,7 +190,7 @@
         <br>
         <h3 style="color:white">Results</h3>
 
-        <table id="nita" style="padding-left:50px;">
+        <table id="nita" style="padding-left:20px;">
         </table>
 
       </div>
